@@ -9,13 +9,14 @@
 #include "tiles/tilebase.h"
 #include "tiles/forest.h"
 #include "tiles/grassland.h"
+#include "graphics/simplegamescene.h"
 
 
 class GameEngine
 {
 public:
     GameEngine();
-    void setupGame();
+    void setupGame(MapWindow* mapWindow);
 };
 
 #endif // GAMEENGINE_H
