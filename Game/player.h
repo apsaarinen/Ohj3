@@ -16,7 +16,8 @@ public:
     Player(const std::string& name,
                const std::vector<std::shared_ptr<Course::GameObject> > objects ={});
 
-    void setResources(const Course::ResourceMap &startResources);
+    bool modifyResource(const Course::BasicResource& resource, const int& amount);
+    bool modifyResources(const Course::ResourceMap &resources);
 private:
     Course::ResourceMap m_resources;
 

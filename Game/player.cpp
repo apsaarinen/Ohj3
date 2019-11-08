@@ -7,7 +7,26 @@ Player::Player(const std::string& name,
 
 }
 
-void Player::setResources(const Course::ResourceMap &startResources)
+bool Player::modifyResource(const Course::BasicResource &resource, const int &amount)
 {
-    m_resources = startResources;
+    if(m_resources[resource]+amount < 0) {
+        return false;
+    }
+    else {
+        m_resources[resource] += amount;
+        return true;
+    }
+
+}
+
+bool Player::modifyResources(const Course::ResourceMap &resources)
+{
+    Course::ResourceMap newMap = Course::mergeResourceMaps(m_resources, resources);
+    for(auto r: newMap) {
+        if( r.second < 0) {
+            return false;
+        }
+    }
+    m_resources = newMap;
+    return true;
 }

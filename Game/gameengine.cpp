@@ -40,7 +40,7 @@ void GameEngine::setupGame(MapWindow *mapWindow,
         {Course::BasicResource::STONE, 100},
         {Course::BasicResource::ORE, 100},
     }; // TODO: get starting resource amounts from start dialog window
-    player1Ptr->setResources(startResources);
-    player2Ptr->setResources(startResources);
+    GEHand->newModifyResources(player1Ptr, startResources);
+    GEHand->newModifyResources(player2Ptr, startResources);
 
 }

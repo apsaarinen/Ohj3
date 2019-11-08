@@ -14,3 +14,13 @@ bool GameEventHandler::modifyResources(std::shared_ptr<Course::PlayerBase> playe
 {
 
 }
+
+bool GameEventHandler::newModifyResource(std::shared_ptr<Player> player, Course::BasicResource resource, int amount)
+{
+    return player->modifyResource(resource, amount);
+}
+
+bool GameEventHandler::newModifyResources(std::shared_ptr<Player> player, Course::ResourceMap resources)
+{
+    return player->modifyResources(resources);
+}

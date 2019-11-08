@@ -60,10 +60,3 @@ void MapWindow::drawItem(std::shared_ptr<Course::GameObject> obj)
 {
     m_simplescene->drawItem(obj);
 }
-
-void MapWindow::drawItems(std::vector<std::shared_ptr<Course::GameObject>> objs)
-{
-    for(std::shared_ptr<Course::GameObject> obj: objs) {
-        m_simplescene->drawItem(obj);
-    }
-}

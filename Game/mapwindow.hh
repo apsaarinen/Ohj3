@@ -36,7 +36,6 @@ public:
     void resize();
 
     void drawItem( std::shared_ptr<Course::GameObject> obj);
-    void drawItems( std::vector<std::shared_ptr<Course::GameObject>> objs);
     void removeItem( std::shared_ptr<Course::GameObject> obj);
     void updateItem( std::shared_ptr<Course::GameObject> obj);
 
@@ -44,7 +43,6 @@ public:
 private:
     Ui::MapWindow* m_ui;
     std::shared_ptr<GameEventHandler> m_GEHandler = nullptr;
-    std::shared_ptr<ObjectManager> m_ObjMan = nullptr;
     std::shared_ptr<Course::SimpleGameScene> m_simplescene = nullptr;
 
 };

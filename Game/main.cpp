@@ -11,12 +11,14 @@ int main(int argc, char* argv[])
     std::shared_ptr<ObjectManager> objManPtr = std::make_shared<ObjectManager>();
     std::shared_ptr<GameEventHandler> eventHandPtr = std::make_shared<GameEventHandler>();
     MapWindow mapWindow;
+    mapWindow.show();
+
+    // TODO: Dialog box for game setup
+
     GameEngine gameEng;
     gameEng.setupGame(&mapWindow, objManPtr, eventHandPtr);
 
 
-
-    mapWindow.show();
     return app.exec();
 
 
