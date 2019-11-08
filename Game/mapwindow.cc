@@ -6,12 +6,10 @@
 #include <math.h>
 
 MapWindow::MapWindow(QWidget *parent,
-                     std::shared_ptr<Course::iGameEventHandler> handler,
-                     std::shared_ptr<Course::iObjectManager> manager):
+                     std::shared_ptr<GameEventHandler> handler):
     QMainWindow(parent),
     m_ui(new Ui::MapWindow),
     m_GEHandler(handler),
-    m_ObjMan(manager),
     m_simplescene(new Course::SimpleGameScene(this))
 {
     m_ui->setupUi(this);
@@ -28,34 +26,9 @@ MapWindow::~MapWindow()
 }
 
 void MapWindow::setGEHandler(
-        std::shared_ptr<Course::iGameEventHandler> nHandler)
+        std::shared_ptr<GameEventHandler> nHandler)
 {
     m_GEHandler = nHandler;
-}
-
-void MapWindow::setObjMan(std::shared_ptr<Course::iObjectManager> nManager)
-{
-    m_ObjMan = nManager;
-}
-
-void MapWindow::setSGS(std::shared_ptr<Course::SimpleGameScene> nScene)
-{
-    m_simplescene = nScene;
-}
-
-std::shared_ptr<Course::iGameEventHandler> MapWindow::getGEHandler()
-{
-    return m_GEHandler;
-}
-
-std::shared_ptr<Course::iObjectManager> MapWindow::getObjMan()
-{
-    return m_ObjMan;
-}
-
-std::shared_ptr<Course::SimpleGameScene> MapWindow::getSGS()
-{
-    return m_simplescene;
 }
 
 void MapWindow::setSize(int width, int height)
@@ -83,7 +56,14 @@ void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
     m_simplescene->removeItem(obj);
 }
 
-void MapWindow::drawItem( std::shared_ptr<Course::GameObject> obj)
+void MapWindow::drawItem(std::shared_ptr<Course::GameObject> obj)
 {
     m_simplescene->drawItem(obj);
+}
+
+void MapWindow::drawItems(std::vector<std::shared_ptr<Course::GameObject>> objs)
+{
+    for(std::shared_ptr<Course::GameObject> obj: objs) {
+        m_simplescene->drawItem(obj);
+    }
 }

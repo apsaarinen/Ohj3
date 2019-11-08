@@ -43,11 +43,32 @@ std::vector<std::shared_ptr<Course::TileBase>> ObjectManager::getTiles(const std
     return matchingTiles;
 }
 
-std::vector<std::shared_ptr<Course::TileBase>> ObjectManager::getTiles()
+const std::vector<std::shared_ptr<Course::TileBase>> ObjectManager::getTiles() const
 {
-    std::vector<std::shared_ptr<Course::TileBase>> matchingTiles;
-    for(std::shared_ptr<Course::TileBase> tile: m_tiles) {
-        matchingTiles.push_back(tile);
+    return m_tiles;
+}
+
+void ObjectManager::addPlayer(const std::shared_ptr<Player> &player)
+{
+    m_players.push_back(player);
+}
+
+void ObjectManager::addPlayers(const std::vector<std::shared_ptr<Player> > &players)
+{
+    m_players = players;
+}
+
+std::shared_ptr<Player> ObjectManager::getPlayer(const std::string &name)
+{
+    for(std::shared_ptr<Player>& player: m_players) {
+        if(player->getName() == name) {
+            return player;
+        }
     }
-    return matchingTiles;
+    return nullptr;
+}
+
+const std::vector<std::shared_ptr<Player> > ObjectManager::getPlayers() const
+{
+    return m_players;
 }

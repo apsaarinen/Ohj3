@@ -5,26 +5,42 @@ GameEngine::GameEngine()
 
 }
 
-void GameEngine::setupGame(MapWindow *mapWindow)
+void GameEngine::setupGame(MapWindow *mapWindow,
+                           std::shared_ptr<ObjectManager> objMan,
+                           std::shared_ptr<GameEventHandler> GEHand)
 {
+
+    // Open dialog window(?) and ask for game specs
+    // TODO
+
+    // Generate tiles and draw them
     auto& worldGen = Course::WorldGenerator::getInstance();
     worldGen.addConstructor<Course::Forest>(10);
     worldGen.addConstructor<Course::Grassland>(1);
-//    std::shared_ptr<Course::iObjectManager> objMan = mapWindow->getObjMan();
-//    std::shared_ptr<Course::iGameEventHandler> eventHand = mapWindow->getGEHandler();
-    std::shared_ptr<Course::SimpleGameScene> sgs = mapWindow->getSGS();
-
-    ObjectManager objMan;
-    std::shared_ptr<ObjectManager> objManPtr = std::make_shared<ObjectManager>(objMan);
-    GameEventHandler eventHand;
-    std::shared_ptr<GameEventHandler> eventHandPtr = std::make_shared<GameEventHandler>(eventHand);
-
-    unsigned int x = 10;
-    unsigned int y = 10;
-    unsigned int seed = 5;
-    worldGen.generateMap(x, y, seed, objManPtr, eventHandPtr);
-    std::vector<std::shared_ptr<Course::TileBase>> asd = objManPtr->getTiles();
-    for(auto t: asd){
-        sgs->drawItem(t);
+    unsigned int x = 10; // TODO: from player or hard coded?
+    unsigned int y = 10; // TODO: from player or hard coded?
+    unsigned int seed = 5; // TODO: random in final version
+    worldGen.generateMap(x, y, seed, objMan, GEHand);
+    std::vector<std::shared_ptr<Course::TileBase>> allTiles = objMan->getTiles();
+    for(std::shared_ptr<Course::TileBase>& tile: allTiles){
+        mapWindow->drawItem(tile);
     }
+
+    // Generate players and save them
+    std::shared_ptr<Player> player1Ptr = std::make_shared<Player>("Player1"); // TODO: player name
+    std::shared_ptr<Player> player2Ptr = std::make_shared<Player>("Player2"); // TODO: player name
+    objMan->addPlayer(player1Ptr);
+    objMan->addPlayer(player2Ptr);
+
+    // Set up player resources
+    Course::ResourceMap startResources = {
+        {Course::BasicResource::MONEY, 100},
+        {Course::BasicResource::FOOD, 100},
+        {Course::BasicResource::WOOD, 100},
+        {Course::BasicResource::STONE, 100},
+        {Course::BasicResource::ORE, 100},
+    }; // TODO: get starting resource amounts from start dialog window
+    player1Ptr->setResources(startResources);
+    player2Ptr->setResources(startResources);
+
 }

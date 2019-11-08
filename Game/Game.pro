@@ -10,13 +10,15 @@ SOURCES += \
     mapwindow.cc \
     objectmanager.cpp \
     gameeventhandler.cpp \
-    gameengine.cpp
+    gameengine.cpp \
+    player.cpp
 
 HEADERS += \
     mapwindow.hh \
     objectmanager.h \
     gameeventhandler.h \
-    gameengine.h
+    gameengine.h \
+    player.h
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib

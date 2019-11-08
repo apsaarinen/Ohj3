@@ -5,6 +5,7 @@
 #include "tiles/tilebase.h"
 #include "core/coordinate.h"
 #include "core/gameobject.h"
+#include "player.h"
 
 
 class ObjectManager : public Course::iObjectManager
@@ -13,6 +14,8 @@ class ObjectManager : public Course::iObjectManager
 public:
     ObjectManager();
 
+
+    // Tiles
 
     /**
      * @brief Adds new tiles to the ObjectManager.
@@ -56,11 +59,22 @@ public:
      * @return Vector that contains pointers to Tiles
      * @post Exception Guarantee: Basic
      */
-    std::vector<std::shared_ptr<Course::TileBase>> getTiles();
+    const std::vector<std::shared_ptr<Course::TileBase>> getTiles() const;
+
+    // Players
+
+    // TODO: docu
+    void addPlayer(const std::shared_ptr<Player>& player);
+    void addPlayers(const std::vector<std::shared_ptr<Player>>& players);
+
+    std::shared_ptr<Player> getPlayer(const std::string& name);
+
+    const std::vector<std::shared_ptr<Player>> getPlayers() const;
 
 
 private:
     std::vector<std::shared_ptr<Course::TileBase>> m_tiles;
+    std::vector<std::shared_ptr<Player>> m_players;
 };
 
 #endif // OBJECTMANAGER_H
