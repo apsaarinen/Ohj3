@@ -11,14 +11,18 @@ SOURCES += \
     objectmanager.cpp \
     gameeventhandler.cpp \
     gameengine.cpp \
-    player.cpp
+    player.cpp \
+    mine.cpp \
+    sawmill.cpp
 
 HEADERS += \
     mapwindow.hh \
     objectmanager.h \
     gameeventhandler.h \
     gameengine.h \
-    player.h
+    player.h \
+    mine.hh \
+    sawmill.hh
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib
