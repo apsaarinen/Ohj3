@@ -29,6 +29,7 @@ public:
     ~MapWindow();
 
     void setGEHandler(std::shared_ptr<GameEventHandler> nHandler);
+    std::shared_ptr<GameEventHandler> getGEHandler(); // TODO: Needed?
 //    void setSGS(std::shared_ptr<Course::SimpleGameScene> sgs); TODO: Needed?
 
     void setSize(int width, int height);

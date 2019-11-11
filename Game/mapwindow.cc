@@ -15,9 +15,7 @@ MapWindow::MapWindow(QWidget *parent,
     m_ui->setupUi(this);
 
     Course::SimpleGameScene* sgs_rawptr = m_simplescene.get();
-//    sgs_rawptr->setSceneRect(10, 10, 100, 100);
     m_ui->graphicsView->setScene(dynamic_cast<QGraphicsScene*>(sgs_rawptr));
-//    m_ui->graphicsView->setAlignment(Qt::AlignTop|Qt::AlignLeft);
 }
 
 MapWindow::~MapWindow()
@@ -29,6 +27,11 @@ void MapWindow::setGEHandler(
         std::shared_ptr<GameEventHandler> nHandler)
 {
     m_GEHandler = nHandler;
+}
+
+std::shared_ptr<GameEventHandler> MapWindow::getGEHandler()
+{
+    return m_GEHandler;
 }
 
 void MapWindow::setSize(int width, int height)

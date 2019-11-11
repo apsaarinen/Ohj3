@@ -30,3 +30,8 @@ bool Player::modifyResources(const Course::ResourceMap &resources)
     m_resources = newMap;
     return true;
 }
+
+Course::ResourceMap Player::getResources() const
+{
+    return m_resources;
+}

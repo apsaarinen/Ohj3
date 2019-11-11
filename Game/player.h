@@ -18,6 +18,8 @@ public:
 
     bool modifyResource(const Course::BasicResource& resource, const int& amount);
     bool modifyResources(const Course::ResourceMap &resources);
+
+    Course::ResourceMap getResources() const;
 private:
     Course::ResourceMap m_resources;
 

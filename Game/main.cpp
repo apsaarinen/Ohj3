@@ -13,11 +13,9 @@ int main(int argc, char* argv[])
     MapWindow mapWindow;
     mapWindow.show();
 
-    // TODO: Dialog box for game setup
-
     GameEngine gameEng;
     gameEng.setupGame(&mapWindow, objManPtr, eventHandPtr);
-
+    //gameEng.turnManager(&mapWindow, objManPtr); // TODO: finish and uncomment
 
     return app.exec();
 

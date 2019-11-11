@@ -7,7 +7,7 @@ ObjectManager::ObjectManager()
 
 void ObjectManager::addTiles(const std::vector<std::shared_ptr<Course::TileBase> > &tiles)
 {
-    m_tiles = tiles;
+    m_tiles.insert(m_tiles.end(), tiles.begin(), tiles.end());
 }
 
 std::shared_ptr<Course::TileBase> ObjectManager::getTile(const Course::Coordinate& coordinate)
@@ -30,6 +30,7 @@ std::shared_ptr<Course::TileBase> ObjectManager::getTile(const Course::ObjectId&
     return nullptr; // TODO: Is this ok?
 }
 
+
 std::vector<std::shared_ptr<Course::TileBase>> ObjectManager::getTiles(const std::vector<Course::Coordinate>& coordinates)
 {
     std::vector<std::shared_ptr<Course::TileBase>> matchingTiles;
@@ -43,19 +44,31 @@ std::vector<std::shared_ptr<Course::TileBase>> ObjectManager::getTiles(const std
     return matchingTiles;
 }
 
+
 const std::vector<std::shared_ptr<Course::TileBase>> ObjectManager::getTiles() const
 {
     return m_tiles;
 }
 
-void ObjectManager::addPlayer(const std::shared_ptr<Player> &player)
+std::vector<std::shared_ptr<Course::TileBase> > ObjectManager::getTiles(const std::shared_ptr<Player> player) const
+{
+    std::vector<std::shared_ptr<Course::TileBase>> tiles;
+    for(std::shared_ptr<Course::TileBase> tile: m_tiles) {
+        if(tile->getOwner() == player) {
+            tiles.push_back(tile);
+        }
+    }
+    return tiles;
+}
+
+void ObjectManager::addPlayer(const std::shared_ptr<Player> player)
 {
     m_players.push_back(player);
 }
 
 void ObjectManager::addPlayers(const std::vector<std::shared_ptr<Player> > &players)
 {
-    m_players = players;
+    m_players.insert(m_players.end(), players.begin(), players.end());
 }
 
 std::shared_ptr<Player> ObjectManager::getPlayer(const std::string &name)

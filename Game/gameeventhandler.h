@@ -5,6 +5,7 @@
 #include "interfaces/igameeventhandler.h"
 #include "core/basicresources.h"
 #include "player.h"
+#include "objectmanager.h"
 
 class GameEventHandler : public Course::iGameEventHandler
 {
@@ -55,6 +56,16 @@ public:
      */
     bool newModifyResources(std::shared_ptr<Player> player, Course::ResourceMap resources);
 
+    // Check if player has won the game
+    bool playerHasWon(std::shared_ptr<Player> player);
+
+    // Calculate income for both of the players and add it to their resources
+    void addIncome(std::shared_ptr<ObjectManager> objMan);
+
+private:
+
+    int m_winningResources; // TODO: this has to be set up in the beginning
+    
 };
 
 #endif // GAMEEVENTHANDLER_H

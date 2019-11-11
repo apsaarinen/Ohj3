@@ -59,12 +59,16 @@ public:
      * @return Vector that contains pointers to Tiles
      * @post Exception Guarantee: Basic
      */
-    const std::vector<std::shared_ptr<Course::TileBase>> getTiles() const;
+    const std::vector<std::shared_ptr<Course::TileBase> > getTiles() const;
+
+    // TODO: docu
+    std::vector<std::shared_ptr<Course::TileBase> > getTiles(const std::shared_ptr<Player> player) const;
+
 
     // Players
 
     // TODO: docu
-    void addPlayer(const std::shared_ptr<Player>& player);
+    void addPlayer(const std::shared_ptr<Player> player);
     void addPlayers(const std::vector<std::shared_ptr<Player>>& players);
 
     std::shared_ptr<Player> getPlayer(const std::string& name);
