@@ -6,6 +6,7 @@
 #include "gameeventhandler.h"
 #include "objectmanager.h"
 #include "player.h"
+#include "resourcemaps_v2.hh"
 
 /**
  * @brief The Mine class represents a mine-building in the game.
@@ -36,8 +37,8 @@ public:
             const std::shared_ptr<ObjectManager>& objectmanager,
             const std::shared_ptr<Player>& owner,
             const int& tilespaces = 1,
-            const Course::ResourceMap& buildcost = Course::ConstResourceMaps::FARM_BUILD_COST,
-            const Course::ResourceMap& production = Course::ConstResourceMaps::FARM_PRODUCTION
+            const Course::ResourceMap& buildcost = Course::ConstResourceMaps::MINE_BUILD_COST,
+            const Course::ResourceMap& production = Course::ConstResourceMaps::MINE_PRODUCTION
             );
             // TODO: MINE_BUILD_COST ja MINE_PRODUCTION
     /**

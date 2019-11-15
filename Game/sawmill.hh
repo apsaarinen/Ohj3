@@ -7,11 +7,12 @@
 #include "gameeventhandler.h"
 #include "objectmanager.h"
 #include "player.h"
+#include "resourcemaps_v2.hh"
 
 /**
  * @brief The Sawmill class represents a sawmill-building in the game.
  *
- * The sawmill adds 2 base-production for wood depending on the tile its placed on.
+ * The sawmill adds 2 base-production for wood.
  */
 class SawMill : public Course::BuildingBase
 {
@@ -37,10 +38,10 @@ public:
             const std::shared_ptr<ObjectManager>& objectmanager,
             const std::shared_ptr<Player>& owner,
             const int& tilespaces = 1,
-            const Course::ResourceMap& buildcost = Course::ConstResourceMaps::FARM_BUILD_COST,
-            const Course::ResourceMap& production = Course::ConstResourceMaps::FARM_PRODUCTION
+            const Course::ResourceMap& buildcost = Course::ConstResourceMaps::SawMill_BUILD_COST,
+            const Course::ResourceMap& production = Course::ConstResourceMaps::SawMill_PRODUCTION
             );
-            // TODO: SawMill_BUILD_COST ja SawMill_PRODUCTION
+
     /**
      * @brief Default destructor.
      */
