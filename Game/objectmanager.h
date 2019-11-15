@@ -75,6 +75,8 @@ public:
 
     const std::vector<std::shared_ptr<Player>> getPlayers() const;
 
+    bool isLastPlayer(const std::shared_ptr<Player> player);
+
 
 private:
     std::vector<std::shared_ptr<Course::TileBase>> m_tiles;

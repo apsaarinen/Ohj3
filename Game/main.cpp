@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
 
     GameEngine gameEng;
     gameEng.setupGame(&mapWindow, objManPtr, eventHandPtr);
-    //gameEng.turnManager(&mapWindow, objManPtr); // TODO: finish and uncomment
+    gameEng.startGame(&mapWindow, objManPtr);
 
     return app.exec();
 

@@ -21,16 +21,13 @@ public:
     GameEngine();
     // Create the initial game setup
     void setupGame(MapWindow* mapWindow, std::shared_ptr<ObjectManager> objMan, std::shared_ptr<GameEventHandler> GEHand);
-    // Give players turns and monitor win condition
-    void turnManager(MapWindow* mapWindow, std::shared_ptr<ObjectManager> objMan);
+    // Start the game for the QT event loop
+    void startGame(MapWindow* mapWindow, std::shared_ptr<ObjectManager> objMan);
 
 private:
-    // Execute a player turn
-    void playerTurn(MapWindow* mapWindow, std::shared_ptr<Player> player);
     // End dialog (player name, stats, etc.)
     void endGame(MapWindow* mapWindow, std::vector<std::shared_ptr<Player> > winners);
-    // Check whether player(s) have fulfilled the win condition(s)
-    std::vector<std::shared_ptr<Player>> checkWinCondition(std::shared_ptr<GameEventHandler> GEHand, std::vector<std::shared_ptr<Player>> players);
+
 };
 
 #endif // GAMEENGINE_H

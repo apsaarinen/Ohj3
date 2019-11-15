@@ -25,11 +25,14 @@ class MapWindow : public QMainWindow
 
 public:
     explicit MapWindow(QWidget *parent = 0,
-                       std::shared_ptr<GameEventHandler> GEHandler = {});
+                       std::shared_ptr<GameEventHandler> GEHandler = {},
+                       std::shared_ptr<ObjectManager> objMan = {});
     ~MapWindow();
 
     void setGEHandler(std::shared_ptr<GameEventHandler> nHandler);
-    std::shared_ptr<GameEventHandler> getGEHandler(); // TODO: Needed?
+    std::shared_ptr<GameEventHandler> getGEHandler();
+    void setObjMan(std::shared_ptr<ObjectManager> nObjMan);
+    std::shared_ptr<ObjectManager> getObjMan();
 //    void setSGS(std::shared_ptr<Course::SimpleGameScene> sgs); TODO: Needed?
 
     void setSize(int width, int height);
@@ -40,10 +43,15 @@ public:
     void removeItem( std::shared_ptr<Course::GameObject> obj);
     void updateItem( std::shared_ptr<Course::GameObject> obj);
 
+    void changeTurn(const std::shared_ptr<Player> player);
+
+private slots:
+    void on_endTurnButton_clicked();
 
 private:
     Ui::MapWindow* m_ui;
     std::shared_ptr<GameEventHandler> m_GEHandler = nullptr;
+    std::shared_ptr<ObjectManager> m_objMan = nullptr;
     std::shared_ptr<Course::SimpleGameScene> m_simplescene = nullptr;
 
 };

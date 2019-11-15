@@ -59,13 +59,21 @@ public:
     // Check if player has won the game
     bool playerHasWon(std::shared_ptr<Player> player);
 
+    // Returns the player whose turn it is currently
+    std::shared_ptr<Player> getPlayerInTurn();
+
+    // Sets the turn to a player
+    void setPlayerInTurn(const std::shared_ptr<Player> player);
+
     // Calculate income for both of the players and add it to their resources
     void addIncome(std::shared_ptr<ObjectManager> objMan);
+
+    std::vector<std::shared_ptr<Player>> checkWinCondition(std::vector<std::shared_ptr<Player>> players);
 
 private:
 
     int m_winningResources; // TODO: this has to be set up in the beginning
-    
+    std::weak_ptr<Player> m_playerInTurn;
 };
 
 #endif // GAMEEVENTHANDLER_H

@@ -44,10 +44,31 @@ bool GameEventHandler::playerHasWon(std::shared_ptr<Player> player)
     return false;
 }
 
+std::shared_ptr<Player> GameEventHandler::getPlayerInTurn()
+{
+    return m_playerInTurn.lock();
+}
+
+void GameEventHandler::setPlayerInTurn(const std::shared_ptr<Player> player)
+{
+    m_playerInTurn = player;
+}
+
 void GameEventHandler::addIncome(std::shared_ptr<ObjectManager> objMan)
 {
     std::vector<std::shared_ptr<Course::TileBase>> tiles = objMan->getTiles();
     for(std::shared_ptr<Course::TileBase> tile: tiles) {
         tile->generateResources();
     }
+}
+
+std::vector<std::shared_ptr<Player> > GameEventHandler::checkWinCondition(std::vector<std::shared_ptr<Player> > players)
+{
+    std::vector<std::shared_ptr<Player>> winners;
+    for(std::shared_ptr<Player> player: players) {
+        if(playerHasWon(player)) {
+            winners.push_back(player);
+        }
+    }
+    return winners;
 }

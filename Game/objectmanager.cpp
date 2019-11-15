@@ -85,3 +85,8 @@ const std::vector<std::shared_ptr<Player> > ObjectManager::getPlayers() const
 {
     return m_players;
 }
+
+bool ObjectManager::isLastPlayer(const std::shared_ptr<Player> player)
+{
+    return m_players.back() == player;
+}
