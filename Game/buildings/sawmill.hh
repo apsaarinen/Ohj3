@@ -38,8 +38,8 @@ public:
             const std::shared_ptr<ObjectManager>& objectmanager,
             const std::shared_ptr<Player>& owner,
             const int& tilespaces = 1,
-            const Course::ResourceMap& buildcost = Course::ConstResourceMaps::SawMill_BUILD_COST,
-            const Course::ResourceMap& production = Course::ConstResourceMaps::SawMill_PRODUCTION
+            const Course::ResourceMap& buildcost = Course::ConstResourceMaps::SAWMILL_BUILD_COST,
+            const Course::ResourceMap& production = Course::ConstResourceMaps::SAWMILL_PRODUCTION
             );
 
     /**

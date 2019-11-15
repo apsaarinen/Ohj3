@@ -35,22 +35,22 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QPushButton" name="exitButton">
-      <property name="text">
-       <string>Exit game</string>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="1">
-     <widget class="QPushButton" name="endTurnButton">
+     <widget class="QPushButton" name="button_endTurn">
       <property name="text">
        <string>End turn</string>
       </property>
      </widget>
     </item>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="button_exit">
+      <property name="text">
+       <string>Exit game</string>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="1">
-     <widget class="QLabel" name="playerNameLabel">
+     <widget class="QLabel" name="label_playerName">
       <property name="text">
        <string>Player in turn:</string>
       </property>
@@ -73,7 +73,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>exitButton</sender>
+   <sender>button_exit</sender>
    <signal>clicked()</signal>
    <receiver>MapWindow</receiver>
    <slot>close()</slot>

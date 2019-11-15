@@ -38,7 +38,7 @@ bool GameEventHandler::playerHasWon(std::shared_ptr<Player> player)
     for(auto n: playerResourceMap) {
         resourceSum += n.second;
     }
-    if(resourceSum >= m_winningResources) {
+    if(resourceSum >= m_resourcesToWin) {
         return true;
     }
     return false;
@@ -71,4 +71,9 @@ std::vector<std::shared_ptr<Player> > GameEventHandler::checkWinCondition(std::v
         }
     }
     return winners;
+}
+
+void GameEventHandler::setResourcesToWin(const int resourcesToWin)
+{
+    m_resourcesToWin = resourcesToWin;
 }

@@ -20,12 +20,12 @@ const ResourceMap MINE_PRODUCTION = {
 };
 
 // Building - Sawmill
-const ResourceMap SawMill_BUILD_COST = {
+const ResourceMap SAWMILL_BUILD_COST = {
     {BasicResource::MONEY, 70},
     {BasicResource::FOOD, 70},
     {BasicResource::WOOD, 50}
 };
-const ResourceMap SawMill_PRODUCTION = {
+const ResourceMap SAWMILL_PRODUCTION = {
     {BasicResource::MONEY, 1},
     {BasicResource::FOOD, 5},
     {BasicResource::WOOD, 2}

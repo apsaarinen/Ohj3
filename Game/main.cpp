@@ -1,5 +1,4 @@
 #include "mapwindow.hh"
-#include "begindialog.hh"
 
 #include <QApplication>
 #include "gameengine.h"
@@ -12,21 +11,27 @@ int main(int argc, char* argv[])
     std::shared_ptr<ObjectManager> objManPtr = std::make_shared<ObjectManager>();
     std::shared_ptr<GameEventHandler> eventHandPtr = std::make_shared<GameEventHandler>();
 
+    // Open a dialog window and ask for initial value for game setup
     begindialog beginDialog;
     beginDialog.show();
+    std::vector<std::string> playernames;
+    Course::ResourceMap startingResources;
     if(beginDialog.exec() == QDialog::Accepted){
-        std::vector<std::string> playernames = beginDialog.getPlayernames();
-        Course::ResourceMap startingResources = beginDialog.getStartingResources();
-        int resources_to_win = beginDialog.getResourcesToWin();
+        playernames = beginDialog.getPlayernames();
+        startingResources = beginDialog.getStartingResources();
+        eventHandPtr->setResourcesToWin(beginDialog.getResourcesToWin());
     }
     else{
         exit(0);
     }
+
     MapWindow mapWindow;
     mapWindow.show();
 
     GameEngine gameEng;
-    gameEng.setupGame(&mapWindow, objManPtr, eventHandPtr);
+    mapWindow.setGEHandler(eventHandPtr);
+    mapWindow.setObjMan(objManPtr);
+    gameEng.setupGame(&mapWindow, playernames, startingResources);
     gameEng.startGame(&mapWindow, objManPtr);
 
     return app.exec();

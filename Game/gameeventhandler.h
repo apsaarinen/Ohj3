@@ -70,9 +70,11 @@ public:
 
     std::vector<std::shared_ptr<Player>> checkWinCondition(std::vector<std::shared_ptr<Player>> players);
 
+    void setResourcesToWin(const int resourcesToWin);
+
 private:
 
-    int m_winningResources; // TODO: this has to be set up in the beginning
+    int m_resourcesToWin;
     std::weak_ptr<Player> m_playerInTurn;
 };
 

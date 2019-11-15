@@ -12,8 +12,8 @@ SOURCES += \
     gameeventhandler.cpp \
     gameengine.cpp \
     player.cpp \
-    mine.cpp \
-    sawmill.cpp \
+    buildings/mine.cpp \
+    buildings/sawmill.cpp \
     begindialog.cpp
 
 HEADERS += \
@@ -22,8 +22,8 @@ HEADERS += \
     gameeventhandler.h \
     gameengine.h \
     player.h \
-    mine.hh \
-    sawmill.hh \
+    buildings/mine.hh \
+    buildings/sawmill.hh \
     begindialog.hh \
     resourcemaps_v2.hh
 

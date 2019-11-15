@@ -46,7 +46,7 @@ public:
     void changeTurn(const std::shared_ptr<Player> player);
 
 private slots:
-    void on_endTurnButton_clicked();
+    void on_button_endTurn_clicked();
 
 private:
     Ui::MapWindow* m_ui;

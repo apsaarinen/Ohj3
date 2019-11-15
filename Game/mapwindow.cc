@@ -69,6 +69,14 @@ void MapWindow::updateItem(std::shared_ptr<Course::GameObject> obj)
 void MapWindow::changeTurn(const std::shared_ptr<Player> player)
 {
     // Update the UI for the current player
+
+    // Set player name in UI
+    QString playerName = "Player in turn: " + QString::fromStdString(player->getName());
+    m_ui->label_playerName->setText(playerName);
+
+    // Set player resources in UI
+
+    // Highlight or color tiles?
 }
 
 void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
@@ -81,7 +89,7 @@ void MapWindow::drawItem(std::shared_ptr<Course::GameObject> obj)
     m_simplescene->drawItem(obj);
 }
 
-void MapWindow::on_endTurnButton_clicked()
+void MapWindow::on_button_endTurn_clicked()
 {
     std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
     std::shared_ptr<ObjectManager> objMan = getObjMan();
@@ -98,8 +106,6 @@ void MapWindow::on_endTurnButton_clicked()
     // Give turn to next player
     for(std::shared_ptr<Player> player: players) {
         if(player != playerInTurn) {
-            QString playerName = "Player in turn: " + QString::fromStdString(player->getName());
-            m_ui->playerNameLabel->setText(playerName);
             GEHand->setPlayerInTurn(player);
             changeTurn(player);
         }
