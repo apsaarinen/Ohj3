@@ -45,9 +45,3 @@ void GameEngine::startGame(MapWindow *mapWindow, std::shared_ptr<ObjectManager> 
         GEHand->setPlayerInTurn(players[0]);
         mapWindow->changeTurn(players[0]);
 }
-
-void GameEngine::endGame(MapWindow *mapWindow, std::vector<std::shared_ptr<Player>> winners)
-{
-    // Popup dialog?
-    // Different cases for a win and a draw
-}

@@ -48,7 +48,14 @@ public:
 private slots:
     void on_button_endTurn_clicked();
 
+    void on_button_getMoney_clicked();
+
+    void on_button_loseMoney_clicked();
+
 private:
+    void drawResources(std::shared_ptr<Player> player);
+    void endGame(std::vector<std::shared_ptr<Player>> winners);
+
     Ui::MapWindow* m_ui;
     std::shared_ptr<GameEventHandler> m_GEHandler = nullptr;
     std::shared_ptr<ObjectManager> m_objMan = nullptr;

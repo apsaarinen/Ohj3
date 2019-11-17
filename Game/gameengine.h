@@ -24,11 +24,6 @@ public:
     void setupGame(MapWindow* mapWindow, std::vector<std::string> playerNames, Course::ResourceMap startingResources);
     // Start the game for the QT event loop
     void startGame(MapWindow* mapWindow, std::shared_ptr<ObjectManager> objMan);
-
-private:
-    // End dialog (player name, stats, etc.)
-    void endGame(MapWindow* mapWindow, std::vector<std::shared_ptr<Player> > winners);
-
 };
 
 #endif // GAMEENGINE_H
