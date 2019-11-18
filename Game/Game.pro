@@ -14,7 +14,12 @@ SOURCES += \
     player.cpp \
     buildings/mine.cpp \
     buildings/sawmill.cpp \
-    begindialog.cpp
+    begindialog.cpp \
+    tiles/blockfield.cpp \
+    tiles/oredeposit.cpp \
+    workers/mineworker.cpp \
+    workers/sawmillworker.cpp \
+    tiles/water.cpp
 
 HEADERS += \
     mapwindow.hh \
@@ -25,7 +30,12 @@ HEADERS += \
     buildings/mine.hh \
     buildings/sawmill.hh \
     begindialog.hh \
-    resourcemaps_v2.hh
+    resourcemaps_v2.hh \
+    tiles/blockfield.h \
+    tiles/oredeposit.h \
+    workers/mineworker.h \
+    workers/sawmillworker.h \
+    tiles/water.h
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib
