@@ -6,6 +6,7 @@
 #include "objectmanager.h"
 #include "core/coordinate.h"
 #include "core/resourcemaps.h"
+#include "resourcemaps_v2.hh"
 #include "core/basicresources.h"
 #include "buildings/buildingbase.h"
 

@@ -6,6 +6,7 @@
 #include "objectmanager.h"
 #include "core/coordinate.h"
 #include "core/resourcemaps.h"
+#include "resourcemaps_v2.hh"
 #include "core/basicresources.h"
 #include "buildings/buildingbase.h"
 
@@ -29,7 +30,6 @@ public:
            const unsigned int& max_build = 2,
            const unsigned int& max_work = 3,
            const Course::ResourceMap& production = Course::ConstResourceMaps::BLOCKFIELD_BP);
-
     /**
      * @brief Default destructor.
      */

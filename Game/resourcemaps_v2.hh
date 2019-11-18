@@ -63,7 +63,7 @@ const ResourceMap BLOCKFIELD_BP = {
     {FOOD, 0},
     {WOOD, 0},
     {STONE, 5},
-    {ORE, 2},
+    {ORE, 2}
 };
 
 // Tile - OreDeposit
@@ -72,7 +72,7 @@ const ResourceMap OREDEPOSIT_BP = {
     {FOOD, 0},
     {WOOD, 0},
     {STONE, 2},
-    {ORE, 5},
+    {ORE, 5}
 };
 
 // Tile - Water
@@ -82,7 +82,7 @@ const ResourceMap WATER_BP = {
     {FOOD, 0},
     {WOOD, 0},
     {STONE, 0},
-    {ORE, 0},
+    {ORE, 0}
 };
 
 }

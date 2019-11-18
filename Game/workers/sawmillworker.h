@@ -3,6 +3,7 @@
 
 #include "workers/workerbase.h"
 #include "core/resourcemaps.h"
+#include "resourcemaps_v2.hh"
 
 /**
  * @brief The SawMillWorker class represents a saw mill worker in the game.

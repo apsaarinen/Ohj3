@@ -3,6 +3,7 @@
 
 #include "workers/workerbase.h"
 #include "core/resourcemaps.h"
+#include "resourcemaps_v2.hh"
 
 /**
  * @brief The MineWorker class represents a mine worker in the game.
