@@ -14,7 +14,8 @@ SOURCES += \
     player.cpp \
     buildings/mine.cpp \
     buildings/sawmill.cpp \
-    begindialog.cpp
+    begindialog.cpp \
+    enddialog.cpp
 
 HEADERS += \
     mapwindow.hh \
@@ -25,7 +26,8 @@ HEADERS += \
     buildings/mine.hh \
     buildings/sawmill.hh \
     begindialog.hh \
-    resourcemaps_v2.hh
+    resourcemaps_v2.hh \
+    enddialog.hh
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib
@@ -53,4 +55,5 @@ else:unix: PRE_TARGETDEPS += \
 
 FORMS += \
     mapwindow.ui \
-    begindialog.ui
+    begindialog.ui \
+    enddialog.ui

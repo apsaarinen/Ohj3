@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>546</width>
-    <height>405</height>
+    <width>597</width>
+    <height>436</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>360</y>
+     <x>240</x>
+     <y>390</y>
      <width>341</width>
      <height>32</height>
     </rect>
@@ -42,7 +42,7 @@
     <item row="0" column="0">
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>Player1:</string>
+       <string>Player 1:</string>
       </property>
      </widget>
     </item>
@@ -134,7 +134,7 @@
     <item row="1" column="0">
      <widget class="QLabel" name="label_7">
       <property name="text">
-       <string>Player2:</string>
+       <string>Player 2:</string>
       </property>
      </widget>
     </item>
@@ -143,12 +143,18 @@
       <property name="text">
        <string>Name1</string>
       </property>
+      <property name="maxLength">
+       <number>12</number>
+      </property>
      </widget>
     </item>
     <item row="1" column="1">
      <widget class="QLineEdit" name="lineEdit_2">
       <property name="text">
        <string>Name2</string>
+      </property>
+      <property name="maxLength">
+       <number>12</number>
       </property>
      </widget>
     </item>
@@ -177,6 +183,32 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>20</y>
+     <width>181</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Max length 12 characters</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>50</y>
+     <width>181</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Max length 12 characters</string>
+   </property>
   </widget>
  </widget>
  <resources/>

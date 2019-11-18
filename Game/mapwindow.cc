@@ -145,18 +145,18 @@ void MapWindow::drawResources(std::shared_ptr<Player> player)
     m_ui->label_sumInput->setText(QString::number(resourceSum));
 }
 
-// TODO: this could lauch a pop-up that closes the game?
+
 void MapWindow::endGame(std::vector<std::shared_ptr<Player> > winners)
 {
-    if(winners.size() == 1) {
-        // One winner
-        QString winnerText = "Player " +
-                QString::fromStdString(winners[0]->getName()) +
-                " has won the game!";
-        m_ui->label_playerName->setText(winnerText);
-    } else {
-        // Draw
-        m_ui->label_playerName->setText("It's a draw!");
-    }
     m_ui->button_endTurn->hide();
+
+    enddialog endDialog;
+    endDialog.setWinner(winners);
+    if(endDialog.exec() == QDialog::Accepted){
+        exit(0);
+    }
+
+
+
+
 }
