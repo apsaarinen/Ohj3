@@ -15,7 +15,7 @@ SOURCES += \
     buildings/mine.cpp \
     buildings/sawmill.cpp \
     begindialog.cpp \
-    enddialog.cpp
+    enddialog.cpp \
     tiles/blockfield.cpp \
     tiles/oredeposit.cpp \
     workers/mineworker.cpp \
@@ -32,7 +32,7 @@ HEADERS += \
     buildings/sawmill.hh \
     begindialog.hh \
     resourcemaps_v2.hh \
-    enddialog.hh
+    enddialog.hh \
     tiles/blockfield.h \
     tiles/oredeposit.h \
     workers/mineworker.h \
