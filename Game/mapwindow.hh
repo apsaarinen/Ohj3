@@ -53,12 +53,13 @@ private slots:
 
     void on_button_loseMoney_clicked();
 
+    void on_button_farm_clicked();
+
 private:
     void drawResources(std::shared_ptr<Player> player);
     void endGame(std::vector<std::shared_ptr<Player>> winners);
 
     Ui::MapWindow* m_ui;
-    //Ui::enddialog* e_ui;
     std::shared_ptr<GameEventHandler> m_GEHandler = nullptr;
     std::shared_ptr<ObjectManager> m_objMan = nullptr;
     std::shared_ptr<Course::SimpleGameScene> m_simplescene = nullptr;

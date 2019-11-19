@@ -130,6 +130,31 @@ void MapWindow::on_button_loseMoney_clicked()
     drawResources(player);
 }
 
+void MapWindow::on_button_farm_clicked()
+{
+    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
+
+    m_ui->button_getMoney->setEnabled(false);
+    m_ui->label_status->setText("Choose a square you want to build this building on.");
+
+    // Player clicks on a square and it's ID is returned
+
+    // Testivaiheeseen mitä tahansa klikkaamalla vain napit takaisin aktiivisiksi jne.
+    // Voiko tässä käyttää jotenkin SimpleGameScenen mouseevent kakkaa?
+    //if(m_ui->graphicsView->event(QEvent *event)){
+    //    m_ui->label_status->setText("Square clicked.");
+    //}
+
+    // Check if the square is available
+        // If yes, take resources, make object of the building with square ID,
+        // make the player owner of the square and put building to players objects.
+        // Draw building on the map
+
+        // If no, show error message and continue the turn
+
+}
+
 void MapWindow::drawResources(std::shared_ptr<Player> player)
 {
     Course::ResourceMap playerResources = player->getResources();
@@ -153,6 +178,9 @@ void MapWindow::endGame(std::vector<std::shared_ptr<Player> > winners)
     enddialog endDialog;
     endDialog.setWinner(winners);
     if(endDialog.exec() == QDialog::Accepted){
+        exit(0);
+    }
+    else{
         exit(0);
     }
 

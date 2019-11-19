@@ -40,7 +40,7 @@ public:
             const Course::ResourceMap& buildcost = Course::ConstResourceMaps::MINE_BUILD_COST,
             const Course::ResourceMap& production = Course::ConstResourceMaps::MINE_PRODUCTION
             );
-            // TODO: MINE_BUILD_COST ja MINE_PRODUCTION
+
     /**
      * @brief Default destructor.
      */
