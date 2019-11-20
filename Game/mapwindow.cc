@@ -1,7 +1,7 @@
 #include "mapwindow.hh"
 #include "ui_mapwindow.h"
 
-#include "graphics/simplemapitem.h"
+#include "graphics/mapitem.h"
 
 #include <math.h>
 
@@ -12,12 +12,14 @@ MapWindow::MapWindow(QWidget *parent,
     m_ui(new Ui::MapWindow),
     m_GEHandler(handler),
     m_objMan(objMan),
-    m_simplescene(new Course::SimpleGameScene(this))
+    m_gamescene(new GameScene(this))
 {
     m_ui->setupUi(this);
 
-    Course::SimpleGameScene* sgs_rawptr = m_simplescene.get();
+    GameScene* sgs_rawptr = m_gamescene.get();
     m_ui->graphicsView->setScene(dynamic_cast<QGraphicsScene*>(sgs_rawptr));
+
+    connect(sgs_rawptr, SIGNAL(mapItemClicked(Course::ObjectId)), this, SLOT(placeObject(Course::ObjectId)));
 }
 
 MapWindow::~MapWindow()
@@ -48,22 +50,22 @@ std::shared_ptr<ObjectManager> MapWindow::getObjMan()
 
 void MapWindow::setSize(int width, int height)
 {
-    m_simplescene->setSize(width, height);
+    m_gamescene->setSize(width, height);
 }
 
 void MapWindow::setScale(int scale)
 {
-    m_simplescene->setScale(scale);
+    m_gamescene->setScale(scale);
 }
 
 void MapWindow::resize()
 {
-    m_simplescene->resize();
+    m_gamescene->resize();
 }
 
 void MapWindow::updateItem(std::shared_ptr<Course::GameObject> obj)
 {
-    m_simplescene->updateItem(obj);
+    m_gamescene->updateItem(obj);
 }
 
 void MapWindow::changeTurn(const std::shared_ptr<Player> player)
@@ -82,12 +84,12 @@ void MapWindow::changeTurn(const std::shared_ptr<Player> player)
 
 void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
 {
-    m_simplescene->removeItem(obj);
+    m_gamescene->removeItem(obj);
 }
 
 void MapWindow::drawItem(std::shared_ptr<Course::GameObject> obj)
 {
-    m_simplescene->drawItem(obj);
+    m_gamescene->drawItem(obj);
 }
 
 void MapWindow::on_button_endTurn_clicked()
@@ -118,7 +120,7 @@ void MapWindow::on_button_getMoney_clicked()
 {
     std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
     std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
-    GEHand->newModifyResource(player, Course::BasicResource::MONEY, 100);
+    GEHand->modifyResource(player, Course::BasicResource::MONEY, 100);
     drawResources(player);
 }
 
@@ -126,33 +128,83 @@ void MapWindow::on_button_loseMoney_clicked()
 {
     std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
     std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
-    GEHand->newModifyResource(player, Course::BasicResource::MONEY, -100);
+    GEHand->modifyResource(player, Course::BasicResource::MONEY, -100);
     drawResources(player);
 }
 
 void MapWindow::on_button_farm_clicked()
 {
+    std::shared_ptr<ObjectManager> objMan = getObjMan();
     std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
     std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<Course::Farm> selectedObj = std::make_shared<Course::Farm>(GEHand,
+                                                                               objMan,
+                                                                               player);
+    selectedObj->addDescription("type", "building");
+    // Create a negative version of the BUILD_COST resource map
+    Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::FARM_BUILD_COST, Course::ConstResourceMaps::NEGATIVE);
+    if(player->modifyResources(cost)) {
+        // Player had money and paid for the object
+        buyObject(objMan, GEHand, player, selectedObj);
+    }
+    else {
+        m_ui->label_status->setText("Not enough resources!");
+    }
+}
 
+void MapWindow::buyObject(std::shared_ptr<ObjectManager> objMan, std::shared_ptr<GameEventHandler> GEHand, std::shared_ptr<Player> player, std::shared_ptr<Course::PlaceableGameObject> object)
+{
+    // Set buying flag on
+    GEHand->setBuyingFlag(true);
+
+    // Deactivate buttons and maybe show help text
     m_ui->button_getMoney->setEnabled(false);
     m_ui->label_status->setText("Choose a square you want to build this building on.");
 
-    // Player clicks on a square and it's ID is returned
+    // Save the object to objman and player
+    objMan->addPlaceableObject(object);
+    player->addObject(object);
 
-    // Testivaiheeseen mitä tahansa klikkaamalla vain napit takaisin aktiivisiksi jne.
-    // Voiko tässä käyttää jotenkin SimpleGameScenen mouseevent kakkaa?
-    //if(m_ui->graphicsView->event(QEvent *event)){
-    //    m_ui->label_status->setText("Square clicked.");
-    //}
+    drawResources(player);
+}
 
-    // Check if the square is available
-        // If yes, take resources, make object of the building with square ID,
-        // make the player owner of the square and put building to players objects.
-        // Draw building on the map
+void MapWindow::placeObject(Course::ObjectId tileID)
+{
+    std::shared_ptr<ObjectManager> objMan = getObjMan();
+    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
 
-        // If no, show error message and continue the turn
+    if(not GEHand->isPlayerBuying()) {
+        // Player has not paid or selected a resource to place on the map
+        return;
+    }
 
+    std::shared_ptr<Course::PlaceableGameObject> object = objMan->getNewestPlaceableObject();
+
+    std::shared_ptr<Course::TileBase> tile = objMan->getTile(tileID);
+
+    if(tile->getOwner() == nullptr or tile->getOwner() == player) {
+        if((object->getDescription("type") == "building" and tile->hasSpaceForBuildings(1)) or
+                (object->getDescription("type") == "worker" and tile->hasSpaceForWorkers(1))) {
+            // Draw building on map
+            object->setCoordinate(tile->getCoordinate());
+            // Set tile owner
+            tile->setOwner(player);
+            // TODO: set owner for adjacent tiles
+            qDebug() << "Draw building/worker on map!";
+            // Enable all buttons again and maybe change instruction text
+
+            // Set buying flag off
+            GEHand->setBuyingFlag(false);
+        }
+        else {
+            m_ui->label_status->setText("No space on the tile! Select another one.");
+        }
+    }
+    else {
+        m_ui->label_status->setText("Another player owns that tile! Select another one.");
+    }
+    // Display error?
 }
 
 void MapWindow::drawResources(std::shared_ptr<Player> player)

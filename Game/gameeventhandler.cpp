@@ -7,26 +7,18 @@ GameEventHandler::GameEventHandler()
 
 bool GameEventHandler::modifyResource(std::shared_ptr<Course::PlayerBase> player, Course::BasicResource resource, int amount)
 {
-
-}
-
-bool GameEventHandler::modifyResources(std::shared_ptr<Course::PlayerBase> player, Course::ResourceMap resources)
-{
-
-}
-
-bool GameEventHandler::newModifyResource(std::shared_ptr<Player> player, Course::BasicResource resource, int amount)
-{
-    if(player != nullptr) { // TODO: nullptr ok?
-        return player->modifyResource(resource, amount);
+    std::shared_ptr<Player> playerNew = std::static_pointer_cast<Player>(player);
+    if(playerNew != nullptr) { // TODO: nullptr ok?
+        return playerNew->modifyResource(resource, amount);
     }
     return false;
 }
 
-bool GameEventHandler::newModifyResources(std::shared_ptr<Player> player, Course::ResourceMap resources)
+bool GameEventHandler::modifyResources(std::shared_ptr<Course::PlayerBase> player, Course::ResourceMap resources)
 {
-    if(player != nullptr) { // TODO: nullptr ok?
-        return player->modifyResources(resources);
+    std::shared_ptr<Player> playerNew = std::static_pointer_cast<Player>(player);
+    if(playerNew != nullptr) { // TODO: nullptr ok?
+        return playerNew->modifyResources(resources);
     }
     return false;
 }
@@ -76,4 +68,14 @@ std::vector<std::shared_ptr<Player> > GameEventHandler::checkWinCondition(std::v
 void GameEventHandler::setResourcesToWin(const int resourcesToWin)
 {
     m_resourcesToWin = resourcesToWin;
+}
+
+void GameEventHandler::setBuyingFlag(const bool buying)
+{
+    m_playerBuying = buying;
+}
+
+bool GameEventHandler::isPlayerBuying() const
+{
+    return m_playerBuying;
 }

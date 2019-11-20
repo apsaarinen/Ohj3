@@ -1,7 +1,5 @@
 #include "sawmill.hh"
 
-
-
 SawMill::SawMill(const std::shared_ptr<GameEventHandler>& eventhandler,
            const std::shared_ptr<ObjectManager>& objectmanager,
            const std::shared_ptr<Player>& owner,

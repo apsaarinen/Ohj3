@@ -32,8 +32,8 @@ void GameEngine::setupGame(MapWindow *mapWindow,
     objMan->addPlayer(player2Ptr);
 
 
-    GEHand->newModifyResources(player1Ptr, startingResources);
-    GEHand->newModifyResources(player2Ptr, startingResources);
+    GEHand->modifyResources(player1Ptr, startingResources);
+    GEHand->modifyResources(player2Ptr, startingResources);
 
 }
 

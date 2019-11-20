@@ -7,6 +7,16 @@ namespace Course{
 
 namespace ConstResourceMaps {
 
+// All negative resourcemapdouble for additive inversion of other maps
+const ResourceMapDouble NEGATIVE = {
+    {MONEY, -1},
+    {FOOD, -1},
+    {WOOD, -1},
+    {STONE, -1},
+    {ORE, -1}
+};
+
+
 // Building - Mine
 const ResourceMap MINE_BUILD_COST = {
     {BasicResource::MONEY, 60},

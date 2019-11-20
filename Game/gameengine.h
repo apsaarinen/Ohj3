@@ -10,7 +10,7 @@
 #include "tiles/tilebase.h"
 #include "tiles/forest.h"
 #include "tiles/grassland.h"
-#include "graphics/simplegamescene.h"
+#include "graphics/gamescene.h"
 #include "player.h"
 #include "core/basicresources.h"
 #include "core/resourcemaps.h"

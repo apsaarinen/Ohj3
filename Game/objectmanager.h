@@ -78,9 +78,21 @@ public:
     bool isLastPlayer(const std::shared_ptr<Player> player);
 
 
+    // Placeable objects (buildings and workers)
+
+    // TODO: docu
+    void addPlaceableObject(const std::shared_ptr<Course::PlaceableGameObject> object);
+    const std::vector<std::shared_ptr<Course::PlaceableGameObject>> getPlaceableObjects() const;
+    const std::shared_ptr<Course::PlaceableGameObject> getPlaceableObject(const Course::ObjectId& id);
+    const std::shared_ptr<Course::PlaceableGameObject> getNewestPlaceableObject();
+
+
 private:
     std::vector<std::shared_ptr<Course::TileBase>> m_tiles;
     std::vector<std::shared_ptr<Player>> m_players;
+    std::vector<std::shared_ptr<Course::BuildingBase>> m_buildings; // TODO are these used
+    std::vector<std::shared_ptr<Course::WorkerBase>> m_workers; // TODO are these used
+    std::vector<std::shared_ptr<Course::PlaceableGameObject>> m_placeableObjects;
 };
 
 #endif // OBJECTMANAGER_H

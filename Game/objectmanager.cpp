@@ -90,3 +90,28 @@ bool ObjectManager::isLastPlayer(const std::shared_ptr<Player> player)
 {
     return m_players.back() == player;
 }
+
+void ObjectManager::addPlaceableObject(const std::shared_ptr<Course::PlaceableGameObject> object)
+{
+    m_placeableObjects.push_back(object);
+}
+
+const std::vector<std::shared_ptr<Course::PlaceableGameObject> > ObjectManager::getPlaceableObjects() const
+{
+    return m_placeableObjects;
+}
+
+const std::shared_ptr<Course::PlaceableGameObject> ObjectManager::getPlaceableObject(const Course::ObjectId &id)
+{
+    for(std::shared_ptr<Course::PlaceableGameObject>& obj: m_placeableObjects) {
+        if(obj->ID == id) {
+            return obj;
+        }
+    }
+    return nullptr;
+}
+
+const std::shared_ptr<Course::PlaceableGameObject> ObjectManager::getNewestPlaceableObject()
+{
+    return m_placeableObjects.back();
+}

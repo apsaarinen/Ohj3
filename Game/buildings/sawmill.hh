@@ -1,7 +1,6 @@
 #ifndef SAWMILL_HH
 #define SAWMILL_HH
 
-
 #include "buildings/buildingbase.h"
 #include "core/resourcemaps.h"
 #include "gameeventhandler.h"

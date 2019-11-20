@@ -11,10 +11,21 @@
 #include <map>
 
 #include "interfaces/igameeventhandler.h"
-#include "graphics/simplegamescene.h"
+#include "graphics/gamescene.h"
 #include "gameeventhandler.h"
 #include "objectmanager.h"
 #include "enddialog.hh"
+
+// All buildings and workers
+#include "buildings/farm.h"
+#include "buildings/headquarters.h"
+#include "buildings/outpost.h"
+#include "buildings/mine.hh"
+#include "buildings/sawmill.hh"
+
+#include "workers/mineworker.h"
+#include "workers/sawmillworker.h"
+#include "workers/basicworker.h"
 
 namespace Ui {
 class MapWindow;
@@ -46,6 +57,20 @@ public:
 
     void changeTurn(const std::shared_ptr<Player> player);
 
+public slots:
+    void placeObject(Course::ObjectId tileID);
+
+private:
+    void buyObject(std::shared_ptr<ObjectManager> objMan, std::shared_ptr<GameEventHandler> GEHand, std::shared_ptr<Player> player, std::shared_ptr<Course::PlaceableGameObject> object);
+    void drawResources(std::shared_ptr<Player> player);
+    void endGame(std::vector<std::shared_ptr<Player>> winners);
+
+    Ui::MapWindow* m_ui;
+    std::shared_ptr<GameEventHandler> m_GEHandler = nullptr;
+    std::shared_ptr<ObjectManager> m_objMan = nullptr;
+    std::shared_ptr<GameScene> m_gamescene = nullptr;
+
+
 private slots:
     void on_button_endTurn_clicked();
 
@@ -54,16 +79,6 @@ private slots:
     void on_button_loseMoney_clicked();
 
     void on_button_farm_clicked();
-
-private:
-    void drawResources(std::shared_ptr<Player> player);
-    void endGame(std::vector<std::shared_ptr<Player>> winners);
-
-    Ui::MapWindow* m_ui;
-    std::shared_ptr<GameEventHandler> m_GEHandler = nullptr;
-    std::shared_ptr<ObjectManager> m_objMan = nullptr;
-    std::shared_ptr<Course::SimpleGameScene> m_simplescene = nullptr;
-
 };
 
 #endif // MapWINDOW_HH

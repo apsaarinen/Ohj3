@@ -20,7 +20,9 @@ SOURCES += \
     tiles/oredeposit.cpp \
     workers/mineworker.cpp \
     workers/sawmillworker.cpp \
-    tiles/water.cpp
+    tiles/water.cpp \
+    graphics/gamescene.cpp \
+    graphics/mapitem.cpp
 
 HEADERS += \
     mapwindow.hh \
@@ -37,7 +39,9 @@ HEADERS += \
     tiles/oredeposit.h \
     workers/mineworker.h \
     workers/sawmillworker.h \
-    tiles/water.h
+    tiles/water.h \
+    graphics/gamescene.h \
+    graphics/mapitem.h
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib
