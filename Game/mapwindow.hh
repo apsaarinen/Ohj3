@@ -60,6 +60,24 @@ public:
 public slots:
     void placeObject(Course::ObjectId tileID);
 
+    void deactivateButtons();
+
+    // Varmaan turha
+    void setButtonTooltips();
+
+    bool eventFilter(QObject *watched, QEvent *event);
+
+private slots:
+    void on_button_endTurn_clicked();
+
+    void on_button_getMoney_clicked();
+
+    void on_button_loseMoney_clicked();
+
+    void on_button_farm_clicked();
+
+    void on_button_headquarters_clicked();
+
 private:
     void buyObject(std::shared_ptr<ObjectManager> objMan, std::shared_ptr<GameEventHandler> GEHand, std::shared_ptr<Player> player, std::shared_ptr<Course::PlaceableGameObject> object);
     void drawResources(std::shared_ptr<Player> player);

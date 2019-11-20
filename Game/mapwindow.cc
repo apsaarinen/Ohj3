@@ -20,6 +20,17 @@ MapWindow::MapWindow(QWidget *parent,
     m_ui->graphicsView->setScene(dynamic_cast<QGraphicsScene*>(sgs_rawptr));
 
     connect(sgs_rawptr, SIGNAL(mapItemClicked(Course::ObjectId)), this, SLOT(placeObject(Course::ObjectId)));
+
+    // Installing event filters for buttons
+    m_ui->button_farm->installEventFilter(this);
+    m_ui->button_headquarters->installEventFilter(this);
+    m_ui->button_outpost->installEventFilter(this);
+    m_ui->button_mines->installEventFilter(this);
+    m_ui->button_sawmill->installEventFilter(this);
+    m_ui->button_basicworker->installEventFilter(this);
+    m_ui->button_miner->installEventFilter(this);
+    m_ui->button_sawmillworker->installEventFilter(this);
+
 }
 
 MapWindow::~MapWindow()
@@ -81,6 +92,275 @@ void MapWindow::changeTurn(const std::shared_ptr<Player> player)
 
     // Highlight or color tiles?
 }
+
+void MapWindow::deactivateButtons()
+{
+    m_ui->button_basicworker->setEnabled(false);
+    m_ui->button_endTurn->setEnabled(false);
+    m_ui->button_farm->setEnabled(false);
+    m_ui->button_getMoney->setEnabled(false);
+    m_ui->button_headquarters->setEnabled(false);
+    m_ui->button_loseMoney->setEnabled(false);
+    m_ui->button_miner->setEnabled(false);
+    m_ui->button_mines->setEnabled(false);
+    m_ui->button_outpost->setEnabled(false);
+    m_ui->button_sawmill->setEnabled(false);
+    m_ui->button_sawmillworker->setEnabled(false);
+}
+
+void MapWindow::setButtonTooltips()
+{
+    m_ui->button_farm->setToolTip(QString("Money: ") + QString::number(
+                                      Course::ConstResourceMaps::FARM_BUILD_COST.at(
+                                          Course::BasicResource::MONEY)));
+}
+
+bool MapWindow::eventFilter(QObject *watched, QEvent *event)
+{
+    // Farm
+    if(watched == (QObject*)m_ui->button_farm){
+        if(event->type() == QEvent::Enter){
+            m_ui->label_info->show();
+            m_ui->label_info->setText(QString("Building a farm costs: \n "
+                                              "Money: ") + QString::number(
+                                            Course::ConstResourceMaps::FARM_BUILD_COST.at(
+                                            Course::BasicResource::MONEY)) + "\n Food: " +
+                                            QString::number(Course::ConstResourceMaps::
+                                            FARM_BUILD_COST.at(Course::BasicResource::FOOD)) +
+                                            "\n Wood: " + QString::number(
+                                            Course::ConstResourceMaps::FARM_BUILD_COST.at(
+                                            Course::BasicResource::WOOD))+
+                                            "\n\nProduction\n " "Money: " + QString::number(
+                                            Course::ConstResourceMaps::FARM_PRODUCTION.at(
+                                            Course::BasicResource::MONEY)) + "\n Food: " +
+                                            QString::number(Course::ConstResourceMaps::
+                                            FARM_PRODUCTION.at(Course::BasicResource::FOOD)));
+        }
+        else if(event->type() == QEvent::Leave){
+            m_ui->label_info->hide();
+        }
+        return QWidget::eventFilter(watched,event);
+    }
+
+    // Headquarters
+    else if(watched == (QObject*)m_ui->button_headquarters){
+        if(event->type() == QEvent::Enter){
+            m_ui->label_info->show();
+            m_ui->label_info->setText(QString("Building an HQ costs: \n "
+                                              "Money: ") + QString::number(
+                                            Course::ConstResourceMaps::HQ_BUILD_COST.at(
+                                            Course::BasicResource::MONEY)) + "\n Food: " +
+                                            QString::number(Course::ConstResourceMaps::
+                                            HQ_BUILD_COST.at(Course::BasicResource::FOOD)) +
+                                            "\n Wood: " + QString::number(
+                                            Course::ConstResourceMaps::HQ_BUILD_COST.at(
+                                            Course::BasicResource::WOOD)) + "\n Stone: " +
+                                            QString::number(Course::ConstResourceMaps::
+                                            HQ_BUILD_COST.at(Course::BasicResource::STONE)) +
+                                            "\n\nProduction\n " "Money: " + QString::number(
+                                            Course::ConstResourceMaps::HQ_PRODUCTION.at(
+                                            Course::BasicResource::MONEY)) + "\n Food: " +
+                                            QString::number(Course::ConstResourceMaps::
+                                            HQ_PRODUCTION.at(Course::BasicResource::FOOD)));
+        }
+        else if(event->type() == QEvent::Leave){
+            m_ui->label_info->hide();
+        }
+        return QWidget::eventFilter(watched,event);
+    }
+
+    // Outpost
+    else if(watched == (QObject*)m_ui->button_outpost){
+        if(event->type() == QEvent::Enter){
+            m_ui->label_info->show();
+            m_ui->label_info->setText(QString("Building an outpost costs: \n "
+                                              "Money: ") + QString::number(
+                                          Course::ConstResourceMaps::OUTPOST_BUILD_COST.at(
+                                          Course::BasicResource::MONEY)) + "\n Food: " +
+                                          QString::number(Course::ConstResourceMaps::
+                                          OUTPOST_BUILD_COST.at(Course::BasicResource::FOOD)) +
+                                          "\n Wood: " + QString::number(
+                                          Course::ConstResourceMaps::OUTPOST_BUILD_COST.at(
+                                          Course::BasicResource::WOOD)) +
+                                          "\n Stone: " + QString::number(
+                                          Course::ConstResourceMaps::OUTPOST_BUILD_COST.at(
+                                          Course::BasicResource::STONE)) + "\n\nProduction\n "
+                                          "Money: " + QString::number(
+                                          Course::ConstResourceMaps::OUTPOST_PRODUCTION.at(
+                                          Course::BasicResource::MONEY)) + "\n Food: " +
+                                          QString::number(Course::ConstResourceMaps::
+                                          OUTPOST_PRODUCTION.at(Course::BasicResource::FOOD)));
+        }
+
+        else if(event->type() == QEvent::Leave){
+            m_ui->label_info->hide();
+        }
+        return QWidget::eventFilter(watched,event);
+    }
+
+    // Mines
+    else if(watched == (QObject*)m_ui->button_mines){
+        if(event->type() == QEvent::Enter){
+            m_ui->label_info->show();
+            m_ui->label_info->setText(QString("Building a mine costs: \n "
+                                              "Money: ") + QString::number(
+                                          Course::ConstResourceMaps::MINE_BUILD_COST.at(
+                                          Course::BasicResource::MONEY)) + "\n Food: " +
+                                          QString::number(Course::ConstResourceMaps::
+                                          MINE_BUILD_COST.at(Course::BasicResource::FOOD)) +
+                                          "\n Wood: " + QString::number(
+                                          Course::ConstResourceMaps::MINE_BUILD_COST.at(
+                                          Course::BasicResource::WOOD)) + "\n\nProduction\n "
+                                          "Money: " + QString::number(
+                                          Course::ConstResourceMaps::MINE_PRODUCTION.at(
+                                          Course::BasicResource::MONEY)) + "\n Stone: " +
+                                          QString::number(Course::ConstResourceMaps::
+                                          MINE_PRODUCTION.at(Course::BasicResource::STONE)) +
+                                          "\n Ore: " + QString::number(
+                                          Course::ConstResourceMaps::MINE_PRODUCTION.at(
+                                          Course::BasicResource::ORE)));
+        }
+        else if(event->type() == QEvent::Leave){
+            m_ui->label_info->hide();
+        }
+        return QWidget::eventFilter(watched,event);
+    }
+
+    // Sawmill
+    else if(watched == (QObject*)m_ui->button_sawmill){
+        if(event->type() == QEvent::Enter){
+            m_ui->label_info->show();
+            m_ui->label_info->setText(QString("Building a sawmill costs: \n "
+                                              "Money: ") + QString::number(
+                                            Course::ConstResourceMaps::SAWMILL_BUILD_COST.at(
+                                            Course::BasicResource::MONEY)) + "\n Food: " +
+                                            QString::number(Course::ConstResourceMaps::
+                                            SAWMILL_BUILD_COST.at(Course::BasicResource::FOOD)) +
+                                            "\n Wood: " + QString::number(
+                                            Course::ConstResourceMaps::SAWMILL_BUILD_COST.at(
+                                            Course::BasicResource::WOOD)) + "\n\nProduction\n "
+                                            "Money: " + QString::number(
+                                            Course::ConstResourceMaps::SAWMILL_PRODUCTION.at(
+                                            Course::BasicResource::MONEY)) + "\n Food: " +
+                                            QString::number(Course::ConstResourceMaps::
+                                            SAWMILL_PRODUCTION.at(Course::BasicResource::FOOD)) +
+                                            "\n Wood: " + QString::number(
+                                            Course::ConstResourceMaps::SAWMILL_PRODUCTION.at(
+                                            Course::BasicResource::WOOD)));
+        }
+        else if(event->type() == QEvent::Leave){
+            m_ui->label_info->hide();
+        }
+        return QWidget::eventFilter(watched,event);
+    }
+
+    // Basic Worker
+    else if(watched == (QObject*)m_ui->button_basicworker){
+        if(event->type() == QEvent::Enter){
+            m_ui->label_info->show();
+            m_ui->label_info->setText(QString("Hiring a basic worker costs: \n "
+                                              "Money: ") + QString::number(
+                                            Course::ConstResourceMaps::BW_RECRUITMENT_COST.at(
+                                            Course::BasicResource::MONEY)) + "\n Food: " +
+                                            QString::number(Course::ConstResourceMaps::
+                                            BW_RECRUITMENT_COST.at(Course::BasicResource::FOOD)) +
+                                            "\n\n Working efficiency: \n"
+                                            "Money: " + QString::number(
+                                            Course::ConstResourceMaps::BW_WORKER_EFFICIENCY.at(
+                                            Course::BasicResource::MONEY)) +
+                                            "\n Food: " + QString::number(
+                                            Course::ConstResourceMaps::BW_WORKER_EFFICIENCY.at(
+                                            Course::BasicResource::FOOD)) +
+                                            "\n Wood: " + QString::number(
+                                            Course::ConstResourceMaps::BW_WORKER_EFFICIENCY.at(
+                                            Course::BasicResource::WOOD)) +
+                                            "\n Stone: " + QString::number(
+                                            Course::ConstResourceMaps::BW_WORKER_EFFICIENCY.at(
+                                            Course::BasicResource::STONE)) +
+                                            "\n Ore: " + QString::number(
+                                            Course::ConstResourceMaps::BW_WORKER_EFFICIENCY.at(
+                                            Course::BasicResource::ORE)) +
+                                            "\n\n Wage per turn\n Money: -1 \n Food: -1");
+        }
+        else if(event->type() == QEvent::Leave){
+            m_ui->label_info->hide();
+        }
+        return QWidget::eventFilter(watched,event);
+    }
+
+    // Miner
+    else if(watched == (QObject*)m_ui->button_miner){
+        if(event->type() == QEvent::Enter){
+            m_ui->label_info->show();
+            m_ui->label_info->setText(QString("Hiring a miner costs: \n "
+                                              "Money: ") + QString::number(
+                                            Course::ConstResourceMaps::MW_RECRUITMENT_COST.at(
+                                            Course::BasicResource::MONEY)) + "\n Food: " +
+                                            QString::number(Course::ConstResourceMaps::
+                                            MW_RECRUITMENT_COST.at(Course::BasicResource::FOOD)) +
+                                            "\n\n Working efficiency: \n"
+                                            "Money: " + QString::number(
+                                            Course::ConstResourceMaps::MW_WORKER_EFFICIENCY.at(
+                                            Course::BasicResource::MONEY)) +
+                                            "\n Food: " + QString::number(
+                                            Course::ConstResourceMaps::MW_WORKER_EFFICIENCY.at(
+                                            Course::BasicResource::FOOD)) +
+                                            "\n Wood: " + QString::number(
+                                            Course::ConstResourceMaps::MW_WORKER_EFFICIENCY.at(
+                                            Course::BasicResource::WOOD)) +
+                                            "\n Stone: " + QString::number(
+                                            Course::ConstResourceMaps::MW_WORKER_EFFICIENCY.at(
+                                            Course::BasicResource::STONE)) +
+                                            "\n Ore: " + QString::number(
+                                            Course::ConstResourceMaps::MW_WORKER_EFFICIENCY.at(
+                                            Course::BasicResource::ORE)) +
+                                            "\n\n Wage per turn\n Money: -2 \n Food: -2");
+        }
+        else if(event->type() == QEvent::Leave){
+            m_ui->label_info->hide();
+        }
+        return QWidget::eventFilter(watched,event);
+    }
+
+    // Sawmill worker
+    else if(watched == (QObject*)m_ui->button_sawmillworker){
+        if(event->type() == QEvent::Enter){
+            m_ui->label_info->show();
+            m_ui->label_info->setText(QString("Hiring a sawmill worker costs: \n "
+                                              "Money: ") + QString::number(
+                                            Course::ConstResourceMaps::SMW_RECRUITMENT_COST.at(
+                                            Course::BasicResource::MONEY)) + "\n Food: " +
+                                            QString::number(Course::ConstResourceMaps::
+                                            SMW_RECRUITMENT_COST.at(Course::BasicResource::FOOD)) +
+                                            "\n\n Working efficiency: \n"
+                                            "Money: " + QString::number(
+                                            Course::ConstResourceMaps::SMW_WORKER_EFFICIENCY.at(
+                                            Course::BasicResource::MONEY)) +
+                                            "\n Food: " + QString::number(
+                                            Course::ConstResourceMaps::SMW_WORKER_EFFICIENCY.at(
+                                            Course::BasicResource::FOOD)) +
+                                            "\n Wood: " + QString::number(
+                                            Course::ConstResourceMaps::SMW_WORKER_EFFICIENCY.at(
+                                            Course::BasicResource::WOOD)) +
+                                            "\n Stone: " + QString::number(
+                                            Course::ConstResourceMaps::SMW_WORKER_EFFICIENCY.at(
+                                            Course::BasicResource::STONE)) +
+                                            "\n Ore: " + QString::number(
+                                            Course::ConstResourceMaps::SMW_WORKER_EFFICIENCY.at(
+                                            Course::BasicResource::ORE)) +
+                                            "\n\n Wage per turn\n Money: -2 \n Food: -2");
+        }
+        else if(event->type() == QEvent::Leave){
+            m_ui->label_info->hide();
+        }
+        return QWidget::eventFilter(watched,event);
+    }
+    else{
+        return QWidget::eventFilter(watched,event);
+    }
+}
+
+
 
 void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
 {
@@ -159,6 +439,7 @@ void MapWindow::buyObject(std::shared_ptr<ObjectManager> objMan, std::shared_ptr
 
     // Deactivate buttons and maybe show help text
     m_ui->button_getMoney->setEnabled(false);
+    setButtonTooltips();
     m_ui->label_status->setText("Choose a square you want to build this building on.");
 
     // Save the object to objman and player
@@ -205,6 +486,11 @@ void MapWindow::placeObject(Course::ObjectId tileID)
         m_ui->label_status->setText("Another player owns that tile! Select another one.");
     }
     // Display error?
+}
+
+void MapWindow::on_button_headquarters_clicked()
+{
+    deactivateButtons();
 }
 
 void MapWindow::drawResources(std::shared_ptr<Player> player)
