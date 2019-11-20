@@ -104,20 +104,15 @@ bool GameScene::event(QEvent *event)
                 // TODO: Do we want to do something in this case? Probably not
             }else{
                 qDebug() << "ObjID: " << static_cast<MapItem*>(pressed)->getBoundObject()->ID  << " pressed.";
-                // We know which object was pressed
-
-                // We need to call a function or save the object's identifier somewhere
 
                 // Emit map item clicked
                 emit mapItemClicked(static_cast<MapItem*>(pressed)->getBoundObject()->ID);
-
 
                 return true;
             }
 
         }
     }
-
     return false;
 }
 

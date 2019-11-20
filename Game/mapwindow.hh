@@ -60,7 +60,7 @@ public:
 public slots:
     void placeObject(Course::ObjectId tileID);
 
-    void deactivateButtons();
+    void toggleActiveButtons(bool isActive);
 
     // Varmaan turha
     void setButtonTooltips();
@@ -78,6 +78,18 @@ private slots:
 
     void on_button_headquarters_clicked();
 
+    void on_button_outpost_clicked();
+
+    void on_button_mines_clicked();
+
+    void on_button_sawmill_clicked();
+
+    void on_button_basicworker_clicked();
+
+    void on_button_miner_clicked();
+
+    void on_button_sawmillworker_clicked();
+
 private:
     void buyObject(std::shared_ptr<ObjectManager> objMan, std::shared_ptr<GameEventHandler> GEHand, std::shared_ptr<Player> player, std::shared_ptr<Course::PlaceableGameObject> object);
     void drawResources(std::shared_ptr<Player> player);
@@ -89,14 +101,6 @@ private:
     std::shared_ptr<GameScene> m_gamescene = nullptr;
 
 
-private slots:
-    void on_button_endTurn_clicked();
-
-    void on_button_getMoney_clicked();
-
-    void on_button_loseMoney_clicked();
-
-    void on_button_farm_clicked();
 };
 
 #endif // MapWINDOW_HH

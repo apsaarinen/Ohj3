@@ -14,8 +14,11 @@ void GameEngine::setupGame(MapWindow *mapWindow,
 
     // Generate tiles and draw them
     auto& worldGen = Course::WorldGenerator::getInstance();
-    worldGen.addConstructor<Course::Forest>(10);
+    worldGen.addConstructor<Course::Forest>(6);
     worldGen.addConstructor<Course::Grassland>(10);
+    worldGen.addConstructor<Blockfield>(6);
+    worldGen.addConstructor<Water>(10);
+    worldGen.addConstructor<OreDeposit>(3);
     unsigned int x = 10; // TODO: from player or hard coded?
     unsigned int y = 10; // TODO: from player or hard coded?
     unsigned int seed = 5; // TODO: random in final version

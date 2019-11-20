@@ -86,6 +86,8 @@ void MapWindow::changeTurn(const std::shared_ptr<Player> player)
     // Set player name in UI
     QString playerName = "Player in turn: " + QString::fromStdString(player->getName());
     m_ui->label_playerName->setText(playerName);
+    QString status = QString::fromStdString(player->getName()) + "'s turn.";
+    m_ui->label_status->setText(status);
 
     // Set player resources in UI
     drawResources(player);
@@ -93,19 +95,19 @@ void MapWindow::changeTurn(const std::shared_ptr<Player> player)
     // Highlight or color tiles?
 }
 
-void MapWindow::deactivateButtons()
+void MapWindow::toggleActiveButtons(bool isActive)
 {
-    m_ui->button_basicworker->setEnabled(false);
-    m_ui->button_endTurn->setEnabled(false);
-    m_ui->button_farm->setEnabled(false);
-    m_ui->button_getMoney->setEnabled(false);
-    m_ui->button_headquarters->setEnabled(false);
-    m_ui->button_loseMoney->setEnabled(false);
-    m_ui->button_miner->setEnabled(false);
-    m_ui->button_mines->setEnabled(false);
-    m_ui->button_outpost->setEnabled(false);
-    m_ui->button_sawmill->setEnabled(false);
-    m_ui->button_sawmillworker->setEnabled(false);
+    m_ui->button_basicworker->setEnabled(isActive);
+    m_ui->button_endTurn->setEnabled(isActive);
+    m_ui->button_farm->setEnabled(isActive);
+    m_ui->button_getMoney->setEnabled(isActive);
+    m_ui->button_headquarters->setEnabled(isActive);
+    m_ui->button_loseMoney->setEnabled(isActive);
+    m_ui->button_miner->setEnabled(isActive);
+    m_ui->button_mines->setEnabled(isActive);
+    m_ui->button_outpost->setEnabled(isActive);
+    m_ui->button_sawmill->setEnabled(isActive);
+    m_ui->button_sawmillworker->setEnabled(isActive);
 }
 
 void MapWindow::setButtonTooltips()
@@ -378,6 +380,7 @@ void MapWindow::on_button_endTurn_clicked()
     std::shared_ptr<ObjectManager> objMan = getObjMan();
     std::vector<std::shared_ptr<Player>> players = objMan->getPlayers();
     std::shared_ptr<Player> playerInTurn = GEHand->getPlayerInTurn();
+
     // If last player, check for win condition
     if(objMan->isLastPlayer(playerInTurn)) {
         std::vector<std::shared_ptr<Player>> winners = GEHand->checkWinCondition(players);
@@ -386,7 +389,13 @@ void MapWindow::on_button_endTurn_clicked()
             endGame(winners);
             return;
         }
+        // Calculate resources
+        std::vector<std::shared_ptr<Course::TileBase>> tiles = objMan->getTiles();
+        for(std::shared_ptr<Course::TileBase>& tile: tiles) {
+            tile->generateResources();
+        }
     }
+
     // Give turn to next player
     for(std::shared_ptr<Player> player: players) {
         if(player != playerInTurn) {
@@ -412,35 +421,20 @@ void MapWindow::on_button_loseMoney_clicked()
     drawResources(player);
 }
 
-void MapWindow::on_button_farm_clicked()
-{
-    std::shared_ptr<ObjectManager> objMan = getObjMan();
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
-    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
-    std::shared_ptr<Course::Farm> selectedObj = std::make_shared<Course::Farm>(GEHand,
-                                                                               objMan,
-                                                                               player);
-    selectedObj->addDescription("type", "building");
-    // Create a negative version of the BUILD_COST resource map
-    Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::FARM_BUILD_COST, Course::ConstResourceMaps::NEGATIVE);
-    if(player->modifyResources(cost)) {
-        // Player had money and paid for the object
-        buyObject(objMan, GEHand, player, selectedObj);
-    }
-    else {
-        m_ui->label_status->setText("Not enough resources!");
-    }
-}
-
 void MapWindow::buyObject(std::shared_ptr<ObjectManager> objMan, std::shared_ptr<GameEventHandler> GEHand, std::shared_ptr<Player> player, std::shared_ptr<Course::PlaceableGameObject> object)
 {
     // Set buying flag on
     GEHand->setBuyingFlag(true);
 
     // Deactivate buttons and maybe show help text
-    m_ui->button_getMoney->setEnabled(false);
+    toggleActiveButtons(false);
     setButtonTooltips();
-    m_ui->label_status->setText("Choose a square you want to build this building on.");
+    if(object->getDescription("type") == "building") {
+        m_ui->label_status->setText("Choose a square you want to build the building on.");
+    }
+    if(object->getDescription("type") == "worker") {
+        m_ui->label_status->setText("Choose a square you want to hire the worker on.");
+    }
 
     // Save the object to objman and player
     objMan->addPlaceableObject(object);
@@ -471,9 +465,21 @@ void MapWindow::placeObject(Course::ObjectId tileID)
             object->setCoordinate(tile->getCoordinate());
             // Set tile owner
             tile->setOwner(player);
+
+            if(object->getDescription("type") == "building") {
+                tile->addBuilding(std::static_pointer_cast<Course::BuildingBase>(object));
+                m_ui->label_status->setText("Building placed!");
+            }
+            if(object->getDescription("type") == "worker") {
+                tile->addWorker(std::static_pointer_cast<Course::WorkerBase>(object));
+                m_ui->label_status->setText("Worker hired!");
+            }
+
             // TODO: set owner for adjacent tiles
+
             qDebug() << "Draw building/worker on map!";
-            // Enable all buttons again and maybe change instruction text
+            // Disable all buttons again
+            toggleActiveButtons(true);
 
             // Set buying flag off
             GEHand->setBuyingFlag(false);
@@ -486,11 +492,6 @@ void MapWindow::placeObject(Course::ObjectId tileID)
         m_ui->label_status->setText("Another player owns that tile! Select another one.");
     }
     // Display error?
-}
-
-void MapWindow::on_button_headquarters_clicked()
-{
-    deactivateButtons();
 }
 
 void MapWindow::drawResources(std::shared_ptr<Player> player)
@@ -521,8 +522,164 @@ void MapWindow::endGame(std::vector<std::shared_ptr<Player> > winners)
     else{
         exit(0);
     }
+}
 
+void MapWindow::on_button_farm_clicked()
+{
+    std::shared_ptr<ObjectManager> objMan = getObjMan();
+    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<Course::Farm> selectedObj = std::make_shared<Course::Farm>(GEHand,
+                                                                               objMan,
+                                                                               player);
+    selectedObj->addDescription("type", "building");
+    // Create a negative version of the BUILD_COST resource map
+    Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::FARM_BUILD_COST, Course::ConstResourceMaps::NEGATIVE);
+    if(player->modifyResources(cost)) {
+        // Player had money and paid for the object
+        buyObject(objMan, GEHand, player, selectedObj);
+    }
+    else {
+        m_ui->label_status->setText("Not enough resources!");
+    }
+}
 
+void MapWindow::on_button_headquarters_clicked()
+{
+    std::shared_ptr<ObjectManager> objMan = getObjMan();
+    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<Course::HeadQuarters> selectedObj = std::make_shared<Course::HeadQuarters>(GEHand,
+                                                                                       objMan,
+                                                                                       player);
+    selectedObj->addDescription("type", "building");
+    // Create a negative version of the BUILD_COST resource map
+    Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::HQ_BUILD_COST, Course::ConstResourceMaps::NEGATIVE);
+    if(player->modifyResources(cost)) {
+        // Player had money and paid for the object
+        buyObject(objMan, GEHand, player, selectedObj);
+    }
+    else {
+        m_ui->label_status->setText("Not enough resources!");
+    }
+}
 
+void MapWindow::on_button_outpost_clicked()
+{
+    std::shared_ptr<ObjectManager> objMan = getObjMan();
+    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<Course::Outpost> selectedObj = std::make_shared<Course::Outpost>(GEHand,
+                                                                                       objMan,
+                                                                                       player);
+    selectedObj->addDescription("type", "building");
+    // Create a negative version of the BUILD_COST resource map
+    Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::OUTPOST_BUILD_COST, Course::ConstResourceMaps::NEGATIVE);
+    if(player->modifyResources(cost)) {
+        // Player had money and paid for the object
+        buyObject(objMan, GEHand, player, selectedObj);
+    }
+    else {
+        m_ui->label_status->setText("Not enough resources!");
+    }
+}
 
+void MapWindow::on_button_mines_clicked()
+{
+    std::shared_ptr<ObjectManager> objMan = getObjMan();
+    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<Mine> selectedObj = std::make_shared<Mine>(GEHand,
+                                                                                       objMan,
+                                                                                       player);
+    selectedObj->addDescription("type", "building");
+    // Create a negative version of the BUILD_COST resource map
+    Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::MINE_BUILD_COST, Course::ConstResourceMaps::NEGATIVE);
+    if(player->modifyResources(cost)) {
+        // Player had money and paid for the object
+        buyObject(objMan, GEHand, player, selectedObj);
+    }
+    else {
+        m_ui->label_status->setText("Not enough resources!");
+    }
+}
+
+void MapWindow::on_button_sawmill_clicked()
+{
+    std::shared_ptr<ObjectManager> objMan = getObjMan();
+    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<SawMill> selectedObj = std::make_shared<SawMill>(GEHand,
+                                                                                       objMan,
+                                                                                       player);
+    selectedObj->addDescription("type", "building");
+    // Create a negative version of the BUILD_COST resource map
+    Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::SAWMILL_BUILD_COST, Course::ConstResourceMaps::NEGATIVE);
+    if(player->modifyResources(cost)) {
+        // Player had money and paid for the object
+        buyObject(objMan, GEHand, player, selectedObj);
+    }
+    else {
+        m_ui->label_status->setText("Not enough resources!");
+    }
+}
+
+void MapWindow::on_button_basicworker_clicked()
+{
+    std::shared_ptr<ObjectManager> objMan = getObjMan();
+    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<Course::BasicWorker> selectedObj = std::make_shared<Course::BasicWorker>(GEHand,
+                                                                                       objMan,
+                                                                                       player);
+    selectedObj->addDescription("type", "worker");
+    // Create a negative version of the BUILD_COST resource map
+    Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::BW_RECRUITMENT_COST, Course::ConstResourceMaps::NEGATIVE);
+    if(player->modifyResources(cost)) {
+        // Player had money and paid for the object
+        buyObject(objMan, GEHand, player, selectedObj);
+    }
+    else {
+        m_ui->label_status->setText("Not enough resources!");
+    }
+}
+
+void MapWindow::on_button_miner_clicked()
+{
+    std::shared_ptr<ObjectManager> objMan = getObjMan();
+    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<MineWorker> selectedObj = std::make_shared<MineWorker>(GEHand,
+                                                                                       objMan,
+                                                                                       player);
+    selectedObj->addDescription("type", "worker");
+    // Create a negative version of the BUILD_COST resource map
+    Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::MW_RECRUITMENT_COST, Course::ConstResourceMaps::NEGATIVE);
+    if(player->modifyResources(cost)) {
+        // Player had money and paid for the object
+        buyObject(objMan, GEHand, player, selectedObj);
+    }
+    else {
+        m_ui->label_status->setText("Not enough resources!");
+    }
+}
+
+void MapWindow::on_button_sawmillworker_clicked()
+{
+    std::shared_ptr<ObjectManager> objMan = getObjMan();
+    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<SawMillWorker> selectedObj = std::make_shared<SawMillWorker>(GEHand,
+                                                                                       objMan,
+                                                                                       player);
+    selectedObj->addDescription("type", "worker");
+    // Create a negative version of the BUILD_COST resource map
+    Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::SMW_RECRUITMENT_COST, Course::ConstResourceMaps::NEGATIVE);
+    if(player->modifyResources(cost)) {
+        // Player had money and paid for the object
+        buyObject(objMan, GEHand, player, selectedObj);
+    }
+    else {
+        m_ui->label_status->setText("Not enough resources!");
+    }
 }
