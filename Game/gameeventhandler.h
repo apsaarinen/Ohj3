@@ -6,6 +6,7 @@
 #include "core/basicresources.h"
 #include "player.h"
 #include "objectmanager.h"
+#include "resourcemaps_v2.hh"
 
 class GameEventHandler : public Course::iGameEventHandler
 {

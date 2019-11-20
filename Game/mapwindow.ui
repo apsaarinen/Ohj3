@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>893</width>
-    <height>598</height>
+    <width>888</width>
+    <height>580</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,69 +22,6 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="1" colspan="2">
-     <layout class="QFormLayout" name="formLayout_2">
-      <item row="6" column="0">
-       <widget class="QPushButton" name="button_outpost">
-        <property name="text">
-         <string>Build Outpost</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="0">
-       <widget class="QPushButton" name="button_mines">
-        <property name="text">
-         <string>Build Mines</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="0">
-       <widget class="QPushButton" name="pushButton_3">
-        <property name="text">
-         <string>Build Sawmill</string>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="9" column="0">
-       <widget class="QPushButton" name="button_basicworker">
-        <property name="text">
-         <string>Hire Basic Worker</string>
-        </property>
-       </widget>
-      </item>
-      <item row="10" column="0">
-       <widget class="QPushButton" name="button_miner">
-        <property name="text">
-         <string>Hire Miner</string>
-        </property>
-       </widget>
-      </item>
-      <item row="11" column="0">
-       <widget class="QPushButton" name="button_sawmillworker">
-        <property name="text">
-         <string>Hire Sawmill Worker</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QPushButton" name="button_headquarters">
-        <property name="text">
-         <string>Build HQ</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QPushButton" name="button_farm">
-        <property name="text">
-         <string>Build Farm</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
     <item row="0" column="2">
      <widget class="QPushButton" name="button_exit">
       <property name="text">
@@ -98,6 +35,113 @@
        <string>End turn</string>
       </property>
      </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QGraphicsView" name="graphicsView">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_status">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1" colspan="2">
+     <layout class="QFormLayout" name="formLayout_2">
+      <item row="4" column="0" colspan="2">
+       <widget class="QPushButton" name="button_farm">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>Build Farm</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0" colspan="2">
+       <widget class="QPushButton" name="button_headquarters">
+        <property name="text">
+         <string>Build HQ</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QPushButton" name="button_mines">
+        <property name="text">
+         <string>Build Mines</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QPushButton" name="button_sawmill">
+        <property name="text">
+         <string>Build Sawmill</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="1">
+       <widget class="QPushButton" name="button_basicworker">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Hire Basic Worker</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1">
+       <widget class="QPushButton" name="button_miner">
+        <property name="text">
+         <string>Hire Miner</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QPushButton" name="button_outpost">
+        <property name="text">
+         <string>Build Outpost</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="1">
+       <widget class="QPushButton" name="button_sawmillworker">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="text">
+         <string>Hire Sawmill Worker</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item row="5" column="3">
      <widget class="QGroupBox" name="groupBox">
@@ -244,26 +288,24 @@
         <string>Lose 100 money</string>
        </property>
       </widget>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QGraphicsView" name="graphicsView">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_status">
-      <property name="text">
-       <string/>
-      </property>
+      <widget class="QLabel" name="label_info">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>250</y>
+         <width>121</width>
+         <height>161</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -273,7 +315,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>893</width>
+     <width>888</width>
      <height>25</height>
     </rect>
    </property>

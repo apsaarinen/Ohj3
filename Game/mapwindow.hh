@@ -46,6 +46,13 @@ public:
 
     void changeTurn(const std::shared_ptr<Player> player);
 
+    void deactivateButtons();
+
+    // Varmaan turha
+    void setButtonTooltips();
+
+    bool eventFilter(QObject *watched, QEvent *event);
+
 private slots:
     void on_button_endTurn_clicked();
 
@@ -54,6 +61,8 @@ private slots:
     void on_button_loseMoney_clicked();
 
     void on_button_farm_clicked();
+
+    void on_button_headquarters_clicked();
 
 private:
     void drawResources(std::shared_ptr<Player> player);
