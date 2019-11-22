@@ -51,7 +51,7 @@ public:
     void setScale(int scale);
     void resize();
 
-    void drawItem( std::shared_ptr<Course::GameObject> obj);
+    void drawItem( std::shared_ptr<Course::GameObject> obj, int offset);
     void removeItem( std::shared_ptr<Course::GameObject> obj);
     void updateItem( std::shared_ptr<Course::GameObject> obj);
 
@@ -91,6 +91,7 @@ private slots:
     void on_button_sawmillworker_clicked();
 
 private:
+    Course::Coordinate calculateCoordinateOffset(const std::shared_ptr<Course::TileBase> tile, std::string type);
     void buyObject(std::shared_ptr<ObjectManager> objMan, std::shared_ptr<GameEventHandler> GEHand, std::shared_ptr<Player> player, std::shared_ptr<Course::PlaceableGameObject> object);
     void drawResources(std::shared_ptr<Player> player);
     void endGame(std::vector<std::shared_ptr<Player>> winners);

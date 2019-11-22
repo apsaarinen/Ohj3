@@ -71,3 +71,6 @@ FORMS += \
     mapwindow.ui \
     begindialog.ui \
     enddialog.ui
+
+DISTFILES += \
+    images/hakku.png

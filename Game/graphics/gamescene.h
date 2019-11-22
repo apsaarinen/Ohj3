@@ -83,10 +83,11 @@ public:
     /**
      * @brief draw a new item to the map.
      * @param obj shared ptr to the object
+     * @param offset for the item in the tile
      * @pre obj must have a valid coordinate property.
      * @post Exception guarantee: None
      */
-    void drawItem( std::shared_ptr<Course::GameObject> obj);
+    void drawItem( std::shared_ptr<Course::GameObject> obj, int offset);
 
     /**
      * @brief tries to remove drawn object at the location obj points to.

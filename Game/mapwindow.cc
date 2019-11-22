@@ -369,9 +369,9 @@ void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
     m_gamescene->removeItem(obj);
 }
 
-void MapWindow::drawItem(std::shared_ptr<Course::GameObject> obj)
+void MapWindow::drawItem(std::shared_ptr<Course::GameObject> obj, int offset)
 {
-    m_gamescene->drawItem(obj);
+    m_gamescene->drawItem(obj, offset);
 }
 
 void MapWindow::on_button_endTurn_clicked()
@@ -443,6 +443,22 @@ void MapWindow::buyObject(std::shared_ptr<ObjectManager> objMan, std::shared_ptr
     drawResources(player);
 }
 
+// TODO: unused?
+Course::Coordinate MapWindow::calculateCoordinateOffset(const std::shared_ptr<Course::TileBase> tile, std::string type)
+{
+    Course::Coordinate originalCoord = tile->getCoordinate();
+    if(type == "building") {
+        int nBuildings = tile->getBuildingCount();
+        Course::Coordinate r = originalCoord + Course::Coordinate(1*nBuildings, 0);
+        return originalCoord + Course::Coordinate(1*nBuildings, 0);
+    } else {
+        int nWorkers = tile->getWorkerCount();
+        Course::Coordinate r = originalCoord + Course::Coordinate(1*nWorkers, 1);
+        return originalCoord + Course::Coordinate(1*nWorkers, 1);
+    }
+}
+
+
 void MapWindow::placeObject(Course::ObjectId tileID)
 {
     std::shared_ptr<ObjectManager> objMan = getObjMan();
@@ -461,22 +477,33 @@ void MapWindow::placeObject(Course::ObjectId tileID)
     if(tile->getOwner() == nullptr or tile->getOwner() == player) {
         if((object->getDescription("type") == "building" and tile->hasSpaceForBuildings(1)) or
                 (object->getDescription("type") == "worker" and tile->hasSpaceForWorkers(1))) {
-            // Draw building on map
-            object->setCoordinate(tile->getCoordinate());
+
             // Set tile owner
             tile->setOwner(player);
 
             if(object->getDescription("type") == "building") {
+                // Draw object on map
+                object->setCoordinate(tile->getCoordinate());
+                //object->setCoordinate(calculateCoordinateOffset(tile, "building"));
+
+                drawItem(object, tile->getBuildingCount());
+
                 tile->addBuilding(std::static_pointer_cast<Course::BuildingBase>(object));
                 m_ui->label_status->setText("Building placed!");
             }
             if(object->getDescription("type") == "worker") {
+                // Draw object on map
+                object->setCoordinate(tile->getCoordinate());
+                // object->setCoordinate(calculateCoordinateOffset(tile, "worker"));
+
+                drawItem(object, tile->getWorkerCount());
+
                 tile->addWorker(std::static_pointer_cast<Course::WorkerBase>(object));
                 m_ui->label_status->setText("Worker hired!");
             }
 
-            // TODO: draw object on the map
-            drawItem(object);
+            // TODO: how to get the map to update?
+            updateItem(object);
 
             qDebug() << "Draw building/worker on map!";
             // Disable all buttons again

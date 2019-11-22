@@ -26,7 +26,7 @@ void GameEngine::setupGame(MapWindow *mapWindow,
     std::vector<std::shared_ptr<Course::TileBase>> allTiles = objMan->getTiles();
     for(std::shared_ptr<Course::TileBase>& tile: allTiles){
         tile->setDescription("type", "tile");
-        mapWindow->drawItem(tile);
+        mapWindow->drawItem(tile, 0);
     }
 
     // Generate players and save them
