@@ -4,6 +4,8 @@
 #include "core/playerbase.h"
 #include "core/basicresources.h"
 
+#include <QColor>
+
 class Player : public Course::PlayerBase
 {
 public:
@@ -14,14 +16,18 @@ public:
      * GameObjects.
      */
     Player(const std::string& name,
-               const std::vector<std::shared_ptr<Course::GameObject> > objects ={});
+           QColor color,
+           const std::vector<std::shared_ptr<Course::GameObject> > objects ={});
 
     bool modifyResource(const Course::BasicResource& resource, const int& amount);
     bool modifyResources(const Course::ResourceMap &resources);
 
     Course::ResourceMap getResources() const;
+
+    const QColor getColor() const;
 private:
     Course::ResourceMap m_resources;
+    QColor m_color;
 
 };
 

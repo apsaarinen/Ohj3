@@ -26,6 +26,7 @@ int main(int argc, char* argv[])
     }
 
     MapWindow mapWindow;
+    mapWindow.setScale(75);
     mapWindow.show();
 
     GameEngine gameEng;

@@ -8,7 +8,17 @@
 #include <map>
 
 #include "core/gameobject.h"
+#include "player.h"
 
+using ColorMap = std::map<std::string, QColor>;
+
+const ColorMap MAP_COLORS = {
+    {"Blockfield", QColor(192, 192, 192)},
+    {"OreDeposit", QColor(64, 64, 64)},
+    {"Water", QColor(51, 153, 255)},
+    {"Forest", QColor(0, 102, 0)},
+    {"Grassland", QColor(128, 255, 0)}
+};
 
 class MapItem : public QGraphicsItem
 {
@@ -77,7 +87,7 @@ private:
     QPoint m_scenelocation;
     int m_size;
 
-    static std::map<std::string, QColor> c_mapcolors;
+    static ColorMap c_mapcolors;
     static void addNewColor(std::string type);
 
 };

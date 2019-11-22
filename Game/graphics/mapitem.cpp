@@ -16,9 +16,17 @@ QRectF MapItem::boundingRect() const
 void MapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED( option ); Q_UNUSED( widget );
-    painter->setBrush(QBrush(c_mapcolors.at(m_gameobject->getType())));
-    if ( m_gameobject->getType() == "" ){
+    if(m_gameobject->getDescription("type") == "building" or m_gameobject->getDescription("type") == "worker") {
+        std::shared_ptr<Player> player = std::static_pointer_cast<Player>(m_gameobject->getOwner());
+        painter->setBrush(QBrush(player->getColor()));
+    }
+    else {
+        painter->setBrush(QBrush(c_mapcolors.at(m_gameobject->getType())));
+    }
+
+    if (m_gameobject->getDescription("type") == "building" or m_gameobject->getDescription("type") == "worker"){
         // Draw different types in different shapes
+        painter->drawEllipse(boundingRect());
     }
     painter->drawRect(boundingRect());
 }
@@ -57,9 +65,8 @@ void MapItem::setSize(int size)
 
 void MapItem::addNewColor(std::string type)
 {
-    if ( c_mapcolors.find(type) == c_mapcolors.end() ){
-        std::size_t hash = std::hash<std::string>{}(type);
-        c_mapcolors.insert({type, QColor((hash & 0xFF0000) >> 16, (hash & 0x00FF00 ) >> 8, (hash & 0x0000FF))});
+    if ( c_mapcolors.find(type) == c_mapcolors.end() and MAP_COLORS.find(type) != MAP_COLORS.end() ){
+        c_mapcolors.insert({type, MAP_COLORS.at(type)});
 
     }
 }

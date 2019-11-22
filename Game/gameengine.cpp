@@ -25,12 +25,13 @@ void GameEngine::setupGame(MapWindow *mapWindow,
     worldGen.generateMap(x, y, seed, objMan, GEHand);
     std::vector<std::shared_ptr<Course::TileBase>> allTiles = objMan->getTiles();
     for(std::shared_ptr<Course::TileBase>& tile: allTiles){
+        tile->setDescription("type", "tile");
         mapWindow->drawItem(tile);
     }
 
     // Generate players and save them
-    std::shared_ptr<Player> player1Ptr = std::make_shared<Player>(playerNames[0]);
-    std::shared_ptr<Player> player2Ptr = std::make_shared<Player>(playerNames[1]);
+    std::shared_ptr<Player> player1Ptr = std::make_shared<Player>(playerNames[0], QColor(255, 0, 0));
+    std::shared_ptr<Player> player2Ptr = std::make_shared<Player>(playerNames[1], QColor(0, 0, 255));
     objMan->addPlayer(player1Ptr);
     objMan->addPlayer(player2Ptr);
 

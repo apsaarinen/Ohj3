@@ -475,7 +475,8 @@ void MapWindow::placeObject(Course::ObjectId tileID)
                 m_ui->label_status->setText("Worker hired!");
             }
 
-            // TODO: set owner for adjacent tiles
+            // TODO: draw object on the map
+            drawItem(object);
 
             qDebug() << "Draw building/worker on map!";
             // Disable all buttons again
