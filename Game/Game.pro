@@ -73,4 +73,15 @@ FORMS += \
     enddialog.ui
 
 DISTFILES += \
-    images/hakku.png
+    images/SawMillWorker.png \
+    images/Sawmill.png \
+    images/Outpost.png \
+    images/MineWorker.png \
+    images/Mine.png \
+    images/HeadQuarters.png \
+    images/hakku.png \
+    images/Farm.png \
+    images/BasicWorker.png
+
+RESOURCES += \
+    resources.qrc

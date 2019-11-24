@@ -11,12 +11,6 @@ MapItem::MapItem(const std::shared_ptr<Course::GameObject> &obj, int size, int o
 
 QRectF MapItem::boundingRect() const
 {
-    return QRectF(m_scenelocation * m_size, m_scenelocation * m_size + QPoint(m_size, m_size));
-}
-
-QRectF MapItem::boundingSmallRect() const
-{
-    std::string gg = m_gameobject->getDescription("type");
     if(m_gameobject->getDescription("type") == "building") {
         int loc_x = m_scenelocation.x();
         int loc_y = m_scenelocation.y();
@@ -24,7 +18,7 @@ QRectF MapItem::boundingSmallRect() const
         loc_x += m_size*m_offset;
         QPoint topLeft = QPoint(loc_x, loc_y*m_size*3);
         return QRectF(topLeft , topLeft + QPoint(m_size, m_size));
-    } else {
+    } else if(m_gameobject->getDescription("type") == "worker") {
         int loc_x = m_scenelocation.x();
         int loc_y = m_scenelocation.y();
         loc_y *= m_size*3;
@@ -33,18 +27,15 @@ QRectF MapItem::boundingSmallRect() const
         loc_x += m_size*m_offset;
         QPoint topLeft = QPoint(loc_x, loc_y);
         return QRectF(topLeft , topLeft + QPoint(m_size, m_size));
+    } else {
+        return QRectF(m_scenelocation * m_size, m_scenelocation * m_size + QPoint(m_size, m_size));
     }
 }
 
 QPixmap MapItem::image() const
 {
-    std::string type = m_gameobject->getType();
-    QPixmap pmap;
-    bool loaded = pmap.load("/home/kytomaki/programming3/apjajoni/Game/images/hakku.png");
-    if(type == "Mine") {
-        return QPixmap("/home/kytomaki/programming3/apjajoni/Game/images/hakku.png");
-    }
-
+    QString imagePath = ":/images/" + QString::fromStdString(m_gameobject->getType()) + ".png";
+    return QPixmap(imagePath);
 }
 
 void MapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -54,15 +45,10 @@ void MapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
     if (m_gameobject->getDescription("type") == "building" or m_gameobject->getDescription("type") == "worker"){
         std::shared_ptr<Player> player = std::static_pointer_cast<Player>(m_gameobject->getOwner());
         painter->setBrush(QBrush(player->getColor()));
-        // Draw different types in different shapes
-//        painter->setBackground(Qt::transparent);
-//        painter->setPen(Qt::transparent);
-//        painter->setBrush(Qt::transparent);
-        painter->drawRect(boundingSmallRect());
-
-
-        painter->drawPixmap(boundingSmallRect().toRect(), image());
-
+        // Draw the rectangle in the background
+        painter->drawRect(boundingRect());
+        // Draw an image into the rectangle
+        painter->drawPixmap(boundingRect().toRect(), image());
         return;
     }
     painter->setBrush(QBrush(c_mapcolors.at(m_gameobject->getType())));
@@ -79,7 +65,7 @@ void MapItem::updateLoc()
     if ( !m_gameobject ){
         delete this;
     } else {
-        update(boundingRect()); // Test if necessary
+        update(boundingRect());
         m_scenelocation = m_gameobject->getCoordinate().asQpoint();
     }
 }

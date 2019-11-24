@@ -39,8 +39,6 @@ public:
      */
     QRectF boundingRect() const override;
 
-    QRectF boundingSmallRect() const;
-
     // TODO: Docu
     QPixmap image() const;
 

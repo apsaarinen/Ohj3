@@ -70,10 +70,6 @@ public slots:
 private slots:
     void on_button_endTurn_clicked();
 
-    void on_button_getMoney_clicked();
-
-    void on_button_loseMoney_clicked();
-
     void on_button_farm_clicked();
 
     void on_button_headquarters_clicked();
@@ -91,7 +87,6 @@ private slots:
     void on_button_sawmillworker_clicked();
 
 private:
-    Course::Coordinate calculateCoordinateOffset(const std::shared_ptr<Course::TileBase> tile, std::string type);
     void buyObject(std::shared_ptr<ObjectManager> objMan, std::shared_ptr<GameEventHandler> GEHand, std::shared_ptr<Player> player, std::shared_ptr<Course::PlaceableGameObject> object);
     void drawResources(std::shared_ptr<Player> player);
     void endGame(std::vector<std::shared_ptr<Player>> winners);

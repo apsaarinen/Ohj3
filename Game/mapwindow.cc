@@ -100,9 +100,7 @@ void MapWindow::toggleActiveButtons(bool isActive)
     m_ui->button_basicworker->setEnabled(isActive);
     m_ui->button_endTurn->setEnabled(isActive);
     m_ui->button_farm->setEnabled(isActive);
-    m_ui->button_getMoney->setEnabled(isActive);
     m_ui->button_headquarters->setEnabled(isActive);
-    m_ui->button_loseMoney->setEnabled(isActive);
     m_ui->button_miner->setEnabled(isActive);
     m_ui->button_mines->setEnabled(isActive);
     m_ui->button_outpost->setEnabled(isActive);
@@ -405,22 +403,6 @@ void MapWindow::on_button_endTurn_clicked()
     }
 }
 
-void MapWindow::on_button_getMoney_clicked()
-{
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
-    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
-    GEHand->modifyResource(player, Course::BasicResource::MONEY, 100);
-    drawResources(player);
-}
-
-void MapWindow::on_button_loseMoney_clicked()
-{
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
-    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
-    GEHand->modifyResource(player, Course::BasicResource::MONEY, -100);
-    drawResources(player);
-}
-
 void MapWindow::buyObject(std::shared_ptr<ObjectManager> objMan, std::shared_ptr<GameEventHandler> GEHand, std::shared_ptr<Player> player, std::shared_ptr<Course::PlaceableGameObject> object)
 {
     // Set buying flag on
@@ -442,22 +424,6 @@ void MapWindow::buyObject(std::shared_ptr<ObjectManager> objMan, std::shared_ptr
 
     drawResources(player);
 }
-
-// TODO: unused?
-Course::Coordinate MapWindow::calculateCoordinateOffset(const std::shared_ptr<Course::TileBase> tile, std::string type)
-{
-    Course::Coordinate originalCoord = tile->getCoordinate();
-    if(type == "building") {
-        int nBuildings = tile->getBuildingCount();
-        Course::Coordinate r = originalCoord + Course::Coordinate(1*nBuildings, 0);
-        return originalCoord + Course::Coordinate(1*nBuildings, 0);
-    } else {
-        int nWorkers = tile->getWorkerCount();
-        Course::Coordinate r = originalCoord + Course::Coordinate(1*nWorkers, 1);
-        return originalCoord + Course::Coordinate(1*nWorkers, 1);
-    }
-}
-
 
 void MapWindow::placeObject(Course::ObjectId tileID)
 {
@@ -482,28 +448,27 @@ void MapWindow::placeObject(Course::ObjectId tileID)
             tile->setOwner(player);
 
             if(object->getDescription("type") == "building") {
-                // Draw object on map
-                object->setCoordinate(tile->getCoordinate());
-                //object->setCoordinate(calculateCoordinateOffset(tile, "building"));
+                std::shared_ptr<Course::BuildingBase> objectBuilding = std::static_pointer_cast<Course::BuildingBase>(object);
 
+                object->setCoordinate(tile->getCoordinate());
+                // Perform buildings on-build action
+                objectBuilding->onBuildAction();
+                // Draw object on map
                 drawItem(object, tile->getBuildingCount());
 
-                tile->addBuilding(std::static_pointer_cast<Course::BuildingBase>(object));
-                m_ui->label_status->setText("Building placed!");
+                tile->addBuilding(objectBuilding);
+                m_ui->label_status->setText("Building placed! Continue your turn.");
             }
             if(object->getDescription("type") == "worker") {
                 // Draw object on map
                 object->setCoordinate(tile->getCoordinate());
-                // object->setCoordinate(calculateCoordinateOffset(tile, "worker"));
-
                 drawItem(object, tile->getWorkerCount());
 
                 tile->addWorker(std::static_pointer_cast<Course::WorkerBase>(object));
-                m_ui->label_status->setText("Worker hired!");
+                m_ui->label_status->setText("Worker hired! Continue your turn.");
             }
 
-            // TODO: how to get the map to update?
-            updateItem(object);
+            m_ui->graphicsView->viewport()->update();
 
             qDebug() << "Draw building/worker on map!";
             // Disable all buttons again
@@ -511,6 +476,9 @@ void MapWindow::placeObject(Course::ObjectId tileID)
 
             // Set buying flag off
             GEHand->setBuyingFlag(false);
+        }
+        else if(tile->getType() == "Water") {
+            m_ui->label_status->setText("Objects can't be placed in water! Select another tile.");
         }
         else {
             m_ui->label_status->setText("No space on the tile! Select another one.");

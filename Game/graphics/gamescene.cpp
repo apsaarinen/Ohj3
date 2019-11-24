@@ -81,6 +81,7 @@ void GameScene::updateItem(std::shared_ptr<Course::GameObject> obj)
             }
         }
     }
+    update();
 }
 
 bool GameScene::event(QEvent *event)
