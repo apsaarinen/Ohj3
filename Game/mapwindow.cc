@@ -100,9 +100,7 @@ void MapWindow::toggleActiveButtons(bool isActive)
     m_ui->button_basicworker->setEnabled(isActive);
     m_ui->button_endTurn->setEnabled(isActive);
     m_ui->button_farm->setEnabled(isActive);
-    m_ui->button_getMoney->setEnabled(isActive);
     m_ui->button_headquarters->setEnabled(isActive);
-    m_ui->button_loseMoney->setEnabled(isActive);
     m_ui->button_miner->setEnabled(isActive);
     m_ui->button_mines->setEnabled(isActive);
     m_ui->button_outpost->setEnabled(isActive);
@@ -369,9 +367,9 @@ void MapWindow::removeItem(std::shared_ptr<Course::GameObject> obj)
     m_gamescene->removeItem(obj);
 }
 
-void MapWindow::drawItem(std::shared_ptr<Course::GameObject> obj)
+void MapWindow::drawItem(std::shared_ptr<Course::GameObject> obj, int offset)
 {
-    m_gamescene->drawItem(obj);
+    m_gamescene->drawItem(obj, offset);
 }
 
 void MapWindow::on_button_endTurn_clicked()
@@ -420,22 +418,6 @@ void MapWindow::on_button_endTurn_clicked()
     }
 }
 
-void MapWindow::on_button_getMoney_clicked()
-{
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
-    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
-    GEHand->modifyResource(player, Course::BasicResource::MONEY, 100);
-    drawResources(player);
-}
-
-void MapWindow::on_button_loseMoney_clicked()
-{
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
-    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
-    GEHand->modifyResource(player, Course::BasicResource::MONEY, -100);
-    drawResources(player);
-}
-
 void MapWindow::buyObject(std::shared_ptr<ObjectManager> objMan, std::shared_ptr<GameEventHandler> GEHand, std::shared_ptr<Player> player, std::shared_ptr<Course::PlaceableGameObject> object)
 {
     // Set buying flag on
@@ -476,22 +458,32 @@ void MapWindow::placeObject(Course::ObjectId tileID)
     if(tile->getOwner() == nullptr or tile->getOwner() == player) {
         if((object->getDescription("type") == "building" and tile->hasSpaceForBuildings(1)) or
                 (object->getDescription("type") == "worker" and tile->hasSpaceForWorkers(1))) {
-            // Draw building on map
-            object->setCoordinate(tile->getCoordinate());
+
             // Set tile owner
             tile->setOwner(player);
 
             if(object->getDescription("type") == "building") {
-                tile->addBuilding(std::static_pointer_cast<Course::BuildingBase>(object));
-                m_ui->label_status->setText("Building placed!");
+                std::shared_ptr<Course::BuildingBase> objectBuilding = std::static_pointer_cast<Course::BuildingBase>(object);
+
+                object->setCoordinate(tile->getCoordinate());
+                // Perform buildings on-build action
+                objectBuilding->onBuildAction();
+                // Draw object on map
+                drawItem(object, tile->getBuildingCount());
+
+                tile->addBuilding(objectBuilding);
+                m_ui->label_status->setText("Building placed! Continue your turn.");
             }
             if(object->getDescription("type") == "worker") {
+                // Draw object on map
+                object->setCoordinate(tile->getCoordinate());
+                drawItem(object, tile->getWorkerCount());
+
                 tile->addWorker(std::static_pointer_cast<Course::WorkerBase>(object));
-                m_ui->label_status->setText("Worker hired!");
+                m_ui->label_status->setText("Worker hired! Continue your turn.");
             }
 
-            // TODO: draw object on the map
-            drawItem(object);
+            m_ui->graphicsView->viewport()->update();
 
             qDebug() << "Draw building/worker on map!";
             // Disable all buttons again
@@ -499,6 +491,9 @@ void MapWindow::placeObject(Course::ObjectId tileID)
 
             // Set buying flag off
             GEHand->setBuyingFlag(false);
+        }
+        else if(tile->getType() == "Water") {
+            m_ui->label_status->setText("Objects can't be placed in water! Select another tile.");
         }
         else {
             m_ui->label_status->setText("No space on the tile! Select another one.");

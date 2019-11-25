@@ -9,6 +9,7 @@
 
 #include "core/gameobject.h"
 #include "player.h"
+#include "buildings/buildingbase.h"
 
 using ColorMap = std::map<std::string, QColor>;
 
@@ -27,15 +28,19 @@ public:
      * @brief Constructor
      * @param obj shared_ptr to the obj.
      * @param size of the created item in pixels.
+     * @param offset for the item in the tile
      * @pre obj must have a valid Coordinate.
      */
-    MapItem(const std::shared_ptr<Course::GameObject> &obj, int size);
+    MapItem(const std::shared_ptr<Course::GameObject> &obj, int size, int offset);
 
     /**
      * @brief boundingRect
      * @return the bounding rectangle of this item.
      */
     QRectF boundingRect() const override;
+
+    // TODO: Docu
+    QPixmap image() const;
 
     /**
      * @brief paints the item
@@ -86,6 +91,7 @@ private:
     const std::shared_ptr<Course::GameObject> m_gameobject;
     QPoint m_scenelocation;
     int m_size;
+    int m_offset;
 
     static ColorMap c_mapcolors;
     static void addNewColor(std::string type);

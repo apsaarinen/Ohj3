@@ -81,6 +81,7 @@ void GameScene::updateItem(std::shared_ptr<Course::GameObject> obj)
             }
         }
     }
+    update();
 }
 
 bool GameScene::event(QEvent *event)
@@ -97,20 +98,20 @@ bool GameScene::event(QEvent *event)
             point.rx() = floor(point.rx());
             point.ry() = floor(point.ry());
 
-            QGraphicsItem* pressed = itemAt(point * m_scale, QTransform());
+            QList<QGraphicsItem *> all_pressed = items(point * m_scale);
+            for(QGraphicsItem * item: all_pressed) {
+                // Attempt to cast, only GabeObject-related items will cast
+                MapItem* mapItem = dynamic_cast<MapItem*>(item);
+                if(mapItem != 0) {
+                    if(mapItem->getBoundObject()->getDescription("type") == "tile") {
+                        qDebug() << "ObjID: " << static_cast<MapItem*>(mapItem)->getBoundObject()->ID  << " pressed.";
+                        // Emit map item clicked
+                        emit mapItemClicked(static_cast<MapItem*>(mapItem)->getBoundObject()->ID);
 
-            if ( pressed == m_mapBoundRect ){
-                qDebug() << "Click on map area.";
-                // TODO: Do we want to do something in this case? Probably not
-            }else{
-                qDebug() << "ObjID: " << static_cast<MapItem*>(pressed)->getBoundObject()->ID  << " pressed.";
-
-                // Emit map item clicked
-                emit mapItemClicked(static_cast<MapItem*>(pressed)->getBoundObject()->ID);
-
-                return true;
+                        return true;
+                    }
+                }
             }
-
         }
     }
     return false;
@@ -132,8 +133,14 @@ void GameScene::removeItem(std::shared_ptr<Course::GameObject> obj)
     }
 }
 
-void GameScene::drawItem( std::shared_ptr<Course::GameObject> obj)
+void GameScene::drawItem( std::shared_ptr<Course::GameObject> obj, int offset)
 {
-    MapItem* nItem = new MapItem(obj, m_scale);
-    addItem(nItem);
+    if(obj->getDescription("type") == "tile") {
+        MapItem* nItem = new MapItem(obj, m_scale, 0);
+        addItem(nItem);
+    } else { // Buildings and workers
+        MapItem* nItem = new MapItem(obj, m_scale/3, offset);
+        addItem(nItem);
+    }
 }
+

@@ -255,32 +255,6 @@
         </item>
        </layout>
       </widget>
-      <widget class="QPushButton" name="button_getMoney">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>190</y>
-         <width>141</width>
-         <height>28</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Get 100 money</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="button_loseMoney">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>220</y>
-         <width>141</width>
-         <height>28</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Lose 100 money</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_info">
        <property name="geometry">
         <rect>

@@ -51,7 +51,7 @@ public:
     void setScale(int scale);
     void resize();
 
-    void drawItem( std::shared_ptr<Course::GameObject> obj);
+    void drawItem( std::shared_ptr<Course::GameObject> obj, int offset);
     void removeItem( std::shared_ptr<Course::GameObject> obj);
     void updateItem( std::shared_ptr<Course::GameObject> obj);
 
@@ -69,10 +69,6 @@ public slots:
 
 private slots:
     void on_button_endTurn_clicked();
-
-    void on_button_getMoney_clicked();
-
-    void on_button_loseMoney_clicked();
 
     void on_button_farm_clicked();
 

@@ -1,0 +1,12 @@
+<!DOCTYPE RCC><RCC version="1.0">
+ <qresource>
+     <file>images/HeadQuarters.png</file>
+     <file>images/Outpost.png</file>
+     <file>images/Farm.png</file>
+     <file>images/Sawmill.png</file>
+     <file>images/Mine.png</file>
+     <file>images/BasicWorker.png</file>
+     <file>images/SawMillWorker.png</file>
+     <file>images/MineWorker.png</file>
+ </qresource>
+ </RCC>
