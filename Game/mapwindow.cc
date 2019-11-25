@@ -388,6 +388,7 @@ void MapWindow::on_button_endTurn_clicked()
             // Game has ended
             endGame(winners);
             return;
+
         }
         // Calculate resources
         std::vector<std::shared_ptr<Course::TileBase>> tiles = objMan->getTiles();
@@ -398,6 +399,20 @@ void MapWindow::on_button_endTurn_clicked()
 
     // Give turn to next player
     for(std::shared_ptr<Player> player: players) {
+        // TODO: Järkevämpi toteutus tähän(?)
+        if(objMan->isLastPlayer(playerInTurn)){
+
+        }
+        else{
+            std::vector<std::shared_ptr<Player>> winners = GEHand->checkWinCondition(players);
+            if(winners.size() > 0) {
+                // Chance to draw for player last in turn
+                m_ui->label_chancetodraw->setText(QString::fromStdString(players[0]->getName()) +
+                                                " is winning, " +QString::fromStdString(
+                                                players[1]->getName()) + " has a chance to draw!");
+            }
+        }
+
         if(player != playerInTurn) {
             GEHand->setPlayerInTurn(player);
             changeTurn(player);
