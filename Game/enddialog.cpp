@@ -16,10 +16,17 @@ enddialog::~enddialog()
 void enddialog::setWinner(std::vector<std::shared_ptr<Player> > winners)
 {
     if(winners.size() == 1) {
-            // One winner
-    QString winnerText = QString::fromStdString(winners[0]->getName()) +
-            " has won the game!";
-    ui->label_result->setText(winnerText);
+
+        // One winner, calculate sum of resources
+        Course::ResourceMap playerResourceMap = winners[0]->getResources();
+        int resourceSum;
+        for(auto n: playerResourceMap) {
+            resourceSum += n.second;
+        }
+        QString winnerText = QString::fromStdString(winners[0]->getName()) +
+                " has won the game with " + QString::fromStdString(std::to_string(resourceSum)) +
+                " resources!";
+        ui->label_result->setText(winnerText);
     } else {
         // Draw
         ui->label_result->setText("It's a draw!");

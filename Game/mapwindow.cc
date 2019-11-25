@@ -108,12 +108,6 @@ void MapWindow::toggleActiveButtons(bool isActive)
     m_ui->button_sawmillworker->setEnabled(isActive);
 }
 
-void MapWindow::setButtonTooltips()
-{
-    m_ui->button_farm->setToolTip(QString("Money: ") + QString::number(
-                                      Course::ConstResourceMaps::FARM_BUILD_COST.at(
-                                          Course::BasicResource::MONEY)));
-}
 
 bool MapWindow::eventFilter(QObject *watched, QEvent *event)
 {
@@ -411,7 +405,6 @@ void MapWindow::buyObject(std::shared_ptr<ObjectManager> objMan, std::shared_ptr
 
     // Deactivate buttons and maybe show help text
     toggleActiveButtons(false);
-    setButtonTooltips();
     if(object->getDescription("type") == "building") {
         m_ui->label_status->setText("Choose a square you want to build the building on.");
     }
@@ -513,12 +506,9 @@ void MapWindow::endGame(std::vector<std::shared_ptr<Player> > winners)
 
     enddialog endDialog;
     endDialog.setWinner(winners);
-    if(endDialog.exec() == QDialog::Accepted){
-        exit(0);
-    }
-    else{
-        exit(0);
-    }
+    endDialog.exec();
+    qApp->quit();
+
 }
 
 void MapWindow::on_button_farm_clicked()
