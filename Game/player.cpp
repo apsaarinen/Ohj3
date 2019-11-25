@@ -1,7 +1,7 @@
 #include "player.h"
 
 Player::Player(const std::string& name,
-               QColor color,
+               QString color,
                const std::vector<std::shared_ptr<Course::GameObject> > objects):
     Course::PlayerBase(name, objects),
     m_color(color)
@@ -38,7 +38,7 @@ Course::ResourceMap Player::getResources() const
     return m_resources;
 }
 
-const QColor Player::getColor() const
+const QString Player::getColor() const
 {
     return m_color;
 }

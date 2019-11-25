@@ -3,8 +3,7 @@
 
 #include "core/playerbase.h"
 #include "core/basicresources.h"
-
-#include <QColor>
+#include <QString>
 
 class Player : public Course::PlayerBase
 {
@@ -16,7 +15,7 @@ public:
      * GameObjects.
      */
     Player(const std::string& name,
-           QColor color,
+           QString color,
            const std::vector<std::shared_ptr<Course::GameObject> > objects ={});
 
     bool modifyResource(const Course::BasicResource& resource, const int& amount);
@@ -24,10 +23,10 @@ public:
 
     Course::ResourceMap getResources() const;
 
-    const QColor getColor() const;
+    const QString getColor() const;
 private:
     Course::ResourceMap m_resources;
-    QColor m_color;
+    QString m_color;
 
 };
 

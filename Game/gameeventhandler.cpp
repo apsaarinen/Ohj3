@@ -79,3 +79,13 @@ bool GameEventHandler::isPlayerBuying() const
 {
     return m_playerBuying;
 }
+
+int GameEventHandler::getRounds() const
+{
+    return m_rounds;
+}
+
+int GameEventHandler::increaseRounds()
+{
+    return ++m_rounds;
+}

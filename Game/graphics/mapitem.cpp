@@ -44,7 +44,7 @@ void MapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 
     if (m_gameobject->getDescription("type") == "building" or m_gameobject->getDescription("type") == "worker"){
         std::shared_ptr<Player> player = std::static_pointer_cast<Player>(m_gameobject->getOwner());
-        painter->setBrush(QBrush(player->getColor()));
+        painter->setBrush(QBrush(QColor(player->getColor())));
         // Draw the rectangle in the background
         painter->drawRect(boundingRect());
         // Draw an image into the rectangle

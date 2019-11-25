@@ -30,8 +30,8 @@ void GameEngine::setupGame(MapWindow *mapWindow,
     }
 
     // Generate players and save them
-    std::shared_ptr<Player> player1Ptr = std::make_shared<Player>(playerNames[0], QColor(255, 0, 0));
-    std::shared_ptr<Player> player2Ptr = std::make_shared<Player>(playerNames[1], QColor(0, 0, 255));
+    std::shared_ptr<Player> player1Ptr = std::make_shared<Player>(playerNames[0], QString("red"));
+    std::shared_ptr<Player> player2Ptr = std::make_shared<Player>(playerNames[1], QString("blue"));
     objMan->addPlayer(player1Ptr);
     objMan->addPlayer(player2Ptr);
 

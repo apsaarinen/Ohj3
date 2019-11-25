@@ -1,7 +1,6 @@
 #ifndef GAMEEVENTHANDLER_H
 #define GAMEEVENTHANDLER_H
 
-#include <QWidget>
 #include "interfaces/igameeventhandler.h"
 #include "core/basicresources.h"
 #include "player.h"
@@ -54,8 +53,12 @@ public:
     // Setting and getting if we are in the middle of buying something
     void setBuyingFlag(const bool buying);
     bool isPlayerBuying() const;
+
+    int getRounds() const;
+    int increaseRounds();
 private:
 
+    int m_rounds = 1;
     int m_resourcesToWin;
     std::weak_ptr<Player> m_playerInTurn;
     bool m_playerBuying = false;
