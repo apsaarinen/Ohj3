@@ -403,7 +403,7 @@ void MapWindow::on_button_endTurn_clicked()
         }
         else{
             std::vector<std::shared_ptr<Player>> winners = GEHand->checkWinCondition(players);
-            if(winners.size() > 0) {
+            if(winners.size() > 1) {
                 // Chance to draw for player last in turn
                 m_ui->label_chancetodraw->setText(QString::fromStdString(players[0]->getName()) +
                                                 " is winning, " +QString::fromStdString(
