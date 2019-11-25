@@ -62,9 +62,6 @@ public slots:
 
     void toggleActiveButtons(bool isActive);
 
-    // Varmaan turha
-    void setButtonTooltips();
-
     bool eventFilter(QObject *watched, QEvent *event);
 
 private slots:

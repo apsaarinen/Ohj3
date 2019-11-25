@@ -13,16 +13,17 @@ int main(int argc, char* argv[])
 
     // Open a dialog window and ask for initial value for game setup
     begindialog beginDialog;
-    beginDialog.show(); // TODO: Turha?
     std::vector<std::string> playernames;
     Course::ResourceMap startingResources;
+    // Pressed "OK"
     if(beginDialog.exec() == QDialog::Accepted){
         playernames = beginDialog.getPlayernames();
         startingResources = beginDialog.getStartingResources();
         eventHandPtr->setResourcesToWin(beginDialog.getResourcesToWin());
     }
+    // Pressed "Cancel" or shut down the window
     else{
-        exit(0);
+        return 0;
     }
 
     MapWindow mapWindow;
