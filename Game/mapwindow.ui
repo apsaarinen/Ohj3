@@ -68,10 +68,17 @@
         </property>
        </widget>
       </item>
-      <item row="7" column="1">
-       <widget class="QPushButton" name="button_mines">
+      <item row="6" column="1">
+       <widget class="QPushButton" name="button_outpost">
         <property name="text">
-         <string>Build Mines</string>
+         <string>Build Outpost</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QPushButton" name="button_mine">
+        <property name="text">
+         <string>Build Mine</string>
         </property>
        </widget>
       </item>
@@ -102,13 +109,6 @@
        <widget class="QPushButton" name="button_miner">
         <property name="text">
          <string>Hire Miner</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="1">
-       <widget class="QPushButton" name="button_outpost">
-        <property name="text">
-         <string>Build Outpost</string>
         </property>
        </widget>
       </item>
@@ -154,7 +154,7 @@
         <item row="4" column="0">
          <widget class="QLabel" name="label_oreFIXED">
           <property name="text">
-           <string>Ore:</string>
+           <string> Ore:</string>
           </property>
          </widget>
         </item>
@@ -180,6 +180,9 @@
         </item>
         <item row="4" column="1">
          <widget class="QLabel" name="label_oreInput">
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
           <property name="text">
            <string>0</string>
           </property>
@@ -191,7 +194,7 @@
         <item row="2" column="0">
          <widget class="QLabel" name="label_woodFIXED">
           <property name="text">
-           <string>Wood:</string>
+           <string> Wood:</string>
           </property>
          </widget>
         </item>
@@ -208,21 +211,21 @@
         <item row="3" column="0">
          <widget class="QLabel" name="label_stoneFIXED">
           <property name="text">
-           <string>Stone:</string>
+           <string> Stone:</string>
           </property>
          </widget>
         </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_foodFIXED">
           <property name="text">
-           <string>Food:</string>
+           <string> Food:</string>
           </property>
          </widget>
         </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label_moneyFIXED">
           <property name="text">
-           <string>Money:</string>
+           <string> Money:</string>
           </property>
          </widget>
         </item>
@@ -239,7 +242,7 @@
         <item row="5" column="0">
          <widget class="QLabel" name="label_sumFIXED">
           <property name="text">
-           <string>Sum:</string>
+           <string> Sum:</string>
           </property>
          </widget>
         </item>
@@ -259,9 +262,9 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>250</y>
+         <y>240</y>
          <width>121</width>
-         <height>161</height>
+         <height>171</height>
         </rect>
        </property>
        <property name="font">
@@ -271,6 +274,51 @@
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+      <widget class="QWidget" name="gridLayoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>190</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="1">
+         <widget class="QLabel" name="label_toWin">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_toWinFIXED">
+          <property name="text">
+           <string> To win:</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="Line" name="line">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>180</y>
+         <width>141</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </widget>

@@ -69,6 +69,7 @@ default_tile::default_tile()
 
 void default_tile::test_addBuilding()
 {
+    // doesnt work because the objecthandler is a nullptr?
     default_object->setOwner(player1);
     building1->setOwner(player1);
     QVERIFY(default_object->getBuildingCount() == 0);

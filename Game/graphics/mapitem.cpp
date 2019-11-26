@@ -6,11 +6,19 @@ MapItem::MapItem(const std::shared_ptr<Course::GameObject> &obj, int size, int o
     m_gameobject(obj), m_scenelocation(m_gameobject->getCoordinatePtr()->asQpoint()),
     m_size(size), m_offset(offset)
 {
-    addNewColor(m_gameobject->getType()); // TODO is this needed at all?
+    // Workers and buildings are only 1/3 of the tile's scale
+    if(m_gameobject->getDescription("type") == "worker" or
+            m_gameobject->getDescription("type") == "building") {
+        m_size = m_size/3;
+    // If is tile: set its color it accordigly to its type
+    } else {
+        c_mapcolors.insert({m_gameobject->getType(), MAP_COLORS.at(m_gameobject->getType())});
+    }
 }
 
 QRectF MapItem::boundingRect() const
 {
+    // Buildings are drawn on the upper part of the tile
     if(m_gameobject->getDescription("type") == "building") {
         int loc_x = m_scenelocation.x();
         int loc_y = m_scenelocation.y();
@@ -18,6 +26,7 @@ QRectF MapItem::boundingRect() const
         loc_x += m_size*m_offset;
         QPoint topLeft = QPoint(loc_x, loc_y*m_size*3);
         return QRectF(topLeft , topLeft + QPoint(m_size, m_size));
+    // Workers are drawn on the lower part of the tile
     } else if(m_gameobject->getDescription("type") == "worker") {
         int loc_x = m_scenelocation.x();
         int loc_y = m_scenelocation.y();
@@ -27,6 +36,7 @@ QRectF MapItem::boundingRect() const
         loc_x += m_size*m_offset;
         QPoint topLeft = QPoint(loc_x, loc_y);
         return QRectF(topLeft , topLeft + QPoint(m_size, m_size));
+    // Tiles are drawn "normally"
     } else {
         return QRectF(m_scenelocation * m_size, m_scenelocation * m_size + QPoint(m_size, m_size));
     }
@@ -41,18 +51,22 @@ QPixmap MapItem::image() const
 void MapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED( option ); Q_UNUSED( widget );
+    if (m_gameobject->getDescription("type") == "building" or
+            m_gameobject->getDescription("type") == "worker"){
 
-    if (m_gameobject->getDescription("type") == "building" or m_gameobject->getDescription("type") == "worker"){
         std::shared_ptr<Player> player = std::static_pointer_cast<Player>(m_gameobject->getOwner());
         painter->setBrush(QBrush(QColor(player->getColor())));
-        // Draw the rectangle in the background
+        // Draw the rectangle in the background with player color
         painter->drawRect(boundingRect());
-        // Draw an image into the rectangle
+        // Draw an image into the rectangle with original image color
         painter->drawPixmap(boundingRect().toRect(), image());
-        return;
+
+    } else { // Is tile
+
+        painter->setBrush(QBrush(c_mapcolors.at(m_gameobject->getType())));
+        painter->drawRect(boundingRect());
+
     }
-    painter->setBrush(QBrush(c_mapcolors.at(m_gameobject->getType())));
-    painter->drawRect(boundingRect());
 }
 
 const std::shared_ptr<Course::GameObject> &MapItem::getBoundObject()
@@ -74,24 +88,3 @@ bool MapItem::isSameObj(std::shared_ptr<Course::GameObject> obj)
 {
     return obj == m_gameobject;
 }
-
-int MapItem::getSize() const
-{
-    return m_size;
-}
-
-void MapItem::setSize(int size)
-{
-    if ( size > 0 && size <= 500 ){
-        m_size = size;
-    }
-}
-
-void MapItem::addNewColor(std::string type)
-{
-    if ( c_mapcolors.find(type) == c_mapcolors.end() and MAP_COLORS.find(type) != MAP_COLORS.end() ){
-        c_mapcolors.insert({type, MAP_COLORS.at(type)});
-
-    }
-}
-

@@ -11,7 +11,7 @@
 /**
  * @brief The Sawmill class represents a sawmill-building in the game.
  *
- * The sawmill adds 2 base-production for wood.
+ * The sawmill adds 1 base-production for money, 2 for food and 5 for wood.
  */
 class SawMill : public Course::BuildingBase
 {

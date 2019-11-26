@@ -16,7 +16,6 @@ const ResourceMapDouble NEGATIVE = {
     {ORE, -1}
 };
 
-
 // Building - Mine
 const ResourceMap MINE_BUILD_COST = {
     {BasicResource::MONEY, 60},
@@ -24,9 +23,9 @@ const ResourceMap MINE_BUILD_COST = {
     {BasicResource::WOOD, 30}
 };
 const ResourceMap MINE_PRODUCTION = {
-    {BasicResource::MONEY, 2},
-    {BasicResource::STONE, 10},
-    {BasicResource::ORE, 10}
+    {BasicResource::MONEY, 1},
+    {BasicResource::STONE, 5},
+    {BasicResource::ORE, 5}
 };
 
 // Building - Sawmill
@@ -37,8 +36,8 @@ const ResourceMap SAWMILL_BUILD_COST = {
 };
 const ResourceMap SAWMILL_PRODUCTION = {
     {BasicResource::MONEY, 1},
-    {BasicResource::FOOD, 5},
-    {BasicResource::WOOD, 10}
+    {BasicResource::FOOD, 2},
+    {BasicResource::WOOD, 5}
 };
 
 // Worker - SawMillWorker

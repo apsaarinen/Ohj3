@@ -10,7 +10,6 @@ SOURCES += \
     mapwindow.cc \
     objectmanager.cpp \
     gameeventhandler.cpp \
-    gameengine.cpp \
     player.cpp \
     buildings/mine.cpp \
     buildings/sawmill.cpp \
@@ -22,13 +21,13 @@ SOURCES += \
     workers/sawmillworker.cpp \
     tiles/water.cpp \
     graphics/gamescene.cpp \
-    graphics/mapitem.cpp
+    graphics/mapitem.cpp \
+    setupgame.cpp
 
 HEADERS += \
     mapwindow.hh \
     objectmanager.h \
     gameeventhandler.h \
-    gameengine.h \
     player.h \
     buildings/mine.hh \
     buildings/sawmill.hh \
@@ -41,7 +40,8 @@ HEADERS += \
     workers/sawmillworker.h \
     tiles/water.h \
     graphics/gamescene.h \
-    graphics/mapitem.h
+    graphics/mapitem.h \
+    setupgame.h
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib
@@ -79,7 +79,6 @@ DISTFILES += \
     images/MineWorker.png \
     images/Mine.png \
     images/HeadQuarters.png \
-    images/hakku.png \
     images/Farm.png \
     images/BasicWorker.png
 

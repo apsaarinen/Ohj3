@@ -1,7 +1,8 @@
 #include "mapwindow.hh"
+#include "begindialog.hh"
 
 #include <QApplication>
-#include "gameengine.h"
+#include "setupgame.h"
 
 int main(int argc, char* argv[])
 {
@@ -13,30 +14,25 @@ int main(int argc, char* argv[])
 
     // Open a dialog window and ask for initial value for game setup
     begindialog beginDialog;
-    std::vector<std::string> playernames;
-    Course::ResourceMap startingResources;
-    // Pressed "OK"
-    if(beginDialog.exec() == QDialog::Accepted){
-        playernames = beginDialog.getPlayernames();
-        startingResources = beginDialog.getStartingResources();
-        eventHandPtr->setResourcesToWin(beginDialog.getResourcesToWin());
-    }
     // Pressed "Cancel" or shut down the window
-    else{
+    if(beginDialog.exec() != QDialog::Accepted){
         return 0;
     }
+    // Getting the initial values from the begindialog
+    std::vector<std::string> playernames = beginDialog.getPlayernames();
+    Course::ResourceMap startingResources = beginDialog.getStartingResources();
+    int resourcesToWin = beginDialog.getResourcesToWin();
+    eventHandPtr->setResourcesToWin(resourcesToWin);
 
-    MapWindow mapWindow;
+    MapWindow mapWindow(0, eventHandPtr, objManPtr);
     mapWindow.setScale(75);
-    mapWindow.show();
+    mapWindow.showFullScreen();
 
-    GameEngine gameEng;
-    mapWindow.setGEHandler(eventHandPtr);
-    mapWindow.setObjMan(objManPtr);
-    gameEng.setupGame(&mapWindow, playernames, startingResources);
-    gameEng.startGame(&mapWindow, objManPtr);
+    mapWindow.setupUI(resourcesToWin);
+    setupGame(&mapWindow, playernames, startingResources, objManPtr);
+
+    // Start the game by giving the turn to the first player
+    mapWindow.changeTurn(eventHandPtr->getPlayerInTurn());
 
     return app.exec();
-
-
 }

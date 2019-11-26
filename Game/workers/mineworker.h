@@ -17,9 +17,7 @@
  *
  * MineWorkers consume Food and money. \n
  * * 2 Food - Or MineWorker refuses to work. \n
- * * 2 Money - Or MineWorker works at 50% efficiency. \n
- * * Resourcefocus adds 25% efficiency for the focused resource,
- * even if the worker is refusing work.
+ * * 2 Money - Or MineWorker works at 50% efficiency.
  */
 class MineWorker : public Course::WorkerBase
 {
@@ -33,8 +31,11 @@ public:
      * @brief Constructor for the class.
      *
      * @param eventhandler points to the student's GameEventHandler.
+     * @param objectmanager points to the ObjectManager.
      * @param owner points to the owning player.
-     * @param descriptions contains descriptions and flavor texts.
+     * @param tilespaces defines how many spaces the worker takes on tile
+     * @param cost defines how much the worker costs
+     * @param efficiency defines how much and what the worker produces
      */
     MineWorker(const std::shared_ptr<Course::iGameEventHandler>& eventhandler,
                 const std::shared_ptr<Course::iObjectManager>& objectmanager,
@@ -73,6 +74,7 @@ public:
 
     /**
      * @brief Performs the Worker's default action.
+     * Does nothing as this is not implemented.
      */
     virtual void doSpecialAction() override;
 

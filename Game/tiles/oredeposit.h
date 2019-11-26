@@ -10,6 +10,20 @@
 #include "core/basicresources.h"
 #include "buildings/buildingbase.h"
 
+/**
+ * @brief The OreDeposit class represents an ore deposit in the gameworld.
+ *
+ * OreDeposit has BasicProduction: \n
+ * * Money = 3
+ * * Food = 0
+ * * Wood = 0
+ * * Stone = 2
+ * * Ore = 5
+ *
+ * Building in the ore deposit takes time. So buildings get extra hold-marker.
+ *
+ * Tile supports 2 buildings.
+ */
 class OreDeposit : public Course::TileBase
 {
 public:
@@ -22,7 +36,11 @@ public:
      * @brief Constructor for the class.
      *
      * @param location is the Coordinate where the Tile is located in the game.
-     * @param eventhandler points to the student's GameEventHandler.
+     * @param eventhandler points to the GameEventHandler.
+     * @param objectmanager points to the ObjectManager.
+     * @param max_build defines maximum amount of buildings on the tile
+     * @param max_work defines maximum amount of workers on the tile
+     * @param production sets the tiles production
      */
     OreDeposit(const Course::Coordinate& location,
            const std::shared_ptr<Course::iGameEventHandler>& eventhandler,

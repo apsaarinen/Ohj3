@@ -17,7 +17,7 @@ public:
     explicit enddialog(QWidget *parent = 0);
     ~enddialog();
 
-    void setWinner(std::vector<std::shared_ptr<Player> > winners);
+    void setWinner(std::vector<std::shared_ptr<Player> > winners, int round);
 
 private:
     Ui::enddialog *ui;

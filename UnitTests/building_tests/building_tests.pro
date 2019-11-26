@@ -9,7 +9,7 @@ QT       += testlib
 QT       -= gui
 
 TARGET = tst_default_building
-CONFIG   += qt console warn_on depend_includepath testcase
+CONFIG   += console
 CONFIG   -= app_bundle
 
 TEMPLATE = app

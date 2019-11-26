@@ -29,7 +29,6 @@ bool MineWorker::canBePlacedOnTile(const std::shared_ptr<Course::TileBase> &targ
             WorkerBase::canBePlacedOnTile(target);
 }
 
-// TODO: create a special action
 void MineWorker::doSpecialAction()
 {
 

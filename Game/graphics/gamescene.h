@@ -87,7 +87,7 @@ public:
      * @pre obj must have a valid coordinate property.
      * @post Exception guarantee: None
      */
-    void drawItem( std::shared_ptr<Course::GameObject> obj, int offset);
+    void drawItem( std::shared_ptr<Course::GameObject> obj, int offset=0);
 
     /**
      * @brief tries to remove drawn object at the location obj points to.
@@ -114,6 +114,10 @@ public:
     virtual bool event(QEvent* event) override;
 
 signals:
+    /**
+     * @brief signal that is triggered when a player clicks the map
+     * @param id of the tile that was clicked.
+     */
     void mapItemClicked(Course::ObjectId id);
 
 private:

@@ -31,7 +31,9 @@ public:
      * @param offset for the item in the tile
      * @pre obj must have a valid Coordinate.
      */
-    MapItem(const std::shared_ptr<Course::GameObject> &obj, int size, int offset);
+    MapItem(const std::shared_ptr<Course::GameObject> &obj,
+            int size,
+            int offset);
 
     /**
      * @brief boundingRect
@@ -39,7 +41,13 @@ public:
      */
     QRectF boundingRect() const override;
 
-    // TODO: Docu
+    /**
+     * @brief Finds the corresponding image for the object
+     * @pre object must have an image named accordingly to its
+     * object type
+     * @return object's image
+     * @post Exception guarantee: No-throw
+     */
     QPixmap image() const;
 
     /**
@@ -72,21 +80,6 @@ public:
      */
     bool isSameObj(std::shared_ptr<Course::GameObject> obj);
 
-    /**
-     * @brief getSize
-     * @return size of the object in pixels.
-     * @post Exception guarantee: No-throw
-     */
-    int getSize() const;
-
-    /**
-     * @brief setSize
-     * @param size of the object in pixels.
-     * @pre 0 < size <= 500
-     * @post Exception guarantee: No-throw
-     */
-    void setSize(int size);
-
 private:
     const std::shared_ptr<Course::GameObject> m_gameobject;
     QPoint m_scenelocation;
@@ -94,7 +87,6 @@ private:
     int m_offset;
 
     static ColorMap c_mapcolors;
-    static void addNewColor(std::string type);
 
 };
 

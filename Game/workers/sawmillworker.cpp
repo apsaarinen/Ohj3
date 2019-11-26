@@ -29,7 +29,6 @@ bool SawMillWorker::canBePlacedOnTile(const std::shared_ptr<Course::TileBase> &t
             WorkerBase::canBePlacedOnTile(target);
 }
 
-// TODO: create a special action
 void SawMillWorker::doSpecialAction()
 {
 

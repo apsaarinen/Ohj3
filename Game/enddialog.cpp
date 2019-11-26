@@ -13,10 +13,9 @@ enddialog::~enddialog()
     delete ui;
 }
 
-void enddialog::setWinner(std::vector<std::shared_ptr<Player> > winners)
+void enddialog::setWinner(std::vector<std::shared_ptr<Player> > winners, int round)
 {
     if(winners.size() == 1) {
-
         // One winner, calculate sum of resources
         Course::ResourceMap playerResourceMap = winners[0]->getResources();
         int resourceSum;
@@ -24,11 +23,11 @@ void enddialog::setWinner(std::vector<std::shared_ptr<Player> > winners)
             resourceSum += n.second;
         }
         QString winnerText = QString::fromStdString(winners[0]->getName()) +
-                " has won the game with " + QString::fromStdString(std::to_string(resourceSum)) +
-                " resources!";
+                " has won the game with " + QString::number(resourceSum) +
+                " resources in " + QString::number(round) + " rounds!";
         ui->label_result->setText(winnerText);
     } else {
         // Draw
-        ui->label_result->setText("It's a draw!");
+        ui->label_result->setText("It's a draw in " + QString::number(round) + " rounds!");
     }
 }

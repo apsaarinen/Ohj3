@@ -10,6 +10,18 @@
 #include "core/basicresources.h"
 #include "buildings/buildingbase.h"
 
+/**
+ * @brief The Water class represents water in the gameworld.
+ *
+ * Water has BasicProduction: \n
+ * * Money = 0
+ * * Food = 0
+ * * Wood = 0
+ * * Stone = 0
+ * * Ore = 0
+ *
+ * You cannot build in water!
+ */
 class Water : public Course::TileBase
 {
 public:
@@ -22,7 +34,11 @@ public:
      * @brief Constructor for the class.
      *
      * @param location is the Coordinate where the Tile is located in the game.
-     * @param eventhandler points to the student's GameEventHandler.
+     * @param eventhandler points to the GameEventHandler.
+     * @param objectmanager points to the ObjectManager.
+     * @param max_build defines maximum amount of buildings on the tile
+     * @param max_work defines maximum amount of workers on the tile
+     * @param production sets the tiles production
      */
     Water(const Course::Coordinate& location,
            const std::shared_ptr<Course::iGameEventHandler>& eventhandler,
@@ -41,8 +57,6 @@ public:
      */
     virtual std::string getType() const override;
 
-    // TODO: you can't build in water
-    void addBuilding(const std::shared_ptr<Course::BuildingBase>& building) override;
 };
 
 #endif // WATER_H
