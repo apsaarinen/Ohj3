@@ -2,7 +2,6 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     building_tests \
-    gameengine_tests \
     gameeventhandler_tests \
     objectmanager_tests \
     player_tests \

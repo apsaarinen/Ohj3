@@ -11,6 +11,8 @@
 #include "tiles/tilebase.h"
 #include "exceptions/illegalaction.h"
 #include "core/coordinate.h"
+#include "objectmanager.h"
+#include "gameeventhandler.h"
 
 class default_building : public QObject
 {
@@ -20,20 +22,20 @@ public:
     default_building();
 
 private Q_SLOTS:
+    // Tests as a PlaceableGameObject
     void test_canBePlacedOnTile_same_owner();
     void test_canBePlacedOnTile_ownerconflict();
     void test_canBePlacedOnTile_no_owner_for_tile();
     void test_canBePlacedOnTile_no_owner_for_object();
     void test_canBePlacedOnTile_no_owners();
-
     void test_setLocationTile();
     void test_unsetLocationTile();
     void test_setLocationTile_exception();
-
-    void test_addHoldMarkers();
-
     void test_currentLocationTile_expired_ptr();
 
+    // Tests as a BuildingBase
+    void test_onBuildAction();
+    void test_addHoldMarkers();
     void test_type_BuildingBase();
     void test_type_HQ();
     void test_type_Outpost();
@@ -44,13 +46,18 @@ private Q_SLOTS:
     void cleanup();
 
 private:
+    std::shared_ptr<ObjectManager> objMan;
+    std::shared_ptr<GameEventHandler> GEHand;
+
     std::shared_ptr<Player> player1;
     std::shared_ptr<Player> player2;
     std::shared_ptr<Course::TileBase> tile1;
     std::shared_ptr<Course::TileBase> tile2;
+    std::shared_ptr<Course::TileBase> tileExpire;
 
     const Course::Coordinate tile1_coordinate = {1,1};
     const Course::Coordinate tile2_coordinate = {1,2};
+    const Course::Coordinate tileExpire_coordinate = {2,2};
 
     std::shared_ptr<Course::BuildingBase> default_object;
     std::shared_ptr<Course::HeadQuarters> hq_object;
@@ -63,22 +70,41 @@ private:
 
 default_building::default_building()
 {
+    objMan = std::make_shared<ObjectManager>();
+    GEHand = std::make_shared<GameEventHandler>();
+
     player1 = std::make_shared<Player>("player1", QString("red"));
     player2 = std::make_shared<Player>("player2", QString("blue"));
-    tile1 = std::make_shared<Course::TileBase>(tile1_coordinate, nullptr, nullptr);
-    tile2 = std::make_shared<Course::TileBase>(tile2_coordinate, nullptr, nullptr);
+    objMan->addPlayer(player1);
+    objMan->addPlayer(player2);
+
+    tile1 = std::make_shared<Course::TileBase>(tile1_coordinate, GEHand, objMan);
+    tile2 = std::make_shared<Course::TileBase>(tile2_coordinate, GEHand, objMan);
+    std::vector<std::shared_ptr<Course::TileBase>> tiles;
+    tiles.push_back(tile1);
+    tiles.push_back(tile2);
+    objMan->addTiles(tiles);
+    // We don't want to add this tile to the ObjectManager
+    tileExpire = std::make_shared<Course::TileBase>(tileExpire_coordinate, GEHand, objMan);
+
     default_object = std::make_shared<Course::BuildingBase>(
-                nullptr, nullptr, nullptr, 2);
+                GEHand, objMan, nullptr, 1);
     hq_object = std::make_shared<Course::HeadQuarters>(
-                nullptr, nullptr, nullptr);
+                GEHand, objMan, nullptr);
     outpost_object = std::make_shared<Course::Outpost>(
-                nullptr, nullptr, nullptr);
+                GEHand, objMan, nullptr);
     farm_object = std::make_shared<Course::Farm>(
-                nullptr, nullptr, nullptr);
+                GEHand, objMan, nullptr);
     mine_object = std::make_shared<Mine>(
-                nullptr, nullptr, nullptr);
+                GEHand, objMan, nullptr);
     sawmill_object = std::make_shared<SawMill>(
-                nullptr, nullptr, nullptr);
+                GEHand, objMan, nullptr);
+    objMan->addPlaceableObject(default_object);
+    objMan->addPlaceableObject(hq_object);
+    objMan->addPlaceableObject(outpost_object);
+    objMan->addPlaceableObject(farm_object);
+    objMan->addPlaceableObject(mine_object);
+    objMan->addPlaceableObject(sawmill_object);
 }
 
 void default_building::test_canBePlacedOnTile_same_owner()
@@ -152,19 +178,29 @@ void default_building::test_setLocationTile_exception()
                              Course::IllegalAction);
 }
 
+void default_building::test_currentLocationTile_expired_ptr()
+{
+    QVERIFY(default_object->currentLocationTile() == nullptr);
+    default_object->setLocationTile(tileExpire);
+    QVERIFY(default_object->currentLocationTile() == tileExpire);
+    tileExpire = {};
+    QVERIFY(default_object->currentLocationTile() == nullptr);
+}
+
+void default_building::test_onBuildAction()
+{
+    hq_object->setOwner(player1);
+    default_object->setOwner(player2);
+    tile1->setOwner(player1);
+    hq_object->setLocationTile(tile1);
+    hq_object->onBuildAction();
+    QVERIFY(!default_object->canBePlacedOnTile(tile2));
+}
+
 void default_building::test_addHoldMarkers()
 {
     default_object->addHoldMarkers(1);
     QVERIFY(default_object->holdCount() == 1);
-}
-
-void default_building::test_currentLocationTile_expired_ptr()
-{
-    QVERIFY(default_object->currentLocationTile() == nullptr);
-    default_object->setLocationTile(tile1);
-    QVERIFY(default_object->currentLocationTile() == tile1);
-    tile1 = {};
-    QVERIFY(default_object->currentLocationTile() == nullptr);
 }
 
 void default_building::test_type_BuildingBase()
@@ -199,22 +235,41 @@ void default_building::test_type_Mine()
 
 void default_building::cleanup()
 {
+    objMan = std::make_shared<ObjectManager>();
+    GEHand = std::make_shared<GameEventHandler>();
+
     player1 = std::make_shared<Player>("player1", QString("red"));
     player2 = std::make_shared<Player>("player2", QString("blue"));
-    tile1 = std::make_shared<Course::TileBase>(tile1_coordinate, nullptr, nullptr);
-    tile2 = std::make_shared<Course::TileBase>(tile2_coordinate, nullptr, nullptr);
+    objMan->addPlayer(player1);
+    objMan->addPlayer(player2);
+
+    tile1 = std::make_shared<Course::TileBase>(tile1_coordinate, GEHand, objMan);
+    tile2 = std::make_shared<Course::TileBase>(tile2_coordinate, GEHand, objMan);
+    std::vector<std::shared_ptr<Course::TileBase>> tiles;
+    tiles.push_back(tile1);
+    tiles.push_back(tile2);
+    objMan->addTiles(tiles);
+    // We don't want to add this tile to the ObjectManager
+    tileExpire = std::make_shared<Course::TileBase>(tileExpire_coordinate, GEHand, objMan);
+
     default_object = std::make_shared<Course::BuildingBase>(
-                nullptr, nullptr, nullptr, 2);
+                GEHand, objMan, nullptr, 1);
     hq_object = std::make_shared<Course::HeadQuarters>(
-                nullptr, nullptr, nullptr);
+                GEHand, objMan, nullptr);
     outpost_object = std::make_shared<Course::Outpost>(
-                nullptr, nullptr, nullptr);
+                GEHand, objMan, nullptr);
     farm_object = std::make_shared<Course::Farm>(
-                nullptr, nullptr, nullptr);
+                GEHand, objMan, nullptr);
     mine_object = std::make_shared<Mine>(
-                nullptr, nullptr, nullptr);
+                GEHand, objMan, nullptr);
     sawmill_object = std::make_shared<SawMill>(
-                nullptr, nullptr, nullptr);
+                GEHand, objMan, nullptr);
+    objMan->addPlaceableObject(default_object);
+    objMan->addPlaceableObject(hq_object);
+    objMan->addPlaceableObject(outpost_object);
+    objMan->addPlaceableObject(farm_object);
+    objMan->addPlaceableObject(mine_object);
+    objMan->addPlaceableObject(sawmill_object);
 }
 
 QTEST_APPLESS_MAIN(default_building)

@@ -57,12 +57,16 @@ else:unix: PRE_TARGETDEPS += \
 HEADERS += \
     $$PWD/../../Game/player.h \
     $$PWD/../../Game/buildings/mine.h \
-    $$PWD/../../Game/buildings/sawmill.h
+    $$PWD/../../Game/buildings/sawmill.h \
+    $$PWD/../../Game/objectmanager.h \
+    $$PWD/../../Game/gameeventhandler.h
 
 
 SOURCES += \
     tst_default_building.cpp \
     $$PWD/../../Game/player.cpp \
     $$PWD/../../Game/buildings/mine.cpp \
-    $$PWD/../../Game/buildings/sawmill.cpp
+    $$PWD/../../Game/buildings/sawmill.cpp \
+    $$PWD/../../Game/objectmanager.cpp \
+    $$PWD/../../Game/gameeventhandler.cpp
 
