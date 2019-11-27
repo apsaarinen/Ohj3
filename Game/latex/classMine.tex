@@ -1,0 +1,92 @@
+\hypertarget{classMine}{\section{Mine Class Reference}
+\label{classMine}\index{Mine@{Mine}}
+}
+
+
+The \hyperlink{classMine}{Mine} class represents a mine-\/building in the game.  
+
+
+
+
+{\ttfamily \#include $<$mine.\-hh$>$}
+
+Inheritance diagram for Mine\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classMine_a4c43d4530ffb0859f76c8dc88f23fe32}{\hyperlink{classMine_a4c43d4530ffb0859f76c8dc88f23fe32}{Mine} ()=delete}\label{classMine_a4c43d4530ffb0859f76c8dc88f23fe32}
+
+\begin{DoxyCompactList}\small\item\em Disabled parameterless constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMine_a7fcd00f345c281632eb4e8fd684c99fb}{Mine} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classGameEventHandler}{Game\-Event\-Handler} $>$ \&eventhandler, const std\-::shared\-\_\-ptr$<$ \hyperlink{classObjectManager}{Object\-Manager} $>$ \&objectmanager, const std\-::shared\-\_\-ptr$<$ \hyperlink{classPlayer}{Player} $>$ \&owner, const int \&tilespaces=1, const Course\-::\-Resource\-Map \&buildcost=Course\-::\-Const\-Resource\-Maps\-::\-M\-I\-N\-E\-\_\-\-B\-U\-I\-L\-D\-\_\-\-C\-O\-S\-T, const Course\-::\-Resource\-Map \&production=Course\-::\-Const\-Resource\-Maps\-::\-M\-I\-N\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N)
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+\hypertarget{classMine_afc625411283c4d05ec2036835311c74d}{virtual \hyperlink{classMine_afc625411283c4d05ec2036835311c74d}{$\sim$\-Mine} ()=default}\label{classMine_afc625411283c4d05ec2036835311c74d}
+
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classMine_a00834ef329590343a322e934c531095f}{get\-Type} () const override
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classMine}{Mine} class represents a mine-\/building in the game. 
+
+The mine adds 1 base-\/production for money and 5 for stone and ore. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMine_a7fcd00f345c281632eb4e8fd684c99fb}{\index{Mine@{Mine}!Mine@{Mine}}
+\index{Mine@{Mine}!Mine@{Mine}}
+\subsubsection[{Mine}]{\setlength{\rightskip}{0pt plus 5cm}Mine\-::\-Mine (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Game\-Event\-Handler} $>$ \&}]{eventhandler, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Object\-Manager} $>$ \&}]{objectmanager, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Player} $>$ \&}]{owner, }
+\item[{const int \&}]{tilespaces = {\ttfamily 1}, }
+\item[{const Course\-::\-Resource\-Map \&}]{buildcost = {\ttfamily Course\-:\-:ConstResourceMaps\-:\-:MINE\-\_\-BUILD\-\_\-COST}, }
+\item[{const Course\-::\-Resource\-Map \&}]{production = {\ttfamily Course\-:\-:ConstResourceMaps\-:\-:MINE\-\_\-PRODUCTION}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classMine_a7fcd00f345c281632eb4e8fd684c99fb}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eventhandler} & points to the student's \hyperlink{classGameEventHandler}{Game\-Event\-Handler}. \\
+\hline
+{\em owner} & points to the owning player. \\
+\hline
+{\em tile} & points to the tile upon which the building is constructed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Exception Guarantee\-: No guarantee. 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Owner\-Conflict} & -\/ if the building conflicts with tile's ownership. \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMine_a00834ef329590343a322e934c531095f}{\index{Mine@{Mine}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!Mine@{Mine}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Mine\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classMine_a00834ef329590343a322e934c531095f}
+
+
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+buildings/mine.\-hh\item 
+buildings/mine.\-cpp\end{DoxyCompactItemize}

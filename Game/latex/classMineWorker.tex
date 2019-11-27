@@ -1,0 +1,154 @@
+\hypertarget{classMineWorker}{\section{Mine\-Worker Class Reference}
+\label{classMineWorker}\index{Mine\-Worker@{Mine\-Worker}}
+}
+
+
+The \hyperlink{classMineWorker}{Mine\-Worker} class represents a mine worker in the game.  
+
+
+
+
+{\ttfamily \#include $<$mineworker.\-h$>$}
+
+Inheritance diagram for Mine\-Worker\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMineWorker}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classMineWorker_aaf862528bbda1b1acd19f9fc56ec5391}{\hyperlink{classMineWorker_aaf862528bbda1b1acd19f9fc56ec5391}{Mine\-Worker} ()=delete}\label{classMineWorker_aaf862528bbda1b1acd19f9fc56ec5391}
+
+\begin{DoxyCompactList}\small\item\em Disabled parameterless constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMineWorker_a98f16e373645b0e17818865983cba18b}{Mine\-Worker} (const std\-::shared\-\_\-ptr$<$ Course\-::i\-Game\-Event\-Handler $>$ \&eventhandler, const std\-::shared\-\_\-ptr$<$ Course\-::i\-Object\-Manager $>$ \&objectmanager, const std\-::shared\-\_\-ptr$<$ Course\-::\-Player\-Base $>$ \&owner, const int \&tilespaces=1, const Course\-::\-Resource\-Map \&cost=Course\-::\-Const\-Resource\-Maps\-::\-M\-W\-\_\-\-R\-E\-C\-R\-U\-I\-T\-M\-E\-N\-T\-\_\-\-C\-O\-S\-T, const Course\-::\-Resource\-Map\-Double \&efficiency=Course\-::\-Const\-Resource\-Maps\-::\-M\-W\-\_\-\-W\-O\-R\-K\-E\-R\-\_\-\-E\-F\-F\-I\-C\-I\-E\-N\-C\-Y)
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+\hypertarget{classMineWorker_a86c512f4ba29198dc819eb2dc2def097}{virtual \hyperlink{classMineWorker_a86c512f4ba29198dc819eb2dc2def097}{$\sim$\-Mine\-Worker} ()=default}\label{classMineWorker_a86c512f4ba29198dc819eb2dc2def097}
+
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classMineWorker_a0bf862a2e75fe61bfb5b3c1b2cd7d362}{get\-Type} () const override
+\item 
+virtual bool \hyperlink{classMineWorker_a70c0a63fe8de3d5177c8a5425cea6596}{can\-Be\-Placed\-On\-Tile} (const std\-::shared\-\_\-ptr$<$ Course\-::\-Tile\-Base $>$ \&target) const override
+\begin{DoxyCompactList}\small\item\em Check if the worker can be placed on the Tile according to it's placement rule. Only rule is that the Tile must have same owner as the worker. \end{DoxyCompactList}\item 
+\hypertarget{classMineWorker_add98cd0ed5af0512f911f4eb55d75f04}{virtual void \hyperlink{classMineWorker_add98cd0ed5af0512f911f4eb55d75f04}{do\-Special\-Action} () override}\label{classMineWorker_add98cd0ed5af0512f911f4eb55d75f04}
+
+\begin{DoxyCompactList}\small\item\em Performs the Worker's default action. Does nothing as this is not implemented. \end{DoxyCompactList}\item 
+virtual const \\*
+Course\-::\-Resource\-Map\-Double \hyperlink{classMineWorker_a75713bed7c7f8ae8a9518b922a192db5}{tile\-Work\-Action} () override
+\begin{DoxyCompactList}\small\item\em Returns Worker's efficiency at resource production. Worker consumes F\-O\-O\-D and M\-O\-N\-E\-Y. Resource consumption and resource focus determine final multiplier that is based on W\-O\-R\-K\-E\-R\-\_\-\-E\-F\-F\-I\-C\-I\-E\-N\-C\-Y. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classMineWorker}{Mine\-Worker} class represents a mine worker in the game. 
+
+Worker has following production-\/efficiency\-: \par
+
+\begin{DoxyItemize}
+\item Money -\/ 0.\-25 \par
+
+\item Food -\/ 0.\-25 \par
+
+\item Wood -\/ 0.\-25 \par
+
+\item Stone -\/ 1.\-50 \par
+
+\item Ore -\/ 1.\-50 \par
+ Mine\-Workers consume Food and money. \par
+
+\item 2 Food -\/ Or \hyperlink{classMineWorker}{Mine\-Worker} refuses to work. \par
+
+\item 2 Money -\/ Or \hyperlink{classMineWorker}{Mine\-Worker} works at 50\% efficiency. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMineWorker_a98f16e373645b0e17818865983cba18b}{\index{Mine\-Worker@{Mine\-Worker}!Mine\-Worker@{Mine\-Worker}}
+\index{Mine\-Worker@{Mine\-Worker}!MineWorker@{Mine\-Worker}}
+\subsubsection[{Mine\-Worker}]{\setlength{\rightskip}{0pt plus 5cm}Mine\-Worker\-::\-Mine\-Worker (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ Course\-::i\-Game\-Event\-Handler $>$ \&}]{eventhandler, }
+\item[{const std\-::shared\-\_\-ptr$<$ Course\-::i\-Object\-Manager $>$ \&}]{objectmanager, }
+\item[{const std\-::shared\-\_\-ptr$<$ Course\-::\-Player\-Base $>$ \&}]{owner, }
+\item[{const int \&}]{tilespaces = {\ttfamily 1}, }
+\item[{const Course\-::\-Resource\-Map \&}]{cost = {\ttfamily Course\-:\-:ConstResourceMaps\-:\-:MW\-\_\-RECRUITMENT\-\_\-COST}, }
+\item[{const Course\-::\-Resource\-Map\-Double \&}]{efficiency = {\ttfamily Course\-:\-:ConstResourceMaps\-:\-:MW\-\_\-WORKER\-\_\-EFFICIENCY}}
+\end{DoxyParamCaption}
+)}}\label{classMineWorker_a98f16e373645b0e17818865983cba18b}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eventhandler} & points to the student's \hyperlink{classGameEventHandler}{Game\-Event\-Handler}. \\
+\hline
+{\em objectmanager} & points to the \hyperlink{classObjectManager}{Object\-Manager}. \\
+\hline
+{\em owner} & points to the owning player. \\
+\hline
+{\em tilespaces} & defines how many spaces the worker takes on tile \\
+\hline
+{\em cost} & defines how much the worker costs \\
+\hline
+{\em efficiency} & defines how much and what the worker produces \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMineWorker_a70c0a63fe8de3d5177c8a5425cea6596}{\index{Mine\-Worker@{Mine\-Worker}!can\-Be\-Placed\-On\-Tile@{can\-Be\-Placed\-On\-Tile}}
+\index{can\-Be\-Placed\-On\-Tile@{can\-Be\-Placed\-On\-Tile}!MineWorker@{Mine\-Worker}}
+\subsubsection[{can\-Be\-Placed\-On\-Tile}]{\setlength{\rightskip}{0pt plus 5cm}bool Mine\-Worker\-::can\-Be\-Placed\-On\-Tile (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ Course\-::\-Tile\-Base $>$ \&}]{target}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classMineWorker_a70c0a63fe8de3d5177c8a5425cea6596}
+
+
+Check if the worker can be placed on the Tile according to it's placement rule. Only rule is that the Tile must have same owner as the worker. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & is the Tile that worker is being placed on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True -\/ If baseclass' method return true and target Tile has space for worker. False -\/ If both conditions aren't met. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Override to change placement rules for derived worker. 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: Basic 
+\end{DoxyPostcond}
+\hypertarget{classMineWorker_a0bf862a2e75fe61bfb5b3c1b2cd7d362}{\index{Mine\-Worker@{Mine\-Worker}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!MineWorker@{Mine\-Worker}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Mine\-Worker\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classMineWorker_a0bf862a2e75fe61bfb5b3c1b2cd7d362}
+
+
+
+
+\hypertarget{classMineWorker_a75713bed7c7f8ae8a9518b922a192db5}{\index{Mine\-Worker@{Mine\-Worker}!tile\-Work\-Action@{tile\-Work\-Action}}
+\index{tile\-Work\-Action@{tile\-Work\-Action}!MineWorker@{Mine\-Worker}}
+\subsubsection[{tile\-Work\-Action}]{\setlength{\rightskip}{0pt plus 5cm}const Course\-::\-Resource\-Map\-Double Mine\-Worker\-::tile\-Work\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classMineWorker_a75713bed7c7f8ae8a9518b922a192db5}
+
+
+Returns Worker's efficiency at resource production. Worker consumes F\-O\-O\-D and M\-O\-N\-E\-Y. Resource consumption and resource focus determine final multiplier that is based on W\-O\-R\-K\-E\-R\-\_\-\-E\-F\-F\-I\-C\-I\-E\-N\-C\-Y. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+workers/mineworker.\-h\item 
+workers/mineworker.\-cpp\end{DoxyCompactItemize}

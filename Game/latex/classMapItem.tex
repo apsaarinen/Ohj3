@@ -1,0 +1,169 @@
+\hypertarget{classMapItem}{\section{Map\-Item Class Reference}
+\label{classMapItem}\index{Map\-Item@{Map\-Item}}
+}
+
+
+The \hyperlink{classMapItem}{Map\-Item} class is a custom Q\-Graphics\-Item that acts as a single Game\-Object's graphical element.  
+
+
+
+
+{\ttfamily \#include $<$mapitem.\-h$>$}
+
+Inheritance diagram for Map\-Item\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMapItem}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMapItem_abd291e247593a597f6e42bb135064c53}{Map\-Item} (const std\-::shared\-\_\-ptr$<$ Course\-::\-Game\-Object $>$ \&obj, int size, int offset)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+Q\-Rect\-F \hyperlink{classMapItem_a3b3b3273632471f2513035a200340a69}{bounding\-Rect} () const override
+\begin{DoxyCompactList}\small\item\em bounding\-Rect \end{DoxyCompactList}\item 
+Q\-Pixmap \hyperlink{classMapItem_a29b49ba0fcb6aa491cfcfbe2369295ac}{image} () const 
+\begin{DoxyCompactList}\small\item\em Finds the corresponding image for the object. \end{DoxyCompactList}\item 
+void \hyperlink{classMapItem_acc9ed7dd172a0f757216d3f00a30c60c}{paint} (Q\-Painter $\ast$painter, const Q\-Style\-Option\-Graphics\-Item $\ast$option, Q\-Widget $\ast$widget)
+\begin{DoxyCompactList}\small\item\em paints the item \end{DoxyCompactList}\item 
+const std\-::shared\-\_\-ptr\\*
+$<$ Course\-::\-Game\-Object $>$ \& \hyperlink{classMapItem_a63ef014ada46c6b68de1fbe87a43c435}{get\-Bound\-Object} ()
+\begin{DoxyCompactList}\small\item\em get\-Bound\-Object \end{DoxyCompactList}\item 
+\hypertarget{classMapItem_aa2c3ad1e8c9023042ce71dfda1e9c0ed}{void \hyperlink{classMapItem_aa2c3ad1e8c9023042ce71dfda1e9c0ed}{update\-Loc} ()}\label{classMapItem_aa2c3ad1e8c9023042ce71dfda1e9c0ed}
+
+\begin{DoxyCompactList}\small\item\em update\-Loc moves the item if the position has changed. \end{DoxyCompactList}\item 
+bool \hyperlink{classMapItem_add416649188fbdddfafcb76164e93ce5}{is\-Same\-Obj} (std\-::shared\-\_\-ptr$<$ Course\-::\-Game\-Object $>$ obj)
+\begin{DoxyCompactList}\small\item\em checks if this instance has obj as bound obj. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classMapItem}{Map\-Item} class is a custom Q\-Graphics\-Item that acts as a single Game\-Object's graphical element. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMapItem_abd291e247593a597f6e42bb135064c53}{\index{Map\-Item@{Map\-Item}!Map\-Item@{Map\-Item}}
+\index{Map\-Item@{Map\-Item}!MapItem@{Map\-Item}}
+\subsubsection[{Map\-Item}]{\setlength{\rightskip}{0pt plus 5cm}Map\-Item\-::\-Map\-Item (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ Course\-::\-Game\-Object $>$ \&}]{obj, }
+\item[{int}]{size, }
+\item[{int}]{offset}
+\end{DoxyParamCaption}
+)}}\label{classMapItem_abd291e247593a597f6e42bb135064c53}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & shared\-\_\-ptr to the obj. \\
+\hline
+{\em size} & of the created item in pixels. \\
+\hline
+{\em offset} & for the item in the tile \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+obj must have a valid Coordinate. 
+\end{DoxyPrecond}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMapItem_a3b3b3273632471f2513035a200340a69}{\index{Map\-Item@{Map\-Item}!bounding\-Rect@{bounding\-Rect}}
+\index{bounding\-Rect@{bounding\-Rect}!MapItem@{Map\-Item}}
+\subsubsection[{bounding\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Rect\-F Map\-Item\-::bounding\-Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}}}\label{classMapItem_a3b3b3273632471f2513035a200340a69}
+
+
+bounding\-Rect 
+
+\begin{DoxyReturn}{Returns}
+the bounding rectangle of this item. 
+\end{DoxyReturn}
+\hypertarget{classMapItem_a63ef014ada46c6b68de1fbe87a43c435}{\index{Map\-Item@{Map\-Item}!get\-Bound\-Object@{get\-Bound\-Object}}
+\index{get\-Bound\-Object@{get\-Bound\-Object}!MapItem@{Map\-Item}}
+\subsubsection[{get\-Bound\-Object}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::shared\-\_\-ptr$<$ Course\-::\-Game\-Object $>$ \& Map\-Item\-::get\-Bound\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMapItem_a63ef014ada46c6b68de1fbe87a43c435}
+
+
+get\-Bound\-Object 
+
+\begin{DoxyReturn}{Returns}
+the object this item is bound to. 
+\end{DoxyReturn}
+\hypertarget{classMapItem_a29b49ba0fcb6aa491cfcfbe2369295ac}{\index{Map\-Item@{Map\-Item}!image@{image}}
+\index{image@{image}!MapItem@{Map\-Item}}
+\subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Pixmap Map\-Item\-::image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMapItem_a29b49ba0fcb6aa491cfcfbe2369295ac}
+
+
+Finds the corresponding image for the object. 
+
+\begin{DoxyPrecond}{Precondition}
+object must have an image named accordingly to its object type 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+object's image 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\hypertarget{classMapItem_add416649188fbdddfafcb76164e93ce5}{\index{Map\-Item@{Map\-Item}!is\-Same\-Obj@{is\-Same\-Obj}}
+\index{is\-Same\-Obj@{is\-Same\-Obj}!MapItem@{Map\-Item}}
+\subsubsection[{is\-Same\-Obj}]{\setlength{\rightskip}{0pt plus 5cm}bool Map\-Item\-::is\-Same\-Obj (
+\begin{DoxyParamCaption}
+\item[{std\-::shared\-\_\-ptr$<$ Course\-::\-Game\-Object $>$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classMapItem_add416649188fbdddfafcb76164e93ce5}
+
+
+checks if this instance has obj as bound obj. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True\-: if obj is pointing to the same object as this item. False otherwise. 
+\end{DoxyReturn}
+\hypertarget{classMapItem_acc9ed7dd172a0f757216d3f00a30c60c}{\index{Map\-Item@{Map\-Item}!paint@{paint}}
+\index{paint@{paint}!MapItem@{Map\-Item}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void Map\-Item\-::paint (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{const Q\-Style\-Option\-Graphics\-Item $\ast$}]{option, }
+\item[{Q\-Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{classMapItem_acc9ed7dd172a0f757216d3f00a30c60c}
+
+
+paints the item 
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & \\
+\hline
+{\em option} & \\
+\hline
+{\em widget} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The Graphics\-View containing the scene this belongs to usually calls this function. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+graphics/mapitem.\-h\item 
+graphics/mapitem.\-cpp\end{DoxyCompactItemize}

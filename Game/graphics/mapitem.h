@@ -21,6 +21,10 @@ const ColorMap MAP_COLORS = {
     {"Grassland", QColor(128, 255, 0)}
 };
 
+/**
+ * @brief The MapItem class is a custom QGraphicsItem that
+ * acts as a single GameObject's graphical element.
+ */
 class MapItem : public QGraphicsItem
 {
 public:
