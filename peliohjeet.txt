@@ -1,8 +1,12 @@
 Peliohjeet:
 
-1. Pelilaatat:
+1. Pelin kulku
 
-	1.1 Tumman vihreä - Forest
+	- Katso säännöt
+
+2. Pelilaatat:
+
+	2.1 Tumman vihreä - Forest
 		Tuotanto per kierros:
 		Money = 1
 		Food = 3
@@ -13,7 +17,7 @@ Peliohjeet:
 		Rakennusten max lkm: 2
 		Työntekijöiden max lkm: 3
 
-	1.2 Kirkkaan vihreä - Grassland
+	2.2 Kirkkaan vihreä - Grassland
 		Tuotanto per kierros:
 		Money = 2
 		Food = 5
@@ -24,7 +28,7 @@ Peliohjeet:
 		Rakennusten max lkm: 3
 		Työntekijöiden max lkm: 3
 
-	1.3 Vaalean harmaa - Blockfield
+	2.3 Vaalean harmaa - Blockfield
 		Tuotanto per kierros:
 		Money = 2
 		Food = 0
@@ -36,7 +40,7 @@ Peliohjeet:
 		Työntekijöiden max lkm: 3
 
 
-	1.4 Tumman harmaa - Ore deposit
+	2.4 Tumman harmaa - Ore deposit
 		Tuotanto per kierros:
 		Money = 3
 		Food = 0
@@ -47,7 +51,7 @@ Peliohjeet:
 		Rakennusten max lkm: 2
 		Työntekijöiden max lkm: 3
 
-	1.5 Sininen - Water
+	2.5 Sininen - Water
 		Tuotanto per kierros:
 		Money = 0
 		Food = 0
@@ -58,9 +62,9 @@ Peliohjeet:
 		Rakennusten max lkm: 0
 		Työntekijöiden max lkm: 0
 
-2. Rakennukset:
+3. Rakennukset:
 	
-	2.1 Farm
+	3.1 Farm
 		Rakennuskustannukset:
 		Money = 50
 		Food = 100
@@ -70,7 +74,7 @@ Peliohjeet:
 		Money = 1
 		Food = 5
 
-	2.2 Headquarters
+	3.2 Headquarters
 		Rakennuskustannukset:
 		Money = 750
 		Food = 1000
@@ -81,7 +85,7 @@ Peliohjeet:
 		Money = 10
 		Food = 2
 
-	2.3 Outpost - Valtaa myös ympärillä olevat laatat
+	3.3 Outpost - Valtaa myös rakennuksen ympärillä olevat laatat
 		Rakennuskustannukset:
 		Money = 150
 		Food = 200
@@ -92,7 +96,7 @@ Peliohjeet:
 		Money = -5
 		Food = -2
 
-	2.4 Mine
+	3.4 Mine
 		Rakennuskustannukset:
 		Money = 60
 		Food = 80
@@ -103,7 +107,7 @@ Peliohjeet:
 		Stone = 5
 		Ore = 5
 
-	2.5 Sawmill
+	3.5 Sawmill
 		Rakennuskustannukset:
 		Money = 70
 		Food = 70
@@ -113,3 +117,45 @@ Peliohjeet:
 		Money = 1
 		Food = 2
 		Wood = 5
+
+4. Työntekijät:
+	Huom! Työntekijät menevät lakkoon jos pelaajalla ei ole tarpeeksi ruokaa ja
+	      50% teholla jos pelaajalla ei ole tarpeeksi rahaa.
+
+	4.1 Basic worker
+		Palkkauskustannukset:
+		Money = 10, jonka jälkeen 1 per kierros
+		Food = 25, jonka jälkeen 1 per kierros
+
+		Työteho:
+		Money = 0.25
+		Food = 1.00
+		Wood = 0.75
+		Stone = 0.50
+		Ore = 0.50
+
+	4.2 Mine worker
+		Palkkauskustannukset:
+		Money = 20, jonka jälkeen 2 per kierros
+		Food = 50, jonka jälkeen 2 per kierros
+
+		Työteho:
+		Money = 0.25
+		Food = 0.25
+		Wood = 0.25
+		Stone = 1.50
+		Ore = 1.50
+
+	4.3 Sawmill worker
+		Palkkauskustannukset:
+		Money = 20, jonka jälkeen 2 per kierros
+		Food = 50, jonka jälkeen 2 per kierros
+
+		Työteho:
+		Money = 0.25
+		Food = 0.25
+		Wood = 2.00
+		Stone = 0.25
+		Ore = 0.25
+
+

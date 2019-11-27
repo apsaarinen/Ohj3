@@ -12,7 +12,7 @@ void setupGame(MapWindow *mapWindow,
     worldGen.addConstructor<Course::Forest>(6);
     worldGen.addConstructor<Course::Grassland>(10);
     worldGen.addConstructor<Blockfield>(6);
-    worldGen.addConstructor<Water>(10);
+    worldGen.addConstructor<Water>(5);
     worldGen.addConstructor<OreDeposit>(3);
     unsigned int x = 10;
     unsigned int y = 10;
