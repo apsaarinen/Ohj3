@@ -11,7 +11,7 @@
 /**
  * @brief The Mine class represents a mine-building in the game.
  *
- * The mine adds 2 base-production for money and 5 for stone and ore.
+ * The mine adds 1 base-production for money and 5 for stone and ore.
  */
 class Mine : public Course::BuildingBase
 {

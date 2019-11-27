@@ -127,7 +127,13 @@ public slots:
      */
     void placeObject(Course::ObjectId tileID);
 
-    // TODO: doku
+    /**
+     * @brief Shows and hides info text of building and hiring buttons when \n
+     *  hovered over with mouse.
+     * @param Objects of buttons that are being tracked for mouse hovering.
+     * @param Enter or leave events when mouse hovering over a button.
+     * @return Event to parent class
+     */
     bool eventFilter(QObject *watched, QEvent *event);
 
 private slots:

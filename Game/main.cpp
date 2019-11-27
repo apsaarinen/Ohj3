@@ -14,7 +14,6 @@ int main(int argc, char* argv[])
 
     // Open a dialog window and ask for initial value for game setup
     begindialog beginDialog;
-    // Pressed "Cancel" or shut down the window
     if(beginDialog.exec() != QDialog::Accepted){
         return 0;
     }

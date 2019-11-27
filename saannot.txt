@@ -1,6 +1,6 @@
 Pelin säännöt:
 
-1. Pelin alussa pelaajat voivat valita aloitusresurssien määrän ja kuinka paljon resursseja tarvitaan yhteensä pelin voittamiseksi.
+1. Pelin alussa pelaajat valitsevat aloitusresurssien määrän ja kuinka paljon resursseja tarvitaan yhteensä pelin voittamiseksi.
 
 2. Peli alkaa pelaajan 1 vuorolla.
 

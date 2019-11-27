@@ -396,7 +396,7 @@ void MapWindow::buyObject(std::shared_ptr<ObjectManager> objMan,
     // Set buying flag on
     GEHand->setBuyingFlag(true);
 
-    // Deactivate buttons and maybe show help text
+    // Deactivate buttons and show help text
     toggleActiveButtons(false);
     if(object->getDescription("type") == "building") {
         m_ui->label_status->setText("Choose a square you want to build the building on.");
@@ -456,6 +456,7 @@ void MapWindow::placeObject(Course::ObjectId tileID)
                 m_ui->label_status->setText("Worker hired! Continue your turn.");
             }
 
+            // Update map to show drawn building or worker
             m_ui->graphicsView->viewport()->update();
 
             qDebug() << "Draw building/worker on map!";

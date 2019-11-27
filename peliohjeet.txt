@@ -1,0 +1,115 @@
+Peliohjeet:
+
+1. Pelilaatat:
+
+	1.1 Tumman vihreä - Forest
+		Tuotanto per kierros:
+		Money = 1
+		Food = 3
+		Wood = 5
+		Stone = 1
+		Ore = 0
+
+		Rakennusten max lkm: 2
+		Työntekijöiden max lkm: 3
+
+	1.2 Kirkkaan vihreä - Grassland
+		Tuotanto per kierros:
+		Money = 2
+		Food = 5
+		Wood = 1
+		Stone = 1
+		Ore = 0
+
+		Rakennusten max lkm: 3
+		Työntekijöiden max lkm: 3
+
+	1.3 Vaalean harmaa - Blockfield
+		Tuotanto per kierros:
+		Money = 2
+		Food = 0
+		Wood = 0
+		Stone = 5
+		Ore = 2
+
+		Rakennusten max lkm: 3
+		Työntekijöiden max lkm: 3
+
+
+	1.4 Tumman harmaa - Ore deposit
+		Tuotanto per kierros:
+		Money = 3
+		Food = 0
+		Wood = 0
+		Stone = 2
+		Ore = 5
+
+		Rakennusten max lkm: 2
+		Työntekijöiden max lkm: 3
+
+	1.5 Sininen - Water
+		Tuotanto per kierros:
+		Money = 0
+		Food = 0
+		Wood = 0
+		Stone = 0
+		Ore = 0
+
+		Rakennusten max lkm: 0
+		Työntekijöiden max lkm: 0
+
+2. Rakennukset:
+	
+	2.1 Farm
+		Rakennuskustannukset:
+		Money = 50
+		Food = 100
+		Wood = 25
+
+		Tuotanto per kierros:
+		Money = 1
+		Food = 5
+
+	2.2 Headquarters
+		Rakennuskustannukset:
+		Money = 750
+		Food = 1000
+		Wood = 500
+		Stone = 250
+
+		Tuotanto per kierros:
+		Money = 10
+		Food = 2
+
+	2.3 Outpost - Valtaa myös ympärillä olevat laatat
+		Rakennuskustannukset:
+		Money = 150
+		Food = 200
+		Wood = 200
+		Stone = 25
+
+		Tuotanto per kierros:
+		Money = -5
+		Food = -2
+
+	2.4 Mine
+		Rakennuskustannukset:
+		Money = 60
+		Food = 80
+		Wood = 30
+
+		Tuotanto per kierros:
+		Money = 1
+		Stone = 5
+		Ore = 5
+
+	2.5 Sawmill
+		Rakennuskustannukset:
+		Money = 70
+		Food = 70
+		Wood = 50
+
+		Tuotanto per kierros:
+		Money = 1
+		Food = 2
+		Wood = 5
