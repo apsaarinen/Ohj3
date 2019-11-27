@@ -1,0 +1,92 @@
+\hypertarget{classSawMill}{\section{Saw\-Mill Class Reference}
+\label{classSawMill}\index{Saw\-Mill@{Saw\-Mill}}
+}
+
+
+The Sawmill class represents a sawmill-\/building in the game.  
+
+
+
+
+{\ttfamily \#include $<$sawmill.\-hh$>$}
+
+Inheritance diagram for Saw\-Mill\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSawMill}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classSawMill_a85fecb25b92b31d0d09cbb37cb485804}{\hyperlink{classSawMill_a85fecb25b92b31d0d09cbb37cb485804}{Saw\-Mill} ()=delete}\label{classSawMill_a85fecb25b92b31d0d09cbb37cb485804}
+
+\begin{DoxyCompactList}\small\item\em Disabled parameterless constructor. \end{DoxyCompactList}\item 
+\hyperlink{classSawMill_af7f5d19bfcee2e51865ee106b7d0999d}{Saw\-Mill} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classGameEventHandler}{Game\-Event\-Handler} $>$ \&eventhandler, const std\-::shared\-\_\-ptr$<$ \hyperlink{classObjectManager}{Object\-Manager} $>$ \&objectmanager, const std\-::shared\-\_\-ptr$<$ \hyperlink{classPlayer}{Player} $>$ \&owner, const int \&tilespaces=1, const Course\-::\-Resource\-Map \&buildcost=Course\-::\-Const\-Resource\-Maps\-::\-S\-A\-W\-M\-I\-L\-L\-\_\-\-B\-U\-I\-L\-D\-\_\-\-C\-O\-S\-T, const Course\-::\-Resource\-Map \&production=Course\-::\-Const\-Resource\-Maps\-::\-S\-A\-W\-M\-I\-L\-L\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N)
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+\hypertarget{classSawMill_ac91d26a1ed2c5a685c0f8583be0c6ec2}{virtual \hyperlink{classSawMill_ac91d26a1ed2c5a685c0f8583be0c6ec2}{$\sim$\-Saw\-Mill} ()=default}\label{classSawMill_ac91d26a1ed2c5a685c0f8583be0c6ec2}
+
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classSawMill_af15ad5811c446ee6f0cb540f4aa7e7d6}{get\-Type} () const override
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Sawmill class represents a sawmill-\/building in the game. 
+
+The sawmill adds 1 base-\/production for money, 2 for food and 5 for wood. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSawMill_af7f5d19bfcee2e51865ee106b7d0999d}{\index{Saw\-Mill@{Saw\-Mill}!Saw\-Mill@{Saw\-Mill}}
+\index{Saw\-Mill@{Saw\-Mill}!SawMill@{Saw\-Mill}}
+\subsubsection[{Saw\-Mill}]{\setlength{\rightskip}{0pt plus 5cm}Saw\-Mill\-::\-Saw\-Mill (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Game\-Event\-Handler} $>$ \&}]{eventhandler, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Object\-Manager} $>$ \&}]{objectmanager, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Player} $>$ \&}]{owner, }
+\item[{const int \&}]{tilespaces = {\ttfamily 1}, }
+\item[{const Course\-::\-Resource\-Map \&}]{buildcost = {\ttfamily Course\-:\-:ConstResourceMaps\-:\-:SAWMILL\-\_\-BUILD\-\_\-COST}, }
+\item[{const Course\-::\-Resource\-Map \&}]{production = {\ttfamily Course\-:\-:ConstResourceMaps\-:\-:SAWMILL\-\_\-PRODUCTION}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classSawMill_af7f5d19bfcee2e51865ee106b7d0999d}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eventhandler} & points to the student's \hyperlink{classGameEventHandler}{Game\-Event\-Handler}. \\
+\hline
+{\em owner} & points to the owning player. \\
+\hline
+{\em tile} & points to the tile upon which the building is constructed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Exception Guarantee\-: No guarantee. 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Owner\-Conflict} & -\/ if the building conflicts with tile's ownership. \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSawMill_af15ad5811c446ee6f0cb540f4aa7e7d6}{\index{Saw\-Mill@{Saw\-Mill}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!SawMill@{Saw\-Mill}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Saw\-Mill\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classSawMill_af15ad5811c446ee6f0cb540f4aa7e7d6}
+
+
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+buildings/sawmill.\-hh\item 
+buildings/sawmill.\-cpp\end{DoxyCompactItemize}

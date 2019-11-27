@@ -10,7 +10,7 @@ MapItem::MapItem(const std::shared_ptr<Course::GameObject> &obj, int size, int o
     if(m_gameobject->getDescription("type") == "worker" or
             m_gameobject->getDescription("type") == "building") {
         m_size = m_size/3;
-    // If is tile: set its color it accordigly to its type
+    // If is tile: set its color it accordingly to its type
     } else {
         c_mapcolors.insert({m_gameobject->getType(), MAP_COLORS.at(m_gameobject->getType())});
     }

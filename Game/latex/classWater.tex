@@ -1,0 +1,100 @@
+\hypertarget{classWater}{\section{Water Class Reference}
+\label{classWater}\index{Water@{Water}}
+}
+
+
+The \hyperlink{classWater}{Water} class represents water in the gameworld.  
+
+
+
+
+{\ttfamily \#include $<$water.\-h$>$}
+
+Inheritance diagram for Water\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classWater}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classWater_a77f0e9aaeaaf84bdca5eec7cf284e935}{\hyperlink{classWater_a77f0e9aaeaaf84bdca5eec7cf284e935}{Water} ()=delete}\label{classWater_a77f0e9aaeaaf84bdca5eec7cf284e935}
+
+\begin{DoxyCompactList}\small\item\em Disabled parameterless constructor. \end{DoxyCompactList}\item 
+\hyperlink{classWater_a3dfea697acbcab2d5b7e673e1e986b8a}{Water} (const Course\-::\-Coordinate \&location, const std\-::shared\-\_\-ptr$<$ Course\-::i\-Game\-Event\-Handler $>$ \&eventhandler, const std\-::shared\-\_\-ptr$<$ Course\-::i\-Object\-Manager $>$ \&objectmanager, const unsigned int \&max\-\_\-build=0, const unsigned int \&max\-\_\-work=0, const Course\-::\-Resource\-Map \&production=Course\-::\-Const\-Resource\-Maps\-::\-W\-A\-T\-E\-R\-\_\-\-B\-P)
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+\hypertarget{classWater_a87325a8a816059701379de0a788aa0b5}{virtual \hyperlink{classWater_a87325a8a816059701379de0a788aa0b5}{$\sim$\-Water} ()=default}\label{classWater_a87325a8a816059701379de0a788aa0b5}
+
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classWater_a8da400015bc1da762833011c9bf76593}{get\-Type} () const override
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classWater}{Water} class represents water in the gameworld. 
+
+\hyperlink{classWater}{Water} has Basic\-Production\-: \par
+
+\begin{DoxyItemize}
+\item Money = 0
+\item Food = 0
+\item Wood = 0
+\item Stone = 0
+\item Ore = 0
+\end{DoxyItemize}
+
+You cannot build in water! 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classWater_a3dfea697acbcab2d5b7e673e1e986b8a}{\index{Water@{Water}!Water@{Water}}
+\index{Water@{Water}!Water@{Water}}
+\subsubsection[{Water}]{\setlength{\rightskip}{0pt plus 5cm}Water\-::\-Water (
+\begin{DoxyParamCaption}
+\item[{const Course\-::\-Coordinate \&}]{location, }
+\item[{const std\-::shared\-\_\-ptr$<$ Course\-::i\-Game\-Event\-Handler $>$ \&}]{eventhandler, }
+\item[{const std\-::shared\-\_\-ptr$<$ Course\-::i\-Object\-Manager $>$ \&}]{objectmanager, }
+\item[{const unsigned int \&}]{max\-\_\-build = {\ttfamily 0}, }
+\item[{const unsigned int \&}]{max\-\_\-work = {\ttfamily 0}, }
+\item[{const Course\-::\-Resource\-Map \&}]{production = {\ttfamily Course\-:\-:ConstResourceMaps\-:\-:WATER\-\_\-BP}}
+\end{DoxyParamCaption}
+)}}\label{classWater_a3dfea697acbcab2d5b7e673e1e986b8a}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & is the Coordinate where the Tile is located in the game. \\
+\hline
+{\em eventhandler} & points to the \hyperlink{classGameEventHandler}{Game\-Event\-Handler}. \\
+\hline
+{\em objectmanager} & points to the \hyperlink{classObjectManager}{Object\-Manager}. \\
+\hline
+{\em max\-\_\-build} & defines maximum amount of buildings on the tile \\
+\hline
+{\em max\-\_\-work} & defines maximum amount of workers on the tile \\
+\hline
+{\em production} & sets the tiles production \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classWater_a8da400015bc1da762833011c9bf76593}{\index{Water@{Water}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!Water@{Water}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Water\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classWater_a8da400015bc1da762833011c9bf76593}
+
+
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+tiles/water.\-h\item 
+tiles/water.\-cpp\end{DoxyCompactItemize}

@@ -24,16 +24,16 @@
 #include "workers/sawmillworker.h"
 #include "workers/basicworker.h"
 
+
+namespace Ui {
+class MapWindow;
+}
 /**
  * @brief The MapWindow class is the main game window.
  *
  * The UI consists of the game map, buttons for buying objects and \n
  * information related to the game state.
  */
-namespace Ui {
-class MapWindow;
-}
-
 class MapWindow : public QMainWindow
 {
     Q_OBJECT
@@ -130,8 +130,8 @@ public slots:
     /**
      * @brief Shows and hides info text of building and hiring buttons when \n
      *  hovered over with mouse.
-     * @param Objects of buttons that are being tracked for mouse hovering.
-     * @param Enter or leave events when mouse hovering over a button.
+     * @param watched Objects of buttons that are being tracked for mouse hovering.
+     * @param event Enter or leave events when mouse hovering over a button.
      * @return Event to parent class
      */
     bool eventFilter(QObject *watched, QEvent *event);

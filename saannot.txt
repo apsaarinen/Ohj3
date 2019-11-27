@@ -4,9 +4,10 @@ Pelin säännöt:
 
 2. Peli alkaa pelaajan 1 vuorolla.
 
-3. Pelaaja voi vuoronsa aikana vallata pelilaattoja ostamalla rakennuksia ja palkkaamalla työntekijöitä vapaana oleville pelilaatoille. Kun pelaaja päättää vuoronsa, vuoro siirtyy toiselle pelaajalle.
+3. Pelaaja voi vuoronsa aikana vallata pelilaattoja ostamalla rakennuksia ja/tai palkkaamalla työntekijöitä vapaana oleville pelilaatoille. Kun pelaaja päättää vuoronsa, vuoro siirtyy toiselle pelaajalle.
 
-4. Pelaaja saa resursseja vuoronsa aluksi omistamiensa pelilaattojen tulojen, sekä rakennusten ja työntekijöiden menojen perusteella. Tuloihin ja menoihin vaikuttavat pelaajan omistamat pelilaatat, sekä niille asetetut rakennukset ja työntekijät.
+4. Pelaaja saa resursseja vuoronsa aluksi omistamiensa pelilaattojen tulojen, sekä rakennusten ja työntekijöiden menojen perusteella. Tuloihin ja menoihin vaikuttavat pelaajan omistamat pelilaatat, sekä niille asetetut rakennukset ja työntekijät. Lisätietoa laattatyypeistä, rakennuksista ja 
+työntekijöistä löytyy peliohjeista.
 
 5. Kierroksen päätyttyä pelaaja, joka on ylittänyt pelin voittamiseksi vaaditun yhteenlaskettujen resurssien määrän voittaa pelin. Kierroksia pelataan, kunnes voittaja on selvillä, tai peli päättyy tasan.
 

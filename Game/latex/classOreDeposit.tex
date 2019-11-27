@@ -1,0 +1,134 @@
+\hypertarget{classOreDeposit}{\section{Ore\-Deposit Class Reference}
+\label{classOreDeposit}\index{Ore\-Deposit@{Ore\-Deposit}}
+}
+
+
+The \hyperlink{classOreDeposit}{Ore\-Deposit} class represents an ore deposit in the gameworld.  
+
+
+
+
+{\ttfamily \#include $<$oredeposit.\-h$>$}
+
+Inheritance diagram for Ore\-Deposit\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOreDeposit}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classOreDeposit_a7e70ca70704722afb22e6805728319d5}{\hyperlink{classOreDeposit_a7e70ca70704722afb22e6805728319d5}{Ore\-Deposit} ()=delete}\label{classOreDeposit_a7e70ca70704722afb22e6805728319d5}
+
+\begin{DoxyCompactList}\small\item\em Disabled parameterless constructor. \end{DoxyCompactList}\item 
+\hyperlink{classOreDeposit_a202bfd9f46012433952ef72d0f7a8042}{Ore\-Deposit} (const Course\-::\-Coordinate \&location, const std\-::shared\-\_\-ptr$<$ Course\-::i\-Game\-Event\-Handler $>$ \&eventhandler, const std\-::shared\-\_\-ptr$<$ Course\-::i\-Object\-Manager $>$ \&objectmanager, const unsigned int \&max\-\_\-build=2, const unsigned int \&max\-\_\-work=3, const Course\-::\-Resource\-Map \&production=Course\-::\-Const\-Resource\-Maps\-::\-O\-R\-E\-D\-E\-P\-O\-S\-I\-T\-\_\-\-B\-P)
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+\hypertarget{classOreDeposit_a05f039b0a39b07d79ec81e5abcfc06d1}{virtual \hyperlink{classOreDeposit_a05f039b0a39b07d79ec81e5abcfc06d1}{$\sim$\-Ore\-Deposit} ()=default}\label{classOreDeposit_a05f039b0a39b07d79ec81e5abcfc06d1}
+
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classOreDeposit_a83add72db67aa3cc0a8f6632c0275bb3}{get\-Type} () const override
+\item 
+void \hyperlink{classOreDeposit_ab7a167ede8452a7d0427717b49fa5f12}{add\-Building} (const std\-::shared\-\_\-ptr$<$ Course\-::\-Building\-Base $>$ \&building) override
+\begin{DoxyCompactList}\small\item\em Adds a new building-\/object to the tile. Building in ore deposit adds one hold-\/marker to the building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classOreDeposit}{Ore\-Deposit} class represents an ore deposit in the gameworld. 
+
+\hyperlink{classOreDeposit}{Ore\-Deposit} has Basic\-Production\-: \par
+
+\begin{DoxyItemize}
+\item Money = 3
+\item Food = 0
+\item Wood = 0
+\item Stone = 2
+\item Ore = 5
+\end{DoxyItemize}
+
+Building in the ore deposit takes time. So buildings get extra hold-\/marker.
+
+Tile supports 2 buildings. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOreDeposit_a202bfd9f46012433952ef72d0f7a8042}{\index{Ore\-Deposit@{Ore\-Deposit}!Ore\-Deposit@{Ore\-Deposit}}
+\index{Ore\-Deposit@{Ore\-Deposit}!OreDeposit@{Ore\-Deposit}}
+\subsubsection[{Ore\-Deposit}]{\setlength{\rightskip}{0pt plus 5cm}Ore\-Deposit\-::\-Ore\-Deposit (
+\begin{DoxyParamCaption}
+\item[{const Course\-::\-Coordinate \&}]{location, }
+\item[{const std\-::shared\-\_\-ptr$<$ Course\-::i\-Game\-Event\-Handler $>$ \&}]{eventhandler, }
+\item[{const std\-::shared\-\_\-ptr$<$ Course\-::i\-Object\-Manager $>$ \&}]{objectmanager, }
+\item[{const unsigned int \&}]{max\-\_\-build = {\ttfamily 2}, }
+\item[{const unsigned int \&}]{max\-\_\-work = {\ttfamily 3}, }
+\item[{const Course\-::\-Resource\-Map \&}]{production = {\ttfamily Course\-:\-:ConstResourceMaps\-:\-:OREDEPOSIT\-\_\-BP}}
+\end{DoxyParamCaption}
+)}}\label{classOreDeposit_a202bfd9f46012433952ef72d0f7a8042}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & is the Coordinate where the Tile is located in the game. \\
+\hline
+{\em eventhandler} & points to the \hyperlink{classGameEventHandler}{Game\-Event\-Handler}. \\
+\hline
+{\em objectmanager} & points to the \hyperlink{classObjectManager}{Object\-Manager}. \\
+\hline
+{\em max\-\_\-build} & defines maximum amount of buildings on the tile \\
+\hline
+{\em max\-\_\-work} & defines maximum amount of workers on the tile \\
+\hline
+{\em production} & sets the tiles production \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOreDeposit_ab7a167ede8452a7d0427717b49fa5f12}{\index{Ore\-Deposit@{Ore\-Deposit}!add\-Building@{add\-Building}}
+\index{add\-Building@{add\-Building}!OreDeposit@{Ore\-Deposit}}
+\subsubsection[{add\-Building}]{\setlength{\rightskip}{0pt plus 5cm}void Ore\-Deposit\-::add\-Building (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ Course\-::\-Building\-Base $>$ \&}]{building}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}}}\label{classOreDeposit_ab7a167ede8452a7d0427717b49fa5f12}
+
+
+Adds a new building-\/object to the tile. Building in ore deposit adds one hold-\/marker to the building. 
+
+Phases\-: \par
+
+\begin{DoxyEnumerate}
+\item Check that there is space for the building. \par
+
+\item Call parent's add\-Building \par
+
+\item Add a Hold\-Marker for the building. \par
+ \begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: Strong 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Owner\-Conflict} & -\/ If the tile's ownership prevents placing the {\bfseries building}. \\
+\hline
+{\em No\-Space} & -\/ If the tile doesn't have enough space for the {\bfseries building}. \\
+\hline
+\end{DoxyExceptions}
+
+\end{DoxyEnumerate}\hypertarget{classOreDeposit_a83add72db67aa3cc0a8f6632c0275bb3}{\index{Ore\-Deposit@{Ore\-Deposit}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!OreDeposit@{Ore\-Deposit}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Ore\-Deposit\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classOreDeposit_a83add72db67aa3cc0a8f6632c0275bb3}
+
+
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+tiles/oredeposit.\-h\item 
+tiles/oredeposit.\-cpp\end{DoxyCompactItemize}

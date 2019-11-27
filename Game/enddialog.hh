@@ -7,14 +7,14 @@
 
 namespace Ui {
 
+
+class enddialog;
+}
 /**
- * @brief Endialog class shows pop-up window announcing the result when game ends.
+ * @brief The enddialog class shows pop-up window announcing the result when game ends.
  *
  * Has text label for game result and exit button for quitting the game.
  */
-class enddialog;
-}
-
 class enddialog : public QDialog
 {
     Q_OBJECT

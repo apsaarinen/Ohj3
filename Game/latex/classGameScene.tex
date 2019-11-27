@@ -1,0 +1,273 @@
+\hypertarget{classGameScene}{\section{Game\-Scene Class Reference}
+\label{classGameScene}\index{Game\-Scene@{Game\-Scene}}
+}
+
+
+The \hyperlink{classGameScene}{Game\-Scene} is a custom Q\-Graphics\-Scene that shows a simple rendering of the game map.  
+
+
+
+
+{\ttfamily \#include $<$gamescene.\-h$>$}
+
+Inheritance diagram for Game\-Scene\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGameScene}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classGameScene_abb07876bec503c4f8e06251c67c92b43}{map\-Item\-Clicked} (Course\-::\-Object\-Id id)
+\begin{DoxyCompactList}\small\item\em signal that is triggered when a player clicks the map \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameScene_ac79cb09c68f4792ee46af017fa611655}{Game\-Scene} (Q\-Widget $\ast$qt\-\_\-parent=nullptr, int width=10, int height=10, int scale=50)
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+\hypertarget{classGameScene_acc18fe047b4c994237711f3bc3c5b957}{\hyperlink{classGameScene_acc18fe047b4c994237711f3bc3c5b957}{$\sim$\-Game\-Scene} ()=default}\label{classGameScene_acc18fe047b4c994237711f3bc3c5b957}
+
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classGameScene_a52aa6944e1827819bf202cc522aa1f34}{set\-Size} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Sets the map size and calls \hyperlink{classGameScene_af0961456d7d4195f165e46b3f8ee416c}{resize()}. \end{DoxyCompactList}\item 
+void \hyperlink{classGameScene_acf8e952cc950bfde99e0302ee0450437}{set\-Scale} (int scale)
+\begin{DoxyCompactList}\small\item\em set the tile size, aka scale of the map and calls \hyperlink{classGameScene_af0961456d7d4195f165e46b3f8ee416c}{resize()}. Function behaviour after objects has been drawn is not specified. \end{DoxyCompactList}\item 
+\hypertarget{classGameScene_af0961456d7d4195f165e46b3f8ee416c}{void \hyperlink{classGameScene_af0961456d7d4195f165e46b3f8ee416c}{resize} ()}\label{classGameScene_af0961456d7d4195f165e46b3f8ee416c}
+
+\begin{DoxyCompactList}\small\item\em resize recalculates the bounding rectangle \end{DoxyCompactList}\item 
+int \hyperlink{classGameScene_ab9902862cd5f550d9de3ff10cde80505}{get\-Scale} () const 
+\begin{DoxyCompactList}\small\item\em get the size of a single tile \end{DoxyCompactList}\item 
+std\-::pair$<$ int, int $>$ \hyperlink{classGameScene_a8c5c9cd5997ca6b17b2924f5cc09902c}{get\-Size} () const 
+\begin{DoxyCompactList}\small\item\em get the size of the map. \end{DoxyCompactList}\item 
+void \hyperlink{classGameScene_aaab2fceed119bca93ecf732e1f9aaa40}{draw\-Item} (std\-::shared\-\_\-ptr$<$ Course\-::\-Game\-Object $>$ obj, int offset=0)
+\begin{DoxyCompactList}\small\item\em draw a new item to the map. \end{DoxyCompactList}\item 
+void \hyperlink{classGameScene_a1cab3171dd8296baa28b091c5e8e22ab}{remove\-Item} (std\-::shared\-\_\-ptr$<$ Course\-::\-Game\-Object $>$ obj)
+\begin{DoxyCompactList}\small\item\em tries to remove drawn object at the location obj points to. If there's multiple objects, will remove the one that matches obj. \end{DoxyCompactList}\item 
+void \hyperlink{classGameScene_a8afcbd20cf3d7fa80dbf06883da17c2b}{update\-Item} (std\-::shared\-\_\-ptr$<$ Course\-::\-Game\-Object $>$ obj)
+\begin{DoxyCompactList}\small\item\em updates the position of obj. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classGameScene_a87d0fd08b1540319e8770e187379d4ba}{event} (Q\-Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em simple event handler that notifies when objects or the play area is clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classGameScene}{Game\-Scene} is a custom Q\-Graphics\-Scene that shows a simple rendering of the game map. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGameScene_ac79cb09c68f4792ee46af017fa611655}{\index{Game\-Scene@{Game\-Scene}!Game\-Scene@{Game\-Scene}}
+\index{Game\-Scene@{Game\-Scene}!GameScene@{Game\-Scene}}
+\subsubsection[{Game\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}Game\-Scene\-::\-Game\-Scene (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{qt\-\_\-parent = {\ttfamily nullptr}, }
+\item[{int}]{width = {\ttfamily 10}, }
+\item[{int}]{height = {\ttfamily 10}, }
+\item[{int}]{scale = {\ttfamily 50}}
+\end{DoxyParamCaption}
+)}}\label{classGameScene_ac79cb09c68f4792ee46af017fa611655}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em qt\-\_\-parent} & points to the parent object per Qt's parent-\/child-\/system. \\
+\hline
+{\em width} & in tiles for the game map. \\
+\hline
+{\em height} & in tiles for the game map. \\
+\hline
+{\em scale} & is the size in pixels of a single square tile.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+0 $<$ width $<$= 100 \&\& 0 $<$ height $<$= 100 \&\& 0 $<$ scale $<$= 500. Otherwise default values are used for the created object. 
+\end{DoxyPrecond}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGameScene_aaab2fceed119bca93ecf732e1f9aaa40}{\index{Game\-Scene@{Game\-Scene}!draw\-Item@{draw\-Item}}
+\index{draw\-Item@{draw\-Item}!GameScene@{Game\-Scene}}
+\subsubsection[{draw\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Scene\-::draw\-Item (
+\begin{DoxyParamCaption}
+\item[{std\-::shared\-\_\-ptr$<$ Course\-::\-Game\-Object $>$}]{obj, }
+\item[{int}]{offset = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classGameScene_aaab2fceed119bca93ecf732e1f9aaa40}
+
+
+draw a new item to the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & shared ptr to the object \\
+\hline
+{\em offset} & for the item in the tile \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+obj must have a valid coordinate property. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: None 
+\end{DoxyPostcond}
+\hypertarget{classGameScene_a87d0fd08b1540319e8770e187379d4ba}{\index{Game\-Scene@{Game\-Scene}!event@{event}}
+\index{event@{event}!GameScene@{Game\-Scene}}
+\subsubsection[{event}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\-Scene\-::event (
+\begin{DoxyParamCaption}
+\item[{Q\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGameScene_a87d0fd08b1540319e8770e187379d4ba}
+
+
+simple event handler that notifies when objects or the play area is clicked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & that has happened. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True\-: if event was handled in the handler. False\-: if the event handling was passed over. 
+\end{DoxyReturn}
+\hypertarget{classGameScene_ab9902862cd5f550d9de3ff10cde80505}{\index{Game\-Scene@{Game\-Scene}!get\-Scale@{get\-Scale}}
+\index{get\-Scale@{get\-Scale}!GameScene@{Game\-Scene}}
+\subsubsection[{get\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}int Game\-Scene\-::get\-Scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGameScene_ab9902862cd5f550d9de3ff10cde80505}
+
+
+get the size of a single tile 
+
+\begin{DoxyReturn}{Returns}
+the size of a tile in pixels. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\hypertarget{classGameScene_a8c5c9cd5997ca6b17b2924f5cc09902c}{\index{Game\-Scene@{Game\-Scene}!get\-Size@{get\-Size}}
+\index{get\-Size@{get\-Size}!GameScene@{Game\-Scene}}
+\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$ int, int $>$ Game\-Scene\-::get\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGameScene_a8c5c9cd5997ca6b17b2924f5cc09902c}
+
+
+get the size of the map. 
+
+\begin{DoxyReturn}{Returns}
+pair$<$width, height$>$ in tiles. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\hypertarget{classGameScene_abb07876bec503c4f8e06251c67c92b43}{\index{Game\-Scene@{Game\-Scene}!map\-Item\-Clicked@{map\-Item\-Clicked}}
+\index{map\-Item\-Clicked@{map\-Item\-Clicked}!GameScene@{Game\-Scene}}
+\subsubsection[{map\-Item\-Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Scene\-::map\-Item\-Clicked (
+\begin{DoxyParamCaption}
+\item[{Course\-::\-Object\-Id}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classGameScene_abb07876bec503c4f8e06251c67c92b43}
+
+
+signal that is triggered when a player clicks the map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & of the tile that was clicked. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGameScene_a1cab3171dd8296baa28b091c5e8e22ab}{\index{Game\-Scene@{Game\-Scene}!remove\-Item@{remove\-Item}}
+\index{remove\-Item@{remove\-Item}!GameScene@{Game\-Scene}}
+\subsubsection[{remove\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Scene\-::remove\-Item (
+\begin{DoxyParamCaption}
+\item[{std\-::shared\-\_\-ptr$<$ Course\-::\-Game\-Object $>$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classGameScene_a1cab3171dd8296baa28b091c5e8e22ab}
+
+
+tries to remove drawn object at the location obj points to. If there's multiple objects, will remove the one that matches obj. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & shared ptr to the object being deleted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: None 
+\end{DoxyPostcond}
+\hypertarget{classGameScene_acf8e952cc950bfde99e0302ee0450437}{\index{Game\-Scene@{Game\-Scene}!set\-Scale@{set\-Scale}}
+\index{set\-Scale@{set\-Scale}!GameScene@{Game\-Scene}}
+\subsubsection[{set\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Scene\-::set\-Scale (
+\begin{DoxyParamCaption}
+\item[{int}]{scale}
+\end{DoxyParamCaption}
+)}}\label{classGameScene_acf8e952cc950bfde99e0302ee0450437}
+
+
+set the tile size, aka scale of the map and calls \hyperlink{classGameScene_af0961456d7d4195f165e46b3f8ee416c}{resize()}. Function behaviour after objects has been drawn is not specified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & in pixels. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+0 $<$ scale $<$= 500 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Scene scale is set to scale. 
+
+Exception guarantee\-: None 
+\end{DoxyPostcond}
+\hypertarget{classGameScene_a52aa6944e1827819bf202cc522aa1f34}{\index{Game\-Scene@{Game\-Scene}!set\-Size@{set\-Size}}
+\index{set\-Size@{set\-Size}!GameScene@{Game\-Scene}}
+\subsubsection[{set\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Scene\-::set\-Size (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}\label{classGameScene_a52aa6944e1827819bf202cc522aa1f34}
+
+
+Sets the map size and calls \hyperlink{classGameScene_af0961456d7d4195f165e46b3f8ee416c}{resize()}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & in tiles. \\
+\hline
+{\em height} & in tiles. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+width and height must each be between 1 and 100. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+width and height are set to given sizes. 
+
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\hypertarget{classGameScene_a8afcbd20cf3d7fa80dbf06883da17c2b}{\index{Game\-Scene@{Game\-Scene}!update\-Item@{update\-Item}}
+\index{update\-Item@{update\-Item}!GameScene@{Game\-Scene}}
+\subsubsection[{update\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Scene\-::update\-Item (
+\begin{DoxyParamCaption}
+\item[{std\-::shared\-\_\-ptr$<$ Course\-::\-Game\-Object $>$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classGameScene_a8afcbd20cf3d7fa80dbf06883da17c2b}
+
+
+updates the position of obj. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & shared ptr to the obj being updated. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+graphics/gamescene.\-h\item 
+graphics/gamescene.\-cpp\end{DoxyCompactItemize}

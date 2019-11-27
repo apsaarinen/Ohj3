@@ -5,13 +5,13 @@
 #include <QDialog>
 
 namespace Ui {
-/**
- * @brief Begindialog class shows pop-up window in the beginning of the game. Asks \n
- * for player names, amount of starting resources and amount of resources to win.
- */
+
 class begindialog;
 }
-
+/**
+ * @brief The begindialog class shows pop-up window in the beginning of the game. Asks \n
+ * for player names, amount of starting resources and amount of resources to win.
+ */
 class begindialog : public QDialog
 {
     Q_OBJECT
