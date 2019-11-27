@@ -1,0 +1,236 @@
+\hypertarget{classGameEventHandler}{\section{Game\-Event\-Handler Class Reference}
+\label{classGameEventHandler}\index{Game\-Event\-Handler@{Game\-Event\-Handler}}
+}
+
+
+The \hyperlink{classGameEventHandler}{Game\-Event\-Handler} class controls and stores the game's status.  
+
+
+
+
+{\ttfamily \#include $<$gameeventhandler.\-h$>$}
+
+Inheritance diagram for Game\-Event\-Handler\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGameEventHandler}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGameEventHandler_a5c739015e6a26976d4941581c7f4852f}{\hyperlink{classGameEventHandler_a5c739015e6a26976d4941581c7f4852f}{Game\-Event\-Handler} ()}\label{classGameEventHandler_a5c739015e6a26976d4941581c7f4852f}
+
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+bool \hyperlink{classGameEventHandler_a7b0209a6043ba6626228c5340e9a7892}{modify\-Resource} (std\-::shared\-\_\-ptr$<$ Course\-::\-Player\-Base $>$ player, Course\-::\-Basic\-Resource resource, int amount)
+\begin{DoxyCompactList}\small\item\em Modify \hyperlink{classPlayer}{Player}'s resource. Can be used to both sum or subtract. \end{DoxyCompactList}\item 
+bool \hyperlink{classGameEventHandler_acae1377e4a362a488b67bb7c8767a94e}{modify\-Resources} (std\-::shared\-\_\-ptr$<$ Course\-::\-Player\-Base $>$ player, Course\-::\-Resource\-Map resources)
+\begin{DoxyCompactList}\small\item\em Modify \hyperlink{classPlayer}{Player}'s resources. Can be used to both sum or subtract. \end{DoxyCompactList}\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classPlayer}{Player} $>$ \hyperlink{classGameEventHandler_abdea4b1e077b65b05451a9a8fe679831}{get\-Player\-In\-Turn} ()
+\begin{DoxyCompactList}\small\item\em Gets the player in turn. \end{DoxyCompactList}\item 
+void \hyperlink{classGameEventHandler_ab103e178471df2a5c6f5f769bd1e0459}{set\-Player\-In\-Turn} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classPlayer}{Player} $>$ player)
+\begin{DoxyCompactList}\small\item\em Sets the player in turn. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classPlayer}{Player} $>$ $>$ \hyperlink{classGameEventHandler_aa5ad66ca2e396c97ad2f9328234cacd9}{check\-Win\-Condition} (std\-::vector$<$ std\-::shared\-\_\-ptr$<$ \hyperlink{classPlayer}{Player} $>$$>$ players)
+\begin{DoxyCompactList}\small\item\em Checks if players have won. \end{DoxyCompactList}\item 
+void \hyperlink{classGameEventHandler_a1c5d965a153cf81b0d594cf49625a4d9}{set\-Resources\-To\-Win} (const int resources\-To\-Win)
+\begin{DoxyCompactList}\small\item\em Sets the sum of resources needed to win the game. \end{DoxyCompactList}\item 
+void \hyperlink{classGameEventHandler_a23bc60e5d802eb151d0f227c3ec75d82}{set\-Buying\-Flag} (const bool buying)
+\begin{DoxyCompactList}\small\item\em Sets the flag telling that we are in the middle of buying something. \end{DoxyCompactList}\item 
+bool \hyperlink{classGameEventHandler_a682951eb61bb9653a1a84bd72ee8ea9f}{is\-Player\-Buying} () const 
+\begin{DoxyCompactList}\small\item\em Checks if we are in the middle of buying something. \end{DoxyCompactList}\item 
+int \hyperlink{classGameEventHandler_a8d8ce2069c3bc1e96ca8d6bbfca6786a}{get\-Rounds} () const 
+\begin{DoxyCompactList}\small\item\em Gets the amount of rounds the game has been played. \end{DoxyCompactList}\item 
+int \hyperlink{classGameEventHandler_a8ab76d633c0cc009e47639171df7b0bd}{increase\-Rounds} ()
+\begin{DoxyCompactList}\small\item\em Increases the game round by one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classGameEventHandler}{Game\-Event\-Handler} class controls and stores the game's status. 
+
+Only one of these should exists at any given point in the time 
+
+\subsection{Member Function Documentation}
+\hypertarget{classGameEventHandler_aa5ad66ca2e396c97ad2f9328234cacd9}{\index{Game\-Event\-Handler@{Game\-Event\-Handler}!check\-Win\-Condition@{check\-Win\-Condition}}
+\index{check\-Win\-Condition@{check\-Win\-Condition}!GameEventHandler@{Game\-Event\-Handler}}
+\subsubsection[{check\-Win\-Condition}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::shared\-\_\-ptr$<$ {\bf Player} $>$ $>$ Game\-Event\-Handler\-::check\-Win\-Condition (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::shared\-\_\-ptr$<$ {\bf Player} $>$$>$}]{players}
+\end{DoxyParamCaption}
+)}}\label{classGameEventHandler_aa5ad66ca2e396c97ad2f9328234cacd9}
+
+
+Checks if players have won. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em players} & Vector of pointers to \hyperlink{classPlayer}{Player} objects. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of pointers to \hyperlink{classPlayer}{Player} objects that have won 
+\end{DoxyReturn}
+\hypertarget{classGameEventHandler_abdea4b1e077b65b05451a9a8fe679831}{\index{Game\-Event\-Handler@{Game\-Event\-Handler}!get\-Player\-In\-Turn@{get\-Player\-In\-Turn}}
+\index{get\-Player\-In\-Turn@{get\-Player\-In\-Turn}!GameEventHandler@{Game\-Event\-Handler}}
+\subsubsection[{get\-Player\-In\-Turn}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<$ {\bf Player} $>$ Game\-Event\-Handler\-::get\-Player\-In\-Turn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGameEventHandler_abdea4b1e077b65b05451a9a8fe679831}
+
+
+Gets the player in turn. 
+
+\begin{DoxyReturn}{Returns}
+the player whose turn it is currently 
+\end{DoxyReturn}
+\hypertarget{classGameEventHandler_a8d8ce2069c3bc1e96ca8d6bbfca6786a}{\index{Game\-Event\-Handler@{Game\-Event\-Handler}!get\-Rounds@{get\-Rounds}}
+\index{get\-Rounds@{get\-Rounds}!GameEventHandler@{Game\-Event\-Handler}}
+\subsubsection[{get\-Rounds}]{\setlength{\rightskip}{0pt plus 5cm}int Game\-Event\-Handler\-::get\-Rounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGameEventHandler_a8d8ce2069c3bc1e96ca8d6bbfca6786a}
+
+
+Gets the amount of rounds the game has been played. 
+
+\begin{DoxyReturn}{Returns}
+Amount of rounds 
+\end{DoxyReturn}
+\hypertarget{classGameEventHandler_a8ab76d633c0cc009e47639171df7b0bd}{\index{Game\-Event\-Handler@{Game\-Event\-Handler}!increase\-Rounds@{increase\-Rounds}}
+\index{increase\-Rounds@{increase\-Rounds}!GameEventHandler@{Game\-Event\-Handler}}
+\subsubsection[{increase\-Rounds}]{\setlength{\rightskip}{0pt plus 5cm}int Game\-Event\-Handler\-::increase\-Rounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGameEventHandler_a8ab76d633c0cc009e47639171df7b0bd}
+
+
+Increases the game round by one. 
+
+\begin{DoxyReturn}{Returns}
+Amount of rounds after the increase 
+\end{DoxyReturn}
+\hypertarget{classGameEventHandler_a682951eb61bb9653a1a84bd72ee8ea9f}{\index{Game\-Event\-Handler@{Game\-Event\-Handler}!is\-Player\-Buying@{is\-Player\-Buying}}
+\index{is\-Player\-Buying@{is\-Player\-Buying}!GameEventHandler@{Game\-Event\-Handler}}
+\subsubsection[{is\-Player\-Buying}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\-Event\-Handler\-::is\-Player\-Buying (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGameEventHandler_a682951eb61bb9653a1a84bd72ee8ea9f}
+
+
+Checks if we are in the middle of buying something. 
+
+\begin{DoxyReturn}{Returns}
+Boolean value telling if we are buying something 
+\end{DoxyReturn}
+\hypertarget{classGameEventHandler_a7b0209a6043ba6626228c5340e9a7892}{\index{Game\-Event\-Handler@{Game\-Event\-Handler}!modify\-Resource@{modify\-Resource}}
+\index{modify\-Resource@{modify\-Resource}!GameEventHandler@{Game\-Event\-Handler}}
+\subsubsection[{modify\-Resource}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\-Event\-Handler\-::modify\-Resource (
+\begin{DoxyParamCaption}
+\item[{std\-::shared\-\_\-ptr$<$ Course\-::\-Player\-Base $>$}]{player, }
+\item[{Course\-::\-Basic\-Resource}]{resource, }
+\item[{int}]{amount}
+\end{DoxyParamCaption}
+)}}\label{classGameEventHandler_a7b0209a6043ba6626228c5340e9a7892}
+
+
+Modify \hyperlink{classPlayer}{Player}'s resource. Can be used to both sum or subtract. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the \hyperlink{classPlayer}{Player} whose resource is being modified. \\
+\hline
+{\em resource} & Defines the modified resource. \\
+\hline
+{\em amount} & Defines the amount of change. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: Basic 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+True -\/ Modification was succesful. \par
+False -\/ Modification failed. \par
+
+\end{DoxyReturn}
+\hypertarget{classGameEventHandler_acae1377e4a362a488b67bb7c8767a94e}{\index{Game\-Event\-Handler@{Game\-Event\-Handler}!modify\-Resources@{modify\-Resources}}
+\index{modify\-Resources@{modify\-Resources}!GameEventHandler@{Game\-Event\-Handler}}
+\subsubsection[{modify\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\-Event\-Handler\-::modify\-Resources (
+\begin{DoxyParamCaption}
+\item[{std\-::shared\-\_\-ptr$<$ Course\-::\-Player\-Base $>$}]{player, }
+\item[{Course\-::\-Resource\-Map}]{resources}
+\end{DoxyParamCaption}
+)}}\label{classGameEventHandler_acae1377e4a362a488b67bb7c8767a94e}
+
+
+Modify \hyperlink{classPlayer}{Player}'s resources. Can be used to both sum or subtract. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the \hyperlink{classPlayer}{Player} whose resources are being modified. \\
+\hline
+{\em resources} & Resource\-Map containing change amounts. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True -\/ Modification was succesful. \par
+False -\/ Modification failed. \par
+
+\end{DoxyReturn}
+\hypertarget{classGameEventHandler_a23bc60e5d802eb151d0f227c3ec75d82}{\index{Game\-Event\-Handler@{Game\-Event\-Handler}!set\-Buying\-Flag@{set\-Buying\-Flag}}
+\index{set\-Buying\-Flag@{set\-Buying\-Flag}!GameEventHandler@{Game\-Event\-Handler}}
+\subsubsection[{set\-Buying\-Flag}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Event\-Handler\-::set\-Buying\-Flag (
+\begin{DoxyParamCaption}
+\item[{const bool}]{buying}
+\end{DoxyParamCaption}
+)}}\label{classGameEventHandler_a23bc60e5d802eb151d0f227c3ec75d82}
+
+
+Sets the flag telling that we are in the middle of buying something. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buying} & Flag for buying \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGameEventHandler_ab103e178471df2a5c6f5f769bd1e0459}{\index{Game\-Event\-Handler@{Game\-Event\-Handler}!set\-Player\-In\-Turn@{set\-Player\-In\-Turn}}
+\index{set\-Player\-In\-Turn@{set\-Player\-In\-Turn}!GameEventHandler@{Game\-Event\-Handler}}
+\subsubsection[{set\-Player\-In\-Turn}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Event\-Handler\-::set\-Player\-In\-Turn (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Player} $>$}]{player}
+\end{DoxyParamCaption}
+)}}\label{classGameEventHandler_ab103e178471df2a5c6f5f769bd1e0459}
+
+
+Sets the player in turn. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the \hyperlink{classPlayer}{Player}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGameEventHandler_a1c5d965a153cf81b0d594cf49625a4d9}{\index{Game\-Event\-Handler@{Game\-Event\-Handler}!set\-Resources\-To\-Win@{set\-Resources\-To\-Win}}
+\index{set\-Resources\-To\-Win@{set\-Resources\-To\-Win}!GameEventHandler@{Game\-Event\-Handler}}
+\subsubsection[{set\-Resources\-To\-Win}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Event\-Handler\-::set\-Resources\-To\-Win (
+\begin{DoxyParamCaption}
+\item[{const int}]{resources\-To\-Win}
+\end{DoxyParamCaption}
+)}}\label{classGameEventHandler_a1c5d965a153cf81b0d594cf49625a4d9}
+
+
+Sets the sum of resources needed to win the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resources\-To\-Win} & Amount of resources as a sum \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+gameeventhandler.\-h\item 
+gameeventhandler.\-cpp\end{DoxyCompactItemize}

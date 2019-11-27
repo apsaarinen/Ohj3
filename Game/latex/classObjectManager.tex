@@ -1,0 +1,263 @@
+\hypertarget{classObjectManager}{\section{Object\-Manager Class Reference}
+\label{classObjectManager}\index{Object\-Manager@{Object\-Manager}}
+}
+
+
+The \hyperlink{classObjectManager}{Object\-Manager} class stores Players and Game\-Objects \par
+(Tiles, Buildings and workers).  
+
+
+
+
+{\ttfamily \#include $<$objectmanager.\-h$>$}
+
+Inheritance diagram for Object\-Manager\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classObjectManager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classObjectManager_a6fa9372c7c3a8da88412f4158ca3dfd9}{\hyperlink{classObjectManager_a6fa9372c7c3a8da88412f4158ca3dfd9}{Object\-Manager} ()}\label{classObjectManager_a6fa9372c7c3a8da88412f4158ca3dfd9}
+
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+void \hyperlink{classObjectManager_a00b483db15dd68a6da5b6dd42a3cdfe0}{add\-Tiles} (const std\-::vector$<$ std\-::shared\-\_\-ptr$<$ Course\-::\-Tile\-Base $>$$>$ \&tiles)
+\begin{DoxyCompactList}\small\item\em Adds new tiles to the \hyperlink{classObjectManager}{Object\-Manager}. \end{DoxyCompactList}\item 
+std\-::shared\-\_\-ptr$<$ Course\-::\-Tile\-Base $>$ \hyperlink{classObjectManager_a5e9109ea92cf452ffdf02ed8cc6f8260}{get\-Tile} (const Course\-::\-Coordinate \&coordinate)
+\begin{DoxyCompactList}\small\item\em Returns a shared pointer to a Tile that has specified coordinate. \end{DoxyCompactList}\item 
+std\-::shared\-\_\-ptr$<$ Course\-::\-Tile\-Base $>$ \hyperlink{classObjectManager_a1bc804e3771e3a40bce0cc462ec35b97}{get\-Tile} (const Course\-::\-Object\-Id \&id)
+\begin{DoxyCompactList}\small\item\em Returns a shared pointer to a Tile that has specified I\-D. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::shared\-\_\-ptr\\*
+$<$ Course\-::\-Tile\-Base $>$ $>$ \hyperlink{classObjectManager_a891e222168b45f7cacb522852fb45cf1}{get\-Tiles} (const std\-::vector$<$ Course\-::\-Coordinate $>$ \&coordinates)
+\begin{DoxyCompactList}\small\item\em Returns a vector of shared pointers to Tiles specified by a vector of Coordinates. \end{DoxyCompactList}\item 
+const std\-::vector\\*
+$<$ std\-::shared\-\_\-ptr\\*
+$<$ Course\-::\-Tile\-Base $>$ $>$ \hyperlink{classObjectManager_adf0c963a866b9e22acb3c5f8af0a5f87}{get\-Tiles} () const 
+\begin{DoxyCompactList}\small\item\em Returns a vector of shared pointers to all stored Tiles. \end{DoxyCompactList}\item 
+void \hyperlink{classObjectManager_a87d894cca083ccc6f1e764f647627850}{add\-Player} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classPlayer}{Player} $>$ player)
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{classPlayer}{Player} to the \hyperlink{classObjectManager}{Object\-Manager}. \end{DoxyCompactList}\item 
+const std\-::vector\\*
+$<$ std\-::shared\-\_\-ptr$<$ \hyperlink{classPlayer}{Player} $>$ $>$ \hyperlink{classObjectManager_a192bf2fa88041eeb0ba8b35723b99504}{get\-Players} () const 
+\begin{DoxyCompactList}\small\item\em Returns a vector of shared pointers to all stored Players. \end{DoxyCompactList}\item 
+bool \hyperlink{classObjectManager_ac658e0043de7550745f723bc7035cd8d}{is\-Last\-Player} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classPlayer}{Player} $>$ player)
+\begin{DoxyCompactList}\small\item\em Returns whether a player is the last player to act. \end{DoxyCompactList}\item 
+void \hyperlink{classObjectManager_a27ae17c7d302790f6727b29fdc523092}{add\-Placeable\-Object} (const std\-::shared\-\_\-ptr$<$ Course\-::\-Placeable\-Game\-Object $>$ object)
+\begin{DoxyCompactList}\small\item\em Adds a new Placeable\-Game\-Object to the \hyperlink{classObjectManager}{Object\-Manager}. \end{DoxyCompactList}\item 
+const std\-::shared\-\_\-ptr\\*
+$<$ Course\-::\-Placeable\-Game\-Object $>$ \hyperlink{classObjectManager_a91786b1034989ae95b18e923a8846d26}{get\-Newest\-Placeable\-Object} ()
+\begin{DoxyCompactList}\small\item\em Returns a shared pointer to a Placeable\-Game\-Object that \par
+was last added. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classObjectManager}{Object\-Manager} class stores Players and Game\-Objects \par
+(Tiles, Buildings and workers). 
+
+Only one of these should exists at any given point in the time 
+
+\subsection{Member Function Documentation}
+\hypertarget{classObjectManager_a27ae17c7d302790f6727b29fdc523092}{\index{Object\-Manager@{Object\-Manager}!add\-Placeable\-Object@{add\-Placeable\-Object}}
+\index{add\-Placeable\-Object@{add\-Placeable\-Object}!ObjectManager@{Object\-Manager}}
+\subsubsection[{add\-Placeable\-Object}]{\setlength{\rightskip}{0pt plus 5cm}void Object\-Manager\-::add\-Placeable\-Object (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ Course\-::\-Placeable\-Game\-Object $>$}]{object}
+\end{DoxyParamCaption}
+)}}\label{classObjectManager_a27ae17c7d302790f6727b29fdc523092}
+
+
+Adds a new Placeable\-Game\-Object to the \hyperlink{classObjectManager}{Object\-Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & a pointer to a Placeable\-Game\-Object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+The player-\/pointer is stored in the \hyperlink{classObjectManager}{Object\-Manager}. Exception Guarantee\-: Basic 
+\end{DoxyPostcond}
+\hypertarget{classObjectManager_a87d894cca083ccc6f1e764f647627850}{\index{Object\-Manager@{Object\-Manager}!add\-Player@{add\-Player}}
+\index{add\-Player@{add\-Player}!ObjectManager@{Object\-Manager}}
+\subsubsection[{add\-Player}]{\setlength{\rightskip}{0pt plus 5cm}void Object\-Manager\-::add\-Player (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Player} $>$}]{player}
+\end{DoxyParamCaption}
+)}}\label{classObjectManager_a87d894cca083ccc6f1e764f647627850}
+
+
+Adds a new \hyperlink{classPlayer}{Player} to the \hyperlink{classObjectManager}{Object\-Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & a pointer to a \hyperlink{classPlayer}{Player} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+The player-\/pointer is stored in the \hyperlink{classObjectManager}{Object\-Manager}. Exception Guarantee\-: Basic 
+\end{DoxyPostcond}
+\hypertarget{classObjectManager_a00b483db15dd68a6da5b6dd42a3cdfe0}{\index{Object\-Manager@{Object\-Manager}!add\-Tiles@{add\-Tiles}}
+\index{add\-Tiles@{add\-Tiles}!ObjectManager@{Object\-Manager}}
+\subsubsection[{add\-Tiles}]{\setlength{\rightskip}{0pt plus 5cm}void Object\-Manager\-::add\-Tiles (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ std\-::shared\-\_\-ptr$<$ Course\-::\-Tile\-Base $>$$>$ \&}]{tiles}
+\end{DoxyParamCaption}
+)}}\label{classObjectManager_a00b483db15dd68a6da5b6dd42a3cdfe0}
+
+
+Adds new tiles to the \hyperlink{classObjectManager}{Object\-Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tiles} & a vector that contains the Tiles to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+The tile-\/pointers in the vector are stored in the \hyperlink{classObjectManager}{Object\-Manager}. Exception Guarantee\-: Basic 
+\end{DoxyPostcond}
+\hypertarget{classObjectManager_a91786b1034989ae95b18e923a8846d26}{\index{Object\-Manager@{Object\-Manager}!get\-Newest\-Placeable\-Object@{get\-Newest\-Placeable\-Object}}
+\index{get\-Newest\-Placeable\-Object@{get\-Newest\-Placeable\-Object}!ObjectManager@{Object\-Manager}}
+\subsubsection[{get\-Newest\-Placeable\-Object}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::shared\-\_\-ptr$<$ Course\-::\-Placeable\-Game\-Object $>$ Object\-Manager\-::get\-Newest\-Placeable\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classObjectManager_a91786b1034989ae95b18e923a8846d26}
+
+
+Returns a shared pointer to a Placeable\-Game\-Object that \par
+was last added. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to a Placeable\-Game\-Object that was last added 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception Guarantee\-: Basic 
+\end{DoxyPostcond}
+\hypertarget{classObjectManager_a192bf2fa88041eeb0ba8b35723b99504}{\index{Object\-Manager@{Object\-Manager}!get\-Players@{get\-Players}}
+\index{get\-Players@{get\-Players}!ObjectManager@{Object\-Manager}}
+\subsubsection[{get\-Players}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::vector$<$ std\-::shared\-\_\-ptr$<$ {\bf Player} $>$ $>$ Object\-Manager\-::get\-Players (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classObjectManager_a192bf2fa88041eeb0ba8b35723b99504}
+
+
+Returns a vector of shared pointers to all stored Players. 
+
+\begin{DoxyReturn}{Returns}
+Vector that contains pointers to Players 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception Guarantee\-: Basic 
+\end{DoxyPostcond}
+\hypertarget{classObjectManager_a5e9109ea92cf452ffdf02ed8cc6f8260}{\index{Object\-Manager@{Object\-Manager}!get\-Tile@{get\-Tile}}
+\index{get\-Tile@{get\-Tile}!ObjectManager@{Object\-Manager}}
+\subsubsection[{get\-Tile}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<$ Course\-::\-Tile\-Base $>$ Object\-Manager\-::get\-Tile (
+\begin{DoxyParamCaption}
+\item[{const Course\-::\-Coordinate \&}]{coordinate}
+\end{DoxyParamCaption}
+)}}\label{classObjectManager_a5e9109ea92cf452ffdf02ed8cc6f8260}
+
+
+Returns a shared pointer to a Tile that has specified coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordinate} & Requested Tile's Coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a Tile that has the given coordinate. If no for the coordinate exists, return empty pointer. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception Guarantee\-: Basic 
+\end{DoxyPostcond}
+\hypertarget{classObjectManager_a1bc804e3771e3a40bce0cc462ec35b97}{\index{Object\-Manager@{Object\-Manager}!get\-Tile@{get\-Tile}}
+\index{get\-Tile@{get\-Tile}!ObjectManager@{Object\-Manager}}
+\subsubsection[{get\-Tile}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<$ Course\-::\-Tile\-Base $>$ Object\-Manager\-::get\-Tile (
+\begin{DoxyParamCaption}
+\item[{const Course\-::\-Object\-Id \&}]{id}
+\end{DoxyParamCaption}
+)}}\label{classObjectManager_a1bc804e3771e3a40bce0cc462ec35b97}
+
+
+Returns a shared pointer to a Tile that has specified I\-D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Tile's Object\-Id. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the Tile that has the given I\-D If no for the id exists, return empty pointer. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception Guarantee\-: Basic 
+\end{DoxyPostcond}
+\hypertarget{classObjectManager_a891e222168b45f7cacb522852fb45cf1}{\index{Object\-Manager@{Object\-Manager}!get\-Tiles@{get\-Tiles}}
+\index{get\-Tiles@{get\-Tiles}!ObjectManager@{Object\-Manager}}
+\subsubsection[{get\-Tiles}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::shared\-\_\-ptr$<$ Course\-::\-Tile\-Base $>$ $>$ Object\-Manager\-::get\-Tiles (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ Course\-::\-Coordinate $>$ \&}]{coordinates}
+\end{DoxyParamCaption}
+)}}\label{classObjectManager_a891e222168b45f7cacb522852fb45cf1}
+
+
+Returns a vector of shared pointers to Tiles specified by a vector of Coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordinates} & a vector of Coordinates for the requested Tiles \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of that contains pointers to Tile's that match the coordinates. The vector is empty if no matches were made. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception Guarantee\-: Basic 
+\end{DoxyPostcond}
+\hypertarget{classObjectManager_adf0c963a866b9e22acb3c5f8af0a5f87}{\index{Object\-Manager@{Object\-Manager}!get\-Tiles@{get\-Tiles}}
+\index{get\-Tiles@{get\-Tiles}!ObjectManager@{Object\-Manager}}
+\subsubsection[{get\-Tiles}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::vector$<$ std\-::shared\-\_\-ptr$<$ Course\-::\-Tile\-Base $>$ $>$ Object\-Manager\-::get\-Tiles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classObjectManager_adf0c963a866b9e22acb3c5f8af0a5f87}
+
+
+Returns a vector of shared pointers to all stored Tiles. 
+
+\begin{DoxyReturn}{Returns}
+Vector that contains pointers to Tiles 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception Guarantee\-: Basic 
+\end{DoxyPostcond}
+\hypertarget{classObjectManager_ac658e0043de7550745f723bc7035cd8d}{\index{Object\-Manager@{Object\-Manager}!is\-Last\-Player@{is\-Last\-Player}}
+\index{is\-Last\-Player@{is\-Last\-Player}!ObjectManager@{Object\-Manager}}
+\subsubsection[{is\-Last\-Player}]{\setlength{\rightskip}{0pt plus 5cm}bool Object\-Manager\-::is\-Last\-Player (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Player} $>$}]{player}
+\end{DoxyParamCaption}
+)}}\label{classObjectManager_ac658e0043de7550745f723bc7035cd8d}
+
+
+Returns whether a player is the last player to act. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & a pointer to a \hyperlink{classPlayer}{Player} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bool that tells if the player is last to act 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception Guarantee\-: Basic 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+objectmanager.\-h\item 
+objectmanager.\-cpp\end{DoxyCompactItemize}
