@@ -3,9 +3,11 @@
 
 #include "interfaces/igameeventhandler.h"
 #include "core/basicresources.h"
-#include "player.h"
-#include "objectmanager.h"
-#include "resourcemaps_v2.hh"
+#include "core/player.h"
+#include "core/objectmanager.h"
+#include "core/resourcemaps_v2.hh"
+
+namespace Game {
 
 /**
  * @brief The GameEventHandler class controls and stores the game's status.
@@ -62,7 +64,8 @@ public:
      * @param players Vector of pointers to Player objects.
      * @return Vector of pointers to Player objects that have won
      */
-    std::vector<std::shared_ptr<Player>> checkWinCondition(std::vector<std::shared_ptr<Player>> players);
+    std::vector<std::shared_ptr<Player>> checkWinCondition(
+            std::vector<std::shared_ptr<Player>> players);
 
     /**
      * @brief Sets the sum of resources needed to win the game
@@ -109,5 +112,7 @@ private:
     std::weak_ptr<Player> m_playerInTurn;
     bool m_playerBuying = false;
 };
+
+} // namespace Game
 
 #endif // GAMEEVENTHANDLER_H

@@ -1,7 +1,7 @@
 #include <QString>
 #include <QtTest>
 
-#include "player.h"
+#include "core/player.h"
 #include "buildings/buildingbase.h"
 #include "buildings/farm.h"
 #include "buildings/outpost.h"
@@ -11,8 +11,10 @@
 #include "tiles/tilebase.h"
 #include "exceptions/illegalaction.h"
 #include "core/coordinate.h"
-#include "objectmanager.h"
-#include "gameeventhandler.h"
+#include "core/objectmanager.h"
+#include "core/gameeventhandler.h"
+
+using namespace Game;
 
 class default_building : public QObject
 {

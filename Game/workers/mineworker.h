@@ -3,7 +3,9 @@
 
 #include "workers/workerbase.h"
 #include "core/resourcemaps.h"
-#include "resourcemaps_v2.hh"
+#include "core/resourcemaps_v2.hh"
+
+namespace Game {
 
 /**
  * @brief The MineWorker class represents a mine worker in the game.
@@ -42,9 +44,9 @@ public:
                 const std::shared_ptr<Course::PlayerBase>& owner,
                 const int& tilespaces = 1,
                 const Course::ResourceMap& cost =
-                    Course::ConstResourceMaps::MW_RECRUITMENT_COST,
+                    Game::ConstResourceMaps::MW_RECRUITMENT_COST,
                 const Course::ResourceMapDouble& efficiency =
-                    Course::ConstResourceMaps::MW_WORKER_EFFICIENCY
+                    Game::ConstResourceMaps::MW_WORKER_EFFICIENCY
                 );
 
     /**
@@ -87,7 +89,8 @@ public:
      */
     virtual const Course::ResourceMapDouble tileWorkAction() override;
 
-private:
 };
+
+} // namespace Game
 
 #endif // MINEWORKER_H

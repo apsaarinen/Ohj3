@@ -3,10 +3,12 @@
 
 #include "buildings/buildingbase.h"
 #include "core/resourcemaps.h"
-#include "gameeventhandler.h"
-#include "objectmanager.h"
-#include "player.h"
-#include "resourcemaps_v2.hh"
+#include "core/gameeventhandler.h"
+#include "core/objectmanager.h"
+#include "core/player.h"
+#include "core/resourcemaps_v2.hh"
+
+namespace Game {
 
 /**
  * @brief The Mine class represents a mine-building in the game.
@@ -37,8 +39,8 @@ public:
             const std::shared_ptr<ObjectManager>& objectmanager,
             const std::shared_ptr<Player>& owner,
             const int& tilespaces = 1,
-            const Course::ResourceMap& buildcost = Course::ConstResourceMaps::MINE_BUILD_COST,
-            const Course::ResourceMap& production = Course::ConstResourceMaps::MINE_PRODUCTION
+            const Course::ResourceMap& buildcost = Game::ConstResourceMaps::MINE_BUILD_COST,
+            const Course::ResourceMap& production = Game::ConstResourceMaps::MINE_PRODUCTION
             );
 
     /**
@@ -51,5 +53,7 @@ public:
      */
     virtual std::string getType() const override;
 };
+
+} // namespace Game
 
 #endif // MINE_HH

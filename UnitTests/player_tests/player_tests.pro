@@ -55,8 +55,8 @@ else:unix: PRE_TARGETDEPS += \
     $$OUT_PWD/../../Course/CourseLib/libCourseLib.a
 
 HEADERS += \
-    $$PWD/../../Game/player.h
+    $$PWD/../../Game/core/player.h
 
 SOURCES += \
     tst_default_player.cpp \
-    $$PWD/../../Game/player.cpp
+    $$PWD/../../Game/core/player.cpp

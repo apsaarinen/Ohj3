@@ -5,6 +5,8 @@
 #include "core/basicresources.h"
 #include <QString>
 
+namespace Game {
+
 /**
  * @brief The Player class represents a player in the game.
  *
@@ -57,5 +59,7 @@ private:
     QString m_color;
 
 };
+
+} // namespace Game
 
 #endif // PLAYER_H

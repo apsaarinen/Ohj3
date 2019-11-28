@@ -2,13 +2,15 @@
 #define WATER_H
 
 #include "tiles/tilebase.h"
-#include "gameeventhandler.h"
-#include "objectmanager.h"
+#include "core/gameeventhandler.h"
+#include "core/objectmanager.h"
 #include "core/coordinate.h"
 #include "core/resourcemaps.h"
-#include "resourcemaps_v2.hh"
+#include "core/resourcemaps_v2.hh"
 #include "core/basicresources.h"
 #include "buildings/buildingbase.h"
+
+namespace Game {
 
 /**
  * @brief The Water class represents water in the gameworld.
@@ -45,7 +47,7 @@ public:
            const std::shared_ptr<Course::iObjectManager>& objectmanager,
            const unsigned int& max_build = 0,
            const unsigned int& max_work = 0,
-           const Course::ResourceMap& production = Course::ConstResourceMaps::WATER_BP);
+           const Course::ResourceMap& production = Game::ConstResourceMaps::WATER_BP);
 
     /**
      * @brief Default destructor.
@@ -58,5 +60,7 @@ public:
     virtual std::string getType() const override;
 
 };
+
+} // namespace Game
 
 #endif // WATER_H
