@@ -1,5 +1,7 @@
 #include "mapitem.h"
 
+namespace Game {
+
 std::map<std::string, QColor> MapItem::c_mapcolors = {};
 
 MapItem::MapItem(const std::shared_ptr<Course::GameObject> &obj, int size, int offset ):
@@ -88,3 +90,5 @@ bool MapItem::isSameObj(std::shared_ptr<Course::GameObject> obj)
 {
     return obj == m_gameobject;
 }
+
+} // namespace Game

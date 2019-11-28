@@ -1,5 +1,7 @@
 #include "blockfield.h"
 
+namespace Game {
+
 Blockfield::Blockfield(const Course::Coordinate &location,
                        const std::shared_ptr<Course::iGameEventHandler> &eventhandler,
                        const std::shared_ptr<Course::iObjectManager> &objectmanager,
@@ -25,3 +27,5 @@ void Blockfield::addBuilding(const std::shared_ptr<Course::BuildingBase> &buildi
     TileBase::addBuilding(building);
     building->addHoldMarkers(1);
 }
+
+} // namespace Game

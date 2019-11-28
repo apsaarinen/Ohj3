@@ -1,7 +1,7 @@
 #include <QString>
 #include <QtTest>
 
-#include "player.h"
+#include "core/player.h"
 #include "buildings/buildingbase.h"
 #include "workers/workerbase.h"
 #include "workers/basicworker.h"
@@ -13,8 +13,10 @@
 #include "tiles/water.h"
 #include "exceptions/illegalaction.h"
 #include "core/coordinate.h"
-#include "objectmanager.h"
-#include "gameeventhandler.h"
+#include "core/objectmanager.h"
+#include "core/gameeventhandler.h"
+
+using namespace Game;
 
 class default_tile : public QObject
 {

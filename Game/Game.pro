@@ -7,14 +7,14 @@ CONFIG += c++14
 
 SOURCES += \
     main.cpp \
-    mapwindow.cc \
-    objectmanager.cpp \
-    gameeventhandler.cpp \
-    player.cpp \
+    ui/mapwindow.cc \
+    core/objectmanager.cpp \
+    core/gameeventhandler.cpp \
+    core/player.cpp \
     buildings/mine.cpp \
     buildings/sawmill.cpp \
-    begindialog.cpp \
-    enddialog.cpp \
+    ui/begindialog.cpp \
+    ui/enddialog.cpp \
     tiles/blockfield.cpp \
     tiles/oredeposit.cpp \
     workers/mineworker.cpp \
@@ -25,15 +25,15 @@ SOURCES += \
     setupgame.cpp
 
 HEADERS += \
-    mapwindow.hh \
-    objectmanager.h \
-    gameeventhandler.h \
-    player.h \
+    ui/mapwindow.hh \
+    core/objectmanager.h \
+    core/gameeventhandler.h \
+    core/player.h \
     buildings/mine.hh \
     buildings/sawmill.hh \
-    begindialog.hh \
-    resourcemaps_v2.hh \
-    enddialog.hh \
+    ui/begindialog.hh \
+    core/resourcemaps_v2.hh \
+    ui/enddialog.hh \
     tiles/blockfield.h \
     tiles/oredeposit.h \
     workers/mineworker.h \
@@ -68,9 +68,9 @@ else:unix: PRE_TARGETDEPS += \
     $$OUT_PWD/../Course/CourseLib/libCourseLib.a
 
 FORMS += \
-    mapwindow.ui \
-    begindialog.ui \
-    enddialog.ui
+    ui/mapwindow.ui \
+    ui/begindialog.ui \
+    ui/enddialog.ui
 
 DISTFILES += \
     images/SawMillWorker.png \

@@ -5,6 +5,8 @@
 
 #include <math.h>
 
+namespace Game {
+
 GameScene::GameScene(QWidget* parent,
                                  int width,
                                  int height,
@@ -141,3 +143,4 @@ void GameScene::drawItem( std::shared_ptr<Course::GameObject> obj, int offset)
 
 }
 
+} // namespace Game

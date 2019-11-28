@@ -6,17 +6,17 @@
 #include <math.h>
 
 MapWindow::MapWindow(QWidget *parent,
-                     std::shared_ptr<GameEventHandler> handler,
-                     std::shared_ptr<ObjectManager> objMan):
+                     std::shared_ptr<Game::GameEventHandler> handler,
+                     std::shared_ptr<Game::ObjectManager> objMan):
     QMainWindow(parent),
     m_ui(new Ui::MapWindow),
     m_GEHandler(handler),
     m_objMan(objMan),
-    m_gamescene(new GameScene(this))
+    m_gamescene(new Game::GameScene(this))
 {
     m_ui->setupUi(this);
 
-    GameScene* sgs_rawptr = m_gamescene.get();
+    Game::GameScene* sgs_rawptr = m_gamescene.get();
     m_ui->graphicsView->setScene(dynamic_cast<QGraphicsScene*>(sgs_rawptr));
 
     connect(sgs_rawptr, SIGNAL(mapItemClicked(Course::ObjectId)), this, SLOT(placeObject(Course::ObjectId)));
@@ -38,12 +38,12 @@ MapWindow::~MapWindow()
     delete m_ui;
 }
 
-std::shared_ptr<GameEventHandler> MapWindow::getGEHandler()
+std::shared_ptr<Game::GameEventHandler> MapWindow::getGEHandler()
 {
     return m_GEHandler;
 }
 
-std::shared_ptr<ObjectManager> MapWindow::getObjMan()
+std::shared_ptr<Game::ObjectManager> MapWindow::getObjMan()
 {
     return m_objMan;
 }
@@ -68,7 +68,7 @@ void MapWindow::updateItem(std::shared_ptr<Course::GameObject> obj)
     m_gamescene->updateItem(obj);
 }
 
-void MapWindow::changeTurn(const std::shared_ptr<Player> player)
+void MapWindow::changeTurn(const std::shared_ptr<Game::Player> player)
 {
     // Set player name in UI
     QString playerName = "Player in turn: " + QString::fromStdString(player->getName());
@@ -188,20 +188,20 @@ bool MapWindow::eventFilter(QObject *watched, QEvent *event)
             m_ui->label_info->show();
             m_ui->label_info->setText(QString("Building a mine costs: \n "
                                               "Money: ") + QString::number(
-                                          Course::ConstResourceMaps::MINE_BUILD_COST.at(
+                                          Game::ConstResourceMaps::MINE_BUILD_COST.at(
                                           Course::BasicResource::MONEY)) + "\n Food: " +
-                                          QString::number(Course::ConstResourceMaps::
+                                          QString::number(Game::ConstResourceMaps::
                                           MINE_BUILD_COST.at(Course::BasicResource::FOOD)) +
                                           "\n Wood: " + QString::number(
-                                          Course::ConstResourceMaps::MINE_BUILD_COST.at(
+                                          Game::ConstResourceMaps::MINE_BUILD_COST.at(
                                           Course::BasicResource::WOOD)) + "\n\nProduction\n "
                                           "Money: " + QString::number(
-                                          Course::ConstResourceMaps::MINE_PRODUCTION.at(
+                                          Game::ConstResourceMaps::MINE_PRODUCTION.at(
                                           Course::BasicResource::MONEY)) + "\n Stone: " +
-                                          QString::number(Course::ConstResourceMaps::
+                                          QString::number(Game::ConstResourceMaps::
                                           MINE_PRODUCTION.at(Course::BasicResource::STONE)) +
                                           "\n Ore: " + QString::number(
-                                          Course::ConstResourceMaps::MINE_PRODUCTION.at(
+                                          Game::ConstResourceMaps::MINE_PRODUCTION.at(
                                           Course::BasicResource::ORE)));
         }
         else if(event->type() == QEvent::Leave){
@@ -216,20 +216,20 @@ bool MapWindow::eventFilter(QObject *watched, QEvent *event)
             m_ui->label_info->show();
             m_ui->label_info->setText(QString("Building a sawmill costs: \n "
                                               "Money: ") + QString::number(
-                                            Course::ConstResourceMaps::SAWMILL_BUILD_COST.at(
+                                            Game::ConstResourceMaps::SAWMILL_BUILD_COST.at(
                                             Course::BasicResource::MONEY)) + "\n Food: " +
-                                            QString::number(Course::ConstResourceMaps::
+                                            QString::number(Game::ConstResourceMaps::
                                             SAWMILL_BUILD_COST.at(Course::BasicResource::FOOD)) +
                                             "\n Wood: " + QString::number(
-                                            Course::ConstResourceMaps::SAWMILL_BUILD_COST.at(
+                                            Game::ConstResourceMaps::SAWMILL_BUILD_COST.at(
                                             Course::BasicResource::WOOD)) + "\n\nProduction\n "
                                             "Money: " + QString::number(
-                                            Course::ConstResourceMaps::SAWMILL_PRODUCTION.at(
+                                            Game::ConstResourceMaps::SAWMILL_PRODUCTION.at(
                                             Course::BasicResource::MONEY)) + "\n Food: " +
-                                            QString::number(Course::ConstResourceMaps::
+                                            QString::number(Game::ConstResourceMaps::
                                             SAWMILL_PRODUCTION.at(Course::BasicResource::FOOD)) +
                                             "\n Wood: " + QString::number(
-                                            Course::ConstResourceMaps::SAWMILL_PRODUCTION.at(
+                                            Game::ConstResourceMaps::SAWMILL_PRODUCTION.at(
                                             Course::BasicResource::WOOD)));
         }
         else if(event->type() == QEvent::Leave){
@@ -278,25 +278,25 @@ bool MapWindow::eventFilter(QObject *watched, QEvent *event)
             m_ui->label_info->show();
             m_ui->label_info->setText(QString("Hiring a miner costs: \n "
                                               "Money: ") + QString::number(
-                                            Course::ConstResourceMaps::MW_RECRUITMENT_COST.at(
+                                            Game::ConstResourceMaps::MW_RECRUITMENT_COST.at(
                                             Course::BasicResource::MONEY)) + "\n Food: " +
-                                            QString::number(Course::ConstResourceMaps::
+                                            QString::number(Game::ConstResourceMaps::
                                             MW_RECRUITMENT_COST.at(Course::BasicResource::FOOD)) +
                                             "\n\nWorking efficiency: \n "
                                             "Money: " + QString::number(
-                                            Course::ConstResourceMaps::MW_WORKER_EFFICIENCY.at(
+                                            Game::ConstResourceMaps::MW_WORKER_EFFICIENCY.at(
                                             Course::BasicResource::MONEY)) +
                                             "\n Food: " + QString::number(
-                                            Course::ConstResourceMaps::MW_WORKER_EFFICIENCY.at(
+                                            Game::ConstResourceMaps::MW_WORKER_EFFICIENCY.at(
                                             Course::BasicResource::FOOD)) +
                                             "\n Wood: " + QString::number(
-                                            Course::ConstResourceMaps::MW_WORKER_EFFICIENCY.at(
+                                            Game::ConstResourceMaps::MW_WORKER_EFFICIENCY.at(
                                             Course::BasicResource::WOOD)) +
                                             "\n Stone: " + QString::number(
-                                            Course::ConstResourceMaps::MW_WORKER_EFFICIENCY.at(
+                                            Game::ConstResourceMaps::MW_WORKER_EFFICIENCY.at(
                                             Course::BasicResource::STONE)) +
                                             "\n Ore: " + QString::number(
-                                            Course::ConstResourceMaps::MW_WORKER_EFFICIENCY.at(
+                                            Game::ConstResourceMaps::MW_WORKER_EFFICIENCY.at(
                                             Course::BasicResource::ORE)) +
                                             "\n\nWage per turn\n Money: -2 \n Food: -2");
         }
@@ -312,25 +312,25 @@ bool MapWindow::eventFilter(QObject *watched, QEvent *event)
             m_ui->label_info->show();
             m_ui->label_info->setText(QString("Hiring a sawmill worker costs: \n "
                                               "Money: ") + QString::number(
-                                            Course::ConstResourceMaps::SMW_RECRUITMENT_COST.at(
+                                            Game::ConstResourceMaps::SMW_RECRUITMENT_COST.at(
                                             Course::BasicResource::MONEY)) + "\n Food: " +
-                                            QString::number(Course::ConstResourceMaps::
+                                            QString::number(Game::ConstResourceMaps::
                                             SMW_RECRUITMENT_COST.at(Course::BasicResource::FOOD)) +
                                             "\n\nWorking efficiency: \n "
                                             "Money: " + QString::number(
-                                            Course::ConstResourceMaps::SMW_WORKER_EFFICIENCY.at(
+                                            Game::ConstResourceMaps::SMW_WORKER_EFFICIENCY.at(
                                             Course::BasicResource::MONEY)) +
                                             "\n Food: " + QString::number(
-                                            Course::ConstResourceMaps::SMW_WORKER_EFFICIENCY.at(
+                                            Game::ConstResourceMaps::SMW_WORKER_EFFICIENCY.at(
                                             Course::BasicResource::FOOD)) +
                                             "\n Wood: " + QString::number(
-                                            Course::ConstResourceMaps::SMW_WORKER_EFFICIENCY.at(
+                                            Game::ConstResourceMaps::SMW_WORKER_EFFICIENCY.at(
                                             Course::BasicResource::WOOD)) +
                                             "\n Stone: " + QString::number(
-                                            Course::ConstResourceMaps::SMW_WORKER_EFFICIENCY.at(
+                                            Game::ConstResourceMaps::SMW_WORKER_EFFICIENCY.at(
                                             Course::BasicResource::STONE)) +
                                             "\n Ore: " + QString::number(
-                                            Course::ConstResourceMaps::SMW_WORKER_EFFICIENCY.at(
+                                            Game::ConstResourceMaps::SMW_WORKER_EFFICIENCY.at(
                                             Course::BasicResource::ORE)) +
                                             "\n\nWage per turn\n Money: -2 \n Food: -2");
         }
@@ -358,10 +358,10 @@ void MapWindow::drawItem(std::shared_ptr<Course::GameObject> obj, int offset)
 
 void MapWindow::on_button_endTurn_clicked()
 {
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
-    std::shared_ptr<ObjectManager> objMan = getObjMan();
-    std::vector<std::shared_ptr<Player>> players = objMan->getPlayers();
-    std::shared_ptr<Player> playerInTurn = GEHand->getPlayerInTurn();
+    std::shared_ptr<Game::GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Game::ObjectManager> objMan = getObjMan();
+    std::vector<std::shared_ptr<Game::Player>> players = objMan->getPlayers();
+    std::shared_ptr<Game::Player> playerInTurn = GEHand->getPlayerInTurn();
 
     // If last player, check for win condition
     if(objMan->isLastPlayer(playerInTurn)) {
@@ -370,7 +370,7 @@ void MapWindow::on_button_endTurn_clicked()
         for(std::shared_ptr<Course::TileBase>& tile: tiles) {
             tile->generateResources();
         }
-        std::vector<std::shared_ptr<Player>> winners = GEHand->checkWinCondition(players);
+        std::vector<std::shared_ptr<Game::Player>> winners = GEHand->checkWinCondition(players);
         if(winners.size() > 0) {
             // Game has ended
             endGame(winners);
@@ -380,7 +380,7 @@ void MapWindow::on_button_endTurn_clicked()
     }
 
     // Give turn to next player
-    for(std::shared_ptr<Player> player: players) {
+    for(std::shared_ptr<Game::Player> player: players) {
         if(player != playerInTurn) {
             GEHand->setPlayerInTurn(player);
             changeTurn(player);
@@ -388,9 +388,9 @@ void MapWindow::on_button_endTurn_clicked()
     }
 }
 
-void MapWindow::buyObject(std::shared_ptr<ObjectManager> objMan,
-                          std::shared_ptr<GameEventHandler> GEHand,
-                          std::shared_ptr<Player> player,
+void MapWindow::buyObject(std::shared_ptr<Game::ObjectManager> objMan,
+                          std::shared_ptr<Game::GameEventHandler> GEHand,
+                          std::shared_ptr<Game::Player> player,
                           std::shared_ptr<Course::PlaceableGameObject> object)
 {
     // Set buying flag on
@@ -414,9 +414,9 @@ void MapWindow::buyObject(std::shared_ptr<ObjectManager> objMan,
 
 void MapWindow::placeObject(Course::ObjectId tileID)
 {
-    std::shared_ptr<ObjectManager> objMan = getObjMan();
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
-    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<Game::ObjectManager> objMan = getObjMan();
+    std::shared_ptr<Game::GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Game::Player> player = GEHand->getPlayerInTurn();
 
     if(not GEHand->isPlayerBuying()) {
         // Player has not paid or selected a resource to place on the map
@@ -478,7 +478,7 @@ void MapWindow::placeObject(Course::ObjectId tileID)
     }
 }
 
-void MapWindow::drawResources(std::shared_ptr<Player> player)
+void MapWindow::drawResources(std::shared_ptr<Game::Player> player)
 {
     Course::ResourceMap playerResources = player->getResources();
     m_ui->label_moneyInput->setText(QString::number(playerResources[Course::BasicResource::MONEY]));
@@ -494,11 +494,11 @@ void MapWindow::drawResources(std::shared_ptr<Player> player)
 }
 
 
-void MapWindow::endGame(std::vector<std::shared_ptr<Player> > winners)
+void MapWindow::endGame(std::vector<std::shared_ptr<Game::Player> > winners)
 {
     m_ui->button_endTurn->hide();
 
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Game::GameEventHandler> GEHand = getGEHandler();
     enddialog endDialog;
     endDialog.setWinner(winners, GEHand->getRounds());
     endDialog.exec();
@@ -508,16 +508,16 @@ void MapWindow::endGame(std::vector<std::shared_ptr<Player> > winners)
 
 void MapWindow::on_button_farm_clicked()
 {
-    std::shared_ptr<ObjectManager> objMan = getObjMan();
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
-    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<Game::ObjectManager> objMan = getObjMan();
+    std::shared_ptr<Game::GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Game::Player> player = GEHand->getPlayerInTurn();
     std::shared_ptr<Course::Farm> selectedObj = std::make_shared<Course::Farm>(GEHand,
                                                                                objMan,
                                                                                player);
     selectedObj->addDescription("type", "building");
     // Create a negative version of the BUILD_COST resource map
     Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::FARM_BUILD_COST,
-                                                           Course::ConstResourceMaps::NEGATIVE);
+                                                           Game::ConstResourceMaps::NEGATIVE);
     if(player->modifyResources(cost)) {
         // Player had money and paid for the object
         buyObject(objMan, GEHand, player, selectedObj);
@@ -529,16 +529,16 @@ void MapWindow::on_button_farm_clicked()
 
 void MapWindow::on_button_headquarters_clicked()
 {
-    std::shared_ptr<ObjectManager> objMan = getObjMan();
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
-    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<Game::ObjectManager> objMan = getObjMan();
+    std::shared_ptr<Game::GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Game::Player> player = GEHand->getPlayerInTurn();
     std::shared_ptr<Course::HeadQuarters> selectedObj = std::make_shared<Course::HeadQuarters>(GEHand,
                                                                                                objMan,
                                                                                                player);
     selectedObj->addDescription("type", "building");
     // Create a negative version of the BUILD_COST resource map
     Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::HQ_BUILD_COST,
-                                                           Course::ConstResourceMaps::NEGATIVE);
+                                                           Game::ConstResourceMaps::NEGATIVE);
     if(player->modifyResources(cost)) {
         // Player had money and paid for the object
         buyObject(objMan, GEHand, player, selectedObj);
@@ -550,16 +550,16 @@ void MapWindow::on_button_headquarters_clicked()
 
 void MapWindow::on_button_outpost_clicked()
 {
-    std::shared_ptr<ObjectManager> objMan = getObjMan();
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
-    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<Game::ObjectManager> objMan = getObjMan();
+    std::shared_ptr<Game::GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Game::Player> player = GEHand->getPlayerInTurn();
     std::shared_ptr<Course::Outpost> selectedObj = std::make_shared<Course::Outpost>(GEHand,
                                                                                      objMan,
                                                                                      player);
     selectedObj->addDescription("type", "building");
     // Create a negative version of the BUILD_COST resource map
     Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::OUTPOST_BUILD_COST,
-                                                           Course::ConstResourceMaps::NEGATIVE);
+                                                           Game::ConstResourceMaps::NEGATIVE);
     if(player->modifyResources(cost)) {
         // Player had money and paid for the object
         buyObject(objMan, GEHand, player, selectedObj);
@@ -571,16 +571,16 @@ void MapWindow::on_button_outpost_clicked()
 
 void MapWindow::on_button_mine_clicked()
 {
-    std::shared_ptr<ObjectManager> objMan = getObjMan();
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
-    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
-    std::shared_ptr<Mine> selectedObj = std::make_shared<Mine>(GEHand,
+    std::shared_ptr<Game::ObjectManager> objMan = getObjMan();
+    std::shared_ptr<Game::GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Game::Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<Game::Mine> selectedObj = std::make_shared<Game::Mine>(GEHand,
                                                                objMan,
                                                                player);
     selectedObj->addDescription("type", "building");
     // Create a negative version of the BUILD_COST resource map
-    Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::MINE_BUILD_COST,
-                                                           Course::ConstResourceMaps::NEGATIVE);
+    Course::ResourceMap cost = Course::multiplyResourceMap(Game::ConstResourceMaps::MINE_BUILD_COST,
+                                                           Game::ConstResourceMaps::NEGATIVE);
     if(player->modifyResources(cost)) {
         // Player had money and paid for the object
         buyObject(objMan, GEHand, player, selectedObj);
@@ -592,16 +592,16 @@ void MapWindow::on_button_mine_clicked()
 
 void MapWindow::on_button_sawmill_clicked()
 {
-    std::shared_ptr<ObjectManager> objMan = getObjMan();
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
-    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
-    std::shared_ptr<SawMill> selectedObj = std::make_shared<SawMill>(GEHand,
+    std::shared_ptr<Game::ObjectManager> objMan = getObjMan();
+    std::shared_ptr<Game::GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Game::Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<Game::SawMill> selectedObj = std::make_shared<Game::SawMill>(GEHand,
                                                                      objMan,
                                                                      player);
     selectedObj->addDescription("type", "building");
     // Create a negative version of the BUILD_COST resource map
-    Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::SAWMILL_BUILD_COST,
-                                                           Course::ConstResourceMaps::NEGATIVE);
+    Course::ResourceMap cost = Course::multiplyResourceMap(Game::ConstResourceMaps::SAWMILL_BUILD_COST,
+                                                           Game::ConstResourceMaps::NEGATIVE);
     if(player->modifyResources(cost)) {
         // Player had money and paid for the object
         buyObject(objMan, GEHand, player, selectedObj);
@@ -613,16 +613,16 @@ void MapWindow::on_button_sawmill_clicked()
 
 void MapWindow::on_button_basicworker_clicked()
 {
-    std::shared_ptr<ObjectManager> objMan = getObjMan();
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
-    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<Game::ObjectManager> objMan = getObjMan();
+    std::shared_ptr<Game::GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Game::Player> player = GEHand->getPlayerInTurn();
     std::shared_ptr<Course::BasicWorker> selectedObj = std::make_shared<Course::BasicWorker>(GEHand,
                                                                                              objMan,
                                                                                              player);
     selectedObj->addDescription("type", "worker");
     // Create a negative version of the BUILD_COST resource map
     Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::BW_RECRUITMENT_COST,
-                                                           Course::ConstResourceMaps::NEGATIVE);
+                                                           Game::ConstResourceMaps::NEGATIVE);
     if(player->modifyResources(cost)) {
         // Player had money and paid for the object
         buyObject(objMan, GEHand, player, selectedObj);
@@ -634,16 +634,16 @@ void MapWindow::on_button_basicworker_clicked()
 
 void MapWindow::on_button_miner_clicked()
 {
-    std::shared_ptr<ObjectManager> objMan = getObjMan();
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
-    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
-    std::shared_ptr<MineWorker> selectedObj = std::make_shared<MineWorker>(GEHand,
+    std::shared_ptr<Game::ObjectManager> objMan = getObjMan();
+    std::shared_ptr<Game::GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Game::Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<Game::MineWorker> selectedObj = std::make_shared<Game::MineWorker>(GEHand,
                                                                            objMan,
                                                                            player);
     selectedObj->addDescription("type", "worker");
     // Create a negative version of the BUILD_COST resource map
-    Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::MW_RECRUITMENT_COST,
-                                                           Course::ConstResourceMaps::NEGATIVE);
+    Course::ResourceMap cost = Course::multiplyResourceMap(Game::ConstResourceMaps::MW_RECRUITMENT_COST,
+                                                           Game::ConstResourceMaps::NEGATIVE);
     if(player->modifyResources(cost)) {
         // Player had money and paid for the object
         buyObject(objMan, GEHand, player, selectedObj);
@@ -655,16 +655,16 @@ void MapWindow::on_button_miner_clicked()
 
 void MapWindow::on_button_sawmillworker_clicked()
 {
-    std::shared_ptr<ObjectManager> objMan = getObjMan();
-    std::shared_ptr<GameEventHandler> GEHand = getGEHandler();
-    std::shared_ptr<Player> player = GEHand->getPlayerInTurn();
-    std::shared_ptr<SawMillWorker> selectedObj = std::make_shared<SawMillWorker>(GEHand,
+    std::shared_ptr<Game::ObjectManager> objMan = getObjMan();
+    std::shared_ptr<Game::GameEventHandler> GEHand = getGEHandler();
+    std::shared_ptr<Game::Player> player = GEHand->getPlayerInTurn();
+    std::shared_ptr<Game::SawMillWorker> selectedObj = std::make_shared<Game::SawMillWorker>(GEHand,
                                                                                  objMan,
                                                                                  player);
     selectedObj->addDescription("type", "worker");
     // Create a negative version of the BUILD_COST resource map
-    Course::ResourceMap cost = Course::multiplyResourceMap(Course::ConstResourceMaps::SMW_RECRUITMENT_COST,
-                                                           Course::ConstResourceMaps::NEGATIVE);
+    Course::ResourceMap cost = Course::multiplyResourceMap(Game::ConstResourceMaps::SMW_RECRUITMENT_COST,
+                                                           Game::ConstResourceMaps::NEGATIVE);
     if(player->modifyResources(cost)) {
         // Player had money and paid for the object
         buyObject(objMan, GEHand, player, selectedObj);

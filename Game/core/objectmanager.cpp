@@ -1,5 +1,7 @@
 #include "objectmanager.h"
 
+namespace Game {
+
 ObjectManager::ObjectManager()
 {
 
@@ -72,5 +74,12 @@ void ObjectManager::addPlaceableObject(const std::shared_ptr<Course::PlaceableGa
 
 const std::shared_ptr<Course::PlaceableGameObject> ObjectManager::getNewestPlaceableObject()
 {
-    return m_placeableObjects.back();
+    if(m_placeableObjects.size() > 0) {
+        return m_placeableObjects.back();
+    }
+    else {
+        return nullptr;
+    }
 }
+
+} // namespace Game

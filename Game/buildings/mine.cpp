@@ -1,5 +1,7 @@
 #include "mine.hh"
 
+namespace Game {
+
 Mine::Mine(const std::shared_ptr<GameEventHandler>& eventhandler,
            const std::shared_ptr<ObjectManager>& objectmanager,
            const std::shared_ptr<Player>& owner,
@@ -22,3 +24,5 @@ std::string Mine::getType() const
 {
     return "Mine";
 }
+
+} // namespace Game

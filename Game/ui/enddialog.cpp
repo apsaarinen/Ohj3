@@ -13,7 +13,7 @@ enddialog::~enddialog()
     delete ui;
 }
 
-void enddialog::setWinner(std::vector<std::shared_ptr<Player> > winners, int round)
+void enddialog::setWinner(std::vector<std::shared_ptr<Game::Player> > winners, int round)
 {
     if(winners.size() == 1) {
         // One winner, calculate sum of resources

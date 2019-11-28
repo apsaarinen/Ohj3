@@ -5,7 +5,9 @@
 #include "tiles/tilebase.h"
 #include "core/coordinate.h"
 #include "core/gameobject.h"
-#include "player.h"
+#include "core/player.h"
+
+namespace Game {
 
 /**
  * @brief The ObjectManager class stores Players and GameObjects \n
@@ -111,5 +113,7 @@ private:
     std::vector<std::shared_ptr<Player>> m_players;
     std::vector<std::shared_ptr<Course::PlaceableGameObject>> m_placeableObjects;
 };
+
+} // namespace Game
 
 #endif // OBJECTMANAGER_H

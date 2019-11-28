@@ -11,6 +11,8 @@
 #include "core/gameobject.h"
 #include "graphics/mapitem.h"
 
+namespace Game {
+
 const std::pair<int, int> SCENE_WIDTH_LIMITS = {1, 100};
 const std::pair<int, int> SCENE_HEIGHT_LIMITS = {1, 100};
 const std::pair<int, int> SCENE_SCALE_LIMITS = {1, 500};
@@ -131,5 +133,7 @@ private:
     int m_scale;
 
 };
+
+} // namespace Game
 
 #endif // GAMESCENE_H

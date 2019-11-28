@@ -1,7 +1,7 @@
-#include "mapwindow.hh"
-#include "begindialog.hh"
-
 #include <QApplication>
+
+#include "ui/mapwindow.hh"
+#include "ui/begindialog.hh"
 #include "setupgame.h"
 
 int main(int argc, char* argv[])
@@ -9,8 +9,10 @@ int main(int argc, char* argv[])
 
     QApplication app(argc, argv);
 
-    std::shared_ptr<ObjectManager> objManPtr = std::make_shared<ObjectManager>();
-    std::shared_ptr<GameEventHandler> eventHandPtr = std::make_shared<GameEventHandler>();
+    std::shared_ptr<Game::ObjectManager> objManPtr = std::make_shared<
+            Game::ObjectManager>();
+    std::shared_ptr<Game::GameEventHandler> eventHandPtr = std::make_shared<
+            Game::GameEventHandler>();
 
     // Open a dialog window and ask for initial value for game setup
     begindialog beginDialog;
@@ -28,7 +30,7 @@ int main(int argc, char* argv[])
     mapWindow.showFullScreen();
 
     mapWindow.setupUI(resourcesToWin);
-    setupGame(&mapWindow, playernames, startingResources, objManPtr);
+    Game::setupGame(&mapWindow, playernames, startingResources, objManPtr);
 
     // Start the game by giving the turn to the first player
     mapWindow.changeTurn(eventHandPtr->getPlayerInTurn());

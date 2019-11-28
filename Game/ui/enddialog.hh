@@ -1,7 +1,7 @@
 #ifndef ENDDIALOG_HH
 #define ENDDIALOG_HH
 
-#include "player.h"
+#include "core/player.h"
 
 #include <QDialog>
 
@@ -32,7 +32,7 @@ public:
      * @param winners Pointer to vector which has winner or winners.
      * @param round Number of rounds played.
      */
-    void setWinner(std::vector<std::shared_ptr<Player> > winners, int round);
+    void setWinner(std::vector<std::shared_ptr<Game::Player> > winners, int round);
 
 private:
     Ui::enddialog *ui;

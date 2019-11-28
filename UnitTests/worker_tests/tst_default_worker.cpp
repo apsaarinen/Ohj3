@@ -1,7 +1,7 @@
 #include <QString>
 #include <QtTest>
 
-#include "player.h"
+#include "core/player.h"
 #include "workers/workerbase.h"
 #include "workers/basicworker.h"
 #include "workers/mineworker.h"
@@ -10,9 +10,11 @@
 #include "tiles/tilebase.h"
 #include "exceptions/illegalaction.h"
 #include "core/coordinate.h"
-#include "objectmanager.h"
-#include "gameeventhandler.h"
+#include "core/objectmanager.h"
+#include "core/gameeventhandler.h"
 #include "core/basicresources.h"
+
+using namespace Game;
 
 class default_worker : public QObject
 {
@@ -178,7 +180,7 @@ void default_worker::test_tileWorkAction_notEnoughMoneyAndFood()
     QVERIFY(player1->getResources().at(Course::BasicResource::MONEY) == 100);
     QVERIFY(player1->getResources().at(Course::BasicResource::FOOD) == 100);
     Course::ResourceMap startResourceInverse = Course::multiplyResourceMap(startResources,
-                                                           Course::ConstResourceMaps::NEGATIVE);
+                                                           Game::ConstResourceMaps::NEGATIVE);
     GEHand->modifyResources(player1, startResourceInverse);
     Course::ResourceMap asd = player1->getResources();
     QVERIFY(player1->getResources().at(Course::BasicResource::MONEY) == 0);

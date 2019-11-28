@@ -12,9 +12,9 @@
 
 #include "interfaces/igameeventhandler.h"
 #include "graphics/gamescene.h"
-#include "gameeventhandler.h"
-#include "objectmanager.h"
-#include "enddialog.hh"
+#include "core/gameeventhandler.h"
+#include "core/objectmanager.h"
+#include "ui/enddialog.hh"
 #include "buildings/farm.h"
 #include "buildings/headquarters.h"
 #include "buildings/outpost.h"
@@ -47,8 +47,8 @@ public:
      * @param objMan points to the ObjectManager
      */
     explicit MapWindow(QWidget *parent = 0,
-                       std::shared_ptr<GameEventHandler> GEHandler = {},
-                       std::shared_ptr<ObjectManager> objMan = {});
+                       std::shared_ptr<Game::GameEventHandler> GEHandler = {},
+                       std::shared_ptr<Game::ObjectManager> objMan = {});
 
     /**
      * @brief Constructor for the class.
@@ -59,13 +59,13 @@ public:
      * @brief Gets a pointer to the GameEventHandler
      * @return Pointer to the GameEventHandler
      */
-    std::shared_ptr<GameEventHandler> getGEHandler();
+    std::shared_ptr<Game::GameEventHandler> getGEHandler();
 
     /**
      * @brief Gets a pointer to the ObjectManager
      * @return Pointer to the ObjectManager
      */
-    std::shared_ptr<ObjectManager> getObjMan();
+    std::shared_ptr<Game::ObjectManager> getObjMan();
 
     /**
      * @brief Sets the game map
@@ -110,7 +110,7 @@ public:
      * @brief Changes the UI for the next player in turn
      * @param player pointer to a Player object whose turn it's going to be
      */
-    void changeTurn(const std::shared_ptr<Player> player);
+    void changeTurn(const std::shared_ptr<Game::Player> player);
 
     /**
      * @brief Sets up certain fixed elements in the UI when a game is started
@@ -210,16 +210,16 @@ private:
      * @note Is called by all Build/Hire button slots to \n
      * combine functionality to one function
      */
-    void buyObject(std::shared_ptr<ObjectManager> objMan,
-                   std::shared_ptr<GameEventHandler> GEHand,
-                   std::shared_ptr<Player> player,
+    void buyObject(std::shared_ptr<Game::ObjectManager> objMan,
+                   std::shared_ptr<Game::GameEventHandler> GEHand,
+                   std::shared_ptr<Game::Player> player,
                    std::shared_ptr<Course::PlaceableGameObject> object);
 
     /**
      * @brief Draws a players resources to the UI
      * @param player Pointer to the player whose resources are drawn
      */
-    void drawResources(std::shared_ptr<Player> player);
+    void drawResources(std::shared_ptr<Game::Player> player);
 
     /**
      * @brief Ends the game with a window pop-up
@@ -227,12 +227,12 @@ private:
      * (1player=winner, 2players=draw)
      * @note Game exits in this function and closes all windows
      */
-    void endGame(std::vector<std::shared_ptr<Player>> winners);
+    void endGame(std::vector<std::shared_ptr<Game::Player>> winners);
 
     Ui::MapWindow* m_ui;
-    std::shared_ptr<GameEventHandler> m_GEHandler = nullptr;
-    std::shared_ptr<ObjectManager> m_objMan = nullptr;
-    std::shared_ptr<GameScene> m_gamescene = nullptr;
+    std::shared_ptr<Game::GameEventHandler> m_GEHandler = nullptr;
+    std::shared_ptr<Game::ObjectManager> m_objMan = nullptr;
+    std::shared_ptr<Game::GameScene> m_gamescene = nullptr;
 
 };
 

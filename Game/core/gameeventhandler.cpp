@@ -1,5 +1,7 @@
 #include "gameeventhandler.h"
 
+namespace Game {
+
 GameEventHandler::GameEventHandler()
 {
 }
@@ -80,3 +82,5 @@ int GameEventHandler::increaseRounds()
 {
     return ++m_rounds;
 }
+
+} // namespace Game

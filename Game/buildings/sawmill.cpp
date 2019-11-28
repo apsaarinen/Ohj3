@@ -1,5 +1,7 @@
 #include "sawmill.hh"
 
+namespace Game {
+
 SawMill::SawMill(const std::shared_ptr<GameEventHandler>& eventhandler,
            const std::shared_ptr<ObjectManager>& objectmanager,
            const std::shared_ptr<Player>& owner,
@@ -22,3 +24,5 @@ std::string SawMill::getType() const
 {
     return "Sawmill";
 }
+
+} // namespace Game

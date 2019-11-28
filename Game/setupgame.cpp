@@ -1,5 +1,7 @@
 #include "setupgame.h"
 
+namespace Game {
+
 void setupGame(MapWindow *mapWindow,
                std::vector<std::__cxx11::string> playerNames,
                Course::ResourceMap startingResources,
@@ -37,3 +39,5 @@ void setupGame(MapWindow *mapWindow,
 
     GEHand->setPlayerInTurn(player1Ptr);
 }
+
+} // namespace Game

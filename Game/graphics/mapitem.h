@@ -8,8 +8,10 @@
 #include <map>
 
 #include "core/gameobject.h"
-#include "player.h"
+#include "core/player.h"
 #include "buildings/buildingbase.h"
+
+namespace Game {
 
 using ColorMap = std::map<std::string, QColor>;
 
@@ -93,5 +95,7 @@ private:
     static ColorMap c_mapcolors;
 
 };
+
+} // namespace Game
 
 #endif // MAPITEM_H

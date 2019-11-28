@@ -1,5 +1,7 @@
 #include "player.h"
 
+namespace Game {
+
 Player::Player(const std::string& name,
                QString color,
                const std::vector<std::shared_ptr<Course::GameObject> > objects):
@@ -42,3 +44,5 @@ const QString Player::getColor() const
 {
     return m_color;
 }
+
+} // namespace Game

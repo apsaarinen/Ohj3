@@ -2,13 +2,15 @@
 #define BLOCKFIELD_H
 
 #include "tiles/tilebase.h"
-#include "gameeventhandler.h"
-#include "objectmanager.h"
+#include "core/gameeventhandler.h"
+#include "core/objectmanager.h"
 #include "core/coordinate.h"
 #include "core/resourcemaps.h"
-#include "resourcemaps_v2.hh"
+#include "core/resourcemaps_v2.hh"
 #include "core/basicresources.h"
 #include "buildings/buildingbase.h"
+
+namespace Game {
 
 /**
  * @brief The Blockfield class represents a blockfield in the gameworld.
@@ -47,7 +49,7 @@ public:
            const std::shared_ptr<Course::iObjectManager>& objectmanager,
            const unsigned int& max_build = 3,
            const unsigned int& max_work = 3,
-           const Course::ResourceMap& production = Course::ConstResourceMaps::BLOCKFIELD_BP);
+           const Course::ResourceMap& production = Game::ConstResourceMaps::BLOCKFIELD_BP);
     /**
      * @brief Default destructor.
      */
@@ -76,5 +78,7 @@ public:
     void addBuilding(const std::shared_ptr<Course::BuildingBase>& building) override;
 
 };
+
+} // namespace Game
 
 #endif // BLOCKFIELD_H

@@ -55,18 +55,18 @@ else:unix: PRE_TARGETDEPS += \
 
 
 HEADERS += \
-    $$PWD/../../Game/player.h \
+    $$PWD/../../Game/core/player.h \
     $$PWD/../../Game/tiles/blockfield.h \
     $$PWD/../../Game/tiles/oredeposit.h \
     $$PWD/../../Game/tiles/water.h \
-    $$PWD/../../Game/objectmanager.h \
-    $$PWD/../../Game/gameeventhandler.h
+    $$PWD/../../Game/core/objectmanager.h \
+    $$PWD/../../Game/core/gameeventhandler.h
 
 SOURCES += \
     tst_default_tile.cpp \
-    $$PWD/../../Game/player.cpp \
+    $$PWD/../../Game/core/player.cpp \
     $$PWD/../../Game/tiles/blockfield.cpp \
     $$PWD/../../Game/tiles/oredeposit.cpp \
     $$PWD/../../Game/tiles/water.cpp \
-    $$PWD/../../Game/objectmanager.cpp \
-    $$PWD/../../Game/gameeventhandler.cpp
+    $$PWD/../../Game/core/objectmanager.cpp \
+    $$PWD/../../Game/core/gameeventhandler.cpp

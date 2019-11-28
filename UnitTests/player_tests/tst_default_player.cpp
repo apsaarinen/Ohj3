@@ -4,7 +4,9 @@
 #include "exceptions/keyerror.h"
 
 #include "core/gameobject.h"
-#include "player.h"
+#include "core/player.h"
+
+using namespace Game;
 
 class default_player : public QObject
 {
