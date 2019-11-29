@@ -16,6 +16,9 @@
 
 using namespace Game;
 
+/**
+ * @brief The worker_tests test the PlaceableGameObject and all Worker classes
+ */
 class default_worker : public QObject
 {
     Q_OBJECT
@@ -24,22 +27,94 @@ public:
     default_worker();
 
 private Q_SLOTS:
+
     // Tests as a PlaceableGameObject
+
+    /**
+     * @brief Tests whether an object with the same owner \n
+     *  can be placed on a tile
+     * @post Should be possible
+     */
     void test_canBePlacedOnTile_same_owner();
+
+    /**
+     * @brief Tests whether an object with a different owner \n
+     *  can be placed on a tile
+     * @post Should not be possible
+     */
     void test_canBePlacedOnTile_ownerconflict();
+
+    /**
+     * @brief Tests whether an object with no owner \n
+     *  can be placed on a tile without an owner
+     * @post Should be possible
+     */
     void test_canBePlacedOnTile_no_owners();
+
+    /**
+     * @brief Tests whether an object can be placed on a tile
+     * @post Should be possible
+     */
     void test_setLocationTile();
+
+    /**
+     * @brief Tests whether an object's location can be removed
+     * @post Should be possible
+     */
     void test_unsetLocationTile();
+
+    /**
+     * @brief Tests whether an object's location can set to a tile \n
+     * with a different owner
+     * @post Should throw an IllegalAction exception
+     */
     void test_setLocationTile_exception();
+
+    /**
+     * @brief Tests whether an objects location gets removed if the \n
+     * tile expires it was located on
+     * @post Should be removed
+     */
     void test_currentLocationTile_expired_ptr();
-    
+
+
     // Tests as a BasicWorker
+
+    /**
+     * @brief Tests worker's tileworkaction (generating resources)
+     * @post Should generate resources
+     */
     void test_tileWorkAction();
+
+    /**
+     * @brief Tests worker's tileworkaction when there aren't \n
+     * enough resources
+     * @post Should not give resources
+     */
     void test_tileWorkAction_notEnoughMoneyAndFood();
+
+    /**
+     * @brief Tests BasicWorker's type
+     * @post Should be BasicWorker
+     */
     void test_type_basicworker();
+
+    /**
+     * @brief Tests MineWorker's type
+     * @post Should be MineWorker
+     */
     void test_type_mineworker();
+
+    /**
+     * @brief Tests SawMillWorker's type
+     * @post Should be SawMillWorker
+     */
     void test_type_sawmillworker();
 
+
+    /**
+     * @brief Test cleanup
+     */
     void cleanup();
 
 private:

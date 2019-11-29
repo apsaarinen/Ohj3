@@ -8,36 +8,124 @@
 
 using namespace Game;
 
+/**
+ * @brief The player_tests test the PlayerBase and Player classes
+ */
 class default_player : public QObject
 {
     Q_OBJECT
 
 public:
+    /**
+     * @brief Test setup
+     */
     default_player();
-    ~default_player();
 
 private Q_SLOTS:
+
+    // Tests as a PlayerBase
+
+    /**
+     * @brief Tests changing the player's name
+     * @post Should be changed
+     */
     void setName();
 
+    /**
+     * @brief Tests adding an object to the player
+     * @post Should be added
+     */
     void addObject();
+
+    /**
+     * @brief Tests adding an list of objects to the player
+     * @post Should be added
+     */
     void addObjects();
 
+    /**
+     * @brief Tests removing an object from the player
+     * @post Should be removed
+     */
     void removeObject();
+
+    /**
+     * @brief Tests removing an object from the player with a \n
+     * wrong key
+     * @post Should throw a KeyError exception
+     */
     void removeObject_exception_keyerror();
+
+    /**
+     * @brief Cleanup after remove test
+     */
     void removeObject_cleanup();
+
+    /**
+     * @brief Tests removing a list of objects from the player
+     * @post Should be removed
+     */
     void removeObjects();
+
+    /**
+     * @brief Tests removing a list of objects from the player
+     * @post Should be removed or will not throw an exception
+     */
     void removeObjects_verify_no_throw();
+
+    /**
+     * @brief Cleanup after remove test
+     */
     void removeObjects_cleanup();
 
+    /**
+     * @brief Tests removing an object from the player by ID
+     * @post Should be removed
+     */
     void removeObject_byID();
+
+    /**
+     * @brief Tests removing an object from the player by ID \n
+     * with the wrong ID
+     * @post Should throw a KeyError exception
+     */
     void removeObject_byID_exception();
+
+    /**
+     * @brief Cleanup after remove test
+     */
     void removeObject_byID_cleanup();
+
+    /**
+     * @brief Tests removing a list of objects from the player by ID
+     * @post Should be removed
+     */
     void removeObjects_byID();
+
+    /**
+     * @brief Cleanup after remove test
+     */
     void removeObjects_byID_cleanup();
+
+    /**
+     * @brief Tests removing a list of objects from the player by ID
+     * @post Should be removed or will not throw an exception
+     */
     void removeObjects_byID_verify_no_throw();
 
+
+    // Tests as a Player
+
+    /**
+     * @brief Tests that a player's color is set up correctly
+     * @post Should be set up correctly
+     */
     void checkColor();
 
+
+    /**
+     * @brief Test cleanup
+     */
     void cleanup();
 
 private:
@@ -64,20 +152,6 @@ private:
 default_player::default_player()
 {
     default_instance = std::make_unique<Player>(DEFAULT_NAME, "red");
-}
-
-default_player::~default_player()
-{
-}
-
-void default_player::cleanup()
-{
-    default_instance = std::make_unique<Player>(DEFAULT_NAME, "red");
-
-    destroyable_objects = {
-        std::make_shared<Course::GameObject>(),
-        std::make_shared<Course::GameObject>()
-    };
 }
 
 bool default_player::vectorContainsPtr(
@@ -377,6 +451,15 @@ void default_player::checkColor()
     QVERIFY(default_instance->getColor() == QString("red"));
 }
 
+void default_player::cleanup()
+{
+    default_instance = std::make_unique<Player>(DEFAULT_NAME, "red");
+
+    destroyable_objects = {
+        std::make_shared<Course::GameObject>(),
+        std::make_shared<Course::GameObject>()
+    };
+}
 
 
 QTEST_APPLESS_MAIN(default_player)

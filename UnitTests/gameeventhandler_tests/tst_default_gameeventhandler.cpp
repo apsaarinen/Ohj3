@@ -7,27 +7,61 @@
 
 using namespace Game;
 
+/**
+ * @brief The gameventhandler_tests test the GameEventHandler class
+ */
 class default_gameeventhandler : public QObject
 {
     Q_OBJECT
 
 public:
+    /**
+     * @brief Test setup
+     */
     default_gameeventhandler();
 
 private Q_SLOTS:
+
+    /**
+     * @brief Tests player reaching the win condition
+     * @post Player should be selected as the winner
+     */
     void test_playerHasWon();
+
+    /**
+     * @brief Tests modifying a player's resource
+     * @post Resource should be modified accordingly
+     */
     void test_modifyResource();
+
+    /**
+     * @brief Tests modifying a player's resources
+     * @post Resources should be modified accordingly
+     */
     void test_modifyResources();
 
-    // Set/get player in turn
+    /**
+     * @brief Tests getting and setting the player in turn
+     * @post Player in turn should change and be returned correctly
+     */
     void test_playerInTurn();
 
-    // set and get is buying
+    /**
+     * @brief Tests getting and setting the buying-flag
+     * @post Buying flag should change and be returned correctly
+     */
     void test_isBuying();
 
-    // getting and increasing rounds
+    /**
+     * @brief Tests getting and increasing the current game round
+     * @post Rounds should increase and be returned correctly
+     */
     void test_rounds();
 
+
+    /**
+     * @brief Test cleanup
+     */
     void cleanup();
 
 private:

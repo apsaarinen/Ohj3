@@ -18,28 +18,127 @@
 
 using namespace Game;
 
+/**
+ * @brief The tiles_tests test the TileBase class and all its children
+ */
 class default_tile : public QObject
 {
     Q_OBJECT
 
 public:
+    /**
+     * @brief Test setup
+     */
     default_tile();
 
 private Q_SLOTS:
+
+    /**
+     * @brief Tests adding a building to a tile
+     * @post Should be possible
+     */
     void test_addBuilding();
+
+    /**
+     * @brief Tests adding too many buildings on a tile
+     * @post Should throw an IllegalAction exception
+     */
     void test_addBuilding_too_many_buildings();
+
+    /**
+     * @brief Tests adding a building to water
+     * @post Should throw an IllegalAction exception
+     */
     void test_addBuilding_to_water();
+
+    /**
+     * @brief Tests removing a building from a tile
+     * @post Should be possible
+     */
     void test_removeBuilding();
+
+    /**
+     * @brief Tests getting buildings from a tile
+     * @post Should be possible
+     */
     void test_getBuildings();
 
+    /**
+     * @brief Tests adding a worker to a tile
+     * @post Should be possible
+     */
     void test_addWorker();
+
+    /**
+     * @brief Tests adding too many workers on a tile
+     * @post Should throw an IllegalAction exception
+     */
     void test_addWorker_too_many_workers();
+
+    /**
+     * @brief Tests adding a worker to water
+     * @post Should throw an IllegalAction exception
+     */
     void test_addWorker_to_water();
+
+    /**
+     * @brief Tests removing a worker from a tile
+     * @post Should be possible
+     */
     void test_removeWorker();
+
+    /**
+     * @brief Tests getting workers from a tile
+     * @post Should be possible
+     */
     void test_getWorkers();
 
+    /**
+     * @brief Tests adding workers and buildings to a tile
+     * @post Should be possible to add both within limits of the tile
+     */
     void test_addBuildingAndWorker();
 
+    /**
+     * @brief Tests TilesBase's type
+     * @post Should be TilesBase
+     */
+    void test_type_tilebase();
+
+    /**
+     * @brief Tests Forest's type
+     * @post Should be Forest
+     */
+    void test_type_forest();
+
+    /**
+     * @brief Tests Grassland's type
+     * @post Should be Grassland
+     */
+    void test_type_grassland();
+
+    /**
+     * @brief Tests Water's type
+     * @post Should be Water
+     */
+    void test_type_water();
+
+    /**
+     * @brief Tests Blockfield's type
+     * @post Should be Blockfield
+     */
+    void test_type_blockfield();
+
+    /**
+     * @brief Tests OreDeposit's type
+     * @post Should be OreDeposit
+     */
+    void test_type_oredeposit();
+
+
+    /**
+     * @brief Test cleanup
+     */
     void cleanup();
 
 private:
@@ -227,6 +326,36 @@ void default_tile::test_addBuildingAndWorker()
     default_object->addWorker(worker1);
     QVERIFY_EXCEPTION_THROWN(default_object->addWorker(worker2),
                              Course::IllegalAction);
+}
+
+void default_tile::test_type_tilebase()
+{
+    QVERIFY(default_object->getType() == "TileBase");
+}
+
+void default_tile::test_type_forest()
+{
+    QVERIFY(forest_object->getType() == "Forest");
+}
+
+void default_tile::test_type_grassland()
+{
+    QVERIFY(grassland_object->getType() == "Grassland");
+}
+
+void default_tile::test_type_water()
+{
+    QVERIFY(water_object->getType() == "Water");
+}
+
+void default_tile::test_type_blockfield()
+{
+    QVERIFY(blockfield_object->getType() == "Blockfield");
+}
+
+void default_tile::test_type_oredeposit()
+{
+    QVERIFY(oredeposit_object->getType() == "OreDeposit");
 }
 
 void default_tile::cleanup()

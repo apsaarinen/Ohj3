@@ -16,35 +16,139 @@
 
 using namespace Game;
 
+/**
+ * @brief The building_tests test the PlaceableGameObject and all Building classes
+ */
 class default_building : public QObject
 {
     Q_OBJECT
 
 public:
+    /**
+     * @brief Test setup
+     */
     default_building();
 
 private Q_SLOTS:
+
     // Tests as a PlaceableGameObject
+
+    /**
+     * @brief Tests whether an object with the same owner \n
+     *  can be placed on a tile
+     * @post Should be possible
+     */
     void test_canBePlacedOnTile_same_owner();
+
+    /**
+     * @brief Tests whether an object with a different owner \n
+     *  can be placed on a tile
+     * @post Should not be possible
+     */
     void test_canBePlacedOnTile_ownerconflict();
+
+    /**
+     * @brief Tests whether an owned object \n
+     *  can be placed on a tile with no owner
+     * @post Should be possible
+     */
     void test_canBePlacedOnTile_no_owner_for_tile();
+
+    /**
+     * @brief Tests whether an object with no owner \n
+     *  can be placed on a tile with an owner
+     * @post Should be possible
+     */
     void test_canBePlacedOnTile_no_owner_for_object();
+
+    /**
+     * @brief Tests whether an object with no owner \n
+     *  can be placed on a tile without an owner
+     * @post Should be possible
+     */
     void test_canBePlacedOnTile_no_owners();
+
+    /**
+     * @brief Tests whether an object can be placed on a tile
+     * @post Should be possible
+     */
     void test_setLocationTile();
+
+    /**
+     * @brief Tests whether an object's location can be removed
+     * @post Should be possible
+     */
     void test_unsetLocationTile();
+
+    /**
+     * @brief Tests whether an object's location can set to a tile \n
+     * with a different owner
+     * @post Should throw an IllegalAction exception
+     */
     void test_setLocationTile_exception();
+
+    /**
+     * @brief Tests whether an objects location gets removed if the \n
+     * tile expires it was located on
+     * @post Should be removed
+     */
     void test_currentLocationTile_expired_ptr();
 
+
     // Tests as a BuildingBase
+
+    /**
+     * @brief Tests if an HQ buildings onbuildaction works
+     * @post Should work
+     */
     void test_onBuildAction();
+
+    /**
+     * @brief Tests adding a hold marker to a building
+     * @post Should be possible
+     */
     void test_addHoldMarkers();
+
+    /**
+     * @brief Tests BuildingBase's type
+     * @post Should be BuildingBase
+     */
     void test_type_BuildingBase();
+
+    /**
+     * @brief Tests HeadQuarter's type
+     * @post Should be HeadQuarters
+     */
     void test_type_HQ();
+
+    /**
+     * @brief Tests Outpost's type
+     * @post Should be Outpost
+     */
     void test_type_Outpost();
+
+    /**
+     * @brief Tests Farm's type
+     * @post Should be Farm
+     */
     void test_type_Farm();
+
+    /**
+     * @brief Tests Sawmill's type
+     * @post Should be Sawmill
+     */
     void test_type_SawMill();
+
+    /**
+     * @brief Tests Mine's type
+     * @post Should be Mine
+     */
     void test_type_Mine();
 
+
+    /**
+     * @brief Test cleanup
+     */
     void cleanup();
 
 private:

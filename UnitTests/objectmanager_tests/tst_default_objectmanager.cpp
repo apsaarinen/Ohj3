@@ -9,23 +9,44 @@
 
 using namespace Game;
 
+/**
+ * @brief The objectmanager_tests test the ObjectManager class
+ */
 class default_objectmanager : public QObject
 {
     Q_OBJECT
 
 public:
+    /**
+     * @brief Test setup
+     */
     default_objectmanager();
 
 private Q_SLOTS:
-    // Player related operations
+
+    /**
+     * @brief Tests opeations to the list of players
+     * @post players should be added and returned correctly
+     */
     void test_player_operations();
 
-    // Tile related opeations
+    /**
+     * @brief Tests opeations to the list of tiles
+     * @post tiles should be added and returned correctly
+     */
     void test_tile_operations();
 
+    /**
+     * @brief Tests opeations to the list of placeableobjects \n
+     * (workers and buildings)
+     * @post placeableobjects should be added and returned correctly
+     */
     void test_placeableobject_operations();
 
 
+    /**
+     * @brief Test cleanup
+     */
     void cleanup();
 private:
     std::shared_ptr<ObjectManager> objectmanager_object;
