@@ -1,0 +1,240 @@
+\hypertarget{classCourse_1_1SimpleMapItem}{\section{Course\-:\-:Simple\-Map\-Item Class Reference}
+\label{classCourse_1_1SimpleMapItem}\index{Course\-::\-Simple\-Map\-Item@{Course\-::\-Simple\-Map\-Item}}
+}
+
+
+The \hyperlink{classCourse_1_1SimpleMapItem}{Simple\-Map\-Item} class is a custom Q\-Graphics\-Item that acts as a single \hyperlink{classCourse_1_1GameObject}{Game\-Object}'s graphical element.  
+
+
+
+
+{\ttfamily \#include $<$simplemapitem.\-h$>$}
+
+Inheritance diagram for Course\-:\-:Simple\-Map\-Item\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCourse_1_1SimpleMapItem}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCourse_1_1SimpleMapItem_a3203bf5f513161593f4036320b7c24c6}{Simple\-Map\-Item} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1GameObject}{Course\-::\-Game\-Object} $>$ \&obj, int size)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+Q\-Rect\-F \hyperlink{classCourse_1_1SimpleMapItem_ad103986c7b67b3e1c69e10291e6c4b36}{bounding\-Rect} () const override
+\begin{DoxyCompactList}\small\item\em bounding\-Rect \end{DoxyCompactList}\item 
+void \hyperlink{classCourse_1_1SimpleMapItem_a42f0b7bd86da05bcc511486362aabb8b}{paint} (Q\-Painter $\ast$painter, const Q\-Style\-Option\-Graphics\-Item $\ast$option, Q\-Widget $\ast$widget)
+\begin{DoxyCompactList}\small\item\em paints the item \end{DoxyCompactList}\item 
+const std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1GameObject}{Course\-::\-Game\-Object} $>$ \& \hyperlink{classCourse_1_1SimpleMapItem_ad244bfbca3b53ec888ae7fa07b004e68}{get\-Bound\-Object} ()
+\begin{DoxyCompactList}\small\item\em get\-Bound\-Object \end{DoxyCompactList}\item 
+void \hyperlink{classCourse_1_1SimpleMapItem_a7b064cd8193aff3a1e810582e9e75786}{update\-Loc} ()
+\begin{DoxyCompactList}\small\item\em update\-Loc moves the item if the position has changed. \end{DoxyCompactList}\item 
+bool \hyperlink{classCourse_1_1SimpleMapItem_a95cc703e4962903f3a67bee4eb7c7165}{is\-Same\-Obj} (std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1GameObject}{Course\-::\-Game\-Object} $>$ obj)
+\begin{DoxyCompactList}\small\item\em checks if this instance has obj as bound obj. \end{DoxyCompactList}\item 
+int \hyperlink{classCourse_1_1SimpleMapItem_af80e162edd2c57e5f74b88cdc8113721}{get\-Size} () const 
+\begin{DoxyCompactList}\small\item\em get\-Size \end{DoxyCompactList}\item 
+void \hyperlink{classCourse_1_1SimpleMapItem_aaff1ad6f7daac8b91bb606d9d2b26f4a}{set\-Size} (int size)
+\begin{DoxyCompactList}\small\item\em set\-Size \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classCourse_1_1SimpleMapItem_ae00337284799adff891f10d4ec1396d5}{add\-New\-Color} (std\-::string type)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1GameObject}{Course\-::\-Game\-Object} $>$ \hyperlink{classCourse_1_1SimpleMapItem_a4e067b04d171bb5e0a74f0f9c6419e95}{m\-\_\-gameobject}
+\item 
+Q\-Point \hyperlink{classCourse_1_1SimpleMapItem_a23c29a1b2a650ea0d9e5f7c1cc9a28f3}{m\-\_\-scenelocation}
+\item 
+int \hyperlink{classCourse_1_1SimpleMapItem_a68703106114f279f0fa103057d4b77af}{m\-\_\-size}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::map$<$ std\-::string, \\*
+Q\-Color $>$ \hyperlink{classCourse_1_1SimpleMapItem_adf954f1c53a9651e2634cd307be9aab4}{c\-\_\-mapcolors} = \{\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classCourse_1_1SimpleMapItem}{Simple\-Map\-Item} class is a custom Q\-Graphics\-Item that acts as a single \hyperlink{classCourse_1_1GameObject}{Game\-Object}'s graphical element. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCourse_1_1SimpleMapItem_a3203bf5f513161593f4036320b7c24c6}{\index{Course\-::\-Simple\-Map\-Item@{Course\-::\-Simple\-Map\-Item}!Simple\-Map\-Item@{Simple\-Map\-Item}}
+\index{Simple\-Map\-Item@{Simple\-Map\-Item}!Course::SimpleMapItem@{Course\-::\-Simple\-Map\-Item}}
+\subsubsection[{Simple\-Map\-Item}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Simple\-Map\-Item\-::\-Simple\-Map\-Item (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Course\-::\-Game\-Object} $>$ \&}]{obj, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1SimpleMapItem_a3203bf5f513161593f4036320b7c24c6}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & shared\-\_\-ptr to the obj. \\
+\hline
+{\em size} & of the created item in pixels. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+obj must have a valid \hyperlink{classCourse_1_1Coordinate}{Coordinate}. 
+\end{DoxyPrecond}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCourse_1_1SimpleMapItem_ae00337284799adff891f10d4ec1396d5}{\index{Course\-::\-Simple\-Map\-Item@{Course\-::\-Simple\-Map\-Item}!add\-New\-Color@{add\-New\-Color}}
+\index{add\-New\-Color@{add\-New\-Color}!Course::SimpleMapItem@{Course\-::\-Simple\-Map\-Item}}
+\subsubsection[{add\-New\-Color}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::\-Simple\-Map\-Item\-::add\-New\-Color (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCourse_1_1SimpleMapItem_ae00337284799adff891f10d4ec1396d5}
+\hypertarget{classCourse_1_1SimpleMapItem_ad103986c7b67b3e1c69e10291e6c4b36}{\index{Course\-::\-Simple\-Map\-Item@{Course\-::\-Simple\-Map\-Item}!bounding\-Rect@{bounding\-Rect}}
+\index{bounding\-Rect@{bounding\-Rect}!Course::SimpleMapItem@{Course\-::\-Simple\-Map\-Item}}
+\subsubsection[{bounding\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Rect\-F Course\-::\-Simple\-Map\-Item\-::bounding\-Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}}}\label{classCourse_1_1SimpleMapItem_ad103986c7b67b3e1c69e10291e6c4b36}
+
+
+bounding\-Rect 
+
+\begin{DoxyReturn}{Returns}
+the bounding rectangle of this item. 
+\end{DoxyReturn}
+\hypertarget{classCourse_1_1SimpleMapItem_ad244bfbca3b53ec888ae7fa07b004e68}{\index{Course\-::\-Simple\-Map\-Item@{Course\-::\-Simple\-Map\-Item}!get\-Bound\-Object@{get\-Bound\-Object}}
+\index{get\-Bound\-Object@{get\-Bound\-Object}!Course::SimpleMapItem@{Course\-::\-Simple\-Map\-Item}}
+\subsubsection[{get\-Bound\-Object}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::shared\-\_\-ptr$<$ {\bf Course\-::\-Game\-Object} $>$ \& Course\-::\-Simple\-Map\-Item\-::get\-Bound\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1SimpleMapItem_ad244bfbca3b53ec888ae7fa07b004e68}
+
+
+get\-Bound\-Object 
+
+\begin{DoxyReturn}{Returns}
+the object this item is bound to. 
+\end{DoxyReturn}
+\hypertarget{classCourse_1_1SimpleMapItem_af80e162edd2c57e5f74b88cdc8113721}{\index{Course\-::\-Simple\-Map\-Item@{Course\-::\-Simple\-Map\-Item}!get\-Size@{get\-Size}}
+\index{get\-Size@{get\-Size}!Course::SimpleMapItem@{Course\-::\-Simple\-Map\-Item}}
+\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int Course\-::\-Simple\-Map\-Item\-::get\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCourse_1_1SimpleMapItem_af80e162edd2c57e5f74b88cdc8113721}
+
+
+get\-Size 
+
+\begin{DoxyReturn}{Returns}
+size of the object in pixels. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\hypertarget{classCourse_1_1SimpleMapItem_a95cc703e4962903f3a67bee4eb7c7165}{\index{Course\-::\-Simple\-Map\-Item@{Course\-::\-Simple\-Map\-Item}!is\-Same\-Obj@{is\-Same\-Obj}}
+\index{is\-Same\-Obj@{is\-Same\-Obj}!Course::SimpleMapItem@{Course\-::\-Simple\-Map\-Item}}
+\subsubsection[{is\-Same\-Obj}]{\setlength{\rightskip}{0pt plus 5cm}bool Course\-::\-Simple\-Map\-Item\-::is\-Same\-Obj (
+\begin{DoxyParamCaption}
+\item[{std\-::shared\-\_\-ptr$<$ {\bf Course\-::\-Game\-Object} $>$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1SimpleMapItem_a95cc703e4962903f3a67bee4eb7c7165}
+
+
+checks if this instance has obj as bound obj. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True\-: if obj is pointing to the same object as this item. False otherwise. 
+\end{DoxyReturn}
+\hypertarget{classCourse_1_1SimpleMapItem_a42f0b7bd86da05bcc511486362aabb8b}{\index{Course\-::\-Simple\-Map\-Item@{Course\-::\-Simple\-Map\-Item}!paint@{paint}}
+\index{paint@{paint}!Course::SimpleMapItem@{Course\-::\-Simple\-Map\-Item}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::\-Simple\-Map\-Item\-::paint (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{const Q\-Style\-Option\-Graphics\-Item $\ast$}]{option, }
+\item[{Q\-Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1SimpleMapItem_a42f0b7bd86da05bcc511486362aabb8b}
+
+
+paints the item 
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & \\
+\hline
+{\em option} & \\
+\hline
+{\em widget} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The Graphics\-View containing the scene this belongs to usually calls this function. 
+\end{DoxyNote}
+\hypertarget{classCourse_1_1SimpleMapItem_aaff1ad6f7daac8b91bb606d9d2b26f4a}{\index{Course\-::\-Simple\-Map\-Item@{Course\-::\-Simple\-Map\-Item}!set\-Size@{set\-Size}}
+\index{set\-Size@{set\-Size}!Course::SimpleMapItem@{Course\-::\-Simple\-Map\-Item}}
+\subsubsection[{set\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::\-Simple\-Map\-Item\-::set\-Size (
+\begin{DoxyParamCaption}
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1SimpleMapItem_aaff1ad6f7daac8b91bb606d9d2b26f4a}
+
+
+set\-Size 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & of the object in pixels. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+0 $<$ size $<$= 500 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\hypertarget{classCourse_1_1SimpleMapItem_a7b064cd8193aff3a1e810582e9e75786}{\index{Course\-::\-Simple\-Map\-Item@{Course\-::\-Simple\-Map\-Item}!update\-Loc@{update\-Loc}}
+\index{update\-Loc@{update\-Loc}!Course::SimpleMapItem@{Course\-::\-Simple\-Map\-Item}}
+\subsubsection[{update\-Loc}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::\-Simple\-Map\-Item\-::update\-Loc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1SimpleMapItem_a7b064cd8193aff3a1e810582e9e75786}
+
+
+update\-Loc moves the item if the position has changed. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCourse_1_1SimpleMapItem_adf954f1c53a9651e2634cd307be9aab4}{\index{Course\-::\-Simple\-Map\-Item@{Course\-::\-Simple\-Map\-Item}!c\-\_\-mapcolors@{c\-\_\-mapcolors}}
+\index{c\-\_\-mapcolors@{c\-\_\-mapcolors}!Course::SimpleMapItem@{Course\-::\-Simple\-Map\-Item}}
+\subsubsection[{c\-\_\-mapcolors}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ std\-::string, Q\-Color $>$ Course\-::\-Simple\-Map\-Item\-::c\-\_\-mapcolors = \{\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCourse_1_1SimpleMapItem_adf954f1c53a9651e2634cd307be9aab4}
+\hypertarget{classCourse_1_1SimpleMapItem_a4e067b04d171bb5e0a74f0f9c6419e95}{\index{Course\-::\-Simple\-Map\-Item@{Course\-::\-Simple\-Map\-Item}!m\-\_\-gameobject@{m\-\_\-gameobject}}
+\index{m\-\_\-gameobject@{m\-\_\-gameobject}!Course::SimpleMapItem@{Course\-::\-Simple\-Map\-Item}}
+\subsubsection[{m\-\_\-gameobject}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::shared\-\_\-ptr$<${\bf Course\-::\-Game\-Object}$>$ Course\-::\-Simple\-Map\-Item\-::m\-\_\-gameobject\hspace{0.3cm}{\ttfamily [private]}}}\label{classCourse_1_1SimpleMapItem_a4e067b04d171bb5e0a74f0f9c6419e95}
+\hypertarget{classCourse_1_1SimpleMapItem_a23c29a1b2a650ea0d9e5f7c1cc9a28f3}{\index{Course\-::\-Simple\-Map\-Item@{Course\-::\-Simple\-Map\-Item}!m\-\_\-scenelocation@{m\-\_\-scenelocation}}
+\index{m\-\_\-scenelocation@{m\-\_\-scenelocation}!Course::SimpleMapItem@{Course\-::\-Simple\-Map\-Item}}
+\subsubsection[{m\-\_\-scenelocation}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Point Course\-::\-Simple\-Map\-Item\-::m\-\_\-scenelocation\hspace{0.3cm}{\ttfamily [private]}}}\label{classCourse_1_1SimpleMapItem_a23c29a1b2a650ea0d9e5f7c1cc9a28f3}
+\hypertarget{classCourse_1_1SimpleMapItem_a68703106114f279f0fa103057d4b77af}{\index{Course\-::\-Simple\-Map\-Item@{Course\-::\-Simple\-Map\-Item}!m\-\_\-size@{m\-\_\-size}}
+\index{m\-\_\-size@{m\-\_\-size}!Course::SimpleMapItem@{Course\-::\-Simple\-Map\-Item}}
+\subsubsection[{m\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int Course\-::\-Simple\-Map\-Item\-::m\-\_\-size\hspace{0.3cm}{\ttfamily [private]}}}\label{classCourse_1_1SimpleMapItem_a68703106114f279f0fa103057d4b77af}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Course/\-Course\-Lib/graphics/\hyperlink{simplemapitem_8h}{simplemapitem.\-h}\item 
+Course/\-Course\-Lib/graphics/\hyperlink{simplemapitem_8cpp}{simplemapitem.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,434 @@
+\hypertarget{classdefault__building}{\section{default\-\_\-building Class Reference}
+\label{classdefault__building}\index{default\-\_\-building@{default\-\_\-building}}
+}
+
+
+The building\-\_\-tests test the Placeable\-Game\-Object and all Building classes.  
+
+
+Inheritance diagram for default\-\_\-building\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdefault__building}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdefault__building_aa00a39e3aec1b2ea8cda18401df560c4}{default\-\_\-building} ()
+\begin{DoxyCompactList}\small\item\em Test setup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classdefault__building_a6012517a2cdabf2eafc45fe58c1c00c8}{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-same\-\_\-owner} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an object with the same owner \par
+ can be placed on a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_ae581115cf5ef510cd11c9ca627cc2520}{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-ownerconflict} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an object with a different owner \par
+ can be placed on a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_a1ec8a3bb7a692d66acf8d0b75cd3ba44}{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owner\-\_\-for\-\_\-tile} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an owned object \par
+ can be placed on a tile with no owner. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_aa27f2bdc2cf8f1c1af513638c6ad392b}{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owner\-\_\-for\-\_\-object} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an object with no owner \par
+ can be placed on a tile with an owner. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_a949f126050554047ff7e3192e1af3d75}{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owners} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an object with no owner \par
+ can be placed on a tile without an owner. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_a245adf65bac29aacae6c9f148796157d}{test\-\_\-set\-Location\-Tile} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an object can be placed on a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_aa20f013a8a7b29bd639f822dd0ec1c2f}{test\-\_\-unset\-Location\-Tile} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an object's location can be removed. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_a77f6f2948dcbdeda1c89344b4329750e}{test\-\_\-set\-Location\-Tile\-\_\-exception} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an object's location can set to a tile \par
+with a different owner. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_a32db5769634d9638af97d559d6d8aeae}{test\-\_\-current\-Location\-Tile\-\_\-expired\-\_\-ptr} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an objects location gets removed if the \par
+tile expires it was located on. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_a5f5b01449c756e96a14dc7c18e9c778b}{test\-\_\-on\-Build\-Action} ()
+\begin{DoxyCompactList}\small\item\em Tests if an H\-Q buildings onbuildaction works. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_ace547d46c2ba480530c50e19fcdf99f9}{test\-\_\-add\-Hold\-Markers} ()
+\begin{DoxyCompactList}\small\item\em Tests adding a hold marker to a building. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_a37386998dea658666fdd3b271ea12262}{test\-\_\-type\-\_\-\-Building\-Base} ()
+\begin{DoxyCompactList}\small\item\em Tests Building\-Base's type. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_a61e0dccb6b2d2f6caa6d5cb9d6f46761}{test\-\_\-type\-\_\-\-H\-Q} ()
+\begin{DoxyCompactList}\small\item\em Tests Head\-Quarter's type. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_afb2454e44d8d42562191c5c4cd81b6f7}{test\-\_\-type\-\_\-\-Outpost} ()
+\begin{DoxyCompactList}\small\item\em Tests Outpost's type. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_a024dda6691de09c78cd2c41c3b2517bb}{test\-\_\-type\-\_\-\-Farm} ()
+\begin{DoxyCompactList}\small\item\em Tests Farm's type. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_a2629b8493420e49f7d1bffc7c1f085fb}{test\-\_\-type\-\_\-\-Saw\-Mill} ()
+\begin{DoxyCompactList}\small\item\em Tests Sawmill's type. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_ab331bdbdb301645ece2f9942e5d0b1f4}{test\-\_\-type\-\_\-\-Mine} ()
+\begin{DoxyCompactList}\small\item\em Tests Mine's type. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__building_a35e2d98e0d70dd54f04a338c5cf923ae}{cleanup} ()
+\begin{DoxyCompactList}\small\item\em Test cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1ObjectManager}{Object\-Manager} $>$ \hyperlink{classdefault__building_a9f19657073191d1ccfae1537bd1bc574}{obj\-Man}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1GameEventHandler}{Game\-Event\-Handler} $>$ \hyperlink{classdefault__building_a7bf9c55301d5a6027d016bf76cb585ce}{G\-E\-Hand}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1Player}{Player} $>$ \hyperlink{classdefault__building_a0459e600394868e19bb88ababc4e50ae}{player1}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1Player}{Player} $>$ \hyperlink{classdefault__building_a27f3d517ae073d9088c533a83a287ba5}{player2}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1TileBase}{Course\-::\-Tile\-Base} $>$ \hyperlink{classdefault__building_a4851bd1b8736d29d5608dcbd85bca338}{tile1}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1TileBase}{Course\-::\-Tile\-Base} $>$ \hyperlink{classdefault__building_adcb7e13de2a868910460f1ca658e44b0}{tile2}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1TileBase}{Course\-::\-Tile\-Base} $>$ \hyperlink{classdefault__building_a03bf0e5b69cdc4c06be2d1ef255f8550}{tile\-Expire}
+\item 
+const \hyperlink{classCourse_1_1Coordinate}{Course\-::\-Coordinate} \hyperlink{classdefault__building_a9bf0749a6f397a82c5a939fb6fca6f43}{tile1\-\_\-coordinate} = \{1,1\}
+\item 
+const \hyperlink{classCourse_1_1Coordinate}{Course\-::\-Coordinate} \hyperlink{classdefault__building_a6ba4a9f3044210aacfb738b593a585b7}{tile2\-\_\-coordinate} = \{1,2\}
+\item 
+const \hyperlink{classCourse_1_1Coordinate}{Course\-::\-Coordinate} \hyperlink{classdefault__building_a5fadd5f10435b00e89e58ce9e32c57e5}{tile\-Expire\-\_\-coordinate} = \{2,2\}
+\item 
+std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1BuildingBase}{Course\-::\-Building\-Base} $>$ \hyperlink{classdefault__building_afa2b3230dc8c603474fcf7dbf76c47c4}{default\-\_\-object}
+\item 
+std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1HeadQuarters}{Course\-::\-Head\-Quarters} $>$ \hyperlink{classdefault__building_a0badf4ed00b36044834272bc3ebf94d3}{hq\-\_\-object}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1Outpost}{Course\-::\-Outpost} $>$ \hyperlink{classdefault__building_a924c16a0ac49e9b3b9d71d2a27736e93}{outpost\-\_\-object}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1Farm}{Course\-::\-Farm} $>$ \hyperlink{classdefault__building_aa38e3d845ceeb470e23d4a074f797500}{farm\-\_\-object}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1Mine}{Mine} $>$ \hyperlink{classdefault__building_adceff1efd60baeff9af22c161272c67d}{mine\-\_\-object}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1SawMill}{Saw\-Mill} $>$ \hyperlink{classdefault__building_a17f72da13e6159671242ad6e31ba7fb0}{sawmill\-\_\-object}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The building\-\_\-tests test the Placeable\-Game\-Object and all Building classes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classdefault__building_aa00a39e3aec1b2ea8cda18401df560c4}{\index{default\-\_\-building@{default\-\_\-building}!default\-\_\-building@{default\-\_\-building}}
+\index{default\-\_\-building@{default\-\_\-building}!default_building@{default\-\_\-building}}
+\subsubsection[{default\-\_\-building}]{\setlength{\rightskip}{0pt plus 5cm}default\-\_\-building\-::default\-\_\-building (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classdefault__building_aa00a39e3aec1b2ea8cda18401df560c4}
+
+
+Test setup. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classdefault__building_a35e2d98e0d70dd54f04a338c5cf923ae}{\index{default\-\_\-building@{default\-\_\-building}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!default_building@{default\-\_\-building}}
+\subsubsection[{cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_a35e2d98e0d70dd54f04a338c5cf923ae}
+
+
+Test cleanup. 
+
+\hypertarget{classdefault__building_ace547d46c2ba480530c50e19fcdf99f9}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-add\-Hold\-Markers@{test\-\_\-add\-Hold\-Markers}}
+\index{test\-\_\-add\-Hold\-Markers@{test\-\_\-add\-Hold\-Markers}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-add\-Hold\-Markers}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-add\-Hold\-Markers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_ace547d46c2ba480530c50e19fcdf99f9}
+
+
+Tests adding a hold marker to a building. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_aa27f2bdc2cf8f1c1af513638c6ad392b}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owner\-\_\-for\-\_\-object@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owner\-\_\-for\-\_\-object}}
+\index{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owner\-\_\-for\-\_\-object@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owner\-\_\-for\-\_\-object}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owner\-\_\-for\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owner\-\_\-for\-\_\-object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_aa27f2bdc2cf8f1c1af513638c6ad392b}
+
+
+Tests whether an object with no owner \par
+ can be placed on a tile with an owner. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_a1ec8a3bb7a692d66acf8d0b75cd3ba44}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owner\-\_\-for\-\_\-tile@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owner\-\_\-for\-\_\-tile}}
+\index{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owner\-\_\-for\-\_\-tile@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owner\-\_\-for\-\_\-tile}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owner\-\_\-for\-\_\-tile}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owner\-\_\-for\-\_\-tile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_a1ec8a3bb7a692d66acf8d0b75cd3ba44}
+
+
+Tests whether an owned object \par
+ can be placed on a tile with no owner. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_a949f126050554047ff7e3192e1af3d75}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owners@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owners}}
+\index{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owners@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owners}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owners}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owners (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_a949f126050554047ff7e3192e1af3d75}
+
+
+Tests whether an object with no owner \par
+ can be placed on a tile without an owner. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_ae581115cf5ef510cd11c9ca627cc2520}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-ownerconflict@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-ownerconflict}}
+\index{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-ownerconflict@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-ownerconflict}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-ownerconflict}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-ownerconflict (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_ae581115cf5ef510cd11c9ca627cc2520}
+
+
+Tests whether an object with a different owner \par
+ can be placed on a tile. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should not be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_a6012517a2cdabf2eafc45fe58c1c00c8}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-same\-\_\-owner@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-same\-\_\-owner}}
+\index{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-same\-\_\-owner@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-same\-\_\-owner}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-same\-\_\-owner}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-same\-\_\-owner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_a6012517a2cdabf2eafc45fe58c1c00c8}
+
+
+Tests whether an object with the same owner \par
+ can be placed on a tile. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_a32db5769634d9638af97d559d6d8aeae}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-current\-Location\-Tile\-\_\-expired\-\_\-ptr@{test\-\_\-current\-Location\-Tile\-\_\-expired\-\_\-ptr}}
+\index{test\-\_\-current\-Location\-Tile\-\_\-expired\-\_\-ptr@{test\-\_\-current\-Location\-Tile\-\_\-expired\-\_\-ptr}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-current\-Location\-Tile\-\_\-expired\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-current\-Location\-Tile\-\_\-expired\-\_\-ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_a32db5769634d9638af97d559d6d8aeae}
+
+
+Tests whether an objects location gets removed if the \par
+tile expires it was located on. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be removed 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_a5f5b01449c756e96a14dc7c18e9c778b}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-on\-Build\-Action@{test\-\_\-on\-Build\-Action}}
+\index{test\-\_\-on\-Build\-Action@{test\-\_\-on\-Build\-Action}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-on\-Build\-Action}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-on\-Build\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_a5f5b01449c756e96a14dc7c18e9c778b}
+
+
+Tests if an H\-Q buildings onbuildaction works. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should work 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_a245adf65bac29aacae6c9f148796157d}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-set\-Location\-Tile@{test\-\_\-set\-Location\-Tile}}
+\index{test\-\_\-set\-Location\-Tile@{test\-\_\-set\-Location\-Tile}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-set\-Location\-Tile}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-set\-Location\-Tile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_a245adf65bac29aacae6c9f148796157d}
+
+
+Tests whether an object can be placed on a tile. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_a77f6f2948dcbdeda1c89344b4329750e}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-set\-Location\-Tile\-\_\-exception@{test\-\_\-set\-Location\-Tile\-\_\-exception}}
+\index{test\-\_\-set\-Location\-Tile\-\_\-exception@{test\-\_\-set\-Location\-Tile\-\_\-exception}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-set\-Location\-Tile\-\_\-exception}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-set\-Location\-Tile\-\_\-exception (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_a77f6f2948dcbdeda1c89344b4329750e}
+
+
+Tests whether an object's location can set to a tile \par
+with a different owner. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should throw an Illegal\-Action exception 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_a37386998dea658666fdd3b271ea12262}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-type\-\_\-\-Building\-Base@{test\-\_\-type\-\_\-\-Building\-Base}}
+\index{test\-\_\-type\-\_\-\-Building\-Base@{test\-\_\-type\-\_\-\-Building\-Base}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-type\-\_\-\-Building\-Base}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-type\-\_\-\-Building\-Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_a37386998dea658666fdd3b271ea12262}
+
+
+Tests Building\-Base's type. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be Building\-Base 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_a024dda6691de09c78cd2c41c3b2517bb}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-type\-\_\-\-Farm@{test\-\_\-type\-\_\-\-Farm}}
+\index{test\-\_\-type\-\_\-\-Farm@{test\-\_\-type\-\_\-\-Farm}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-type\-\_\-\-Farm}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-type\-\_\-\-Farm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_a024dda6691de09c78cd2c41c3b2517bb}
+
+
+Tests Farm's type. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be Farm 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_a61e0dccb6b2d2f6caa6d5cb9d6f46761}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-type\-\_\-\-H\-Q@{test\-\_\-type\-\_\-\-H\-Q}}
+\index{test\-\_\-type\-\_\-\-H\-Q@{test\-\_\-type\-\_\-\-H\-Q}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-type\-\_\-\-H\-Q}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-type\-\_\-\-H\-Q (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_a61e0dccb6b2d2f6caa6d5cb9d6f46761}
+
+
+Tests Head\-Quarter's type. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be Head\-Quarters 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_ab331bdbdb301645ece2f9942e5d0b1f4}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-type\-\_\-\-Mine@{test\-\_\-type\-\_\-\-Mine}}
+\index{test\-\_\-type\-\_\-\-Mine@{test\-\_\-type\-\_\-\-Mine}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-type\-\_\-\-Mine}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-type\-\_\-\-Mine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_ab331bdbdb301645ece2f9942e5d0b1f4}
+
+
+Tests Mine's type. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be Mine 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_afb2454e44d8d42562191c5c4cd81b6f7}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-type\-\_\-\-Outpost@{test\-\_\-type\-\_\-\-Outpost}}
+\index{test\-\_\-type\-\_\-\-Outpost@{test\-\_\-type\-\_\-\-Outpost}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-type\-\_\-\-Outpost}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-type\-\_\-\-Outpost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_afb2454e44d8d42562191c5c4cd81b6f7}
+
+
+Tests Outpost's type. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be Outpost 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_a2629b8493420e49f7d1bffc7c1f085fb}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-type\-\_\-\-Saw\-Mill@{test\-\_\-type\-\_\-\-Saw\-Mill}}
+\index{test\-\_\-type\-\_\-\-Saw\-Mill@{test\-\_\-type\-\_\-\-Saw\-Mill}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-type\-\_\-\-Saw\-Mill}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-type\-\_\-\-Saw\-Mill (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_a2629b8493420e49f7d1bffc7c1f085fb}
+
+
+Tests Sawmill's type. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be Sawmill 
+\end{DoxyPostcond}
+\hypertarget{classdefault__building_aa20f013a8a7b29bd639f822dd0ec1c2f}{\index{default\-\_\-building@{default\-\_\-building}!test\-\_\-unset\-Location\-Tile@{test\-\_\-unset\-Location\-Tile}}
+\index{test\-\_\-unset\-Location\-Tile@{test\-\_\-unset\-Location\-Tile}!default_building@{default\-\_\-building}}
+\subsubsection[{test\-\_\-unset\-Location\-Tile}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-building\-::test\-\_\-unset\-Location\-Tile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__building_aa20f013a8a7b29bd639f822dd0ec1c2f}
+
+
+Tests whether an object's location can be removed. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classdefault__building_afa2b3230dc8c603474fcf7dbf76c47c4}{\index{default\-\_\-building@{default\-\_\-building}!default\-\_\-object@{default\-\_\-object}}
+\index{default\-\_\-object@{default\-\_\-object}!default_building@{default\-\_\-building}}
+\subsubsection[{default\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Building\-Base}$>$ default\-\_\-building\-::default\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_afa2b3230dc8c603474fcf7dbf76c47c4}
+\hypertarget{classdefault__building_aa38e3d845ceeb470e23d4a074f797500}{\index{default\-\_\-building@{default\-\_\-building}!farm\-\_\-object@{farm\-\_\-object}}
+\index{farm\-\_\-object@{farm\-\_\-object}!default_building@{default\-\_\-building}}
+\subsubsection[{farm\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Farm}$>$ default\-\_\-building\-::farm\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_aa38e3d845ceeb470e23d4a074f797500}
+\hypertarget{classdefault__building_a7bf9c55301d5a6027d016bf76cb585ce}{\index{default\-\_\-building@{default\-\_\-building}!G\-E\-Hand@{G\-E\-Hand}}
+\index{G\-E\-Hand@{G\-E\-Hand}!default_building@{default\-\_\-building}}
+\subsubsection[{G\-E\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Game\-Event\-Handler}$>$ default\-\_\-building\-::\-G\-E\-Hand\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_a7bf9c55301d5a6027d016bf76cb585ce}
+\hypertarget{classdefault__building_a0badf4ed00b36044834272bc3ebf94d3}{\index{default\-\_\-building@{default\-\_\-building}!hq\-\_\-object@{hq\-\_\-object}}
+\index{hq\-\_\-object@{hq\-\_\-object}!default_building@{default\-\_\-building}}
+\subsubsection[{hq\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Head\-Quarters}$>$ default\-\_\-building\-::hq\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_a0badf4ed00b36044834272bc3ebf94d3}
+\hypertarget{classdefault__building_adceff1efd60baeff9af22c161272c67d}{\index{default\-\_\-building@{default\-\_\-building}!mine\-\_\-object@{mine\-\_\-object}}
+\index{mine\-\_\-object@{mine\-\_\-object}!default_building@{default\-\_\-building}}
+\subsubsection[{mine\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Mine}$>$ default\-\_\-building\-::mine\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_adceff1efd60baeff9af22c161272c67d}
+\hypertarget{classdefault__building_a9f19657073191d1ccfae1537bd1bc574}{\index{default\-\_\-building@{default\-\_\-building}!obj\-Man@{obj\-Man}}
+\index{obj\-Man@{obj\-Man}!default_building@{default\-\_\-building}}
+\subsubsection[{obj\-Man}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Object\-Manager}$>$ default\-\_\-building\-::obj\-Man\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_a9f19657073191d1ccfae1537bd1bc574}
+\hypertarget{classdefault__building_a924c16a0ac49e9b3b9d71d2a27736e93}{\index{default\-\_\-building@{default\-\_\-building}!outpost\-\_\-object@{outpost\-\_\-object}}
+\index{outpost\-\_\-object@{outpost\-\_\-object}!default_building@{default\-\_\-building}}
+\subsubsection[{outpost\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Outpost}$>$ default\-\_\-building\-::outpost\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_a924c16a0ac49e9b3b9d71d2a27736e93}
+\hypertarget{classdefault__building_a0459e600394868e19bb88ababc4e50ae}{\index{default\-\_\-building@{default\-\_\-building}!player1@{player1}}
+\index{player1@{player1}!default_building@{default\-\_\-building}}
+\subsubsection[{player1}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Player}$>$ default\-\_\-building\-::player1\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_a0459e600394868e19bb88ababc4e50ae}
+\hypertarget{classdefault__building_a27f3d517ae073d9088c533a83a287ba5}{\index{default\-\_\-building@{default\-\_\-building}!player2@{player2}}
+\index{player2@{player2}!default_building@{default\-\_\-building}}
+\subsubsection[{player2}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Player}$>$ default\-\_\-building\-::player2\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_a27f3d517ae073d9088c533a83a287ba5}
+\hypertarget{classdefault__building_a17f72da13e6159671242ad6e31ba7fb0}{\index{default\-\_\-building@{default\-\_\-building}!sawmill\-\_\-object@{sawmill\-\_\-object}}
+\index{sawmill\-\_\-object@{sawmill\-\_\-object}!default_building@{default\-\_\-building}}
+\subsubsection[{sawmill\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Saw\-Mill}$>$ default\-\_\-building\-::sawmill\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_a17f72da13e6159671242ad6e31ba7fb0}
+\hypertarget{classdefault__building_a4851bd1b8736d29d5608dcbd85bca338}{\index{default\-\_\-building@{default\-\_\-building}!tile1@{tile1}}
+\index{tile1@{tile1}!default_building@{default\-\_\-building}}
+\subsubsection[{tile1}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Tile\-Base}$>$ default\-\_\-building\-::tile1\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_a4851bd1b8736d29d5608dcbd85bca338}
+\hypertarget{classdefault__building_a9bf0749a6f397a82c5a939fb6fca6f43}{\index{default\-\_\-building@{default\-\_\-building}!tile1\-\_\-coordinate@{tile1\-\_\-coordinate}}
+\index{tile1\-\_\-coordinate@{tile1\-\_\-coordinate}!default_building@{default\-\_\-building}}
+\subsubsection[{tile1\-\_\-coordinate}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Course\-::\-Coordinate} default\-\_\-building\-::tile1\-\_\-coordinate = \{1,1\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_a9bf0749a6f397a82c5a939fb6fca6f43}
+\hypertarget{classdefault__building_adcb7e13de2a868910460f1ca658e44b0}{\index{default\-\_\-building@{default\-\_\-building}!tile2@{tile2}}
+\index{tile2@{tile2}!default_building@{default\-\_\-building}}
+\subsubsection[{tile2}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Tile\-Base}$>$ default\-\_\-building\-::tile2\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_adcb7e13de2a868910460f1ca658e44b0}
+\hypertarget{classdefault__building_a6ba4a9f3044210aacfb738b593a585b7}{\index{default\-\_\-building@{default\-\_\-building}!tile2\-\_\-coordinate@{tile2\-\_\-coordinate}}
+\index{tile2\-\_\-coordinate@{tile2\-\_\-coordinate}!default_building@{default\-\_\-building}}
+\subsubsection[{tile2\-\_\-coordinate}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Course\-::\-Coordinate} default\-\_\-building\-::tile2\-\_\-coordinate = \{1,2\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_a6ba4a9f3044210aacfb738b593a585b7}
+\hypertarget{classdefault__building_a03bf0e5b69cdc4c06be2d1ef255f8550}{\index{default\-\_\-building@{default\-\_\-building}!tile\-Expire@{tile\-Expire}}
+\index{tile\-Expire@{tile\-Expire}!default_building@{default\-\_\-building}}
+\subsubsection[{tile\-Expire}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Tile\-Base}$>$ default\-\_\-building\-::tile\-Expire\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_a03bf0e5b69cdc4c06be2d1ef255f8550}
+\hypertarget{classdefault__building_a5fadd5f10435b00e89e58ce9e32c57e5}{\index{default\-\_\-building@{default\-\_\-building}!tile\-Expire\-\_\-coordinate@{tile\-Expire\-\_\-coordinate}}
+\index{tile\-Expire\-\_\-coordinate@{tile\-Expire\-\_\-coordinate}!default_building@{default\-\_\-building}}
+\subsubsection[{tile\-Expire\-\_\-coordinate}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Course\-::\-Coordinate} default\-\_\-building\-::tile\-Expire\-\_\-coordinate = \{2,2\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__building_a5fadd5f10435b00e89e58ce9e32c57e5}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Unit\-Tests/building\-\_\-tests/\hyperlink{tst__default__building_8cpp}{tst\-\_\-default\-\_\-building.\-cpp}\end{DoxyCompactItemize}

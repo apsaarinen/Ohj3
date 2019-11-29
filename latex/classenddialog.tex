@@ -1,0 +1,97 @@
+\hypertarget{classenddialog}{\section{enddialog Class Reference}
+\label{classenddialog}\index{enddialog@{enddialog}}
+}
+
+
+The enddialog class shows pop-\/up window announcing the result when game ends.  
+
+
+
+
+{\ttfamily \#include $<$enddialog.\-hh$>$}
+
+Inheritance diagram for enddialog\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classenddialog}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classenddialog_a5dcbc64678b43043e16f74bd4c4dffb0}{enddialog} (Q\-Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+\hyperlink{classenddialog_acff9c0eadb5978bceef8d3d4dec5bfcc}{$\sim$enddialog} ()
+\item 
+void \hyperlink{classenddialog_a987154e1c5b99b8c1caf4b9ee0e39c8a}{set\-Winner} (std\-::vector$<$ std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1Player}{Game\-::\-Player} $>$ $>$ winners, int round)
+\begin{DoxyCompactList}\small\item\em set\-Winner Announces winner or a draw in the end of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\-::enddialog $\ast$ \hyperlink{classenddialog_afa3bb8811c3ff8cbf6bb1fa27057fadc}{ui}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The enddialog class shows pop-\/up window announcing the result when game ends. 
+
+Has text label for game result and exit button for quitting the game. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classenddialog_a5dcbc64678b43043e16f74bd4c4dffb0}{\index{enddialog@{enddialog}!enddialog@{enddialog}}
+\index{enddialog@{enddialog}!enddialog@{enddialog}}
+\subsubsection[{enddialog}]{\setlength{\rightskip}{0pt plus 5cm}enddialog\-::enddialog (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classenddialog_a5dcbc64678b43043e16f74bd4c4dffb0}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & can be used to point to a parent widget. Not used. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classenddialog_acff9c0eadb5978bceef8d3d4dec5bfcc}{\index{enddialog@{enddialog}!$\sim$enddialog@{$\sim$enddialog}}
+\index{$\sim$enddialog@{$\sim$enddialog}!enddialog@{enddialog}}
+\subsubsection[{$\sim$enddialog}]{\setlength{\rightskip}{0pt plus 5cm}enddialog\-::$\sim$enddialog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classenddialog_acff9c0eadb5978bceef8d3d4dec5bfcc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classenddialog_a987154e1c5b99b8c1caf4b9ee0e39c8a}{\index{enddialog@{enddialog}!set\-Winner@{set\-Winner}}
+\index{set\-Winner@{set\-Winner}!enddialog@{enddialog}}
+\subsubsection[{set\-Winner}]{\setlength{\rightskip}{0pt plus 5cm}void enddialog\-::set\-Winner (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::shared\-\_\-ptr$<$ {\bf Game\-::\-Player} $>$ $>$}]{winners, }
+\item[{int}]{round}
+\end{DoxyParamCaption}
+)}}\label{classenddialog_a987154e1c5b99b8c1caf4b9ee0e39c8a}
+
+
+set\-Winner Announces winner or a draw in the end of the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em winners} & Pointer to vector which has winner or winners. \\
+\hline
+{\em round} & Number of rounds played. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classenddialog_afa3bb8811c3ff8cbf6bb1fa27057fadc}{\index{enddialog@{enddialog}!ui@{ui}}
+\index{ui@{ui}!enddialog@{enddialog}}
+\subsubsection[{ui}]{\setlength{\rightskip}{0pt plus 5cm}Ui\-::enddialog$\ast$ enddialog\-::ui\hspace{0.3cm}{\ttfamily [private]}}}\label{classenddialog_afa3bb8811c3ff8cbf6bb1fa27057fadc}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Game/ui/\hyperlink{enddialog_8hh}{enddialog.\-hh}\item 
+Game/ui/\hyperlink{enddialog_8cpp}{enddialog.\-cpp}\end{DoxyCompactItemize}

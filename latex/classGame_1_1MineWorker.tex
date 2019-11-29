@@ -1,0 +1,201 @@
+\hypertarget{classGame_1_1MineWorker}{\section{Game\-:\-:Mine\-Worker Class Reference}
+\label{classGame_1_1MineWorker}\index{Game\-::\-Mine\-Worker@{Game\-::\-Mine\-Worker}}
+}
+
+
+The \hyperlink{classGame_1_1MineWorker}{Mine\-Worker} class represents a mine worker in the game.  
+
+
+
+
+{\ttfamily \#include $<$mineworker.\-h$>$}
+
+Inheritance diagram for Game\-:\-:Mine\-Worker\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGame_1_1MineWorker}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGame_1_1MineWorker_a1b8706b2cbc8b5f84140230e432c8250}{Mine\-Worker} ()=delete
+\begin{DoxyCompactList}\small\item\em Disabled parameterless constructor. \end{DoxyCompactList}\item 
+\hyperlink{classGame_1_1MineWorker_a2d34cfd55b44b6012d9029ea66e8a7b4}{Mine\-Worker} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iGameEventHandler}{Course\-::i\-Game\-Event\-Handler} $>$ \&eventhandler, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iObjectManager}{Course\-::i\-Object\-Manager} $>$ \&objectmanager, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1PlayerBase}{Course\-::\-Player\-Base} $>$ \&owner, const int \&tilespaces=1, const \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} \&cost=\hyperlink{namespaceGame_1_1ConstResourceMaps_ad5d316811f8c8442f6c24b5dc9134a87}{Game\-::\-Const\-Resource\-Maps\-::\-M\-W\-\_\-\-R\-E\-C\-R\-U\-I\-T\-M\-E\-N\-T\-\_\-\-C\-O\-S\-T}, const \hyperlink{namespaceCourse_a0b96bae1a664dde34efbb1b42dea615e}{Course\-::\-Resource\-Map\-Double} \&efficiency=\hyperlink{namespaceGame_1_1ConstResourceMaps_a11fc543cda6cf6dbd703559e230eb49a}{Game\-::\-Const\-Resource\-Maps\-::\-M\-W\-\_\-\-W\-O\-R\-K\-E\-R\-\_\-\-E\-F\-F\-I\-C\-I\-E\-N\-C\-Y})
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+virtual \hyperlink{classGame_1_1MineWorker_a07f3a09a2c95491de57f1511a8162c43}{$\sim$\-Mine\-Worker} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classGame_1_1MineWorker_a984c2ede11ac50460620a4d982249dbe}{get\-Type} () const override
+\item 
+virtual bool \hyperlink{classGame_1_1MineWorker_aa52833ec99f6746871a78467c51bc57e}{can\-Be\-Placed\-On\-Tile} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1TileBase}{Course\-::\-Tile\-Base} $>$ \&target) const override
+\begin{DoxyCompactList}\small\item\em Check if the worker can be placed on the Tile according to it's placement rule. Only rule is that the Tile must have same owner as the worker. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classGame_1_1MineWorker_a5faef20674a0d6408115461032e32edf}{do\-Special\-Action} () override
+\begin{DoxyCompactList}\small\item\em Performs the Worker's default action. Does nothing as this is not implemented. \end{DoxyCompactList}\item 
+virtual const \\*
+\hyperlink{namespaceCourse_a0b96bae1a664dde34efbb1b42dea615e}{Course\-::\-Resource\-Map\-Double} \hyperlink{classGame_1_1MineWorker_a515a32b59f08ee1577210887166dacb0}{tile\-Work\-Action} () override
+\begin{DoxyCompactList}\small\item\em Returns Worker's efficiency at resource production. Worker consumes F\-O\-O\-D and M\-O\-N\-E\-Y. Resource consumption and resource focus determine final multiplier that is based on W\-O\-R\-K\-E\-R\-\_\-\-E\-F\-F\-I\-C\-I\-E\-N\-C\-Y. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classGame_1_1MineWorker}{Mine\-Worker} class represents a mine worker in the game. 
+
+Worker has following production-\/efficiency\-: \par
+
+\begin{DoxyItemize}
+\item Money -\/ 0.\-25 \par
+
+\item Food -\/ 0.\-25 \par
+
+\item Wood -\/ 0.\-25 \par
+
+\item Stone -\/ 1.\-50 \par
+
+\item Ore -\/ 1.\-50 \par
+ Mine\-Workers consume Food and money. \par
+
+\item 2 Food -\/ Or \hyperlink{classGame_1_1MineWorker}{Mine\-Worker} refuses to work. \par
+
+\item 2 Money -\/ Or \hyperlink{classGame_1_1MineWorker}{Mine\-Worker} works at 50\% efficiency. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGame_1_1MineWorker_a1b8706b2cbc8b5f84140230e432c8250}{\index{Game\-::\-Mine\-Worker@{Game\-::\-Mine\-Worker}!Mine\-Worker@{Mine\-Worker}}
+\index{Mine\-Worker@{Mine\-Worker}!Game::MineWorker@{Game\-::\-Mine\-Worker}}
+\subsubsection[{Mine\-Worker}]{\setlength{\rightskip}{0pt plus 5cm}Game\-::\-Mine\-Worker\-::\-Mine\-Worker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classGame_1_1MineWorker_a1b8706b2cbc8b5f84140230e432c8250}
+
+
+Disabled parameterless constructor. 
+
+\hypertarget{classGame_1_1MineWorker_a2d34cfd55b44b6012d9029ea66e8a7b4}{\index{Game\-::\-Mine\-Worker@{Game\-::\-Mine\-Worker}!Mine\-Worker@{Mine\-Worker}}
+\index{Mine\-Worker@{Mine\-Worker}!Game::MineWorker@{Game\-::\-Mine\-Worker}}
+\subsubsection[{Mine\-Worker}]{\setlength{\rightskip}{0pt plus 5cm}Game\-::\-Mine\-Worker\-::\-Mine\-Worker (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Course\-::i\-Game\-Event\-Handler} $>$ \&}]{eventhandler, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Course\-::i\-Object\-Manager} $>$ \&}]{objectmanager, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Course\-::\-Player\-Base} $>$ \&}]{owner, }
+\item[{const int \&}]{tilespaces = {\ttfamily 1}, }
+\item[{const {\bf Course\-::\-Resource\-Map} \&}]{cost = {\ttfamily {\bf Game\-::\-Const\-Resource\-Maps\-::\-M\-W\-\_\-\-R\-E\-C\-R\-U\-I\-T\-M\-E\-N\-T\-\_\-\-C\-O\-S\-T}}, }
+\item[{const {\bf Course\-::\-Resource\-Map\-Double} \&}]{efficiency = {\ttfamily {\bf Game\-::\-Const\-Resource\-Maps\-::\-M\-W\-\_\-\-W\-O\-R\-K\-E\-R\-\_\-\-E\-F\-F\-I\-C\-I\-E\-N\-C\-Y}}}
+\end{DoxyParamCaption}
+)}}\label{classGame_1_1MineWorker_a2d34cfd55b44b6012d9029ea66e8a7b4}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eventhandler} & points to the student's \hyperlink{classGame_1_1GameEventHandler}{Game\-Event\-Handler}. \\
+\hline
+{\em objectmanager} & points to the \hyperlink{classGame_1_1ObjectManager}{Object\-Manager}. \\
+\hline
+{\em owner} & points to the owning player. \\
+\hline
+{\em tilespaces} & defines how many spaces the worker takes on tile \\
+\hline
+{\em cost} & defines how much the worker costs \\
+\hline
+{\em efficiency} & defines how much and what the worker produces \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGame_1_1MineWorker_a07f3a09a2c95491de57f1511a8162c43}{\index{Game\-::\-Mine\-Worker@{Game\-::\-Mine\-Worker}!$\sim$\-Mine\-Worker@{$\sim$\-Mine\-Worker}}
+\index{$\sim$\-Mine\-Worker@{$\sim$\-Mine\-Worker}!Game::MineWorker@{Game\-::\-Mine\-Worker}}
+\subsubsection[{$\sim$\-Mine\-Worker}]{\setlength{\rightskip}{0pt plus 5cm}virtual Game\-::\-Mine\-Worker\-::$\sim$\-Mine\-Worker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}}\label{classGame_1_1MineWorker_a07f3a09a2c95491de57f1511a8162c43}
+
+
+Default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGame_1_1MineWorker_aa52833ec99f6746871a78467c51bc57e}{\index{Game\-::\-Mine\-Worker@{Game\-::\-Mine\-Worker}!can\-Be\-Placed\-On\-Tile@{can\-Be\-Placed\-On\-Tile}}
+\index{can\-Be\-Placed\-On\-Tile@{can\-Be\-Placed\-On\-Tile}!Game::MineWorker@{Game\-::\-Mine\-Worker}}
+\subsubsection[{can\-Be\-Placed\-On\-Tile}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\-::\-Mine\-Worker\-::can\-Be\-Placed\-On\-Tile (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Course\-::\-Tile\-Base} $>$ \&}]{target}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGame_1_1MineWorker_aa52833ec99f6746871a78467c51bc57e}
+
+
+Check if the worker can be placed on the Tile according to it's placement rule. Only rule is that the Tile must have same owner as the worker. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & is the Tile that worker is being placed on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True -\/ If baseclass' method return true and target Tile has space for worker. False -\/ If both conditions aren't met. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Override to change placement rules for derived worker. 
+\end{DoxyNote}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: Basic 
+\end{DoxyPostcond}
+
+
+Reimplemented from \hyperlink{classCourse_1_1WorkerBase_ad80874970ab91bca95b9d3f959e838d2}{Course\-::\-Worker\-Base}.
+
+\hypertarget{classGame_1_1MineWorker_a5faef20674a0d6408115461032e32edf}{\index{Game\-::\-Mine\-Worker@{Game\-::\-Mine\-Worker}!do\-Special\-Action@{do\-Special\-Action}}
+\index{do\-Special\-Action@{do\-Special\-Action}!Game::MineWorker@{Game\-::\-Mine\-Worker}}
+\subsubsection[{do\-Special\-Action}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::\-Mine\-Worker\-::do\-Special\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGame_1_1MineWorker_a5faef20674a0d6408115461032e32edf}
+
+
+Performs the Worker's default action. Does nothing as this is not implemented. 
+
+
+
+Implements \hyperlink{classCourse_1_1WorkerBase_a78553f35740e1c07d8f1071b5fc82212}{Course\-::\-Worker\-Base}.
+
+\hypertarget{classGame_1_1MineWorker_a984c2ede11ac50460620a4d982249dbe}{\index{Game\-::\-Mine\-Worker@{Game\-::\-Mine\-Worker}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!Game::MineWorker@{Game\-::\-Mine\-Worker}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Game\-::\-Mine\-Worker\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGame_1_1MineWorker_a984c2ede11ac50460620a4d982249dbe}
+
+
+
+
+
+
+Reimplemented from \hyperlink{classCourse_1_1WorkerBase_afe6049810eec47fffe2c2a7334564ef9}{Course\-::\-Worker\-Base}.
+
+\hypertarget{classGame_1_1MineWorker_a515a32b59f08ee1577210887166dacb0}{\index{Game\-::\-Mine\-Worker@{Game\-::\-Mine\-Worker}!tile\-Work\-Action@{tile\-Work\-Action}}
+\index{tile\-Work\-Action@{tile\-Work\-Action}!Game::MineWorker@{Game\-::\-Mine\-Worker}}
+\subsubsection[{tile\-Work\-Action}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Course\-::\-Resource\-Map\-Double} Game\-::\-Mine\-Worker\-::tile\-Work\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGame_1_1MineWorker_a515a32b59f08ee1577210887166dacb0}
+
+
+Returns Worker's efficiency at resource production. Worker consumes F\-O\-O\-D and M\-O\-N\-E\-Y. Resource consumption and resource focus determine final multiplier that is based on W\-O\-R\-K\-E\-R\-\_\-\-E\-F\-F\-I\-C\-I\-E\-N\-C\-Y. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCourse_1_1WorkerBase_af0c1bb4f3bbea015e2a55aa6eff7f9ae}{Course\-::\-Worker\-Base}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Game/workers/\hyperlink{mineworker_8h}{mineworker.\-h}\item 
+Game/workers/\hyperlink{mineworker_8cpp}{mineworker.\-cpp}\end{DoxyCompactItemize}

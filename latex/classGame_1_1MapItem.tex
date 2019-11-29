@@ -1,0 +1,214 @@
+\hypertarget{classGame_1_1MapItem}{\section{Game\-:\-:Map\-Item Class Reference}
+\label{classGame_1_1MapItem}\index{Game\-::\-Map\-Item@{Game\-::\-Map\-Item}}
+}
+
+
+The \hyperlink{classGame_1_1MapItem}{Map\-Item} class is a custom Q\-Graphics\-Item that acts as a single Game\-Object's graphical element.  
+
+
+
+
+{\ttfamily \#include $<$mapitem.\-h$>$}
+
+Inheritance diagram for Game\-:\-:Map\-Item\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGame_1_1MapItem}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGame_1_1MapItem_adab3634fb773e7b185b08b9914bb93e7}{Map\-Item} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1GameObject}{Course\-::\-Game\-Object} $>$ \&obj, int size, int offset)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+Q\-Rect\-F \hyperlink{classGame_1_1MapItem_a564c803217c15efdd414bc47bc385d94}{bounding\-Rect} () const override
+\begin{DoxyCompactList}\small\item\em bounding\-Rect \end{DoxyCompactList}\item 
+Q\-Pixmap \hyperlink{classGame_1_1MapItem_a1cbdeaa3793d5c9ba65d792ca44cfad2}{image} () const 
+\begin{DoxyCompactList}\small\item\em Finds the corresponding image for the object. \end{DoxyCompactList}\item 
+void \hyperlink{classGame_1_1MapItem_a8e18b37b2f48bf586b650dd97bfd03e4}{paint} (Q\-Painter $\ast$painter, const Q\-Style\-Option\-Graphics\-Item $\ast$option, Q\-Widget $\ast$widget)
+\begin{DoxyCompactList}\small\item\em paints the item \end{DoxyCompactList}\item 
+const std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1GameObject}{Course\-::\-Game\-Object} $>$ \& \hyperlink{classGame_1_1MapItem_aa61f3c3867a3805669210c259b2f573e}{get\-Bound\-Object} ()
+\begin{DoxyCompactList}\small\item\em get\-Bound\-Object \end{DoxyCompactList}\item 
+void \hyperlink{classGame_1_1MapItem_a5bd976eefca99e0ff2f8767d7f1c5c03}{update\-Loc} ()
+\begin{DoxyCompactList}\small\item\em update\-Loc moves the item if the position has changed. \end{DoxyCompactList}\item 
+bool \hyperlink{classGame_1_1MapItem_a1183a2283108cead408f52d36e53a41b}{is\-Same\-Obj} (std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1GameObject}{Course\-::\-Game\-Object} $>$ obj)
+\begin{DoxyCompactList}\small\item\em checks if this instance has obj as bound obj. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1GameObject}{Course\-::\-Game\-Object} $>$ \hyperlink{classGame_1_1MapItem_a501cc900c7d06991d795f9148650b070}{m\-\_\-gameobject}
+\item 
+Q\-Point \hyperlink{classGame_1_1MapItem_a0f9e884f907244ada7432215fe01b2cd}{m\-\_\-scenelocation}
+\item 
+int \hyperlink{classGame_1_1MapItem_a7550fe4dec9a0b7d7f42e0d1f25c0813}{m\-\_\-size}
+\item 
+int \hyperlink{classGame_1_1MapItem_a4d704ac5bfc0a70926d8dfc51219e2cd}{m\-\_\-offset}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{namespaceGame_a1fe13161652a186ddb92a1774eeb6eaa}{Color\-Map} \hyperlink{classGame_1_1MapItem_a2e9e5bfec64df70790559d7c2fe374b0}{c\-\_\-mapcolors} = \{\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classGame_1_1MapItem}{Map\-Item} class is a custom Q\-Graphics\-Item that acts as a single Game\-Object's graphical element. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGame_1_1MapItem_adab3634fb773e7b185b08b9914bb93e7}{\index{Game\-::\-Map\-Item@{Game\-::\-Map\-Item}!Map\-Item@{Map\-Item}}
+\index{Map\-Item@{Map\-Item}!Game::MapItem@{Game\-::\-Map\-Item}}
+\subsubsection[{Map\-Item}]{\setlength{\rightskip}{0pt plus 5cm}Game\-::\-Map\-Item\-::\-Map\-Item (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Course\-::\-Game\-Object} $>$ \&}]{obj, }
+\item[{int}]{size, }
+\item[{int}]{offset}
+\end{DoxyParamCaption}
+)}}\label{classGame_1_1MapItem_adab3634fb773e7b185b08b9914bb93e7}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & shared\-\_\-ptr to the obj. \\
+\hline
+{\em size} & of the created item in pixels. \\
+\hline
+{\em offset} & for the item in the tile \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+obj must have a valid Coordinate. 
+\end{DoxyPrecond}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGame_1_1MapItem_a564c803217c15efdd414bc47bc385d94}{\index{Game\-::\-Map\-Item@{Game\-::\-Map\-Item}!bounding\-Rect@{bounding\-Rect}}
+\index{bounding\-Rect@{bounding\-Rect}!Game::MapItem@{Game\-::\-Map\-Item}}
+\subsubsection[{bounding\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Rect\-F Game\-::\-Map\-Item\-::bounding\-Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}}}\label{classGame_1_1MapItem_a564c803217c15efdd414bc47bc385d94}
+
+
+bounding\-Rect 
+
+\begin{DoxyReturn}{Returns}
+the bounding rectangle of this item. 
+\end{DoxyReturn}
+\hypertarget{classGame_1_1MapItem_aa61f3c3867a3805669210c259b2f573e}{\index{Game\-::\-Map\-Item@{Game\-::\-Map\-Item}!get\-Bound\-Object@{get\-Bound\-Object}}
+\index{get\-Bound\-Object@{get\-Bound\-Object}!Game::MapItem@{Game\-::\-Map\-Item}}
+\subsubsection[{get\-Bound\-Object}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::shared\-\_\-ptr$<$ {\bf Course\-::\-Game\-Object} $>$ \& Game\-::\-Map\-Item\-::get\-Bound\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_1_1MapItem_aa61f3c3867a3805669210c259b2f573e}
+
+
+get\-Bound\-Object 
+
+\begin{DoxyReturn}{Returns}
+the object this item is bound to. 
+\end{DoxyReturn}
+\hypertarget{classGame_1_1MapItem_a1cbdeaa3793d5c9ba65d792ca44cfad2}{\index{Game\-::\-Map\-Item@{Game\-::\-Map\-Item}!image@{image}}
+\index{image@{image}!Game::MapItem@{Game\-::\-Map\-Item}}
+\subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Pixmap Game\-::\-Map\-Item\-::image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGame_1_1MapItem_a1cbdeaa3793d5c9ba65d792ca44cfad2}
+
+
+Finds the corresponding image for the object. 
+
+\begin{DoxyPrecond}{Precondition}
+object must have an image named accordingly to its object type 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+object's image 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\hypertarget{classGame_1_1MapItem_a1183a2283108cead408f52d36e53a41b}{\index{Game\-::\-Map\-Item@{Game\-::\-Map\-Item}!is\-Same\-Obj@{is\-Same\-Obj}}
+\index{is\-Same\-Obj@{is\-Same\-Obj}!Game::MapItem@{Game\-::\-Map\-Item}}
+\subsubsection[{is\-Same\-Obj}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\-::\-Map\-Item\-::is\-Same\-Obj (
+\begin{DoxyParamCaption}
+\item[{std\-::shared\-\_\-ptr$<$ {\bf Course\-::\-Game\-Object} $>$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classGame_1_1MapItem_a1183a2283108cead408f52d36e53a41b}
+
+
+checks if this instance has obj as bound obj. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True\-: if obj is pointing to the same object as this item. False otherwise. 
+\end{DoxyReturn}
+\hypertarget{classGame_1_1MapItem_a8e18b37b2f48bf586b650dd97bfd03e4}{\index{Game\-::\-Map\-Item@{Game\-::\-Map\-Item}!paint@{paint}}
+\index{paint@{paint}!Game::MapItem@{Game\-::\-Map\-Item}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::\-Map\-Item\-::paint (
+\begin{DoxyParamCaption}
+\item[{Q\-Painter $\ast$}]{painter, }
+\item[{const Q\-Style\-Option\-Graphics\-Item $\ast$}]{option, }
+\item[{Q\-Widget $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{classGame_1_1MapItem_a8e18b37b2f48bf586b650dd97bfd03e4}
+
+
+paints the item 
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & \\
+\hline
+{\em option} & \\
+\hline
+{\em widget} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The Graphics\-View containing the scene this belongs to usually calls this function. 
+\end{DoxyNote}
+\hypertarget{classGame_1_1MapItem_a5bd976eefca99e0ff2f8767d7f1c5c03}{\index{Game\-::\-Map\-Item@{Game\-::\-Map\-Item}!update\-Loc@{update\-Loc}}
+\index{update\-Loc@{update\-Loc}!Game::MapItem@{Game\-::\-Map\-Item}}
+\subsubsection[{update\-Loc}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::\-Map\-Item\-::update\-Loc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGame_1_1MapItem_a5bd976eefca99e0ff2f8767d7f1c5c03}
+
+
+update\-Loc moves the item if the position has changed. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classGame_1_1MapItem_a2e9e5bfec64df70790559d7c2fe374b0}{\index{Game\-::\-Map\-Item@{Game\-::\-Map\-Item}!c\-\_\-mapcolors@{c\-\_\-mapcolors}}
+\index{c\-\_\-mapcolors@{c\-\_\-mapcolors}!Game::MapItem@{Game\-::\-Map\-Item}}
+\subsubsection[{c\-\_\-mapcolors}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ std\-::string, Q\-Color $>$ Game\-::\-Map\-Item\-::c\-\_\-mapcolors = \{\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classGame_1_1MapItem_a2e9e5bfec64df70790559d7c2fe374b0}
+\hypertarget{classGame_1_1MapItem_a501cc900c7d06991d795f9148650b070}{\index{Game\-::\-Map\-Item@{Game\-::\-Map\-Item}!m\-\_\-gameobject@{m\-\_\-gameobject}}
+\index{m\-\_\-gameobject@{m\-\_\-gameobject}!Game::MapItem@{Game\-::\-Map\-Item}}
+\subsubsection[{m\-\_\-gameobject}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::shared\-\_\-ptr$<${\bf Course\-::\-Game\-Object}$>$ Game\-::\-Map\-Item\-::m\-\_\-gameobject\hspace{0.3cm}{\ttfamily [private]}}}\label{classGame_1_1MapItem_a501cc900c7d06991d795f9148650b070}
+\hypertarget{classGame_1_1MapItem_a4d704ac5bfc0a70926d8dfc51219e2cd}{\index{Game\-::\-Map\-Item@{Game\-::\-Map\-Item}!m\-\_\-offset@{m\-\_\-offset}}
+\index{m\-\_\-offset@{m\-\_\-offset}!Game::MapItem@{Game\-::\-Map\-Item}}
+\subsubsection[{m\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}int Game\-::\-Map\-Item\-::m\-\_\-offset\hspace{0.3cm}{\ttfamily [private]}}}\label{classGame_1_1MapItem_a4d704ac5bfc0a70926d8dfc51219e2cd}
+\hypertarget{classGame_1_1MapItem_a0f9e884f907244ada7432215fe01b2cd}{\index{Game\-::\-Map\-Item@{Game\-::\-Map\-Item}!m\-\_\-scenelocation@{m\-\_\-scenelocation}}
+\index{m\-\_\-scenelocation@{m\-\_\-scenelocation}!Game::MapItem@{Game\-::\-Map\-Item}}
+\subsubsection[{m\-\_\-scenelocation}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Point Game\-::\-Map\-Item\-::m\-\_\-scenelocation\hspace{0.3cm}{\ttfamily [private]}}}\label{classGame_1_1MapItem_a0f9e884f907244ada7432215fe01b2cd}
+\hypertarget{classGame_1_1MapItem_a7550fe4dec9a0b7d7f42e0d1f25c0813}{\index{Game\-::\-Map\-Item@{Game\-::\-Map\-Item}!m\-\_\-size@{m\-\_\-size}}
+\index{m\-\_\-size@{m\-\_\-size}!Game::MapItem@{Game\-::\-Map\-Item}}
+\subsubsection[{m\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int Game\-::\-Map\-Item\-::m\-\_\-size\hspace{0.3cm}{\ttfamily [private]}}}\label{classGame_1_1MapItem_a7550fe4dec9a0b7d7f42e0d1f25c0813}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Game/graphics/\hyperlink{mapitem_8h}{mapitem.\-h}\item 
+Game/graphics/\hyperlink{mapitem_8cpp}{mapitem.\-cpp}\end{DoxyCompactItemize}

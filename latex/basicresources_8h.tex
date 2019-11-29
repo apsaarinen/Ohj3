@@ -1,0 +1,40 @@
+\hypertarget{basicresources_8h}{\section{Course/\-Course\-Lib/core/basicresources.h File Reference}
+\label{basicresources_8h}\index{Course/\-Course\-Lib/core/basicresources.\-h@{Course/\-Course\-Lib/core/basicresources.\-h}}
+}
+{\ttfamily \#include $<$map$>$}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceCourse}{Course}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} = std\-::map$<$ Basic\-Resource, int $>$
+\begin{DoxyCompactList}\small\item\em Resource\-Map is an alias for std\-::map$<$\-Basic\-Resource, int$>$ \end{DoxyCompactList}\item 
+using \hyperlink{namespaceCourse_a0b96bae1a664dde34efbb1b42dea615e}{Course\-::\-Resource\-Map\-Double} = std\-::map$<$ Basic\-Resource, double $>$
+\begin{DoxyCompactList}\small\item\em Resource\-Map\-Double is an alias for std\-::map$<$\-Basicresource, double$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespaceCourse_a02d49c04029594d4adba79b84bb85f65}{Course\-::\-Basic\-Resource} \{ \\*
+\hyperlink{namespaceCourse_a02d49c04029594d4adba79b84bb85f65ae3def61eb1a9033cc0b0d1d2c3c6ff84}{Course\-::\-N\-O\-N\-E} = 0, 
+\hyperlink{namespaceCourse_a02d49c04029594d4adba79b84bb85f65aff016add6bbbdbb44abf1d2d7f215ec0}{Course\-::\-M\-O\-N\-E\-Y} = 1, 
+\hyperlink{namespaceCourse_a02d49c04029594d4adba79b84bb85f65a7018c47af38bfc1390a89e70b4cf4760}{Course\-::\-F\-O\-O\-D} = 2, 
+\hyperlink{namespaceCourse_a02d49c04029594d4adba79b84bb85f65a87287be3009253b983ffb2e9f91eef22}{Course\-::\-W\-O\-O\-D} = 3, 
+\\*
+\hyperlink{namespaceCourse_a02d49c04029594d4adba79b84bb85f65a8598c3079c2be7785410e724cc190229}{Course\-::\-S\-T\-O\-N\-E} = 4, 
+\hyperlink{namespaceCourse_a02d49c04029594d4adba79b84bb85f65af416a215c7dad21349df38d35be0a1e1}{Course\-::\-O\-R\-E} = 5
+ \}
+\begin{DoxyCompactList}\small\item\em Basic\-Resource is an enumeration for different basic resource-\/types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Resource\-Map \hyperlink{namespaceCourse_ad07efc9b36b8b5bc7b2ed80414709a24}{Course\-::merge\-Resource\-Maps} (const Resource\-Map \&left, const Resource\-Map \&right)
+\begin{DoxyCompactList}\small\item\em Creates a new Resource\-Map that contains summed values of two Resource\-Maps. \end{DoxyCompactList}\item 
+Resource\-Map \hyperlink{namespaceCourse_a04e0d37a3018429b9523ee3b70f0c911}{Course\-::multiply\-Resource\-Map} (const Resource\-Map \&resmap, const Resource\-Map\-Double \&multmap)
+\begin{DoxyCompactList}\small\item\em Creates a new Resource\-Map that has multiplied resmap values with multmap values for the same key. \end{DoxyCompactList}\item 
+Resource\-Map\-Double \hyperlink{namespaceCourse_a2a27717372096871145e65bd34313653}{Course\-::merge\-Resource\-Map\-Doubles} (const Resource\-Map\-Double \&left, const Resource\-Map\-Double \&right)
+\begin{DoxyCompactList}\small\item\em Creates a new Resource\-Map\-Double that has summed values of two Resource\-Map\-Doubles. \end{DoxyCompactList}\item 
+Resource\-Map\-Double \hyperlink{namespaceCourse_af4d7e6cd8b320d361f8e748b92fd75ea}{Course\-::multiply\-Resource\-Map\-Doubles} (const Resource\-Map\-Double \&left, const Resource\-Map\-Double \&right)
+\begin{DoxyCompactList}\small\item\em Creates a new Resource\-Map\-Double that has multiplied values of two Resource\-Map\-Doubles. \end{DoxyCompactList}\end{DoxyCompactItemize}

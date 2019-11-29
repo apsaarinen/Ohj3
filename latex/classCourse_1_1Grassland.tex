@@ -1,0 +1,149 @@
+\hypertarget{classCourse_1_1Grassland}{\section{Course\-:\-:Grassland Class Reference}
+\label{classCourse_1_1Grassland}\index{Course\-::\-Grassland@{Course\-::\-Grassland}}
+}
+
+
+The \hyperlink{classCourse_1_1Grassland}{Grassland} class represents \hyperlink{classCourse_1_1Grassland}{Grassland} in the gameworld.  
+
+
+
+
+{\ttfamily \#include $<$grassland.\-h$>$}
+
+Inheritance diagram for Course\-:\-:Grassland\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCourse_1_1Grassland}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCourse_1_1Grassland_a1263204b4995f7306d9a78c5769e30c0}{Grassland} ()=delete
+\begin{DoxyCompactList}\small\item\em Disabled parameterless constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCourse_1_1Grassland_a8d7239afef39efc0531c74ece6ecdc67}{Grassland} (const \hyperlink{classCourse_1_1Coordinate}{Coordinate} \&location, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iGameEventHandler}{i\-Game\-Event\-Handler} $>$ \&eventhandler, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iObjectManager}{i\-Object\-Manager} $>$ \&objectmanager, const unsigned int \&max\-\_\-build=3, const unsigned int \&max\-\_\-work=3, const \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Resource\-Map} \&production=\hyperlink{namespaceCourse_1_1ConstResourceMaps_aae4ef780a53ec4726ff947ecae010082}{Const\-Resource\-Maps\-::\-G\-R\-A\-S\-S\-L\-A\-N\-D\-\_\-\-B\-P})
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+virtual \hyperlink{classCourse_1_1Grassland_aa660837530ab2dcc563c9557ec599066}{$\sim$\-Grassland} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classCourse_1_1Grassland_a0a652bbecdda0216613dad980936e30e}{get\-Type} () const override
+\begin{DoxyCompactList}\small\item\em get\-Type Returns a string describing objects type. This should be overriden in each inherited class. Makes checking object's type easier for students. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \hyperlink{classCourse_1_1Grassland_aa90f673331e9c748a5960c513c27cdd9}{M\-A\-X\-\_\-\-B\-U\-I\-L\-D\-I\-N\-G\-S}
+\item 
+static const unsigned int \hyperlink{classCourse_1_1Grassland_af92733b817010370c0540d1631b6f486}{M\-A\-X\-\_\-\-W\-O\-R\-K\-E\-R\-S}
+\item 
+static const \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Resource\-Map} \hyperlink{classCourse_1_1Grassland_a35a3ec14967c6b7446caa94887e33524}{B\-A\-S\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classCourse_1_1Grassland}{Grassland} class represents \hyperlink{classCourse_1_1Grassland}{Grassland} in the gameworld. 
+
+\hyperlink{classCourse_1_1Grassland}{Grassland} has Basic\-Production\-: \par
+
+\begin{DoxyItemize}
+\item Money = 2
+\item Food = 5
+\item Wood = 1
+\item Stone = 1
+\item Ore = 0
+\end{DoxyItemize}
+
+Functionality follows mainly the parent class' functionality.
+
+Tile supports 3 buildings. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCourse_1_1Grassland_a1263204b4995f7306d9a78c5769e30c0}{\index{Course\-::\-Grassland@{Course\-::\-Grassland}!Grassland@{Grassland}}
+\index{Grassland@{Grassland}!Course::Grassland@{Course\-::\-Grassland}}
+\subsubsection[{Grassland}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Grassland\-::\-Grassland (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classCourse_1_1Grassland_a1263204b4995f7306d9a78c5769e30c0}
+
+
+Disabled parameterless constructor. 
+
+\hypertarget{classCourse_1_1Grassland_a8d7239afef39efc0531c74ece6ecdc67}{\index{Course\-::\-Grassland@{Course\-::\-Grassland}!Grassland@{Grassland}}
+\index{Grassland@{Grassland}!Course::Grassland@{Course\-::\-Grassland}}
+\subsubsection[{Grassland}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Grassland\-::\-Grassland (
+\begin{DoxyParamCaption}
+\item[{const {\bf Coordinate} \&}]{location, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf i\-Game\-Event\-Handler} $>$ \&}]{eventhandler, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf i\-Object\-Manager} $>$ \&}]{objectmanager, }
+\item[{const unsigned int \&}]{max\-\_\-build = {\ttfamily 3}, }
+\item[{const unsigned int \&}]{max\-\_\-work = {\ttfamily 3}, }
+\item[{const {\bf Resource\-Map} \&}]{production = {\ttfamily {\bf Const\-Resource\-Maps\-::\-G\-R\-A\-S\-S\-L\-A\-N\-D\-\_\-\-B\-P}}}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1Grassland_a8d7239afef39efc0531c74ece6ecdc67}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & is the \hyperlink{classCourse_1_1Coordinate}{Coordinate} where the Tile is located in the game. \\
+\hline
+{\em eventhandler} & points to the student's Game\-Event\-Handler. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCourse_1_1Grassland_aa660837530ab2dcc563c9557ec599066}{\index{Course\-::\-Grassland@{Course\-::\-Grassland}!$\sim$\-Grassland@{$\sim$\-Grassland}}
+\index{$\sim$\-Grassland@{$\sim$\-Grassland}!Course::Grassland@{Course\-::\-Grassland}}
+\subsubsection[{$\sim$\-Grassland}]{\setlength{\rightskip}{0pt plus 5cm}virtual Course\-::\-Grassland\-::$\sim$\-Grassland (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}}\label{classCourse_1_1Grassland_aa660837530ab2dcc563c9557ec599066}
+
+
+Default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCourse_1_1Grassland_a0a652bbecdda0216613dad980936e30e}{\index{Course\-::\-Grassland@{Course\-::\-Grassland}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!Course::Grassland@{Course\-::\-Grassland}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Course\-::\-Grassland\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCourse_1_1Grassland_a0a652bbecdda0216613dad980936e30e}
+
+
+get\-Type Returns a string describing objects type. This should be overriden in each inherited class. Makes checking object's type easier for students. 
+
+\begin{DoxyReturn}{Returns}
+std\-::string that represents Object's type. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\begin{DoxyNote}{Note}
+You can use this in e.\-g. debugging and similar printing. 
+\end{DoxyNote}
+
+
+Reimplemented from \hyperlink{classCourse_1_1TileBase_af1a8aaa3407ad3ade7ffe8f2fb421288}{Course\-::\-Tile\-Base}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCourse_1_1Grassland_a35a3ec14967c6b7446caa94887e33524}{\index{Course\-::\-Grassland@{Course\-::\-Grassland}!B\-A\-S\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N@{B\-A\-S\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N}}
+\index{B\-A\-S\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N@{B\-A\-S\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N}!Course::Grassland@{Course\-::\-Grassland}}
+\subsubsection[{B\-A\-S\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Resource\-Map} Course\-::\-Grassland\-::\-B\-A\-S\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N\hspace{0.3cm}{\ttfamily [static]}}}\label{classCourse_1_1Grassland_a35a3ec14967c6b7446caa94887e33524}
+\hypertarget{classCourse_1_1Grassland_aa90f673331e9c748a5960c513c27cdd9}{\index{Course\-::\-Grassland@{Course\-::\-Grassland}!M\-A\-X\-\_\-\-B\-U\-I\-L\-D\-I\-N\-G\-S@{M\-A\-X\-\_\-\-B\-U\-I\-L\-D\-I\-N\-G\-S}}
+\index{M\-A\-X\-\_\-\-B\-U\-I\-L\-D\-I\-N\-G\-S@{M\-A\-X\-\_\-\-B\-U\-I\-L\-D\-I\-N\-G\-S}!Course::Grassland@{Course\-::\-Grassland}}
+\subsubsection[{M\-A\-X\-\_\-\-B\-U\-I\-L\-D\-I\-N\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int Course\-::\-Grassland\-::\-M\-A\-X\-\_\-\-B\-U\-I\-L\-D\-I\-N\-G\-S\hspace{0.3cm}{\ttfamily [static]}}}\label{classCourse_1_1Grassland_aa90f673331e9c748a5960c513c27cdd9}
+\hypertarget{classCourse_1_1Grassland_af92733b817010370c0540d1631b6f486}{\index{Course\-::\-Grassland@{Course\-::\-Grassland}!M\-A\-X\-\_\-\-W\-O\-R\-K\-E\-R\-S@{M\-A\-X\-\_\-\-W\-O\-R\-K\-E\-R\-S}}
+\index{M\-A\-X\-\_\-\-W\-O\-R\-K\-E\-R\-S@{M\-A\-X\-\_\-\-W\-O\-R\-K\-E\-R\-S}!Course::Grassland@{Course\-::\-Grassland}}
+\subsubsection[{M\-A\-X\-\_\-\-W\-O\-R\-K\-E\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int Course\-::\-Grassland\-::\-M\-A\-X\-\_\-\-W\-O\-R\-K\-E\-R\-S\hspace{0.3cm}{\ttfamily [static]}}}\label{classCourse_1_1Grassland_af92733b817010370c0540d1631b6f486}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Course/\-Course\-Lib/tiles/\hyperlink{grassland_8h}{grassland.\-h}\item 
+Course/\-Course\-Lib/tiles/\hyperlink{grassland_8cpp}{grassland.\-cpp}\end{DoxyCompactItemize}

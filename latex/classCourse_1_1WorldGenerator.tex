@@ -1,0 +1,212 @@
+\hypertarget{classCourse_1_1WorldGenerator}{\section{Course\-:\-:World\-Generator Class Reference}
+\label{classCourse_1_1WorldGenerator}\index{Course\-::\-World\-Generator@{Course\-::\-World\-Generator}}
+}
+
+
+The \hyperlink{classCourse_1_1WorldGenerator}{World\-Generator} class is a singleton for generating tiles for the game.  
+
+
+
+
+{\ttfamily \#include $<$worldgenerator.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCourse_1_1WorldGenerator_a4946730e80bc6cdc42761dec637f29b0}{World\-Generator} (const \hyperlink{classCourse_1_1WorldGenerator}{World\-Generator} \&)=delete
+\item 
+\hyperlink{classCourse_1_1WorldGenerator}{World\-Generator} \& \hyperlink{classCourse_1_1WorldGenerator_a9b75e71fa1d3522c78407c61c85defc3}{operator=} (const \hyperlink{classCourse_1_1WorldGenerator}{World\-Generator} \&)=delete
+\item 
+\hyperlink{classCourse_1_1WorldGenerator_a5e023cb70d8c3a76ad32add672d9d211}{World\-Generator} (\hyperlink{classCourse_1_1WorldGenerator}{World\-Generator} \&\&)=delete
+\item 
+\hyperlink{classCourse_1_1WorldGenerator}{World\-Generator} \& \hyperlink{classCourse_1_1WorldGenerator_ae1ad94ce5da50aeaf3365c86804c10ca}{operator=} (\hyperlink{classCourse_1_1WorldGenerator}{World\-Generator} \&\&)=delete
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classCourse_1_1WorldGenerator_adc7ea4ba3cba155910cdb03130c84e75}{add\-Constructor} (unsigned int weight)
+\begin{DoxyCompactList}\small\item\em Register a Tile's constructor for use in map generation. \end{DoxyCompactList}\item 
+void \hyperlink{classCourse_1_1WorldGenerator_a7fe4468658c14aac5bc282fda98245e1}{generate\-Map} (unsigned int size\-\_\-x, unsigned int size\-\_\-y, unsigned int seed, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iObjectManager}{i\-Object\-Manager} $>$ \&objectmanager, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iGameEventHandler}{i\-Game\-Event\-Handler} $>$ \&eventhandler)
+\begin{DoxyCompactList}\small\item\em Generates Tile-\/objects and sends them to Object\-Manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCourse_1_1WorldGenerator}{World\-Generator} \& \hyperlink{classCourse_1_1WorldGenerator_a2b94f9ec5aa516b6528d90fa81868900}{get\-Instance} ()
+\begin{DoxyCompactList}\small\item\em Used to get a reference to the Singleton instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCourse_1_1WorldGenerator_a5f75bf6c9132d395a4ab0e5e68d1c599}{World\-Generator} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCourse_1_1WorldGenerator_ae1cdc6937568b2a48b82040f4729e7a9}{$\sim$\-World\-Generator} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\hyperlink{namespaceCourse_acf802ffd79a9573eb8afca22ae1f8a2f}{Tile\-Constructor\-Pointer} \hyperlink{classCourse_1_1WorldGenerator_a252f641fc41a3d89b86095f279d7a5fe}{find\-Rand\-Ctor} (int random) const 
+\begin{DoxyCompactList}\small\item\em Find the Tile ctor matching the random number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::multimap$<$ unsigned int, \\*
+\hyperlink{namespaceCourse_acf802ffd79a9573eb8afca22ae1f8a2f}{Tile\-Constructor\-Pointer} $>$ \hyperlink{classCourse_1_1WorldGenerator_aa4b7964b0d107de1248bb1cf0abb306a}{m\-\_\-ctors}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classCourse_1_1WorldGenerator}{World\-Generator} class is a singleton for generating tiles for the game. 
+
+Students use this to create new Tile-\/objects that form the gameworld. \par
+Usage\-:
+\begin{DoxyEnumerate}
+\item Use \hyperlink{classCourse_1_1WorldGenerator_a2b94f9ec5aa516b6528d90fa81868900}{World\-Generator\-::get\-Instance()} to get a reference to the singleton.
+\item Call add\-Constructor with each Tile type you created.
+\item Generate the map through the reference. 
+\end{DoxyEnumerate}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCourse_1_1WorldGenerator_a4946730e80bc6cdc42761dec637f29b0}{\index{Course\-::\-World\-Generator@{Course\-::\-World\-Generator}!World\-Generator@{World\-Generator}}
+\index{World\-Generator@{World\-Generator}!Course::WorldGenerator@{Course\-::\-World\-Generator}}
+\subsubsection[{World\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-World\-Generator\-::\-World\-Generator (
+\begin{DoxyParamCaption}
+\item[{const {\bf World\-Generator} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classCourse_1_1WorldGenerator_a4946730e80bc6cdc42761dec637f29b0}
+\hypertarget{classCourse_1_1WorldGenerator_a5e023cb70d8c3a76ad32add672d9d211}{\index{Course\-::\-World\-Generator@{Course\-::\-World\-Generator}!World\-Generator@{World\-Generator}}
+\index{World\-Generator@{World\-Generator}!Course::WorldGenerator@{Course\-::\-World\-Generator}}
+\subsubsection[{World\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-World\-Generator\-::\-World\-Generator (
+\begin{DoxyParamCaption}
+\item[{{\bf World\-Generator} \&\&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classCourse_1_1WorldGenerator_a5e023cb70d8c3a76ad32add672d9d211}
+\hypertarget{classCourse_1_1WorldGenerator_a5f75bf6c9132d395a4ab0e5e68d1c599}{\index{Course\-::\-World\-Generator@{Course\-::\-World\-Generator}!World\-Generator@{World\-Generator}}
+\index{World\-Generator@{World\-Generator}!Course::WorldGenerator@{Course\-::\-World\-Generator}}
+\subsubsection[{World\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-World\-Generator\-::\-World\-Generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [default]}}}\label{classCourse_1_1WorldGenerator_a5f75bf6c9132d395a4ab0e5e68d1c599}
+
+
+Default constructor. 
+
+\hypertarget{classCourse_1_1WorldGenerator_ae1cdc6937568b2a48b82040f4729e7a9}{\index{Course\-::\-World\-Generator@{Course\-::\-World\-Generator}!$\sim$\-World\-Generator@{$\sim$\-World\-Generator}}
+\index{$\sim$\-World\-Generator@{$\sim$\-World\-Generator}!Course::WorldGenerator@{Course\-::\-World\-Generator}}
+\subsubsection[{$\sim$\-World\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-World\-Generator\-::$\sim$\-World\-Generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [default]}}}\label{classCourse_1_1WorldGenerator_ae1cdc6937568b2a48b82040f4729e7a9}
+
+
+Default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCourse_1_1WorldGenerator_adc7ea4ba3cba155910cdb03130c84e75}{\index{Course\-::\-World\-Generator@{Course\-::\-World\-Generator}!add\-Constructor@{add\-Constructor}}
+\index{add\-Constructor@{add\-Constructor}!Course::WorldGenerator@{Course\-::\-World\-Generator}}
+\subsubsection[{add\-Constructor}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void Course\-::\-World\-Generator\-::add\-Constructor (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{weight}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCourse_1_1WorldGenerator_adc7ea4ba3cba155910cdb03130c84e75}
+
+
+Register a Tile's constructor for use in map generation. 
+
+\begin{DoxyNote}{Note}
+Do this only once per Tile type or they won't be equally common. Use the Tile's type as the template parameter\-: \hyperlink{classCourse_1_1WorldGenerator_adc7ea4ba3cba155910cdb03130c84e75}{add\-Constructor$<$\-Forest$>$()}; 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em weight} & represents the rarity of the Tile, high being common. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCourse_1_1WorldGenerator_a252f641fc41a3d89b86095f279d7a5fe}{\index{Course\-::\-World\-Generator@{Course\-::\-World\-Generator}!find\-Rand\-Ctor@{find\-Rand\-Ctor}}
+\index{find\-Rand\-Ctor@{find\-Rand\-Ctor}!Course::WorldGenerator@{Course\-::\-World\-Generator}}
+\subsubsection[{find\-Rand\-Ctor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tile\-Constructor\-Pointer} Course\-::\-World\-Generator\-::find\-Rand\-Ctor (
+\begin{DoxyParamCaption}
+\item[{int}]{random}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classCourse_1_1WorldGenerator_a252f641fc41a3d89b86095f279d7a5fe}
+
+
+Find the Tile ctor matching the random number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em random} & is the random number being matched to a Tile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The constructor matching the random number. 
+\end{DoxyReturn}
+\hypertarget{classCourse_1_1WorldGenerator_a7fe4468658c14aac5bc282fda98245e1}{\index{Course\-::\-World\-Generator@{Course\-::\-World\-Generator}!generate\-Map@{generate\-Map}}
+\index{generate\-Map@{generate\-Map}!Course::WorldGenerator@{Course\-::\-World\-Generator}}
+\subsubsection[{generate\-Map}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::\-World\-Generator\-::generate\-Map (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{size\-\_\-x, }
+\item[{unsigned int}]{size\-\_\-y, }
+\item[{unsigned int}]{seed, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf i\-Object\-Manager} $>$ \&}]{objectmanager, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf i\-Game\-Event\-Handler} $>$ \&}]{eventhandler}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1WorldGenerator_a7fe4468658c14aac5bc282fda98245e1}
+
+
+Generates Tile-\/objects and sends them to Object\-Manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size\-\_\-x} & is the horizontal size of the map area. \\
+\hline
+{\em size\-\_\-y} & is the vertical size of the map area. \\
+\hline
+{\em seed} & is the seed-\/value used in the generation. \\
+\hline
+{\em objectmanager} & points to the Object\-Manager that receives the generated Tiles. \\
+\hline
+{\em eventhandler} & points to the student's Game\-Event\-Handler. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\hypertarget{classCourse_1_1WorldGenerator_a2b94f9ec5aa516b6528d90fa81868900}{\index{Course\-::\-World\-Generator@{Course\-::\-World\-Generator}!get\-Instance@{get\-Instance}}
+\index{get\-Instance@{get\-Instance}!Course::WorldGenerator@{Course\-::\-World\-Generator}}
+\subsubsection[{get\-Instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf World\-Generator} \& Course\-::\-World\-Generator\-::get\-Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classCourse_1_1WorldGenerator_a2b94f9ec5aa516b6528d90fa81868900}
+
+
+Used to get a reference to the Singleton instance. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the Singleton instance. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\hypertarget{classCourse_1_1WorldGenerator_a9b75e71fa1d3522c78407c61c85defc3}{\index{Course\-::\-World\-Generator@{Course\-::\-World\-Generator}!operator=@{operator=}}
+\index{operator=@{operator=}!Course::WorldGenerator@{Course\-::\-World\-Generator}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf World\-Generator}\& Course\-::\-World\-Generator\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf World\-Generator} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classCourse_1_1WorldGenerator_a9b75e71fa1d3522c78407c61c85defc3}
+\hypertarget{classCourse_1_1WorldGenerator_ae1ad94ce5da50aeaf3365c86804c10ca}{\index{Course\-::\-World\-Generator@{Course\-::\-World\-Generator}!operator=@{operator=}}
+\index{operator=@{operator=}!Course::WorldGenerator@{Course\-::\-World\-Generator}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf World\-Generator}\& Course\-::\-World\-Generator\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf World\-Generator} \&\&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classCourse_1_1WorldGenerator_ae1ad94ce5da50aeaf3365c86804c10ca}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCourse_1_1WorldGenerator_aa4b7964b0d107de1248bb1cf0abb306a}{\index{Course\-::\-World\-Generator@{Course\-::\-World\-Generator}!m\-\_\-ctors@{m\-\_\-ctors}}
+\index{m\-\_\-ctors@{m\-\_\-ctors}!Course::WorldGenerator@{Course\-::\-World\-Generator}}
+\subsubsection[{m\-\_\-ctors}]{\setlength{\rightskip}{0pt plus 5cm}std\-::multimap$<$unsigned int, {\bf Tile\-Constructor\-Pointer}$>$ Course\-::\-World\-Generator\-::m\-\_\-ctors\hspace{0.3cm}{\ttfamily [private]}}}\label{classCourse_1_1WorldGenerator_aa4b7964b0d107de1248bb1cf0abb306a}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Course/\-Course\-Lib/core/\hyperlink{worldgenerator_8h}{worldgenerator.\-h}\item 
+Course/\-Course\-Lib/core/\hyperlink{worldgenerator_8cpp}{worldgenerator.\-cpp}\end{DoxyCompactItemize}

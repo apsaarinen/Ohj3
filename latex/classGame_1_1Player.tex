@@ -1,0 +1,155 @@
+\hypertarget{classGame_1_1Player}{\section{Game\-:\-:Player Class Reference}
+\label{classGame_1_1Player}\index{Game\-::\-Player@{Game\-::\-Player}}
+}
+
+
+The \hyperlink{classGame_1_1Player}{Player} class represents a player in the game.  
+
+
+
+
+{\ttfamily \#include $<$player.\-h$>$}
+
+Inheritance diagram for Game\-:\-:Player\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGame_1_1Player}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGame_1_1Player_a1550c6bbc0e31a91847fd1bfa61ebbd5}{Player} (const std\-::string \&name, Q\-String color, const std\-::vector$<$ std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1GameObject}{Course\-::\-Game\-Object} $>$ $>$ objects=\{\})
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+bool \hyperlink{classGame_1_1Player_aec9c6bb5b0ee04271f84a99d90663d7f}{modify\-Resource} (const \hyperlink{namespaceCourse_a02d49c04029594d4adba79b84bb85f65}{Course\-::\-Basic\-Resource} \&resource, const int \&amount)
+\begin{DoxyCompactList}\small\item\em Modifies a players resource (by addition) \end{DoxyCompactList}\item 
+bool \hyperlink{classGame_1_1Player_a68980b4a5e45acca17bfeb6674031526}{modify\-Resources} (const \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} \&resources)
+\begin{DoxyCompactList}\small\item\em Modifies a players resources (by addition) \end{DoxyCompactList}\item 
+\hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} \hyperlink{classGame_1_1Player_a3614aac3989870a566469c9df26f8a19}{get\-Resources} () const 
+\begin{DoxyCompactList}\small\item\em Returns the player's resources. \end{DoxyCompactList}\item 
+const Q\-String \hyperlink{classGame_1_1Player_a60dafb9daab8ce844f69cc0d78dabd5a}{get\-Color} () const 
+\begin{DoxyCompactList}\small\item\em Returns the player's color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} \hyperlink{classGame_1_1Player_a78e032ef0212488e590267e4bd101400}{m\-\_\-resources}
+\item 
+Q\-String \hyperlink{classGame_1_1Player_aba8134395ff2502baa9dddbd4ebea5ad}{m\-\_\-color}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classGame_1_1Player}{Player} class represents a player in the game. 
+
+\hyperlink{classGame_1_1Player}{Player} has a name, color and ownership to Game\-Objects 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGame_1_1Player_a1550c6bbc0e31a91847fd1bfa61ebbd5}{\index{Game\-::\-Player@{Game\-::\-Player}!Player@{Player}}
+\index{Player@{Player}!Game::Player@{Game\-::\-Player}}
+\subsubsection[{Player}]{\setlength{\rightskip}{0pt plus 5cm}Game\-::\-Player\-::\-Player (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name, }
+\item[{Q\-String}]{color, }
+\item[{const std\-::vector$<$ std\-::shared\-\_\-ptr$<$ {\bf Course\-::\-Game\-Object} $>$ $>$}]{objects = {\ttfamily \{\}}}
+\end{DoxyParamCaption}
+)}}\label{classGame_1_1Player_a1550c6bbc0e31a91847fd1bfa61ebbd5}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & A std\-::string for player's name \\
+\hline
+{\em color} & \hyperlink{classGame_1_1Player}{Player}'s color in the game as a string \\
+\hline
+{\em objects} & (optional) A std\-::vector of shared-\/pointers to Game\-Objects. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGame_1_1Player_a60dafb9daab8ce844f69cc0d78dabd5a}{\index{Game\-::\-Player@{Game\-::\-Player}!get\-Color@{get\-Color}}
+\index{get\-Color@{get\-Color}!Game::Player@{Game\-::\-Player}}
+\subsubsection[{get\-Color}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String Game\-::\-Player\-::get\-Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGame_1_1Player_a60dafb9daab8ce844f69cc0d78dabd5a}
+
+
+Returns the player's color. 
+
+\begin{DoxyReturn}{Returns}
+Qstring that tells the player's color 
+\end{DoxyReturn}
+\hypertarget{classGame_1_1Player_a3614aac3989870a566469c9df26f8a19}{\index{Game\-::\-Player@{Game\-::\-Player}!get\-Resources@{get\-Resources}}
+\index{get\-Resources@{get\-Resources}!Game::Player@{Game\-::\-Player}}
+\subsubsection[{get\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Course\-::\-Resource\-Map} Game\-::\-Player\-::get\-Resources (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGame_1_1Player_a3614aac3989870a566469c9df26f8a19}
+
+
+Returns the player's resources. 
+
+\begin{DoxyReturn}{Returns}
+Resource\-Map containing players resources 
+\end{DoxyReturn}
+\hypertarget{classGame_1_1Player_aec9c6bb5b0ee04271f84a99d90663d7f}{\index{Game\-::\-Player@{Game\-::\-Player}!modify\-Resource@{modify\-Resource}}
+\index{modify\-Resource@{modify\-Resource}!Game::Player@{Game\-::\-Player}}
+\subsubsection[{modify\-Resource}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\-::\-Player\-::modify\-Resource (
+\begin{DoxyParamCaption}
+\item[{const {\bf Course\-::\-Basic\-Resource} \&}]{resource, }
+\item[{const int \&}]{amount}
+\end{DoxyParamCaption}
+)}}\label{classGame_1_1Player_aec9c6bb5b0ee04271f84a99d90663d7f}
+
+
+Modifies a players resource (by addition) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource} & A Basic\-Resource type that is modified \\
+\hline
+{\em amount} & Amount of that resource \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bool that tells if the operation was successful 
+\end{DoxyReturn}
+\hypertarget{classGame_1_1Player_a68980b4a5e45acca17bfeb6674031526}{\index{Game\-::\-Player@{Game\-::\-Player}!modify\-Resources@{modify\-Resources}}
+\index{modify\-Resources@{modify\-Resources}!Game::Player@{Game\-::\-Player}}
+\subsubsection[{modify\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\-::\-Player\-::modify\-Resources (
+\begin{DoxyParamCaption}
+\item[{const {\bf Course\-::\-Resource\-Map} \&}]{resources}
+\end{DoxyParamCaption}
+)}}\label{classGame_1_1Player_a68980b4a5e45acca17bfeb6674031526}
+
+
+Modifies a players resources (by addition) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resources} & A Resource\-Map that is added to players resources \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bool that tells if the operation was successful 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classGame_1_1Player_aba8134395ff2502baa9dddbd4ebea5ad}{\index{Game\-::\-Player@{Game\-::\-Player}!m\-\_\-color@{m\-\_\-color}}
+\index{m\-\_\-color@{m\-\_\-color}!Game::Player@{Game\-::\-Player}}
+\subsubsection[{m\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Game\-::\-Player\-::m\-\_\-color\hspace{0.3cm}{\ttfamily [private]}}}\label{classGame_1_1Player_aba8134395ff2502baa9dddbd4ebea5ad}
+\hypertarget{classGame_1_1Player_a78e032ef0212488e590267e4bd101400}{\index{Game\-::\-Player@{Game\-::\-Player}!m\-\_\-resources@{m\-\_\-resources}}
+\index{m\-\_\-resources@{m\-\_\-resources}!Game::Player@{Game\-::\-Player}}
+\subsubsection[{m\-\_\-resources}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Course\-::\-Resource\-Map} Game\-::\-Player\-::m\-\_\-resources\hspace{0.3cm}{\ttfamily [private]}}}\label{classGame_1_1Player_a78e032ef0212488e590267e4bd101400}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Game/core/\hyperlink{player_8h}{player.\-h}\item 
+Game/core/\hyperlink{player_8cpp}{player.\-cpp}\end{DoxyCompactItemize}

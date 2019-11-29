@@ -1,0 +1,307 @@
+\hypertarget{classCourse_1_1SimpleGameScene}{\section{Course\-:\-:Simple\-Game\-Scene Class Reference}
+\label{classCourse_1_1SimpleGameScene}\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}}
+}
+
+
+The \hyperlink{classCourse_1_1SimpleGameScene}{Simple\-Game\-Scene} is a custom Q\-Graphics\-Scene that shows a simple rendering of the game map.  
+
+
+
+
+{\ttfamily \#include $<$simplegamescene.\-h$>$}
+
+Inheritance diagram for Course\-:\-:Simple\-Game\-Scene\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCourse_1_1SimpleGameScene}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCourse_1_1SimpleGameScene_ad589e26e037e1915fc8d4c0f06140a01}{object\-Clicked} (unsigned int object\-\_\-id)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCourse_1_1SimpleGameScene_ae65dfd293c3490dcbb71d7a71ddda65b}{Simple\-Game\-Scene} (Q\-Widget $\ast$qt\-\_\-parent=nullptr, int width=10, int height=10, int scale=50)
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+\hyperlink{classCourse_1_1SimpleGameScene_ab8addb19d78f539947e163d7ec37e49c}{$\sim$\-Simple\-Game\-Scene} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classCourse_1_1SimpleGameScene_a418450a3659d632ff3ba0696ffe88adc}{set\-Size} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Sets the map size and calls \hyperlink{classCourse_1_1SimpleGameScene_a2a097ef678bc2eaabe93832917d2aedf}{resize()}. \end{DoxyCompactList}\item 
+void \hyperlink{classCourse_1_1SimpleGameScene_a97c12ca31ae67a45b5cf3e53065c5631}{set\-Scale} (int scale)
+\begin{DoxyCompactList}\small\item\em set the tile size, aka scale of the map and calls \hyperlink{classCourse_1_1SimpleGameScene_a2a097ef678bc2eaabe93832917d2aedf}{resize()}. Function behaviour after objects has been drawn is not specified. \end{DoxyCompactList}\item 
+void \hyperlink{classCourse_1_1SimpleGameScene_a2a097ef678bc2eaabe93832917d2aedf}{resize} ()
+\begin{DoxyCompactList}\small\item\em resize recalculates the bounding rectangle \end{DoxyCompactList}\item 
+int \hyperlink{classCourse_1_1SimpleGameScene_aefad6eb4433f9e89850e96697b980831}{get\-Scale} () const 
+\begin{DoxyCompactList}\small\item\em get the size of a single tile \end{DoxyCompactList}\item 
+std\-::pair$<$ int, int $>$ \hyperlink{classCourse_1_1SimpleGameScene_a47bac76decd9c47bb4604a7f0c2d6de7}{get\-Size} () const 
+\begin{DoxyCompactList}\small\item\em get the size of the map. \end{DoxyCompactList}\item 
+void \hyperlink{classCourse_1_1SimpleGameScene_adc6d386caaf44e3ef33a266f46e7eb98}{draw\-Item} (std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1GameObject}{Course\-::\-Game\-Object} $>$ obj)
+\begin{DoxyCompactList}\small\item\em draw a new item to the map. \end{DoxyCompactList}\item 
+void \hyperlink{classCourse_1_1SimpleGameScene_a9184f8347367a255ddb9a1b0ce23e134}{remove\-Item} (std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1GameObject}{Course\-::\-Game\-Object} $>$ obj)
+\begin{DoxyCompactList}\small\item\em tries to remove drawn object at the location obj points to. If there's multiple objects, will remove the one that matches obj. \end{DoxyCompactList}\item 
+void \hyperlink{classCourse_1_1SimpleGameScene_ae175f970177c7564b6fb63f8869a44e3}{update\-Item} (std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1GameObject}{Course\-::\-Game\-Object} $>$ obj)
+\begin{DoxyCompactList}\small\item\em updates the position of obj. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCourse_1_1SimpleGameScene_a8853ddab78ee57fe69489cb246c2dcad}{event} (Q\-Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em simple event handler that notifies when objects or the play area is clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-Graphics\-Item $\ast$ \hyperlink{classCourse_1_1SimpleGameScene_a0fb914c9a9a0b0f609a8e37122dfc66b}{m\-\_\-map\-Bound\-Rect}
+\item 
+int \hyperlink{classCourse_1_1SimpleGameScene_a092cd06906c5f7bf90932155cce61c65}{m\-\_\-width}
+\item 
+int \hyperlink{classCourse_1_1SimpleGameScene_ab9f181b61998050f4705136d4b8ac037}{m\-\_\-height}
+\item 
+int \hyperlink{classCourse_1_1SimpleGameScene_abcfe6adc631563891c7400147bb9de3f}{m\-\_\-scale}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classCourse_1_1SimpleGameScene}{Simple\-Game\-Scene} is a custom Q\-Graphics\-Scene that shows a simple rendering of the game map. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCourse_1_1SimpleGameScene_ae65dfd293c3490dcbb71d7a71ddda65b}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!Simple\-Game\-Scene@{Simple\-Game\-Scene}}
+\index{Simple\-Game\-Scene@{Simple\-Game\-Scene}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{Simple\-Game\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Simple\-Game\-Scene\-::\-Simple\-Game\-Scene (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{qt\-\_\-parent = {\ttfamily nullptr}, }
+\item[{int}]{width = {\ttfamily 10}, }
+\item[{int}]{height = {\ttfamily 10}, }
+\item[{int}]{scale = {\ttfamily 50}}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1SimpleGameScene_ae65dfd293c3490dcbb71d7a71ddda65b}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em qt\-\_\-parent} & points to the parent object per Qt's parent-\/child-\/system. \\
+\hline
+{\em width} & in tiles for the game map. \\
+\hline
+{\em height} & in tiles for the game map. \\
+\hline
+{\em scale} & is the size in pixels of a single square tile.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+0 $<$ width $<$= 100 \&\& 0 $<$ height $<$= 100 \&\& 0 $<$ scale $<$= 500. Otherwise default values are used for the created object. 
+\end{DoxyPrecond}
+\hypertarget{classCourse_1_1SimpleGameScene_ab8addb19d78f539947e163d7ec37e49c}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!$\sim$\-Simple\-Game\-Scene@{$\sim$\-Simple\-Game\-Scene}}
+\index{$\sim$\-Simple\-Game\-Scene@{$\sim$\-Simple\-Game\-Scene}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{$\sim$\-Simple\-Game\-Scene}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Simple\-Game\-Scene\-::$\sim$\-Simple\-Game\-Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{classCourse_1_1SimpleGameScene_ab8addb19d78f539947e163d7ec37e49c}
+
+
+Default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCourse_1_1SimpleGameScene_adc6d386caaf44e3ef33a266f46e7eb98}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!draw\-Item@{draw\-Item}}
+\index{draw\-Item@{draw\-Item}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{draw\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::\-Simple\-Game\-Scene\-::draw\-Item (
+\begin{DoxyParamCaption}
+\item[{std\-::shared\-\_\-ptr$<$ {\bf Course\-::\-Game\-Object} $>$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1SimpleGameScene_adc6d386caaf44e3ef33a266f46e7eb98}
+
+
+draw a new item to the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & shared ptr to the object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+obj must have a valid coordinate property. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: None 
+\end{DoxyPostcond}
+\hypertarget{classCourse_1_1SimpleGameScene_a8853ddab78ee57fe69489cb246c2dcad}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!event@{event}}
+\index{event@{event}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{event}]{\setlength{\rightskip}{0pt plus 5cm}bool Course\-::\-Simple\-Game\-Scene\-::event (
+\begin{DoxyParamCaption}
+\item[{Q\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCourse_1_1SimpleGameScene_a8853ddab78ee57fe69489cb246c2dcad}
+
+
+simple event handler that notifies when objects or the play area is clicked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & that has happened. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True\-: if event was handled in the handler. False\-: if the event handling was passed over. 
+\end{DoxyReturn}
+\hypertarget{classCourse_1_1SimpleGameScene_aefad6eb4433f9e89850e96697b980831}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!get\-Scale@{get\-Scale}}
+\index{get\-Scale@{get\-Scale}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{get\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}int Course\-::\-Simple\-Game\-Scene\-::get\-Scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCourse_1_1SimpleGameScene_aefad6eb4433f9e89850e96697b980831}
+
+
+get the size of a single tile 
+
+\begin{DoxyReturn}{Returns}
+the size of a tile in pixels. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\hypertarget{classCourse_1_1SimpleGameScene_a47bac76decd9c47bb4604a7f0c2d6de7}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!get\-Size@{get\-Size}}
+\index{get\-Size@{get\-Size}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$ int, int $>$ Course\-::\-Simple\-Game\-Scene\-::get\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCourse_1_1SimpleGameScene_a47bac76decd9c47bb4604a7f0c2d6de7}
+
+
+get the size of the map. 
+
+\begin{DoxyReturn}{Returns}
+pair$<$width, height$>$ in tiles. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\hypertarget{classCourse_1_1SimpleGameScene_ad589e26e037e1915fc8d4c0f06140a01}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!object\-Clicked@{object\-Clicked}}
+\index{object\-Clicked@{object\-Clicked}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{object\-Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::\-Simple\-Game\-Scene\-::object\-Clicked (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{object\-\_\-id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classCourse_1_1SimpleGameScene_ad589e26e037e1915fc8d4c0f06140a01}
+\hypertarget{classCourse_1_1SimpleGameScene_a9184f8347367a255ddb9a1b0ce23e134}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!remove\-Item@{remove\-Item}}
+\index{remove\-Item@{remove\-Item}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{remove\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::\-Simple\-Game\-Scene\-::remove\-Item (
+\begin{DoxyParamCaption}
+\item[{std\-::shared\-\_\-ptr$<$ {\bf Course\-::\-Game\-Object} $>$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1SimpleGameScene_a9184f8347367a255ddb9a1b0ce23e134}
+
+
+tries to remove drawn object at the location obj points to. If there's multiple objects, will remove the one that matches obj. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & shared ptr to the object being deleted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: None 
+\end{DoxyPostcond}
+\hypertarget{classCourse_1_1SimpleGameScene_a2a097ef678bc2eaabe93832917d2aedf}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!resize@{resize}}
+\index{resize@{resize}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{resize}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::\-Simple\-Game\-Scene\-::resize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1SimpleGameScene_a2a097ef678bc2eaabe93832917d2aedf}
+
+
+resize recalculates the bounding rectangle 
+
+\hypertarget{classCourse_1_1SimpleGameScene_a97c12ca31ae67a45b5cf3e53065c5631}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!set\-Scale@{set\-Scale}}
+\index{set\-Scale@{set\-Scale}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{set\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::\-Simple\-Game\-Scene\-::set\-Scale (
+\begin{DoxyParamCaption}
+\item[{int}]{scale}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1SimpleGameScene_a97c12ca31ae67a45b5cf3e53065c5631}
+
+
+set the tile size, aka scale of the map and calls \hyperlink{classCourse_1_1SimpleGameScene_a2a097ef678bc2eaabe93832917d2aedf}{resize()}. Function behaviour after objects has been drawn is not specified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & in pixels. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+0 $<$ scale $<$= 500 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Scene scale is set to scale. 
+
+Exception guarantee\-: None 
+\end{DoxyPostcond}
+\hypertarget{classCourse_1_1SimpleGameScene_a418450a3659d632ff3ba0696ffe88adc}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!set\-Size@{set\-Size}}
+\index{set\-Size@{set\-Size}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{set\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::\-Simple\-Game\-Scene\-::set\-Size (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1SimpleGameScene_a418450a3659d632ff3ba0696ffe88adc}
+
+
+Sets the map size and calls \hyperlink{classCourse_1_1SimpleGameScene_a2a097ef678bc2eaabe93832917d2aedf}{resize()}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & in tiles. \\
+\hline
+{\em height} & in tiles. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+width and height must each be between 1 and 100. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+width and height are set to given sizes. 
+
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\hypertarget{classCourse_1_1SimpleGameScene_ae175f970177c7564b6fb63f8869a44e3}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!update\-Item@{update\-Item}}
+\index{update\-Item@{update\-Item}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{update\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::\-Simple\-Game\-Scene\-::update\-Item (
+\begin{DoxyParamCaption}
+\item[{std\-::shared\-\_\-ptr$<$ {\bf Course\-::\-Game\-Object} $>$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1SimpleGameScene_ae175f970177c7564b6fb63f8869a44e3}
+
+
+updates the position of obj. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & shared ptr to the obj being updated. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCourse_1_1SimpleGameScene_ab9f181b61998050f4705136d4b8ac037}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!m\-\_\-height@{m\-\_\-height}}
+\index{m\-\_\-height@{m\-\_\-height}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{m\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}int Course\-::\-Simple\-Game\-Scene\-::m\-\_\-height\hspace{0.3cm}{\ttfamily [private]}}}\label{classCourse_1_1SimpleGameScene_ab9f181b61998050f4705136d4b8ac037}
+\hypertarget{classCourse_1_1SimpleGameScene_a0fb914c9a9a0b0f609a8e37122dfc66b}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!m\-\_\-map\-Bound\-Rect@{m\-\_\-map\-Bound\-Rect}}
+\index{m\-\_\-map\-Bound\-Rect@{m\-\_\-map\-Bound\-Rect}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{m\-\_\-map\-Bound\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Graphics\-Item$\ast$ Course\-::\-Simple\-Game\-Scene\-::m\-\_\-map\-Bound\-Rect\hspace{0.3cm}{\ttfamily [private]}}}\label{classCourse_1_1SimpleGameScene_a0fb914c9a9a0b0f609a8e37122dfc66b}
+\hypertarget{classCourse_1_1SimpleGameScene_abcfe6adc631563891c7400147bb9de3f}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!m\-\_\-scale@{m\-\_\-scale}}
+\index{m\-\_\-scale@{m\-\_\-scale}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{m\-\_\-scale}]{\setlength{\rightskip}{0pt plus 5cm}int Course\-::\-Simple\-Game\-Scene\-::m\-\_\-scale\hspace{0.3cm}{\ttfamily [private]}}}\label{classCourse_1_1SimpleGameScene_abcfe6adc631563891c7400147bb9de3f}
+\hypertarget{classCourse_1_1SimpleGameScene_a092cd06906c5f7bf90932155cce61c65}{\index{Course\-::\-Simple\-Game\-Scene@{Course\-::\-Simple\-Game\-Scene}!m\-\_\-width@{m\-\_\-width}}
+\index{m\-\_\-width@{m\-\_\-width}!Course::SimpleGameScene@{Course\-::\-Simple\-Game\-Scene}}
+\subsubsection[{m\-\_\-width}]{\setlength{\rightskip}{0pt plus 5cm}int Course\-::\-Simple\-Game\-Scene\-::m\-\_\-width\hspace{0.3cm}{\ttfamily [private]}}}\label{classCourse_1_1SimpleGameScene_a092cd06906c5f7bf90932155cce61c65}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Course/\-Course\-Lib/graphics/\hyperlink{simplegamescene_8h}{simplegamescene.\-h}\item 
+Course/\-Course\-Lib/graphics/\hyperlink{simplegamescene_8cpp}{simplegamescene.\-cpp}\end{DoxyCompactItemize}

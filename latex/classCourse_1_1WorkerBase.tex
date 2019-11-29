@@ -1,0 +1,258 @@
+\hypertarget{classCourse_1_1WorkerBase}{\section{Course\-:\-:Worker\-Base Class Reference}
+\label{classCourse_1_1WorkerBase}\index{Course\-::\-Worker\-Base@{Course\-::\-Worker\-Base}}
+}
+
+
+The \hyperlink{classCourse_1_1WorkerBase}{Worker\-Base} class is an abstract base-\/class for Worker-\/objects.  
+
+
+
+
+{\ttfamily \#include $<$workerbase.\-h$>$}
+
+Inheritance diagram for Course\-:\-:Worker\-Base\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.888889cm]{classCourse_1_1WorkerBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCourse_1_1WorkerBase_a419f5f52654b70d123ea0c24bd94e091}{Worker\-Base} ()=delete
+\begin{DoxyCompactList}\small\item\em Disabled parameterless constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCourse_1_1WorkerBase_af3dc160af36133a23d6e5bcd1ffe347e}{Worker\-Base} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iGameEventHandler}{i\-Game\-Event\-Handler} $>$ \&eventhandler, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iObjectManager}{i\-Object\-Manager} $>$ \&objectmanager, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1PlayerBase}{Player\-Base} $>$ \&owner, const int \&tilespaces=1, const \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Resource\-Map} \&cost=\{\}, const \hyperlink{namespaceCourse_a0b96bae1a664dde34efbb1b42dea615e}{Resource\-Map\-Double} \&efficiency=\{\})
+\item 
+virtual \hyperlink{classCourse_1_1WorkerBase_a6711f994b4426907026fcc07ee77b429}{$\sim$\-Worker\-Base} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual const \hyperlink{namespaceCourse_a0b96bae1a664dde34efbb1b42dea615e}{Resource\-Map\-Double} \hyperlink{classCourse_1_1WorkerBase_af0c1bb4f3bbea015e2a55aa6eff7f9ae}{tile\-Work\-Action} ()
+\begin{DoxyCompactList}\small\item\em Performs worker's action when working a Tile for resources. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCourse_1_1WorkerBase_a78553f35740e1c07d8f1071b5fc82212}{do\-Special\-Action} ()=0
+\begin{DoxyCompactList}\small\item\em Performs the Worker's special action. (If any) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCourse_1_1WorkerBase_a30335f9647eba9d04514be4bff059a6b}{set\-Resource\-Focus} (\hyperlink{namespaceCourse_a02d49c04029594d4adba79b84bb85f65}{Basic\-Resource} new\-\_\-focus) final
+\begin{DoxyCompactList}\small\item\em Sets new resourcetype for the worker to focus on. \end{DoxyCompactList}\item 
+virtual \hyperlink{namespaceCourse_a02d49c04029594d4adba79b84bb85f65}{Basic\-Resource} \hyperlink{classCourse_1_1WorkerBase_ac73fff2a6c99a353b80ea67425d5d545}{get\-Resource\-Focus} () const final
+\begin{DoxyCompactList}\small\item\em Returns the currently focused resourcetype. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCourse_1_1WorkerBase_ad80874970ab91bca95b9d3f959e838d2}{can\-Be\-Placed\-On\-Tile} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1TileBase}{Tile\-Base} $>$ \&target) const override
+\begin{DoxyCompactList}\small\item\em Default placement rule for workers\-:\par
+. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classCourse_1_1WorkerBase_afe6049810eec47fffe2c2a7334564ef9}{get\-Type} () const override
+\begin{DoxyCompactList}\small\item\em get\-Type Returns a string describing objects type. This should be overriden in each inherited class. Makes checking object's type easier for students. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{namespaceCourse_a0b96bae1a664dde34efbb1b42dea615e}{Resource\-Map\-Double} \hyperlink{classCourse_1_1WorkerBase_ad20bcd4fba20ad9d287860cdaeedbcca}{W\-O\-R\-K\-E\-R\-\_\-\-E\-F\-F\-I\-C\-I\-E\-N\-C\-Y}
+\item 
+const \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Resource\-Map} \hyperlink{classCourse_1_1WorkerBase_a0734e9b62296511492aca7c2ce531197}{R\-E\-C\-R\-U\-I\-T\-M\-E\-N\-T\-\_\-\-C\-O\-S\-T}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceCourse_a02d49c04029594d4adba79b84bb85f65}{Basic\-Resource} \hyperlink{classCourse_1_1WorkerBase_aeb20af8ac5fede53f8bb68e41b87937c}{m\-\_\-resource\-\_\-focus}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classCourse_1_1WorkerBase}{Worker\-Base} class is an abstract base-\/class for Worker-\/objects. 
+
+
+\begin{DoxyItemize}
+\item Workers can perform actions
+\item Tiles request production-\/multipliers from Workers 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCourse_1_1WorkerBase_a419f5f52654b70d123ea0c24bd94e091}{\index{Course\-::\-Worker\-Base@{Course\-::\-Worker\-Base}!Worker\-Base@{Worker\-Base}}
+\index{Worker\-Base@{Worker\-Base}!Course::WorkerBase@{Course\-::\-Worker\-Base}}
+\subsubsection[{Worker\-Base}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Worker\-Base\-::\-Worker\-Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classCourse_1_1WorkerBase_a419f5f52654b70d123ea0c24bd94e091}
+
+
+Disabled parameterless constructor. 
+
+\hypertarget{classCourse_1_1WorkerBase_af3dc160af36133a23d6e5bcd1ffe347e}{\index{Course\-::\-Worker\-Base@{Course\-::\-Worker\-Base}!Worker\-Base@{Worker\-Base}}
+\index{Worker\-Base@{Worker\-Base}!Course::WorkerBase@{Course\-::\-Worker\-Base}}
+\subsubsection[{Worker\-Base}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Worker\-Base\-::\-Worker\-Base (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf i\-Game\-Event\-Handler} $>$ \&}]{eventhandler, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf i\-Object\-Manager} $>$ \&}]{objectmanager, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Player\-Base} $>$ \&}]{owner, }
+\item[{const int \&}]{tilespaces = {\ttfamily 1}, }
+\item[{const {\bf Resource\-Map} \&}]{cost = {\ttfamily \{\}}, }
+\item[{const {\bf Resource\-Map\-Double} \&}]{efficiency = {\ttfamily \{\}}}
+\end{DoxyParamCaption}
+)}}\label{classCourse_1_1WorkerBase_af3dc160af36133a23d6e5bcd1ffe347e}
+\hypertarget{classCourse_1_1WorkerBase_a6711f994b4426907026fcc07ee77b429}{\index{Course\-::\-Worker\-Base@{Course\-::\-Worker\-Base}!$\sim$\-Worker\-Base@{$\sim$\-Worker\-Base}}
+\index{$\sim$\-Worker\-Base@{$\sim$\-Worker\-Base}!Course::WorkerBase@{Course\-::\-Worker\-Base}}
+\subsubsection[{$\sim$\-Worker\-Base}]{\setlength{\rightskip}{0pt plus 5cm}virtual Course\-::\-Worker\-Base\-::$\sim$\-Worker\-Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}}\label{classCourse_1_1WorkerBase_a6711f994b4426907026fcc07ee77b429}
+
+
+Default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCourse_1_1WorkerBase_ad80874970ab91bca95b9d3f959e838d2}{\index{Course\-::\-Worker\-Base@{Course\-::\-Worker\-Base}!can\-Be\-Placed\-On\-Tile@{can\-Be\-Placed\-On\-Tile}}
+\index{can\-Be\-Placed\-On\-Tile@{can\-Be\-Placed\-On\-Tile}!Course::WorkerBase@{Course\-::\-Worker\-Base}}
+\subsubsection[{can\-Be\-Placed\-On\-Tile}]{\setlength{\rightskip}{0pt plus 5cm}bool Course\-::\-Worker\-Base\-::can\-Be\-Placed\-On\-Tile (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Tile\-Base} $>$ \&}]{target}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCourse_1_1WorkerBase_ad80874970ab91bca95b9d3f959e838d2}
+
+
+Default placement rule for workers\-:\par
+. 
+
+
+\begin{DoxyItemize}
+\item Tile must have space for the worker
+\item Tile must have same owner as the worker 
+\begin{DoxyParams}{Parameters}
+{\em target} & is the Tile that worker is being placed on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True -\/ Only if both conditions are met. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: Basic 
+\end{DoxyPostcond}
+\begin{DoxyNote}{Note}
+Override to change placement rules for derived worker. 
+\end{DoxyNote}
+
+\end{DoxyItemize}
+
+Reimplemented from \hyperlink{classCourse_1_1PlaceableGameObject_a09616c1b271c35df61c88b37d0b85968}{Course\-::\-Placeable\-Game\-Object}.
+
+
+
+Reimplemented in \hyperlink{classGame_1_1MineWorker_aa52833ec99f6746871a78467c51bc57e}{Game\-::\-Mine\-Worker}, \hyperlink{classGame_1_1SawMillWorker_a435e13b35d129a453d7fdfcd60b6dc42}{Game\-::\-Saw\-Mill\-Worker}, and \hyperlink{classCourse_1_1BasicWorker_ab12d85004e92d9a1e85396d72c6cac98}{Course\-::\-Basic\-Worker}.
+
+\hypertarget{classCourse_1_1WorkerBase_a78553f35740e1c07d8f1071b5fc82212}{\index{Course\-::\-Worker\-Base@{Course\-::\-Worker\-Base}!do\-Special\-Action@{do\-Special\-Action}}
+\index{do\-Special\-Action@{do\-Special\-Action}!Course::WorkerBase@{Course\-::\-Worker\-Base}}
+\subsubsection[{do\-Special\-Action}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Course\-::\-Worker\-Base\-::do\-Special\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCourse_1_1WorkerBase_a78553f35740e1c07d8f1071b5fc82212}
+
+
+Performs the Worker's special action. (If any) 
+
+\begin{DoxyNote}{Note}
+Hint\-: You can use game-\/eventhandler for more creative solutions. 
+\end{DoxyNote}
+
+
+Implemented in \hyperlink{classGame_1_1MineWorker_a5faef20674a0d6408115461032e32edf}{Game\-::\-Mine\-Worker}, \hyperlink{classGame_1_1SawMillWorker_af344bff415417cb0c2744b038872221a}{Game\-::\-Saw\-Mill\-Worker}, and \hyperlink{classCourse_1_1BasicWorker_a626bab94f45602a34631c7ab6e60d829}{Course\-::\-Basic\-Worker}.
+
+\hypertarget{classCourse_1_1WorkerBase_ac73fff2a6c99a353b80ea67425d5d545}{\index{Course\-::\-Worker\-Base@{Course\-::\-Worker\-Base}!get\-Resource\-Focus@{get\-Resource\-Focus}}
+\index{get\-Resource\-Focus@{get\-Resource\-Focus}!Course::WorkerBase@{Course\-::\-Worker\-Base}}
+\subsubsection[{get\-Resource\-Focus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Basic\-Resource} Course\-::\-Worker\-Base\-::get\-Resource\-Focus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}}\label{classCourse_1_1WorkerBase_ac73fff2a6c99a353b80ea67425d5d545}
+
+
+Returns the currently focused resourcetype. 
+
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\hypertarget{classCourse_1_1WorkerBase_afe6049810eec47fffe2c2a7334564ef9}{\index{Course\-::\-Worker\-Base@{Course\-::\-Worker\-Base}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!Course::WorkerBase@{Course\-::\-Worker\-Base}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Course\-::\-Worker\-Base\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCourse_1_1WorkerBase_afe6049810eec47fffe2c2a7334564ef9}
+
+
+get\-Type Returns a string describing objects type. This should be overriden in each inherited class. Makes checking object's type easier for students. 
+
+\begin{DoxyReturn}{Returns}
+std\-::string that represents Object's type. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\begin{DoxyNote}{Note}
+You can use this in e.\-g. debugging and similar printing. 
+\end{DoxyNote}
+
+
+Reimplemented from \hyperlink{classCourse_1_1PlaceableGameObject_adcd0c91b52ccedd434092380644f210e}{Course\-::\-Placeable\-Game\-Object}.
+
+
+
+Reimplemented in \hyperlink{classGame_1_1MineWorker_a984c2ede11ac50460620a4d982249dbe}{Game\-::\-Mine\-Worker}, \hyperlink{classGame_1_1SawMillWorker_af64ec6de521d31ec3fdc885a3bc69cba}{Game\-::\-Saw\-Mill\-Worker}, and \hyperlink{classCourse_1_1BasicWorker_a8396e00dafd128cbb86e479296d75c12}{Course\-::\-Basic\-Worker}.
+
+\hypertarget{classCourse_1_1WorkerBase_a30335f9647eba9d04514be4bff059a6b}{\index{Course\-::\-Worker\-Base@{Course\-::\-Worker\-Base}!set\-Resource\-Focus@{set\-Resource\-Focus}}
+\index{set\-Resource\-Focus@{set\-Resource\-Focus}!Course::WorkerBase@{Course\-::\-Worker\-Base}}
+\subsubsection[{set\-Resource\-Focus}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::\-Worker\-Base\-::set\-Resource\-Focus (
+\begin{DoxyParamCaption}
+\item[{{\bf Basic\-Resource}}]{new\-\_\-focus}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}}\label{classCourse_1_1WorkerBase_a30335f9647eba9d04514be4bff059a6b}
+
+
+Sets new resourcetype for the worker to focus on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-\_\-focus} & the new resource focus. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\hypertarget{classCourse_1_1WorkerBase_af0c1bb4f3bbea015e2a55aa6eff7f9ae}{\index{Course\-::\-Worker\-Base@{Course\-::\-Worker\-Base}!tile\-Work\-Action@{tile\-Work\-Action}}
+\index{tile\-Work\-Action@{tile\-Work\-Action}!Course::WorkerBase@{Course\-::\-Worker\-Base}}
+\subsubsection[{tile\-Work\-Action}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Resource\-Map\-Double} Course\-::\-Worker\-Base\-::tile\-Work\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCourse_1_1WorkerBase_af0c1bb4f3bbea015e2a55aa6eff7f9ae}
+
+
+Performs worker's action when working a Tile for resources. 
+
+\begin{DoxyReturn}{Returns}
+Returns the final working efficiency of a worker. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This is called by a Tile when it generates resources. 
+\end{DoxyNote}
+
+
+Reimplemented in \hyperlink{classGame_1_1MineWorker_a515a32b59f08ee1577210887166dacb0}{Game\-::\-Mine\-Worker}, \hyperlink{classGame_1_1SawMillWorker_a51596a8864954a22c6b69303b5e408d8}{Game\-::\-Saw\-Mill\-Worker}, and \hyperlink{classCourse_1_1BasicWorker_a870cf500ea86d30db583ce64299d9df4}{Course\-::\-Basic\-Worker}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCourse_1_1WorkerBase_aeb20af8ac5fede53f8bb68e41b87937c}{\index{Course\-::\-Worker\-Base@{Course\-::\-Worker\-Base}!m\-\_\-resource\-\_\-focus@{m\-\_\-resource\-\_\-focus}}
+\index{m\-\_\-resource\-\_\-focus@{m\-\_\-resource\-\_\-focus}!Course::WorkerBase@{Course\-::\-Worker\-Base}}
+\subsubsection[{m\-\_\-resource\-\_\-focus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Basic\-Resource} Course\-::\-Worker\-Base\-::m\-\_\-resource\-\_\-focus\hspace{0.3cm}{\ttfamily [private]}}}\label{classCourse_1_1WorkerBase_aeb20af8ac5fede53f8bb68e41b87937c}
+\hypertarget{classCourse_1_1WorkerBase_a0734e9b62296511492aca7c2ce531197}{\index{Course\-::\-Worker\-Base@{Course\-::\-Worker\-Base}!R\-E\-C\-R\-U\-I\-T\-M\-E\-N\-T\-\_\-\-C\-O\-S\-T@{R\-E\-C\-R\-U\-I\-T\-M\-E\-N\-T\-\_\-\-C\-O\-S\-T}}
+\index{R\-E\-C\-R\-U\-I\-T\-M\-E\-N\-T\-\_\-\-C\-O\-S\-T@{R\-E\-C\-R\-U\-I\-T\-M\-E\-N\-T\-\_\-\-C\-O\-S\-T}!Course::WorkerBase@{Course\-::\-Worker\-Base}}
+\subsubsection[{R\-E\-C\-R\-U\-I\-T\-M\-E\-N\-T\-\_\-\-C\-O\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Resource\-Map} Course\-::\-Worker\-Base\-::\-R\-E\-C\-R\-U\-I\-T\-M\-E\-N\-T\-\_\-\-C\-O\-S\-T}}\label{classCourse_1_1WorkerBase_a0734e9b62296511492aca7c2ce531197}
+\hypertarget{classCourse_1_1WorkerBase_ad20bcd4fba20ad9d287860cdaeedbcca}{\index{Course\-::\-Worker\-Base@{Course\-::\-Worker\-Base}!W\-O\-R\-K\-E\-R\-\_\-\-E\-F\-F\-I\-C\-I\-E\-N\-C\-Y@{W\-O\-R\-K\-E\-R\-\_\-\-E\-F\-F\-I\-C\-I\-E\-N\-C\-Y}}
+\index{W\-O\-R\-K\-E\-R\-\_\-\-E\-F\-F\-I\-C\-I\-E\-N\-C\-Y@{W\-O\-R\-K\-E\-R\-\_\-\-E\-F\-F\-I\-C\-I\-E\-N\-C\-Y}!Course::WorkerBase@{Course\-::\-Worker\-Base}}
+\subsubsection[{W\-O\-R\-K\-E\-R\-\_\-\-E\-F\-F\-I\-C\-I\-E\-N\-C\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Resource\-Map\-Double} Course\-::\-Worker\-Base\-::\-W\-O\-R\-K\-E\-R\-\_\-\-E\-F\-F\-I\-C\-I\-E\-N\-C\-Y}}\label{classCourse_1_1WorkerBase_ad20bcd4fba20ad9d287860cdaeedbcca}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Course/\-Course\-Lib/workers/\hyperlink{workerbase_8h}{workerbase.\-h}\item 
+Course/\-Course\-Lib/workers/\hyperlink{workerbase_8cpp}{workerbase.\-cpp}\end{DoxyCompactItemize}

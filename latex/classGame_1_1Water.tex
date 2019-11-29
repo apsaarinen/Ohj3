@@ -1,0 +1,125 @@
+\hypertarget{classGame_1_1Water}{\section{Game\-:\-:Water Class Reference}
+\label{classGame_1_1Water}\index{Game\-::\-Water@{Game\-::\-Water}}
+}
+
+
+The \hyperlink{classGame_1_1Water}{Water} class represents water in the gameworld.  
+
+
+
+
+{\ttfamily \#include $<$water.\-h$>$}
+
+Inheritance diagram for Game\-:\-:Water\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGame_1_1Water}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGame_1_1Water_a2f2918f6deef57b3e96ee63221002fee}{Water} ()=delete
+\begin{DoxyCompactList}\small\item\em Disabled parameterless constructor. \end{DoxyCompactList}\item 
+\hyperlink{classGame_1_1Water_a970774392539357ca258286489d9e679}{Water} (const \hyperlink{classCourse_1_1Coordinate}{Course\-::\-Coordinate} \&location, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iGameEventHandler}{Course\-::i\-Game\-Event\-Handler} $>$ \&eventhandler, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iObjectManager}{Course\-::i\-Object\-Manager} $>$ \&objectmanager, const unsigned int \&max\-\_\-build=0, const unsigned int \&max\-\_\-work=0, const \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} \&production=\hyperlink{namespaceGame_1_1ConstResourceMaps_a0a964a6f0f80340d5a2d5a0a8dd0f79a}{Game\-::\-Const\-Resource\-Maps\-::\-W\-A\-T\-E\-R\-\_\-\-B\-P})
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+virtual \hyperlink{classGame_1_1Water_ad714f7f3fd31960b7970e670070975f4}{$\sim$\-Water} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classGame_1_1Water_ab45fa1bb08eb0893d7bec1a97e7b22f0}{get\-Type} () const override
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classGame_1_1Water}{Water} class represents water in the gameworld. 
+
+\hyperlink{classGame_1_1Water}{Water} has Basic\-Production\-: \par
+
+\begin{DoxyItemize}
+\item Money = 0
+\item Food = 0
+\item Wood = 0
+\item Stone = 0
+\item Ore = 0
+\end{DoxyItemize}
+
+You cannot build in water! 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGame_1_1Water_a2f2918f6deef57b3e96ee63221002fee}{\index{Game\-::\-Water@{Game\-::\-Water}!Water@{Water}}
+\index{Water@{Water}!Game::Water@{Game\-::\-Water}}
+\subsubsection[{Water}]{\setlength{\rightskip}{0pt plus 5cm}Game\-::\-Water\-::\-Water (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classGame_1_1Water_a2f2918f6deef57b3e96ee63221002fee}
+
+
+Disabled parameterless constructor. 
+
+\hypertarget{classGame_1_1Water_a970774392539357ca258286489d9e679}{\index{Game\-::\-Water@{Game\-::\-Water}!Water@{Water}}
+\index{Water@{Water}!Game::Water@{Game\-::\-Water}}
+\subsubsection[{Water}]{\setlength{\rightskip}{0pt plus 5cm}Game\-::\-Water\-::\-Water (
+\begin{DoxyParamCaption}
+\item[{const {\bf Course\-::\-Coordinate} \&}]{location, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Course\-::i\-Game\-Event\-Handler} $>$ \&}]{eventhandler, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Course\-::i\-Object\-Manager} $>$ \&}]{objectmanager, }
+\item[{const unsigned int \&}]{max\-\_\-build = {\ttfamily 0}, }
+\item[{const unsigned int \&}]{max\-\_\-work = {\ttfamily 0}, }
+\item[{const {\bf Course\-::\-Resource\-Map} \&}]{production = {\ttfamily {\bf Game\-::\-Const\-Resource\-Maps\-::\-W\-A\-T\-E\-R\-\_\-\-B\-P}}}
+\end{DoxyParamCaption}
+)}}\label{classGame_1_1Water_a970774392539357ca258286489d9e679}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & is the Coordinate where the Tile is located in the game. \\
+\hline
+{\em eventhandler} & points to the \hyperlink{classGame_1_1GameEventHandler}{Game\-Event\-Handler}. \\
+\hline
+{\em objectmanager} & points to the \hyperlink{classGame_1_1ObjectManager}{Object\-Manager}. \\
+\hline
+{\em max\-\_\-build} & defines maximum amount of buildings on the tile \\
+\hline
+{\em max\-\_\-work} & defines maximum amount of workers on the tile \\
+\hline
+{\em production} & sets the tiles production \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGame_1_1Water_ad714f7f3fd31960b7970e670070975f4}{\index{Game\-::\-Water@{Game\-::\-Water}!$\sim$\-Water@{$\sim$\-Water}}
+\index{$\sim$\-Water@{$\sim$\-Water}!Game::Water@{Game\-::\-Water}}
+\subsubsection[{$\sim$\-Water}]{\setlength{\rightskip}{0pt plus 5cm}virtual Game\-::\-Water\-::$\sim$\-Water (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}}\label{classGame_1_1Water_ad714f7f3fd31960b7970e670070975f4}
+
+
+Default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGame_1_1Water_ab45fa1bb08eb0893d7bec1a97e7b22f0}{\index{Game\-::\-Water@{Game\-::\-Water}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!Game::Water@{Game\-::\-Water}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Game\-::\-Water\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGame_1_1Water_ab45fa1bb08eb0893d7bec1a97e7b22f0}
+
+
+
+
+
+
+Reimplemented from \hyperlink{classCourse_1_1TileBase_af1a8aaa3407ad3ade7ffe8f2fb421288}{Course\-::\-Tile\-Base}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Game/tiles/\hyperlink{water_8h}{water.\-h}\item 
+Game/tiles/\hyperlink{water_8cpp}{water.\-cpp}\end{DoxyCompactItemize}
