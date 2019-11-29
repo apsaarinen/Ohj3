@@ -1,0 +1,133 @@
+\hypertarget{namespaceGame}{\section{Game Namespace Reference}
+\label{namespaceGame}\index{Game@{Game}}
+}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceGame_1_1ConstResourceMaps}{Const\-Resource\-Maps}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classGame_1_1Mine}{Mine}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classGame_1_1Mine}{Mine} class represents a mine-\/building in the game. \end{DoxyCompactList}\item 
+class \hyperlink{classGame_1_1SawMill}{Saw\-Mill}
+\begin{DoxyCompactList}\small\item\em The Sawmill class represents a sawmill-\/building in the game. \end{DoxyCompactList}\item 
+class \hyperlink{classGame_1_1GameEventHandler}{Game\-Event\-Handler}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classGame_1_1GameEventHandler}{Game\-Event\-Handler} class controls and stores the game's status. \end{DoxyCompactList}\item 
+class \hyperlink{classGame_1_1ObjectManager}{Object\-Manager}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classGame_1_1ObjectManager}{Object\-Manager} class stores Players and Game\-Objects \par
+(Tiles, Buildings and workers). \end{DoxyCompactList}\item 
+class \hyperlink{classGame_1_1Player}{Player}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classGame_1_1Player}{Player} class represents a player in the game. \end{DoxyCompactList}\item 
+class \hyperlink{classGame_1_1GameScene}{Game\-Scene}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classGame_1_1GameScene}{Game\-Scene} is a custom Q\-Graphics\-Scene that shows a simple rendering of the game map. \end{DoxyCompactList}\item 
+class \hyperlink{classGame_1_1MapItem}{Map\-Item}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classGame_1_1MapItem}{Map\-Item} class is a custom Q\-Graphics\-Item that acts as a single Game\-Object's graphical element. \end{DoxyCompactList}\item 
+class \hyperlink{classGame_1_1Blockfield}{Blockfield}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classGame_1_1Blockfield}{Blockfield} class represents a blockfield in the gameworld. \end{DoxyCompactList}\item 
+class \hyperlink{classGame_1_1OreDeposit}{Ore\-Deposit}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classGame_1_1OreDeposit}{Ore\-Deposit} class represents an ore deposit in the gameworld. \end{DoxyCompactList}\item 
+class \hyperlink{classGame_1_1Water}{Water}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classGame_1_1Water}{Water} class represents water in the gameworld. \end{DoxyCompactList}\item 
+class \hyperlink{classGame_1_1MineWorker}{Mine\-Worker}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classGame_1_1MineWorker}{Mine\-Worker} class represents a mine worker in the game. \end{DoxyCompactList}\item 
+class \hyperlink{classGame_1_1SawMillWorker}{Saw\-Mill\-Worker}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classGame_1_1SawMillWorker}{Saw\-Mill\-Worker} class represents a saw mill worker in the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{namespaceGame_a1fe13161652a186ddb92a1774eeb6eaa}{Color\-Map} = std\-::map$<$ std\-::string, Q\-Color $>$
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespaceGame_a78e1e361404dcd444857b4bc2ba03c54}{setup\-Game} (\hyperlink{classMapWindow}{Map\-Window} $\ast$map\-Window, std\-::vector$<$ std\-::\-\_\-\-\_\-cxx11\-::string $>$ player\-Names, \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} starting\-Resources, std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1ObjectManager}{Object\-Manager} $>$ obj\-Man)
+\item 
+void \hyperlink{namespaceGame_ab354e9f1d250a78a0af38120399542d0}{setup\-Game} (\hyperlink{classMapWindow}{Map\-Window} $\ast$map\-Window, std\-::vector$<$ std\-::string $>$ player\-Names, \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} starting\-Resources, std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1ObjectManager}{Object\-Manager} $>$ obj\-Man)
+\begin{DoxyCompactList}\small\item\em Sets up the game to be played. \par
+Creates tiles, player and sets their resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\-::pair$<$ int, int $>$ \hyperlink{namespaceGame_a6c2a6fd6f11a56a4154caa8fcd93c697}{S\-C\-E\-N\-E\-\_\-\-W\-I\-D\-T\-H\-\_\-\-L\-I\-M\-I\-T\-S} = \{1, 100\}
+\item 
+const std\-::pair$<$ int, int $>$ \hyperlink{namespaceGame_a6e134f98c66ebe13d5b90edfcde55739}{S\-C\-E\-N\-E\-\_\-\-H\-E\-I\-G\-H\-T\-\_\-\-L\-I\-M\-I\-T\-S} = \{1, 100\}
+\item 
+const std\-::pair$<$ int, int $>$ \hyperlink{namespaceGame_abe5aac346864cae6fd721ae3467920c4}{S\-C\-E\-N\-E\-\_\-\-S\-C\-A\-L\-E\-\_\-\-L\-I\-M\-I\-T\-S} = \{1, 500\}
+\item 
+const \hyperlink{namespaceGame_a1fe13161652a186ddb92a1774eeb6eaa}{Color\-Map} \hyperlink{namespaceGame_aaa1d872d39beea46fb7e5466a65838c0}{M\-A\-P\-\_\-\-C\-O\-L\-O\-R\-S}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{namespaceGame_a1fe13161652a186ddb92a1774eeb6eaa}{\index{Game@{Game}!Color\-Map@{Color\-Map}}
+\index{Color\-Map@{Color\-Map}!Game@{Game}}
+\subsubsection[{Color\-Map}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Game\-::\-Color\-Map} = typedef std\-::map$<$std\-::string, Q\-Color$>$}}\label{namespaceGame_a1fe13161652a186ddb92a1774eeb6eaa}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespaceGame_a78e1e361404dcd444857b4bc2ba03c54}{\index{Game@{Game}!setup\-Game@{setup\-Game}}
+\index{setup\-Game@{setup\-Game}!Game@{Game}}
+\subsubsection[{setup\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::setup\-Game (
+\begin{DoxyParamCaption}
+\item[{{\bf Map\-Window} $\ast$}]{map\-Window, }
+\item[{std\-::vector$<$ std\-::\-\_\-\-\_\-cxx11\-::string $>$}]{player\-Names, }
+\item[{{\bf Course\-::\-Resource\-Map}}]{starting\-Resources, }
+\item[{std\-::shared\-\_\-ptr$<$ Object\-Manager $>$}]{obj\-Man}
+\end{DoxyParamCaption}
+)}}\label{namespaceGame_a78e1e361404dcd444857b4bc2ba03c54}
+\hypertarget{namespaceGame_ab354e9f1d250a78a0af38120399542d0}{\index{Game@{Game}!setup\-Game@{setup\-Game}}
+\index{setup\-Game@{setup\-Game}!Game@{Game}}
+\subsubsection[{setup\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-::setup\-Game (
+\begin{DoxyParamCaption}
+\item[{{\bf Map\-Window} $\ast$}]{map\-Window, }
+\item[{std\-::vector$<$ std\-::string $>$}]{player\-Names, }
+\item[{{\bf Course\-::\-Resource\-Map}}]{starting\-Resources, }
+\item[{std\-::shared\-\_\-ptr$<$ Object\-Manager $>$}]{obj\-Man}
+\end{DoxyParamCaption}
+)}}\label{namespaceGame_ab354e9f1d250a78a0af38120399542d0}
+
+
+Sets up the game to be played. \par
+Creates tiles, player and sets their resources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map\-Window} & the main game window \\
+\hline
+{\em player\-Names} & the selected names for both players \\
+\hline
+{\em starting\-Resources} & amount of resources the players start with \\
+\hline
+{\em obj\-Man} & the \hyperlink{classGame_1_1ObjectManager}{Object\-Manager} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Doesn't need to be a class so is a separate function 
+\end{DoxyNote}
+
+
+\subsection{Variable Documentation}
+\hypertarget{namespaceGame_aaa1d872d39beea46fb7e5466a65838c0}{\index{Game@{Game}!M\-A\-P\-\_\-\-C\-O\-L\-O\-R\-S@{M\-A\-P\-\_\-\-C\-O\-L\-O\-R\-S}}
+\index{M\-A\-P\-\_\-\-C\-O\-L\-O\-R\-S@{M\-A\-P\-\_\-\-C\-O\-L\-O\-R\-S}!Game@{Game}}
+\subsubsection[{M\-A\-P\-\_\-\-C\-O\-L\-O\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Color\-Map} Game\-::\-M\-A\-P\-\_\-\-C\-O\-L\-O\-R\-S}}\label{namespaceGame_aaa1d872d39beea46fb7e5466a65838c0}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+    \{\textcolor{stringliteral}{"Blockfield"}, QColor(192, 192, 192)\},
+    \{\textcolor{stringliteral}{"OreDeposit"}, QColor(64, 64, 64)\},
+    \{\textcolor{stringliteral}{"Water"}, QColor(51, 153, 255)\},
+    \{\textcolor{stringliteral}{"Forest"}, QColor(0, 102, 0)\},
+    \{\textcolor{stringliteral}{"Grassland"}, QColor(128, 255, 0)\}
+\}
+\end{DoxyCode}
+\hypertarget{namespaceGame_a6e134f98c66ebe13d5b90edfcde55739}{\index{Game@{Game}!S\-C\-E\-N\-E\-\_\-\-H\-E\-I\-G\-H\-T\-\_\-\-L\-I\-M\-I\-T\-S@{S\-C\-E\-N\-E\-\_\-\-H\-E\-I\-G\-H\-T\-\_\-\-L\-I\-M\-I\-T\-S}}
+\index{S\-C\-E\-N\-E\-\_\-\-H\-E\-I\-G\-H\-T\-\_\-\-L\-I\-M\-I\-T\-S@{S\-C\-E\-N\-E\-\_\-\-H\-E\-I\-G\-H\-T\-\_\-\-L\-I\-M\-I\-T\-S}!Game@{Game}}
+\subsubsection[{S\-C\-E\-N\-E\-\_\-\-H\-E\-I\-G\-H\-T\-\_\-\-L\-I\-M\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::pair$<$int, int$>$ Game\-::\-S\-C\-E\-N\-E\-\_\-\-H\-E\-I\-G\-H\-T\-\_\-\-L\-I\-M\-I\-T\-S = \{1, 100\}}}\label{namespaceGame_a6e134f98c66ebe13d5b90edfcde55739}
+\hypertarget{namespaceGame_abe5aac346864cae6fd721ae3467920c4}{\index{Game@{Game}!S\-C\-E\-N\-E\-\_\-\-S\-C\-A\-L\-E\-\_\-\-L\-I\-M\-I\-T\-S@{S\-C\-E\-N\-E\-\_\-\-S\-C\-A\-L\-E\-\_\-\-L\-I\-M\-I\-T\-S}}
+\index{S\-C\-E\-N\-E\-\_\-\-S\-C\-A\-L\-E\-\_\-\-L\-I\-M\-I\-T\-S@{S\-C\-E\-N\-E\-\_\-\-S\-C\-A\-L\-E\-\_\-\-L\-I\-M\-I\-T\-S}!Game@{Game}}
+\subsubsection[{S\-C\-E\-N\-E\-\_\-\-S\-C\-A\-L\-E\-\_\-\-L\-I\-M\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::pair$<$int, int$>$ Game\-::\-S\-C\-E\-N\-E\-\_\-\-S\-C\-A\-L\-E\-\_\-\-L\-I\-M\-I\-T\-S = \{1, 500\}}}\label{namespaceGame_abe5aac346864cae6fd721ae3467920c4}
+\hypertarget{namespaceGame_a6c2a6fd6f11a56a4154caa8fcd93c697}{\index{Game@{Game}!S\-C\-E\-N\-E\-\_\-\-W\-I\-D\-T\-H\-\_\-\-L\-I\-M\-I\-T\-S@{S\-C\-E\-N\-E\-\_\-\-W\-I\-D\-T\-H\-\_\-\-L\-I\-M\-I\-T\-S}}
+\index{S\-C\-E\-N\-E\-\_\-\-W\-I\-D\-T\-H\-\_\-\-L\-I\-M\-I\-T\-S@{S\-C\-E\-N\-E\-\_\-\-W\-I\-D\-T\-H\-\_\-\-L\-I\-M\-I\-T\-S}!Game@{Game}}
+\subsubsection[{S\-C\-E\-N\-E\-\_\-\-W\-I\-D\-T\-H\-\_\-\-L\-I\-M\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::pair$<$int, int$>$ Game\-::\-S\-C\-E\-N\-E\-\_\-\-W\-I\-D\-T\-H\-\_\-\-L\-I\-M\-I\-T\-S = \{1, 100\}}}\label{namespaceGame_a6c2a6fd6f11a56a4154caa8fcd93c697}

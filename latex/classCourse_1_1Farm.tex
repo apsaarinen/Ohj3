@@ -1,0 +1,126 @@
+\hypertarget{classCourse_1_1Farm}{\section{Course\-:\-:Farm Class Reference}
+\label{classCourse_1_1Farm}\index{Course\-::\-Farm@{Course\-::\-Farm}}
+}
+
+
+The \hyperlink{classCourse_1_1Farm}{Farm} class represents a farm-\/building in the game.  
+
+
+
+
+{\ttfamily \#include $<$farm.\-h$>$}
+
+Inheritance diagram for Course\-:\-:Farm\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classCourse_1_1Farm}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCourse_1_1Farm_a3b92d4bdac7e8f7fd1f648bb1a4a2490}{Farm} ()=delete
+\begin{DoxyCompactList}\small\item\em Disabled parameterless constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCourse_1_1Farm_a01270b705f0bc18f2fc4c5c31f41cf3b}{Farm} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iGameEventHandler}{i\-Game\-Event\-Handler} $>$ \&eventhandler, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iObjectManager}{i\-Object\-Manager} $>$ \&objectmanager, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1PlayerBase}{Player\-Base} $>$ \&owner, const int \&tilespaces=1, const \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Resource\-Map} \&buildcost=\hyperlink{namespaceCourse_1_1ConstResourceMaps_a4919571a8aa47de7c6e513de147642ef}{Const\-Resource\-Maps\-::\-F\-A\-R\-M\-\_\-\-B\-U\-I\-L\-D\-\_\-\-C\-O\-S\-T}, const \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Resource\-Map} \&production=\hyperlink{namespaceCourse_1_1ConstResourceMaps_ac05142db09e7f1f85c7d936356a35df2}{Const\-Resource\-Maps\-::\-F\-A\-R\-M\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N})
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+virtual \hyperlink{classCourse_1_1Farm_a99c06d0eeb549a04390bd260cc7ac68d}{$\sim$\-Farm} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classCourse_1_1Farm_a54ade72809a36d31e0e426eb79d6251a}{get\-Type} () const override
+\begin{DoxyCompactList}\small\item\em get\-Type Returns a string describing objects type. This should be overriden in each inherited class. Makes checking object's type easier for students. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classCourse_1_1Farm}{Farm} class represents a farm-\/building in the game. 
+
+The farm adds 2 base-\/production for food. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCourse_1_1Farm_a3b92d4bdac7e8f7fd1f648bb1a4a2490}{\index{Course\-::\-Farm@{Course\-::\-Farm}!Farm@{Farm}}
+\index{Farm@{Farm}!Course::Farm@{Course\-::\-Farm}}
+\subsubsection[{Farm}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Farm\-::\-Farm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classCourse_1_1Farm_a3b92d4bdac7e8f7fd1f648bb1a4a2490}
+
+
+Disabled parameterless constructor. 
+
+\hypertarget{classCourse_1_1Farm_a01270b705f0bc18f2fc4c5c31f41cf3b}{\index{Course\-::\-Farm@{Course\-::\-Farm}!Farm@{Farm}}
+\index{Farm@{Farm}!Course::Farm@{Course\-::\-Farm}}
+\subsubsection[{Farm}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Farm\-::\-Farm (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf i\-Game\-Event\-Handler} $>$ \&}]{eventhandler, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf i\-Object\-Manager} $>$ \&}]{objectmanager, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Player\-Base} $>$ \&}]{owner, }
+\item[{const int \&}]{tilespaces = {\ttfamily 1}, }
+\item[{const {\bf Resource\-Map} \&}]{buildcost = {\ttfamily {\bf Const\-Resource\-Maps\-::\-F\-A\-R\-M\-\_\-\-B\-U\-I\-L\-D\-\_\-\-C\-O\-S\-T}}, }
+\item[{const {\bf Resource\-Map} \&}]{production = {\ttfamily {\bf Const\-Resource\-Maps\-::\-F\-A\-R\-M\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classCourse_1_1Farm_a01270b705f0bc18f2fc4c5c31f41cf3b}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eventhandler} & points to the student's Game\-Event\-Handler. \\
+\hline
+{\em owner} & points to the owning player. \\
+\hline
+{\em tile} & points to the tile upon which the building is constructed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Exception Guarantee\-: No guarantee. 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classCourse_1_1OwnerConflict}{Owner\-Conflict}} & -\/ if the building conflicts with tile's ownership. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classCourse_1_1Farm_a99c06d0eeb549a04390bd260cc7ac68d}{\index{Course\-::\-Farm@{Course\-::\-Farm}!$\sim$\-Farm@{$\sim$\-Farm}}
+\index{$\sim$\-Farm@{$\sim$\-Farm}!Course::Farm@{Course\-::\-Farm}}
+\subsubsection[{$\sim$\-Farm}]{\setlength{\rightskip}{0pt plus 5cm}virtual Course\-::\-Farm\-::$\sim$\-Farm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}}\label{classCourse_1_1Farm_a99c06d0eeb549a04390bd260cc7ac68d}
+
+
+Default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCourse_1_1Farm_a54ade72809a36d31e0e426eb79d6251a}{\index{Course\-::\-Farm@{Course\-::\-Farm}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!Course::Farm@{Course\-::\-Farm}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Course\-::\-Farm\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCourse_1_1Farm_a54ade72809a36d31e0e426eb79d6251a}
+
+
+get\-Type Returns a string describing objects type. This should be overriden in each inherited class. Makes checking object's type easier for students. 
+
+\begin{DoxyReturn}{Returns}
+std\-::string that represents Object's type. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\begin{DoxyNote}{Note}
+You can use this in e.\-g. debugging and similar printing. 
+\end{DoxyNote}
+
+
+Reimplemented from \hyperlink{classCourse_1_1BuildingBase_ac2cc44e08dc73d05b1617bf71295baaf}{Course\-::\-Building\-Base}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Course/\-Course\-Lib/buildings/\hyperlink{farm_8h}{farm.\-h}\item 
+Course/\-Course\-Lib/buildings/\hyperlink{farm_8cpp}{farm.\-cpp}\end{DoxyCompactItemize}

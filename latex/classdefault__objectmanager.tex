@@ -1,0 +1,200 @@
+\hypertarget{classdefault__objectmanager}{\section{default\-\_\-objectmanager Class Reference}
+\label{classdefault__objectmanager}\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}}
+}
+
+
+The objectmanager\-\_\-tests test the Object\-Manager class.  
+
+
+Inheritance diagram for default\-\_\-objectmanager\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdefault__objectmanager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdefault__objectmanager_ab59752a56a4ac34bc869403fbfbf6af6}{default\-\_\-objectmanager} ()
+\begin{DoxyCompactList}\small\item\em Test setup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classdefault__objectmanager_aec7ac4004e9db71ce3b3437afa74dadf}{test\-\_\-player\-\_\-operations} ()
+\begin{DoxyCompactList}\small\item\em Tests opeations to the list of players. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__objectmanager_aab8dd175d96dfeba8c2220296e033dbd}{test\-\_\-tile\-\_\-operations} ()
+\begin{DoxyCompactList}\small\item\em Tests opeations to the list of tiles. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__objectmanager_a0ca24fa76077d630c473db1843412c43}{test\-\_\-placeableobject\-\_\-operations} ()
+\begin{DoxyCompactList}\small\item\em Tests opeations to the list of placeableobjects \par
+(workers and buildings) \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__objectmanager_a2ff9bd3c55983839dabc9ea9575990e0}{cleanup} ()
+\begin{DoxyCompactList}\small\item\em Test cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1ObjectManager}{Object\-Manager} $>$ \hyperlink{classdefault__objectmanager_af5fd4a43346407b2813199cb58ba898d}{objectmanager\-\_\-object}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1GameEventHandler}{Game\-Event\-Handler} $>$ \hyperlink{classdefault__objectmanager_af3397bf426ecdc890c61d3d69701deff}{G\-E\-Hand}
+\item 
+int \hyperlink{classdefault__objectmanager_af38ed335952982ee29259ce5df67e18e}{win\-Resource\-Sum}
+\item 
+\hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} \hyperlink{classdefault__objectmanager_a86108da49a76801538881c75d2a395db}{zero\-Resources}
+\item 
+\hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} \hyperlink{classdefault__objectmanager_a228d3b342c250174d8f9924f6dd3d711}{start\-Resources}
+\item 
+\hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} \hyperlink{classdefault__objectmanager_a4a0cec3d5392cd32d7406877af357259}{minus\-Start\-Resources}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1Player}{Player} $>$ \hyperlink{classdefault__objectmanager_a1add15cff9927fa0ca0891d83db2aa66}{player1}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1Player}{Player} $>$ \hyperlink{classdefault__objectmanager_acd2b50e95f595209f088bffa2a5b0bf9}{player2}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1TileBase}{Course\-::\-Tile\-Base} $>$ \hyperlink{classdefault__objectmanager_a083c627bb3cb830a59837af57933274e}{tile1}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1TileBase}{Course\-::\-Tile\-Base} $>$ \hyperlink{classdefault__objectmanager_a822a88e652f6af04e9046f011844a12c}{tile2}
+\item 
+const \hyperlink{classCourse_1_1Coordinate}{Course\-::\-Coordinate} \hyperlink{classdefault__objectmanager_ac534d6d0d5db5425a0aeb95c84a6da17}{tile1\-\_\-coordinate} = \{1,1\}
+\item 
+const \hyperlink{classCourse_1_1Coordinate}{Course\-::\-Coordinate} \hyperlink{classdefault__objectmanager_a4c05b0c625dbbba4823e475d5cebc4d4}{tile2\-\_\-coordinate} = \{1,2\}
+\item 
+std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1BuildingBase}{Course\-::\-Building\-Base} $>$ \hyperlink{classdefault__objectmanager_abfc94d530e7c532c632bac4f64c2e4b1}{building1}
+\item 
+std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1BuildingBase}{Course\-::\-Building\-Base} $>$ \hyperlink{classdefault__objectmanager_a04dc230cada67d6d5ec7211bf95905f7}{building2}
+\item 
+std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1BasicWorker}{Course\-::\-Basic\-Worker} $>$ \hyperlink{classdefault__objectmanager_a9372109fc55b6f04f2c6e5e888faa32c}{worker1}
+\item 
+std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1BasicWorker}{Course\-::\-Basic\-Worker} $>$ \hyperlink{classdefault__objectmanager_aefff1e094b9f647478d960f1fbe0f897}{worker2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The objectmanager\-\_\-tests test the Object\-Manager class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classdefault__objectmanager_ab59752a56a4ac34bc869403fbfbf6af6}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!default\-\_\-objectmanager@{default\-\_\-objectmanager}}
+\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{default\-\_\-objectmanager}]{\setlength{\rightskip}{0pt plus 5cm}default\-\_\-objectmanager\-::default\-\_\-objectmanager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classdefault__objectmanager_ab59752a56a4ac34bc869403fbfbf6af6}
+
+
+Test setup. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classdefault__objectmanager_a2ff9bd3c55983839dabc9ea9575990e0}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-objectmanager\-::cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__objectmanager_a2ff9bd3c55983839dabc9ea9575990e0}
+
+
+Test cleanup. 
+
+\hypertarget{classdefault__objectmanager_a0ca24fa76077d630c473db1843412c43}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!test\-\_\-placeableobject\-\_\-operations@{test\-\_\-placeableobject\-\_\-operations}}
+\index{test\-\_\-placeableobject\-\_\-operations@{test\-\_\-placeableobject\-\_\-operations}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{test\-\_\-placeableobject\-\_\-operations}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-objectmanager\-::test\-\_\-placeableobject\-\_\-operations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__objectmanager_a0ca24fa76077d630c473db1843412c43}
+
+
+Tests opeations to the list of placeableobjects \par
+(workers and buildings) 
+
+\begin{DoxyPostcond}{Postcondition}
+placeableobjects should be added and returned correctly 
+\end{DoxyPostcond}
+\hypertarget{classdefault__objectmanager_aec7ac4004e9db71ce3b3437afa74dadf}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!test\-\_\-player\-\_\-operations@{test\-\_\-player\-\_\-operations}}
+\index{test\-\_\-player\-\_\-operations@{test\-\_\-player\-\_\-operations}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{test\-\_\-player\-\_\-operations}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-objectmanager\-::test\-\_\-player\-\_\-operations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__objectmanager_aec7ac4004e9db71ce3b3437afa74dadf}
+
+
+Tests opeations to the list of players. 
+
+\begin{DoxyPostcond}{Postcondition}
+players should be added and returned correctly 
+\end{DoxyPostcond}
+\hypertarget{classdefault__objectmanager_aab8dd175d96dfeba8c2220296e033dbd}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!test\-\_\-tile\-\_\-operations@{test\-\_\-tile\-\_\-operations}}
+\index{test\-\_\-tile\-\_\-operations@{test\-\_\-tile\-\_\-operations}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{test\-\_\-tile\-\_\-operations}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-objectmanager\-::test\-\_\-tile\-\_\-operations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__objectmanager_aab8dd175d96dfeba8c2220296e033dbd}
+
+
+Tests opeations to the list of tiles. 
+
+\begin{DoxyPostcond}{Postcondition}
+tiles should be added and returned correctly 
+\end{DoxyPostcond}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classdefault__objectmanager_abfc94d530e7c532c632bac4f64c2e4b1}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!building1@{building1}}
+\index{building1@{building1}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{building1}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Building\-Base}$>$ default\-\_\-objectmanager\-::building1\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_abfc94d530e7c532c632bac4f64c2e4b1}
+\hypertarget{classdefault__objectmanager_a04dc230cada67d6d5ec7211bf95905f7}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!building2@{building2}}
+\index{building2@{building2}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{building2}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Building\-Base}$>$ default\-\_\-objectmanager\-::building2\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_a04dc230cada67d6d5ec7211bf95905f7}
+\hypertarget{classdefault__objectmanager_af3397bf426ecdc890c61d3d69701deff}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!G\-E\-Hand@{G\-E\-Hand}}
+\index{G\-E\-Hand@{G\-E\-Hand}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{G\-E\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Game\-Event\-Handler}$>$ default\-\_\-objectmanager\-::\-G\-E\-Hand\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_af3397bf426ecdc890c61d3d69701deff}
+\hypertarget{classdefault__objectmanager_a4a0cec3d5392cd32d7406877af357259}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!minus\-Start\-Resources@{minus\-Start\-Resources}}
+\index{minus\-Start\-Resources@{minus\-Start\-Resources}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{minus\-Start\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Course\-::\-Resource\-Map} default\-\_\-objectmanager\-::minus\-Start\-Resources\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_a4a0cec3d5392cd32d7406877af357259}
+\hypertarget{classdefault__objectmanager_af5fd4a43346407b2813199cb58ba898d}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!objectmanager\-\_\-object@{objectmanager\-\_\-object}}
+\index{objectmanager\-\_\-object@{objectmanager\-\_\-object}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{objectmanager\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Object\-Manager}$>$ default\-\_\-objectmanager\-::objectmanager\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_af5fd4a43346407b2813199cb58ba898d}
+\hypertarget{classdefault__objectmanager_a1add15cff9927fa0ca0891d83db2aa66}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!player1@{player1}}
+\index{player1@{player1}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{player1}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Player}$>$ default\-\_\-objectmanager\-::player1\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_a1add15cff9927fa0ca0891d83db2aa66}
+\hypertarget{classdefault__objectmanager_acd2b50e95f595209f088bffa2a5b0bf9}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!player2@{player2}}
+\index{player2@{player2}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{player2}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Player}$>$ default\-\_\-objectmanager\-::player2\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_acd2b50e95f595209f088bffa2a5b0bf9}
+\hypertarget{classdefault__objectmanager_a228d3b342c250174d8f9924f6dd3d711}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!start\-Resources@{start\-Resources}}
+\index{start\-Resources@{start\-Resources}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{start\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Course\-::\-Resource\-Map} default\-\_\-objectmanager\-::start\-Resources\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_a228d3b342c250174d8f9924f6dd3d711}
+\hypertarget{classdefault__objectmanager_a083c627bb3cb830a59837af57933274e}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!tile1@{tile1}}
+\index{tile1@{tile1}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{tile1}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Tile\-Base}$>$ default\-\_\-objectmanager\-::tile1\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_a083c627bb3cb830a59837af57933274e}
+\hypertarget{classdefault__objectmanager_ac534d6d0d5db5425a0aeb95c84a6da17}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!tile1\-\_\-coordinate@{tile1\-\_\-coordinate}}
+\index{tile1\-\_\-coordinate@{tile1\-\_\-coordinate}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{tile1\-\_\-coordinate}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Course\-::\-Coordinate} default\-\_\-objectmanager\-::tile1\-\_\-coordinate = \{1,1\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_ac534d6d0d5db5425a0aeb95c84a6da17}
+\hypertarget{classdefault__objectmanager_a822a88e652f6af04e9046f011844a12c}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!tile2@{tile2}}
+\index{tile2@{tile2}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{tile2}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Tile\-Base}$>$ default\-\_\-objectmanager\-::tile2\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_a822a88e652f6af04e9046f011844a12c}
+\hypertarget{classdefault__objectmanager_a4c05b0c625dbbba4823e475d5cebc4d4}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!tile2\-\_\-coordinate@{tile2\-\_\-coordinate}}
+\index{tile2\-\_\-coordinate@{tile2\-\_\-coordinate}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{tile2\-\_\-coordinate}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Course\-::\-Coordinate} default\-\_\-objectmanager\-::tile2\-\_\-coordinate = \{1,2\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_a4c05b0c625dbbba4823e475d5cebc4d4}
+\hypertarget{classdefault__objectmanager_af38ed335952982ee29259ce5df67e18e}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!win\-Resource\-Sum@{win\-Resource\-Sum}}
+\index{win\-Resource\-Sum@{win\-Resource\-Sum}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{win\-Resource\-Sum}]{\setlength{\rightskip}{0pt plus 5cm}int default\-\_\-objectmanager\-::win\-Resource\-Sum\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_af38ed335952982ee29259ce5df67e18e}
+\hypertarget{classdefault__objectmanager_a9372109fc55b6f04f2c6e5e888faa32c}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!worker1@{worker1}}
+\index{worker1@{worker1}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{worker1}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Basic\-Worker}$>$ default\-\_\-objectmanager\-::worker1\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_a9372109fc55b6f04f2c6e5e888faa32c}
+\hypertarget{classdefault__objectmanager_aefff1e094b9f647478d960f1fbe0f897}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!worker2@{worker2}}
+\index{worker2@{worker2}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{worker2}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Basic\-Worker}$>$ default\-\_\-objectmanager\-::worker2\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_aefff1e094b9f647478d960f1fbe0f897}
+\hypertarget{classdefault__objectmanager_a86108da49a76801538881c75d2a395db}{\index{default\-\_\-objectmanager@{default\-\_\-objectmanager}!zero\-Resources@{zero\-Resources}}
+\index{zero\-Resources@{zero\-Resources}!default_objectmanager@{default\-\_\-objectmanager}}
+\subsubsection[{zero\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Course\-::\-Resource\-Map} default\-\_\-objectmanager\-::zero\-Resources\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__objectmanager_a86108da49a76801538881c75d2a395db}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Unit\-Tests/objectmanager\-\_\-tests/\hyperlink{tst__default__objectmanager_8cpp}{tst\-\_\-default\-\_\-objectmanager.\-cpp}\end{DoxyCompactItemize}

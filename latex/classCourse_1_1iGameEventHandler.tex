@@ -1,0 +1,121 @@
+\hypertarget{classCourse_1_1iGameEventHandler}{\section{Course\-:\-:i\-Game\-Event\-Handler Class Reference}
+\label{classCourse_1_1iGameEventHandler}\index{Course\-::i\-Game\-Event\-Handler@{Course\-::i\-Game\-Event\-Handler}}
+}
+
+
+The \hyperlink{classCourse_1_1iGameEventHandler}{i\-Game\-Event\-Handler} class is an interface which the Course-\/side code uses to interact with the Game\-Event\-Handler implemented by the students.  
+
+
+
+
+{\ttfamily \#include $<$igameeventhandler.\-h$>$}
+
+Inheritance diagram for Course\-:\-:i\-Game\-Event\-Handler\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCourse_1_1iGameEventHandler}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classCourse_1_1iGameEventHandler_a355e0d9635cc9b4888a1b77596431faa}{$\sim$i\-Game\-Event\-Handler} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCourse_1_1iGameEventHandler_abcf1e403dc6081dc348e892fcd197e83}{modify\-Resource} (std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1PlayerBase}{Player\-Base} $>$ player, \hyperlink{namespaceCourse_a02d49c04029594d4adba79b84bb85f65}{Basic\-Resource} resource, int amount)=0
+\begin{DoxyCompactList}\small\item\em Modify Player's resource. Can be used to both sum or subtract. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCourse_1_1iGameEventHandler_aafe82af26594e1261af045b2a896cd4e}{modify\-Resources} (std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1PlayerBase}{Player\-Base} $>$ player, \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Resource\-Map} resources)=0
+\begin{DoxyCompactList}\small\item\em Modify Player's resources. Can be used to both sum or subtract. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classCourse_1_1iGameEventHandler}{i\-Game\-Event\-Handler} class is an interface which the Course-\/side code uses to interact with the Game\-Event\-Handler implemented by the students. 
+
+\begin{DoxyNote}{Note}
+The interface declares only functions required by the Course-\/side code. The actual implementation can (and should!) contain more stuff. 
+
+In a \char`\"{}real\char`\"{} project, the Game\-Event\-Handler should be a singleton and not use an abstract base class to define the interface for it. {\bfseries This design was chosen merely for pedagogical reasons and to give students more freedom in their project design.} 
+\end{DoxyNote}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCourse_1_1iGameEventHandler_a355e0d9635cc9b4888a1b77596431faa}{\index{Course\-::i\-Game\-Event\-Handler@{Course\-::i\-Game\-Event\-Handler}!$\sim$i\-Game\-Event\-Handler@{$\sim$i\-Game\-Event\-Handler}}
+\index{$\sim$i\-Game\-Event\-Handler@{$\sim$i\-Game\-Event\-Handler}!Course::iGameEventHandler@{Course\-::i\-Game\-Event\-Handler}}
+\subsubsection[{$\sim$i\-Game\-Event\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}virtual Course\-::i\-Game\-Event\-Handler\-::$\sim$i\-Game\-Event\-Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}}\label{classCourse_1_1iGameEventHandler_a355e0d9635cc9b4888a1b77596431faa}
+
+
+Default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCourse_1_1iGameEventHandler_abcf1e403dc6081dc348e892fcd197e83}{\index{Course\-::i\-Game\-Event\-Handler@{Course\-::i\-Game\-Event\-Handler}!modify\-Resource@{modify\-Resource}}
+\index{modify\-Resource@{modify\-Resource}!Course::iGameEventHandler@{Course\-::i\-Game\-Event\-Handler}}
+\subsubsection[{modify\-Resource}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Course\-::i\-Game\-Event\-Handler\-::modify\-Resource (
+\begin{DoxyParamCaption}
+\item[{std\-::shared\-\_\-ptr$<$ {\bf Player\-Base} $>$}]{player, }
+\item[{{\bf Basic\-Resource}}]{resource, }
+\item[{int}]{amount}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCourse_1_1iGameEventHandler_abcf1e403dc6081dc348e892fcd197e83}
+
+
+Modify Player's resource. Can be used to both sum or subtract. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the Player whose resource is being modified. \\
+\hline
+{\em resource} & Defines the modified resource. \\
+\hline
+{\em amount} & Defines the amount of change. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: Basic 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+True -\/ Modification was succesful. \par
+False -\/ Modification failed. \par
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classGame_1_1GameEventHandler_a94426aa16bad3385bc3d75249596325c}{Game\-::\-Game\-Event\-Handler}.
+
+\hypertarget{classCourse_1_1iGameEventHandler_aafe82af26594e1261af045b2a896cd4e}{\index{Course\-::i\-Game\-Event\-Handler@{Course\-::i\-Game\-Event\-Handler}!modify\-Resources@{modify\-Resources}}
+\index{modify\-Resources@{modify\-Resources}!Course::iGameEventHandler@{Course\-::i\-Game\-Event\-Handler}}
+\subsubsection[{modify\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Course\-::i\-Game\-Event\-Handler\-::modify\-Resources (
+\begin{DoxyParamCaption}
+\item[{std\-::shared\-\_\-ptr$<$ {\bf Player\-Base} $>$}]{player, }
+\item[{{\bf Resource\-Map}}]{resources}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCourse_1_1iGameEventHandler_aafe82af26594e1261af045b2a896cd4e}
+
+
+Modify Player's resources. Can be used to both sum or subtract. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the Player whose resources are being modified. \\
+\hline
+{\em resources} & Resource\-Map containing change amounts. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True -\/ Modification was succesful. \par
+False -\/ Modification failed. \par
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classGame_1_1GameEventHandler_af2f37590702d555bb6635a6a7793ebb2}{Game\-::\-Game\-Event\-Handler}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Course/\-Course\-Lib/interfaces/\hyperlink{igameeventhandler_8h}{igameeventhandler.\-h}\end{DoxyCompactItemize}

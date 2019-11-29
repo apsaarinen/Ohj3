@@ -1,0 +1,443 @@
+\hypertarget{classdefault__tile}{\section{default\-\_\-tile Class Reference}
+\label{classdefault__tile}\index{default\-\_\-tile@{default\-\_\-tile}}
+}
+
+
+The tiles\-\_\-tests test the Tile\-Base class and all its children.  
+
+
+Inheritance diagram for default\-\_\-tile\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdefault__tile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdefault__tile_a95ff4527fa0b82da41b8ac27aa19b303}{default\-\_\-tile} ()
+\begin{DoxyCompactList}\small\item\em Test setup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classdefault__tile_a43bdf803d694109b43b391aa0420d046}{test\-\_\-add\-Building} ()
+\begin{DoxyCompactList}\small\item\em Tests adding a building to a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_a77367549be5fa7a7e0d30da6ef87cb4e}{test\-\_\-add\-Building\-\_\-too\-\_\-many\-\_\-buildings} ()
+\begin{DoxyCompactList}\small\item\em Tests adding too many buildings on a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_ac5b6391d1b5eb66bcb20bf17dcbb1c79}{test\-\_\-add\-Building\-\_\-to\-\_\-water} ()
+\begin{DoxyCompactList}\small\item\em Tests adding a building to water. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_a692ffdcc135066c0099af99c72073768}{test\-\_\-remove\-Building} ()
+\begin{DoxyCompactList}\small\item\em Tests removing a building from a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_a3af682c7eb40ea93a2c99abc55a9b45e}{test\-\_\-get\-Buildings} ()
+\begin{DoxyCompactList}\small\item\em Tests getting buildings from a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_ac2868337bc13dea171895916e375a0d8}{test\-\_\-add\-Worker} ()
+\begin{DoxyCompactList}\small\item\em Tests adding a worker to a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_af65fe1d9ce7dfe3706b434cf7650eb06}{test\-\_\-add\-Worker\-\_\-too\-\_\-many\-\_\-workers} ()
+\begin{DoxyCompactList}\small\item\em Tests adding too many workers on a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_a29665a14d12c952675435a9bd642bc06}{test\-\_\-add\-Worker\-\_\-to\-\_\-water} ()
+\begin{DoxyCompactList}\small\item\em Tests adding a worker to water. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_aee9fffb30a5ca5435a5421c548b1f9e5}{test\-\_\-remove\-Worker} ()
+\begin{DoxyCompactList}\small\item\em Tests removing a worker from a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_a57d1f35c44e5c82d4ca2878795fb0890}{test\-\_\-get\-Workers} ()
+\begin{DoxyCompactList}\small\item\em Tests getting workers from a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_a917f002ab0713044a752be2f6a37d6ff}{test\-\_\-add\-Building\-And\-Worker} ()
+\begin{DoxyCompactList}\small\item\em Tests adding workers and buildings to a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_a2fa5ec48fde3f3ba7952d364c179ad65}{test\-\_\-type\-\_\-tilebase} ()
+\begin{DoxyCompactList}\small\item\em Tests Tiles\-Base's type. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_abc9cdbb32628185b44a1610454054da7}{test\-\_\-type\-\_\-forest} ()
+\begin{DoxyCompactList}\small\item\em Tests Forest's type. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_a5383699e1c9a86e7414cd477b922fbd5}{test\-\_\-type\-\_\-grassland} ()
+\begin{DoxyCompactList}\small\item\em Tests Grassland's type. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_a086986610e729ee878f8c68b4b19d10b}{test\-\_\-type\-\_\-water} ()
+\begin{DoxyCompactList}\small\item\em Tests Water's type. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_a6612daefb98dbb72a1860264b87f0dbb}{test\-\_\-type\-\_\-blockfield} ()
+\begin{DoxyCompactList}\small\item\em Tests Blockfield's type. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_a05d5665f788e8d38f6708725c9ee946b}{test\-\_\-type\-\_\-oredeposit} ()
+\begin{DoxyCompactList}\small\item\em Tests Ore\-Deposit's type. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__tile_ab2c7a242550d5a341cfbef3cb9d83990}{cleanup} ()
+\begin{DoxyCompactList}\small\item\em Test cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1ObjectManager}{Object\-Manager} $>$ \hyperlink{classdefault__tile_a8749ee4ac9c528916c2fd835ce14f043}{obj\-Man}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1GameEventHandler}{Game\-Event\-Handler} $>$ \hyperlink{classdefault__tile_ac2682ad79db9879a601bc5bdd24add2c}{G\-E\-Hand}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1Player}{Player} $>$ \hyperlink{classdefault__tile_adeba3a9d85b478d7cd0dbd5b6194ede3}{player1}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1Player}{Player} $>$ \hyperlink{classdefault__tile_ad7407fc63175dce0d369ddcc261194a6}{player2}
+\item 
+std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1BuildingBase}{Course\-::\-Building\-Base} $>$ \hyperlink{classdefault__tile_a1428f399558ca156afbc754ae04fe6d0}{building1}
+\item 
+std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1BuildingBase}{Course\-::\-Building\-Base} $>$ \hyperlink{classdefault__tile_a6cff7bada2d7f8f055225d1442fc0d6d}{building2}
+\item 
+std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1BasicWorker}{Course\-::\-Basic\-Worker} $>$ \hyperlink{classdefault__tile_a15da0582e401dfe74e37fc3d6e27931a}{worker1}
+\item 
+std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1BasicWorker}{Course\-::\-Basic\-Worker} $>$ \hyperlink{classdefault__tile_ace6e1dbaff450508a5889ccc10190da5}{worker2}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1TileBase}{Course\-::\-Tile\-Base} $>$ \hyperlink{classdefault__tile_af0e444a7cbe271a0eca9a245fcd938ff}{default\-\_\-object}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1Forest}{Course\-::\-Forest} $>$ \hyperlink{classdefault__tile_aed6aefdcd6b8d7ebf30d586e9143d44f}{forest\-\_\-object}
+\item 
+std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1Grassland}{Course\-::\-Grassland} $>$ \hyperlink{classdefault__tile_ad5fbacd1a3d966e10aa6127db0ba3213}{grassland\-\_\-object}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1Blockfield}{Blockfield} $>$ \hyperlink{classdefault__tile_a475f12ebc676bc8252ccea358329eb55}{blockfield\-\_\-object}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1OreDeposit}{Ore\-Deposit} $>$ \hyperlink{classdefault__tile_a267580dfeea7352f56f5bd106def49c5}{oredeposit\-\_\-object}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1Water}{Water} $>$ \hyperlink{classdefault__tile_a083dbfdbbd2f789667ce742cb26afe83}{water\-\_\-object}
+\item 
+const \hyperlink{classCourse_1_1Coordinate}{Course\-::\-Coordinate} \hyperlink{classdefault__tile_ad881db4d38fb6ce5f6344fd13ad35fc1}{coord1} = \{1,1\}
+\item 
+const \hyperlink{classCourse_1_1Coordinate}{Course\-::\-Coordinate} \hyperlink{classdefault__tile_afe8df9f0be2707e28ca52f2d63a6f565}{coord2} = \{2,2\}
+\item 
+const \hyperlink{classCourse_1_1Coordinate}{Course\-::\-Coordinate} \hyperlink{classdefault__tile_ad831dcb7909d9e7918380ed7ec7f0f8b}{coord3} = \{3,3\}
+\item 
+const \hyperlink{classCourse_1_1Coordinate}{Course\-::\-Coordinate} \hyperlink{classdefault__tile_adfe1e7d47661ef24230ed213d6860d0d}{coord4} = \{4,4\}
+\item 
+const \hyperlink{classCourse_1_1Coordinate}{Course\-::\-Coordinate} \hyperlink{classdefault__tile_a99eb8e09cd1e8bc821c1d410f0cefcdc}{coord5} = \{5,5\}
+\item 
+const \hyperlink{classCourse_1_1Coordinate}{Course\-::\-Coordinate} \hyperlink{classdefault__tile_a02b5556e362bb56edb63015f8a57aaa1}{coord6} = \{6,6\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The tiles\-\_\-tests test the Tile\-Base class and all its children. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classdefault__tile_a95ff4527fa0b82da41b8ac27aa19b303}{\index{default\-\_\-tile@{default\-\_\-tile}!default\-\_\-tile@{default\-\_\-tile}}
+\index{default\-\_\-tile@{default\-\_\-tile}!default_tile@{default\-\_\-tile}}
+\subsubsection[{default\-\_\-tile}]{\setlength{\rightskip}{0pt plus 5cm}default\-\_\-tile\-::default\-\_\-tile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classdefault__tile_a95ff4527fa0b82da41b8ac27aa19b303}
+
+
+Test setup. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classdefault__tile_ab2c7a242550d5a341cfbef3cb9d83990}{\index{default\-\_\-tile@{default\-\_\-tile}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!default_tile@{default\-\_\-tile}}
+\subsubsection[{cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_ab2c7a242550d5a341cfbef3cb9d83990}
+
+
+Test cleanup. 
+
+\hypertarget{classdefault__tile_a43bdf803d694109b43b391aa0420d046}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-add\-Building@{test\-\_\-add\-Building}}
+\index{test\-\_\-add\-Building@{test\-\_\-add\-Building}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-add\-Building}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-add\-Building (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_a43bdf803d694109b43b391aa0420d046}
+
+
+Tests adding a building to a tile. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_ac5b6391d1b5eb66bcb20bf17dcbb1c79}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-add\-Building\-\_\-to\-\_\-water@{test\-\_\-add\-Building\-\_\-to\-\_\-water}}
+\index{test\-\_\-add\-Building\-\_\-to\-\_\-water@{test\-\_\-add\-Building\-\_\-to\-\_\-water}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-add\-Building\-\_\-to\-\_\-water}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-add\-Building\-\_\-to\-\_\-water (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_ac5b6391d1b5eb66bcb20bf17dcbb1c79}
+
+
+Tests adding a building to water. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should throw an Illegal\-Action exception 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_a77367549be5fa7a7e0d30da6ef87cb4e}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-add\-Building\-\_\-too\-\_\-many\-\_\-buildings@{test\-\_\-add\-Building\-\_\-too\-\_\-many\-\_\-buildings}}
+\index{test\-\_\-add\-Building\-\_\-too\-\_\-many\-\_\-buildings@{test\-\_\-add\-Building\-\_\-too\-\_\-many\-\_\-buildings}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-add\-Building\-\_\-too\-\_\-many\-\_\-buildings}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-add\-Building\-\_\-too\-\_\-many\-\_\-buildings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_a77367549be5fa7a7e0d30da6ef87cb4e}
+
+
+Tests adding too many buildings on a tile. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should throw an Illegal\-Action exception 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_a917f002ab0713044a752be2f6a37d6ff}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-add\-Building\-And\-Worker@{test\-\_\-add\-Building\-And\-Worker}}
+\index{test\-\_\-add\-Building\-And\-Worker@{test\-\_\-add\-Building\-And\-Worker}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-add\-Building\-And\-Worker}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-add\-Building\-And\-Worker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_a917f002ab0713044a752be2f6a37d6ff}
+
+
+Tests adding workers and buildings to a tile. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible to add both within limits of the tile 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_ac2868337bc13dea171895916e375a0d8}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-add\-Worker@{test\-\_\-add\-Worker}}
+\index{test\-\_\-add\-Worker@{test\-\_\-add\-Worker}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-add\-Worker}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-add\-Worker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_ac2868337bc13dea171895916e375a0d8}
+
+
+Tests adding a worker to a tile. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_a29665a14d12c952675435a9bd642bc06}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-add\-Worker\-\_\-to\-\_\-water@{test\-\_\-add\-Worker\-\_\-to\-\_\-water}}
+\index{test\-\_\-add\-Worker\-\_\-to\-\_\-water@{test\-\_\-add\-Worker\-\_\-to\-\_\-water}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-add\-Worker\-\_\-to\-\_\-water}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-add\-Worker\-\_\-to\-\_\-water (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_a29665a14d12c952675435a9bd642bc06}
+
+
+Tests adding a worker to water. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should throw an Illegal\-Action exception 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_af65fe1d9ce7dfe3706b434cf7650eb06}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-add\-Worker\-\_\-too\-\_\-many\-\_\-workers@{test\-\_\-add\-Worker\-\_\-too\-\_\-many\-\_\-workers}}
+\index{test\-\_\-add\-Worker\-\_\-too\-\_\-many\-\_\-workers@{test\-\_\-add\-Worker\-\_\-too\-\_\-many\-\_\-workers}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-add\-Worker\-\_\-too\-\_\-many\-\_\-workers}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-add\-Worker\-\_\-too\-\_\-many\-\_\-workers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_af65fe1d9ce7dfe3706b434cf7650eb06}
+
+
+Tests adding too many workers on a tile. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should throw an Illegal\-Action exception 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_a3af682c7eb40ea93a2c99abc55a9b45e}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-get\-Buildings@{test\-\_\-get\-Buildings}}
+\index{test\-\_\-get\-Buildings@{test\-\_\-get\-Buildings}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-get\-Buildings}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-get\-Buildings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_a3af682c7eb40ea93a2c99abc55a9b45e}
+
+
+Tests getting buildings from a tile. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_a57d1f35c44e5c82d4ca2878795fb0890}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-get\-Workers@{test\-\_\-get\-Workers}}
+\index{test\-\_\-get\-Workers@{test\-\_\-get\-Workers}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-get\-Workers}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-get\-Workers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_a57d1f35c44e5c82d4ca2878795fb0890}
+
+
+Tests getting workers from a tile. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_a692ffdcc135066c0099af99c72073768}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-remove\-Building@{test\-\_\-remove\-Building}}
+\index{test\-\_\-remove\-Building@{test\-\_\-remove\-Building}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-remove\-Building}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-remove\-Building (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_a692ffdcc135066c0099af99c72073768}
+
+
+Tests removing a building from a tile. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_aee9fffb30a5ca5435a5421c548b1f9e5}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-remove\-Worker@{test\-\_\-remove\-Worker}}
+\index{test\-\_\-remove\-Worker@{test\-\_\-remove\-Worker}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-remove\-Worker}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-remove\-Worker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_aee9fffb30a5ca5435a5421c548b1f9e5}
+
+
+Tests removing a worker from a tile. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_a6612daefb98dbb72a1860264b87f0dbb}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-type\-\_\-blockfield@{test\-\_\-type\-\_\-blockfield}}
+\index{test\-\_\-type\-\_\-blockfield@{test\-\_\-type\-\_\-blockfield}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-type\-\_\-blockfield}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-type\-\_\-blockfield (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_a6612daefb98dbb72a1860264b87f0dbb}
+
+
+Tests Blockfield's type. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be Blockfield 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_abc9cdbb32628185b44a1610454054da7}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-type\-\_\-forest@{test\-\_\-type\-\_\-forest}}
+\index{test\-\_\-type\-\_\-forest@{test\-\_\-type\-\_\-forest}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-type\-\_\-forest}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-type\-\_\-forest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_abc9cdbb32628185b44a1610454054da7}
+
+
+Tests Forest's type. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be Forest 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_a5383699e1c9a86e7414cd477b922fbd5}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-type\-\_\-grassland@{test\-\_\-type\-\_\-grassland}}
+\index{test\-\_\-type\-\_\-grassland@{test\-\_\-type\-\_\-grassland}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-type\-\_\-grassland}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-type\-\_\-grassland (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_a5383699e1c9a86e7414cd477b922fbd5}
+
+
+Tests Grassland's type. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be Grassland 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_a05d5665f788e8d38f6708725c9ee946b}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-type\-\_\-oredeposit@{test\-\_\-type\-\_\-oredeposit}}
+\index{test\-\_\-type\-\_\-oredeposit@{test\-\_\-type\-\_\-oredeposit}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-type\-\_\-oredeposit}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-type\-\_\-oredeposit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_a05d5665f788e8d38f6708725c9ee946b}
+
+
+Tests Ore\-Deposit's type. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be Ore\-Deposit 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_a2fa5ec48fde3f3ba7952d364c179ad65}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-type\-\_\-tilebase@{test\-\_\-type\-\_\-tilebase}}
+\index{test\-\_\-type\-\_\-tilebase@{test\-\_\-type\-\_\-tilebase}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-type\-\_\-tilebase}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-type\-\_\-tilebase (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_a2fa5ec48fde3f3ba7952d364c179ad65}
+
+
+Tests Tiles\-Base's type. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be Tiles\-Base 
+\end{DoxyPostcond}
+\hypertarget{classdefault__tile_a086986610e729ee878f8c68b4b19d10b}{\index{default\-\_\-tile@{default\-\_\-tile}!test\-\_\-type\-\_\-water@{test\-\_\-type\-\_\-water}}
+\index{test\-\_\-type\-\_\-water@{test\-\_\-type\-\_\-water}!default_tile@{default\-\_\-tile}}
+\subsubsection[{test\-\_\-type\-\_\-water}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-tile\-::test\-\_\-type\-\_\-water (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__tile_a086986610e729ee878f8c68b4b19d10b}
+
+
+Tests Water's type. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be Water 
+\end{DoxyPostcond}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classdefault__tile_a475f12ebc676bc8252ccea358329eb55}{\index{default\-\_\-tile@{default\-\_\-tile}!blockfield\-\_\-object@{blockfield\-\_\-object}}
+\index{blockfield\-\_\-object@{blockfield\-\_\-object}!default_tile@{default\-\_\-tile}}
+\subsubsection[{blockfield\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Blockfield}$>$ default\-\_\-tile\-::blockfield\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_a475f12ebc676bc8252ccea358329eb55}
+\hypertarget{classdefault__tile_a1428f399558ca156afbc754ae04fe6d0}{\index{default\-\_\-tile@{default\-\_\-tile}!building1@{building1}}
+\index{building1@{building1}!default_tile@{default\-\_\-tile}}
+\subsubsection[{building1}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Building\-Base}$>$ default\-\_\-tile\-::building1\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_a1428f399558ca156afbc754ae04fe6d0}
+\hypertarget{classdefault__tile_a6cff7bada2d7f8f055225d1442fc0d6d}{\index{default\-\_\-tile@{default\-\_\-tile}!building2@{building2}}
+\index{building2@{building2}!default_tile@{default\-\_\-tile}}
+\subsubsection[{building2}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Building\-Base}$>$ default\-\_\-tile\-::building2\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_a6cff7bada2d7f8f055225d1442fc0d6d}
+\hypertarget{classdefault__tile_ad881db4d38fb6ce5f6344fd13ad35fc1}{\index{default\-\_\-tile@{default\-\_\-tile}!coord1@{coord1}}
+\index{coord1@{coord1}!default_tile@{default\-\_\-tile}}
+\subsubsection[{coord1}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Course\-::\-Coordinate} default\-\_\-tile\-::coord1 = \{1,1\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_ad881db4d38fb6ce5f6344fd13ad35fc1}
+\hypertarget{classdefault__tile_afe8df9f0be2707e28ca52f2d63a6f565}{\index{default\-\_\-tile@{default\-\_\-tile}!coord2@{coord2}}
+\index{coord2@{coord2}!default_tile@{default\-\_\-tile}}
+\subsubsection[{coord2}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Course\-::\-Coordinate} default\-\_\-tile\-::coord2 = \{2,2\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_afe8df9f0be2707e28ca52f2d63a6f565}
+\hypertarget{classdefault__tile_ad831dcb7909d9e7918380ed7ec7f0f8b}{\index{default\-\_\-tile@{default\-\_\-tile}!coord3@{coord3}}
+\index{coord3@{coord3}!default_tile@{default\-\_\-tile}}
+\subsubsection[{coord3}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Course\-::\-Coordinate} default\-\_\-tile\-::coord3 = \{3,3\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_ad831dcb7909d9e7918380ed7ec7f0f8b}
+\hypertarget{classdefault__tile_adfe1e7d47661ef24230ed213d6860d0d}{\index{default\-\_\-tile@{default\-\_\-tile}!coord4@{coord4}}
+\index{coord4@{coord4}!default_tile@{default\-\_\-tile}}
+\subsubsection[{coord4}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Course\-::\-Coordinate} default\-\_\-tile\-::coord4 = \{4,4\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_adfe1e7d47661ef24230ed213d6860d0d}
+\hypertarget{classdefault__tile_a99eb8e09cd1e8bc821c1d410f0cefcdc}{\index{default\-\_\-tile@{default\-\_\-tile}!coord5@{coord5}}
+\index{coord5@{coord5}!default_tile@{default\-\_\-tile}}
+\subsubsection[{coord5}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Course\-::\-Coordinate} default\-\_\-tile\-::coord5 = \{5,5\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_a99eb8e09cd1e8bc821c1d410f0cefcdc}
+\hypertarget{classdefault__tile_a02b5556e362bb56edb63015f8a57aaa1}{\index{default\-\_\-tile@{default\-\_\-tile}!coord6@{coord6}}
+\index{coord6@{coord6}!default_tile@{default\-\_\-tile}}
+\subsubsection[{coord6}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Course\-::\-Coordinate} default\-\_\-tile\-::coord6 = \{6,6\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_a02b5556e362bb56edb63015f8a57aaa1}
+\hypertarget{classdefault__tile_af0e444a7cbe271a0eca9a245fcd938ff}{\index{default\-\_\-tile@{default\-\_\-tile}!default\-\_\-object@{default\-\_\-object}}
+\index{default\-\_\-object@{default\-\_\-object}!default_tile@{default\-\_\-tile}}
+\subsubsection[{default\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Tile\-Base}$>$ default\-\_\-tile\-::default\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_af0e444a7cbe271a0eca9a245fcd938ff}
+\hypertarget{classdefault__tile_aed6aefdcd6b8d7ebf30d586e9143d44f}{\index{default\-\_\-tile@{default\-\_\-tile}!forest\-\_\-object@{forest\-\_\-object}}
+\index{forest\-\_\-object@{forest\-\_\-object}!default_tile@{default\-\_\-tile}}
+\subsubsection[{forest\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Forest}$>$ default\-\_\-tile\-::forest\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_aed6aefdcd6b8d7ebf30d586e9143d44f}
+\hypertarget{classdefault__tile_ac2682ad79db9879a601bc5bdd24add2c}{\index{default\-\_\-tile@{default\-\_\-tile}!G\-E\-Hand@{G\-E\-Hand}}
+\index{G\-E\-Hand@{G\-E\-Hand}!default_tile@{default\-\_\-tile}}
+\subsubsection[{G\-E\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Game\-Event\-Handler}$>$ default\-\_\-tile\-::\-G\-E\-Hand\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_ac2682ad79db9879a601bc5bdd24add2c}
+\hypertarget{classdefault__tile_ad5fbacd1a3d966e10aa6127db0ba3213}{\index{default\-\_\-tile@{default\-\_\-tile}!grassland\-\_\-object@{grassland\-\_\-object}}
+\index{grassland\-\_\-object@{grassland\-\_\-object}!default_tile@{default\-\_\-tile}}
+\subsubsection[{grassland\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Grassland}$>$ default\-\_\-tile\-::grassland\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_ad5fbacd1a3d966e10aa6127db0ba3213}
+\hypertarget{classdefault__tile_a8749ee4ac9c528916c2fd835ce14f043}{\index{default\-\_\-tile@{default\-\_\-tile}!obj\-Man@{obj\-Man}}
+\index{obj\-Man@{obj\-Man}!default_tile@{default\-\_\-tile}}
+\subsubsection[{obj\-Man}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Object\-Manager}$>$ default\-\_\-tile\-::obj\-Man\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_a8749ee4ac9c528916c2fd835ce14f043}
+\hypertarget{classdefault__tile_a267580dfeea7352f56f5bd106def49c5}{\index{default\-\_\-tile@{default\-\_\-tile}!oredeposit\-\_\-object@{oredeposit\-\_\-object}}
+\index{oredeposit\-\_\-object@{oredeposit\-\_\-object}!default_tile@{default\-\_\-tile}}
+\subsubsection[{oredeposit\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Ore\-Deposit}$>$ default\-\_\-tile\-::oredeposit\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_a267580dfeea7352f56f5bd106def49c5}
+\hypertarget{classdefault__tile_adeba3a9d85b478d7cd0dbd5b6194ede3}{\index{default\-\_\-tile@{default\-\_\-tile}!player1@{player1}}
+\index{player1@{player1}!default_tile@{default\-\_\-tile}}
+\subsubsection[{player1}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Player}$>$ default\-\_\-tile\-::player1\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_adeba3a9d85b478d7cd0dbd5b6194ede3}
+\hypertarget{classdefault__tile_ad7407fc63175dce0d369ddcc261194a6}{\index{default\-\_\-tile@{default\-\_\-tile}!player2@{player2}}
+\index{player2@{player2}!default_tile@{default\-\_\-tile}}
+\subsubsection[{player2}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Player}$>$ default\-\_\-tile\-::player2\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_ad7407fc63175dce0d369ddcc261194a6}
+\hypertarget{classdefault__tile_a083dbfdbbd2f789667ce742cb26afe83}{\index{default\-\_\-tile@{default\-\_\-tile}!water\-\_\-object@{water\-\_\-object}}
+\index{water\-\_\-object@{water\-\_\-object}!default_tile@{default\-\_\-tile}}
+\subsubsection[{water\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Water}$>$ default\-\_\-tile\-::water\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_a083dbfdbbd2f789667ce742cb26afe83}
+\hypertarget{classdefault__tile_a15da0582e401dfe74e37fc3d6e27931a}{\index{default\-\_\-tile@{default\-\_\-tile}!worker1@{worker1}}
+\index{worker1@{worker1}!default_tile@{default\-\_\-tile}}
+\subsubsection[{worker1}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Basic\-Worker}$>$ default\-\_\-tile\-::worker1\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_a15da0582e401dfe74e37fc3d6e27931a}
+\hypertarget{classdefault__tile_ace6e1dbaff450508a5889ccc10190da5}{\index{default\-\_\-tile@{default\-\_\-tile}!worker2@{worker2}}
+\index{worker2@{worker2}!default_tile@{default\-\_\-tile}}
+\subsubsection[{worker2}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Basic\-Worker}$>$ default\-\_\-tile\-::worker2\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__tile_ace6e1dbaff450508a5889ccc10190da5}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Unit\-Tests/tile\-\_\-tests/\hyperlink{tst__default__tile_8cpp}{tst\-\_\-default\-\_\-tile.\-cpp}\end{DoxyCompactItemize}

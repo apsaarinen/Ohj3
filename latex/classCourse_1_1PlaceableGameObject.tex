@@ -1,0 +1,247 @@
+\hypertarget{classCourse_1_1PlaceableGameObject}{\section{Course\-:\-:Placeable\-Game\-Object Class Reference}
+\label{classCourse_1_1PlaceableGameObject}\index{Course\-::\-Placeable\-Game\-Object@{Course\-::\-Placeable\-Game\-Object}}
+}
+
+
+The \hyperlink{classCourse_1_1PlaceableGameObject}{Placeable\-Game\-Object} class represents Game\-Objects that can be placed on Tile Objects.  
+
+
+
+
+{\ttfamily \#include $<$placeablegameobject.\-h$>$}
+
+Inheritance diagram for Course\-:\-:Placeable\-Game\-Object\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.833333cm]{classCourse_1_1PlaceableGameObject}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCourse_1_1PlaceableGameObject_adde506e2a75757799f54b14b464cf128}{Placeable\-Game\-Object} ()=delete
+\begin{DoxyCompactList}\small\item\em Disabled parameterless constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCourse_1_1PlaceableGameObject_a021fe249f3a6de1daf8e0a85e772e57e}{Placeable\-Game\-Object} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iGameEventHandler}{i\-Game\-Event\-Handler} $>$ \&eventhandler, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iObjectManager}{i\-Object\-Manager} $>$ \&objectmanager, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1PlayerBase}{Player\-Base} $>$ \&owner, const int \&tilespace=1)
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+virtual \hyperlink{classCourse_1_1PlaceableGameObject_ab0e0ad8ecd20bf48faefc6c51056066f}{$\sim$\-Placeable\-Game\-Object} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classCourse_1_1PlaceableGameObject_adcd0c91b52ccedd434092380644f210e}{get\-Type} () const override
+\begin{DoxyCompactList}\small\item\em get\-Type Returns a string describing objects type. This should be overriden in each inherited class. Makes checking object's type easier for students. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classCourse_1_1PlaceableGameObject_a677e6c0afa7c9cc70123369f3d7dafcb}{spaces\-In\-Tile\-Capacity} () const 
+\begin{DoxyCompactList}\small\item\em How many spaces does the \hyperlink{classCourse_1_1GameObject}{Game\-Object} take from a Tile's capacity. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classCourse_1_1PlaceableGameObject_a09616c1b271c35df61c88b37d0b85968}{can\-Be\-Placed\-On\-Tile} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1TileBase}{Tile\-Base} $>$ \&target) const 
+\begin{DoxyCompactList}\small\item\em Check if the object's own placement rules allow placement on the specified tile. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCourse_1_1PlaceableGameObject_a22dcc18962f81c27ac0a176b37533ff4}{set\-Location\-Tile} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1TileBase}{Tile\-Base} $>$ \&tile) final
+\begin{DoxyCompactList}\small\item\em Set the \hyperlink{classCourse_1_1PlaceableGameObject}{Placeable\-Game\-Object}'s location. \end{DoxyCompactList}\item 
+virtual std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1TileBase}{Tile\-Base} $>$ \hyperlink{classCourse_1_1PlaceableGameObject_a860e49fae06b1f58641d9ff373d46fdf}{current\-Location\-Tile} () const final
+\begin{DoxyCompactList}\small\item\em Returns a shared\-\_\-ptr to current location-\/tile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{classCourse_1_1PlaceableGameObject_a9f3a7d817d3f90754025fb7a46d7f70d}{T\-I\-L\-E\-S\-P\-A\-C\-E\-S}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::weak\-\_\-ptr$<$ \hyperlink{classCourse_1_1TileBase}{Tile\-Base} $>$ \hyperlink{classCourse_1_1PlaceableGameObject_a2c59e31d488edddd6cb41e5b39a01456}{m\-\_\-location}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classCourse_1_1PlaceableGameObject}{Placeable\-Game\-Object} class represents Game\-Objects that can be placed on Tile Objects. 
+
+Handles placement on a Tile and throws exception if the placement would violate Placeable\-Game\-Objects own placement rules.
+
+\begin{DoxyNote}{Note}
+One new overridable method\-: can\-Be\-Placed\-On\-Tile -\/ Can be used to re-\/specify placement-\/rules. 
+\end{DoxyNote}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCourse_1_1PlaceableGameObject_adde506e2a75757799f54b14b464cf128}{\index{Course\-::\-Placeable\-Game\-Object@{Course\-::\-Placeable\-Game\-Object}!Placeable\-Game\-Object@{Placeable\-Game\-Object}}
+\index{Placeable\-Game\-Object@{Placeable\-Game\-Object}!Course::PlaceableGameObject@{Course\-::\-Placeable\-Game\-Object}}
+\subsubsection[{Placeable\-Game\-Object}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Placeable\-Game\-Object\-::\-Placeable\-Game\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classCourse_1_1PlaceableGameObject_adde506e2a75757799f54b14b464cf128}
+
+
+Disabled parameterless constructor. 
+
+\hypertarget{classCourse_1_1PlaceableGameObject_a021fe249f3a6de1daf8e0a85e772e57e}{\index{Course\-::\-Placeable\-Game\-Object@{Course\-::\-Placeable\-Game\-Object}!Placeable\-Game\-Object@{Placeable\-Game\-Object}}
+\index{Placeable\-Game\-Object@{Placeable\-Game\-Object}!Course::PlaceableGameObject@{Course\-::\-Placeable\-Game\-Object}}
+\subsubsection[{Placeable\-Game\-Object}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Placeable\-Game\-Object\-::\-Placeable\-Game\-Object (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf i\-Game\-Event\-Handler} $>$ \&}]{eventhandler, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf i\-Object\-Manager} $>$ \&}]{objectmanager, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Player\-Base} $>$ \&}]{owner, }
+\item[{const int \&}]{tilespace = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classCourse_1_1PlaceableGameObject_a021fe249f3a6de1daf8e0a85e772e57e}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eventhandler} & points to the student's Game\-Event\-Handler. \\
+\hline
+{\em objectmanager} & points to the studtent's Object\-Manager \\
+\hline
+{\em owner} & points to the owning player. \\
+\hline
+{\em tilespace} & indicates the amount of tilespace the object would take when placed on a tile. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCourse_1_1PlaceableGameObject_ab0e0ad8ecd20bf48faefc6c51056066f}{\index{Course\-::\-Placeable\-Game\-Object@{Course\-::\-Placeable\-Game\-Object}!$\sim$\-Placeable\-Game\-Object@{$\sim$\-Placeable\-Game\-Object}}
+\index{$\sim$\-Placeable\-Game\-Object@{$\sim$\-Placeable\-Game\-Object}!Course::PlaceableGameObject@{Course\-::\-Placeable\-Game\-Object}}
+\subsubsection[{$\sim$\-Placeable\-Game\-Object}]{\setlength{\rightskip}{0pt plus 5cm}virtual Course\-::\-Placeable\-Game\-Object\-::$\sim$\-Placeable\-Game\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}}\label{classCourse_1_1PlaceableGameObject_ab0e0ad8ecd20bf48faefc6c51056066f}
+
+
+Default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCourse_1_1PlaceableGameObject_a09616c1b271c35df61c88b37d0b85968}{\index{Course\-::\-Placeable\-Game\-Object@{Course\-::\-Placeable\-Game\-Object}!can\-Be\-Placed\-On\-Tile@{can\-Be\-Placed\-On\-Tile}}
+\index{can\-Be\-Placed\-On\-Tile@{can\-Be\-Placed\-On\-Tile}!Course::PlaceableGameObject@{Course\-::\-Placeable\-Game\-Object}}
+\subsubsection[{can\-Be\-Placed\-On\-Tile}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Course\-::\-Placeable\-Game\-Object\-::can\-Be\-Placed\-On\-Tile (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Tile\-Base} $>$ \&}]{target}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCourse_1_1PlaceableGameObject_a09616c1b271c35df61c88b37d0b85968}
+
+
+Check if the object's own placement rules allow placement on the specified tile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & is a pointer to the tile that is being targeted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\par
+True -\/ Object has same owner as the tile.\par
+False -\/ If condition doesn't match.\par
+
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: Basic 
+\end{DoxyPostcond}
+\begin{DoxyNote}{Note}
+Override to change default behaviour 
+\end{DoxyNote}
+
+
+Reimplemented in \hyperlink{classCourse_1_1BuildingBase_add23c593f509f39654f2d5abc7d8c072}{Course\-::\-Building\-Base}, \hyperlink{classCourse_1_1WorkerBase_ad80874970ab91bca95b9d3f959e838d2}{Course\-::\-Worker\-Base}, \hyperlink{classGame_1_1MineWorker_aa52833ec99f6746871a78467c51bc57e}{Game\-::\-Mine\-Worker}, \hyperlink{classGame_1_1SawMillWorker_a435e13b35d129a453d7fdfcd60b6dc42}{Game\-::\-Saw\-Mill\-Worker}, and \hyperlink{classCourse_1_1BasicWorker_ab12d85004e92d9a1e85396d72c6cac98}{Course\-::\-Basic\-Worker}.
+
+\hypertarget{classCourse_1_1PlaceableGameObject_a860e49fae06b1f58641d9ff373d46fdf}{\index{Course\-::\-Placeable\-Game\-Object@{Course\-::\-Placeable\-Game\-Object}!current\-Location\-Tile@{current\-Location\-Tile}}
+\index{current\-Location\-Tile@{current\-Location\-Tile}!Course::PlaceableGameObject@{Course\-::\-Placeable\-Game\-Object}}
+\subsubsection[{current\-Location\-Tile}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::shared\-\_\-ptr$<${\bf Tile\-Base}$>$ Course\-::\-Placeable\-Game\-Object\-::current\-Location\-Tile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}}\label{classCourse_1_1PlaceableGameObject_a860e49fae06b1f58641d9ff373d46fdf}
+
+
+Returns a shared\-\_\-ptr to current location-\/tile. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\hypertarget{classCourse_1_1PlaceableGameObject_adcd0c91b52ccedd434092380644f210e}{\index{Course\-::\-Placeable\-Game\-Object@{Course\-::\-Placeable\-Game\-Object}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!Course::PlaceableGameObject@{Course\-::\-Placeable\-Game\-Object}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string Course\-::\-Placeable\-Game\-Object\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCourse_1_1PlaceableGameObject_adcd0c91b52ccedd434092380644f210e}
+
+
+get\-Type Returns a string describing objects type. This should be overriden in each inherited class. Makes checking object's type easier for students. 
+
+\begin{DoxyReturn}{Returns}
+std\-::string that represents Object's type. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\begin{DoxyNote}{Note}
+You can use this in e.\-g. debugging and similar printing. 
+\end{DoxyNote}
+
+
+Reimplemented from \hyperlink{classCourse_1_1GameObject_aeecb0b8f5ed8d7b379e0e38ef4ebba10}{Course\-::\-Game\-Object}.
+
+
+
+Reimplemented in \hyperlink{classCourse_1_1WorkerBase_afe6049810eec47fffe2c2a7334564ef9}{Course\-::\-Worker\-Base}, \hyperlink{classCourse_1_1BuildingBase_ac2cc44e08dc73d05b1617bf71295baaf}{Course\-::\-Building\-Base}, \hyperlink{classCourse_1_1Outpost_a8c89c67187451e0a49ecd57d4fc80602}{Course\-::\-Outpost}, \hyperlink{classGame_1_1MineWorker_a984c2ede11ac50460620a4d982249dbe}{Game\-::\-Mine\-Worker}, \hyperlink{classGame_1_1SawMillWorker_af64ec6de521d31ec3fdc885a3bc69cba}{Game\-::\-Saw\-Mill\-Worker}, \hyperlink{classCourse_1_1BasicWorker_a8396e00dafd128cbb86e479296d75c12}{Course\-::\-Basic\-Worker}, \hyperlink{classCourse_1_1HeadQuarters_a1d9a996a6a87ca31aeb63dff2d41d242}{Course\-::\-Head\-Quarters}, \hyperlink{classGame_1_1Mine_aaf18e426d1978c8e6f0cf0dc7435c257}{Game\-::\-Mine}, \hyperlink{classGame_1_1SawMill_a1dd6fd6bce2044107b121f3bbf012691}{Game\-::\-Saw\-Mill}, and \hyperlink{classCourse_1_1Farm_a54ade72809a36d31e0e426eb79d6251a}{Course\-::\-Farm}.
+
+\hypertarget{classCourse_1_1PlaceableGameObject_a22dcc18962f81c27ac0a176b37533ff4}{\index{Course\-::\-Placeable\-Game\-Object@{Course\-::\-Placeable\-Game\-Object}!set\-Location\-Tile@{set\-Location\-Tile}}
+\index{set\-Location\-Tile@{set\-Location\-Tile}!Course::PlaceableGameObject@{Course\-::\-Placeable\-Game\-Object}}
+\subsubsection[{set\-Location\-Tile}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Course\-::\-Placeable\-Game\-Object\-::set\-Location\-Tile (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Tile\-Base} $>$ \&}]{tile}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}}\label{classCourse_1_1PlaceableGameObject_a22dcc18962f81c27ac0a176b37533ff4}
+
+
+Set the \hyperlink{classCourse_1_1PlaceableGameObject}{Placeable\-Game\-Object}'s location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile} & points to the Tile where the object is placed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: Strong 
+\end{DoxyPostcond}
+\begin{DoxyNote}{Note}
+nullptr can be used to clear the location. 
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classCourse_1_1IllegalAction}{Illegal\-Action}} & -\/ If can\-Be\-Placed\-On\-Tile returns False. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classCourse_1_1PlaceableGameObject_a677e6c0afa7c9cc70123369f3d7dafcb}{\index{Course\-::\-Placeable\-Game\-Object@{Course\-::\-Placeable\-Game\-Object}!spaces\-In\-Tile\-Capacity@{spaces\-In\-Tile\-Capacity}}
+\index{spaces\-In\-Tile\-Capacity@{spaces\-In\-Tile\-Capacity}!Course::PlaceableGameObject@{Course\-::\-Placeable\-Game\-Object}}
+\subsubsection[{spaces\-In\-Tile\-Capacity}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Course\-::\-Placeable\-Game\-Object\-::spaces\-In\-Tile\-Capacity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCourse_1_1PlaceableGameObject_a677e6c0afa7c9cc70123369f3d7dafcb}
+
+
+How many spaces does the \hyperlink{classCourse_1_1GameObject}{Game\-Object} take from a Tile's capacity. 
+
+\begin{DoxyReturn}{Returns}
+Amount of spaces that is being taken. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCourse_1_1PlaceableGameObject_a2c59e31d488edddd6cb41e5b39a01456}{\index{Course\-::\-Placeable\-Game\-Object@{Course\-::\-Placeable\-Game\-Object}!m\-\_\-location@{m\-\_\-location}}
+\index{m\-\_\-location@{m\-\_\-location}!Course::PlaceableGameObject@{Course\-::\-Placeable\-Game\-Object}}
+\subsubsection[{m\-\_\-location}]{\setlength{\rightskip}{0pt plus 5cm}std\-::weak\-\_\-ptr$<${\bf Tile\-Base}$>$ Course\-::\-Placeable\-Game\-Object\-::m\-\_\-location\hspace{0.3cm}{\ttfamily [private]}}}\label{classCourse_1_1PlaceableGameObject_a2c59e31d488edddd6cb41e5b39a01456}
+\hypertarget{classCourse_1_1PlaceableGameObject_a9f3a7d817d3f90754025fb7a46d7f70d}{\index{Course\-::\-Placeable\-Game\-Object@{Course\-::\-Placeable\-Game\-Object}!T\-I\-L\-E\-S\-P\-A\-C\-E\-S@{T\-I\-L\-E\-S\-P\-A\-C\-E\-S}}
+\index{T\-I\-L\-E\-S\-P\-A\-C\-E\-S@{T\-I\-L\-E\-S\-P\-A\-C\-E\-S}!Course::PlaceableGameObject@{Course\-::\-Placeable\-Game\-Object}}
+\subsubsection[{T\-I\-L\-E\-S\-P\-A\-C\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}const int Course\-::\-Placeable\-Game\-Object\-::\-T\-I\-L\-E\-S\-P\-A\-C\-E\-S}}\label{classCourse_1_1PlaceableGameObject_a9f3a7d817d3f90754025fb7a46d7f70d}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Course/\-Course\-Lib/core/\hyperlink{placeablegameobject_8h}{placeablegameobject.\-h}\item 
+Course/\-Course\-Lib/core/\hyperlink{placeablegameobject_8cpp}{placeablegameobject.\-cpp}\end{DoxyCompactItemize}

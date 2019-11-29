@@ -1,0 +1,337 @@
+\hypertarget{classdefault__worker}{\section{default\-\_\-worker Class Reference}
+\label{classdefault__worker}\index{default\-\_\-worker@{default\-\_\-worker}}
+}
+
+
+The worker\-\_\-tests test the Placeable\-Game\-Object and all Worker classes.  
+
+
+Inheritance diagram for default\-\_\-worker\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdefault__worker}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdefault__worker_a7c7de24d48b778cbbfaab029152523e4}{default\-\_\-worker} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classdefault__worker_ad24b13f13fa8c36339c7a7cef535d8b9}{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-same\-\_\-owner} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an object with the same owner \par
+ can be placed on a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__worker_a0e5d2687739d821e3f6beaa7c4e65cd9}{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-ownerconflict} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an object with a different owner \par
+ can be placed on a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__worker_a7858f59a97e1747ee452f34ffe4703ca}{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owners} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an object with no owner \par
+ can be placed on a tile without an owner. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__worker_a2b396d92740880572f56bbab7ad584b4}{test\-\_\-set\-Location\-Tile} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an object can be placed on a tile. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__worker_a79930b71a5ed3d6322aaa1123fbec92b}{test\-\_\-unset\-Location\-Tile} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an object's location can be removed. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__worker_afc31832f2490e8f4099e6460a5b533ce}{test\-\_\-set\-Location\-Tile\-\_\-exception} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an object's location can set to a tile \par
+with a different owner. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__worker_a18fa8ce0183ee7fa9d39918c3ee72c6d}{test\-\_\-current\-Location\-Tile\-\_\-expired\-\_\-ptr} ()
+\begin{DoxyCompactList}\small\item\em Tests whether an objects location gets removed if the \par
+tile expires it was located on. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__worker_a9faf7bd43cb6b07f2be5fbe16ba9c11e}{test\-\_\-tile\-Work\-Action} ()
+\begin{DoxyCompactList}\small\item\em Tests worker's tileworkaction (generating resources) \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__worker_a130375f5e40f7c8cc24c2da1d0039b3c}{test\-\_\-tile\-Work\-Action\-\_\-not\-Enough\-Money\-And\-Food} ()
+\begin{DoxyCompactList}\small\item\em Tests worker's tileworkaction when there aren't \par
+enough resources. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__worker_aa23fa13744f7dbfb7a8d6b3f46402b15}{test\-\_\-type\-\_\-basicworker} ()
+\begin{DoxyCompactList}\small\item\em Tests Basic\-Worker's type. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__worker_a18bed647358defe17331e70a024bfc61}{test\-\_\-type\-\_\-mineworker} ()
+\begin{DoxyCompactList}\small\item\em Tests Mine\-Worker's type. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__worker_a54075e0089e64d81493a9462de924457}{test\-\_\-type\-\_\-sawmillworker} ()
+\begin{DoxyCompactList}\small\item\em Tests Saw\-Mill\-Worker's type. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__worker_ac24a55220859638040a6cad7107b044f}{cleanup} ()
+\begin{DoxyCompactList}\small\item\em Test cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1ObjectManager}{Object\-Manager} $>$ \hyperlink{classdefault__worker_af5dedfd6c8224ee5ca2eba1290f7a853}{obj\-Man}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1GameEventHandler}{Game\-Event\-Handler} $>$ \hyperlink{classdefault__worker_a44df0b6b6c93b3992dfbc912001c47d1}{G\-E\-Hand}
+\item 
+\hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} \hyperlink{classdefault__worker_acd1ecdadb65e25b996f64a42790f83d1}{start\-Resources}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1Player}{Player} $>$ \hyperlink{classdefault__worker_aba0535cd3653d51e44437df2796edb0a}{player1}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1Player}{Player} $>$ \hyperlink{classdefault__worker_a099ddc74e55afb29982086d62063e34c}{player2}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1TileBase}{Course\-::\-Tile\-Base} $>$ \hyperlink{classdefault__worker_a1dca180451327fc342c5874f31dc5b34}{tile1}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1TileBase}{Course\-::\-Tile\-Base} $>$ \hyperlink{classdefault__worker_a58ff3b99ca13fb2bac484383cb97224e}{tile2}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1TileBase}{Course\-::\-Tile\-Base} $>$ \hyperlink{classdefault__worker_ae85c6a01155685fe642e8e6c55116da2}{tile\-Expire}
+\item 
+const \hyperlink{classCourse_1_1Coordinate}{Course\-::\-Coordinate} \hyperlink{classdefault__worker_a8d151cfc7d0d347577cdb66f3db280b0}{tile1\-\_\-coordinate} = \{1,1\}
+\item 
+const \hyperlink{classCourse_1_1Coordinate}{Course\-::\-Coordinate} \hyperlink{classdefault__worker_a5bbce973c2c9387484b709d57f718054}{tile2\-\_\-coordinate} = \{1,2\}
+\item 
+const \hyperlink{classCourse_1_1Coordinate}{Course\-::\-Coordinate} \hyperlink{classdefault__worker_a0a0fe24881186dbb4704e66f121dfeb2}{tile\-Expire\-\_\-coordinate} = \{2,2\}
+\item 
+std\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classCourse_1_1BasicWorker}{Course\-::\-Basic\-Worker} $>$ \hyperlink{classdefault__worker_a872779c575aa3b978bd368c9c120982f}{default\-\_\-object}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1SawMillWorker}{Saw\-Mill\-Worker} $>$ \hyperlink{classdefault__worker_a266e28b4c12c4312b616acae5911bb51}{sawmillworker\-\_\-object}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1MineWorker}{Mine\-Worker} $>$ \hyperlink{classdefault__worker_a4e2482621b6bdd379211cc71006501ad}{mineworker\-\_\-object}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The worker\-\_\-tests test the Placeable\-Game\-Object and all Worker classes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classdefault__worker_a7c7de24d48b778cbbfaab029152523e4}{\index{default\-\_\-worker@{default\-\_\-worker}!default\-\_\-worker@{default\-\_\-worker}}
+\index{default\-\_\-worker@{default\-\_\-worker}!default_worker@{default\-\_\-worker}}
+\subsubsection[{default\-\_\-worker}]{\setlength{\rightskip}{0pt plus 5cm}default\-\_\-worker\-::default\-\_\-worker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classdefault__worker_a7c7de24d48b778cbbfaab029152523e4}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classdefault__worker_ac24a55220859638040a6cad7107b044f}{\index{default\-\_\-worker@{default\-\_\-worker}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!default_worker@{default\-\_\-worker}}
+\subsubsection[{cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-worker\-::cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__worker_ac24a55220859638040a6cad7107b044f}
+
+
+Test cleanup. 
+
+\hypertarget{classdefault__worker_a7858f59a97e1747ee452f34ffe4703ca}{\index{default\-\_\-worker@{default\-\_\-worker}!test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owners@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owners}}
+\index{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owners@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owners}!default_worker@{default\-\_\-worker}}
+\subsubsection[{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owners}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-worker\-::test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-no\-\_\-owners (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__worker_a7858f59a97e1747ee452f34ffe4703ca}
+
+
+Tests whether an object with no owner \par
+ can be placed on a tile without an owner. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__worker_a0e5d2687739d821e3f6beaa7c4e65cd9}{\index{default\-\_\-worker@{default\-\_\-worker}!test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-ownerconflict@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-ownerconflict}}
+\index{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-ownerconflict@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-ownerconflict}!default_worker@{default\-\_\-worker}}
+\subsubsection[{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-ownerconflict}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-worker\-::test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-ownerconflict (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__worker_a0e5d2687739d821e3f6beaa7c4e65cd9}
+
+
+Tests whether an object with a different owner \par
+ can be placed on a tile. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should not be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__worker_ad24b13f13fa8c36339c7a7cef535d8b9}{\index{default\-\_\-worker@{default\-\_\-worker}!test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-same\-\_\-owner@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-same\-\_\-owner}}
+\index{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-same\-\_\-owner@{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-same\-\_\-owner}!default_worker@{default\-\_\-worker}}
+\subsubsection[{test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-same\-\_\-owner}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-worker\-::test\-\_\-can\-Be\-Placed\-On\-Tile\-\_\-same\-\_\-owner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__worker_ad24b13f13fa8c36339c7a7cef535d8b9}
+
+
+Tests whether an object with the same owner \par
+ can be placed on a tile. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__worker_a18fa8ce0183ee7fa9d39918c3ee72c6d}{\index{default\-\_\-worker@{default\-\_\-worker}!test\-\_\-current\-Location\-Tile\-\_\-expired\-\_\-ptr@{test\-\_\-current\-Location\-Tile\-\_\-expired\-\_\-ptr}}
+\index{test\-\_\-current\-Location\-Tile\-\_\-expired\-\_\-ptr@{test\-\_\-current\-Location\-Tile\-\_\-expired\-\_\-ptr}!default_worker@{default\-\_\-worker}}
+\subsubsection[{test\-\_\-current\-Location\-Tile\-\_\-expired\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-worker\-::test\-\_\-current\-Location\-Tile\-\_\-expired\-\_\-ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__worker_a18fa8ce0183ee7fa9d39918c3ee72c6d}
+
+
+Tests whether an objects location gets removed if the \par
+tile expires it was located on. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be removed 
+\end{DoxyPostcond}
+\hypertarget{classdefault__worker_a2b396d92740880572f56bbab7ad584b4}{\index{default\-\_\-worker@{default\-\_\-worker}!test\-\_\-set\-Location\-Tile@{test\-\_\-set\-Location\-Tile}}
+\index{test\-\_\-set\-Location\-Tile@{test\-\_\-set\-Location\-Tile}!default_worker@{default\-\_\-worker}}
+\subsubsection[{test\-\_\-set\-Location\-Tile}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-worker\-::test\-\_\-set\-Location\-Tile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__worker_a2b396d92740880572f56bbab7ad584b4}
+
+
+Tests whether an object can be placed on a tile. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+\hypertarget{classdefault__worker_afc31832f2490e8f4099e6460a5b533ce}{\index{default\-\_\-worker@{default\-\_\-worker}!test\-\_\-set\-Location\-Tile\-\_\-exception@{test\-\_\-set\-Location\-Tile\-\_\-exception}}
+\index{test\-\_\-set\-Location\-Tile\-\_\-exception@{test\-\_\-set\-Location\-Tile\-\_\-exception}!default_worker@{default\-\_\-worker}}
+\subsubsection[{test\-\_\-set\-Location\-Tile\-\_\-exception}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-worker\-::test\-\_\-set\-Location\-Tile\-\_\-exception (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__worker_afc31832f2490e8f4099e6460a5b533ce}
+
+
+Tests whether an object's location can set to a tile \par
+with a different owner. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should throw an Illegal\-Action exception 
+\end{DoxyPostcond}
+\hypertarget{classdefault__worker_a9faf7bd43cb6b07f2be5fbe16ba9c11e}{\index{default\-\_\-worker@{default\-\_\-worker}!test\-\_\-tile\-Work\-Action@{test\-\_\-tile\-Work\-Action}}
+\index{test\-\_\-tile\-Work\-Action@{test\-\_\-tile\-Work\-Action}!default_worker@{default\-\_\-worker}}
+\subsubsection[{test\-\_\-tile\-Work\-Action}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-worker\-::test\-\_\-tile\-Work\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__worker_a9faf7bd43cb6b07f2be5fbe16ba9c11e}
+
+
+Tests worker's tileworkaction (generating resources) 
+
+\begin{DoxyPostcond}{Postcondition}
+Should generate resources 
+\end{DoxyPostcond}
+\hypertarget{classdefault__worker_a130375f5e40f7c8cc24c2da1d0039b3c}{\index{default\-\_\-worker@{default\-\_\-worker}!test\-\_\-tile\-Work\-Action\-\_\-not\-Enough\-Money\-And\-Food@{test\-\_\-tile\-Work\-Action\-\_\-not\-Enough\-Money\-And\-Food}}
+\index{test\-\_\-tile\-Work\-Action\-\_\-not\-Enough\-Money\-And\-Food@{test\-\_\-tile\-Work\-Action\-\_\-not\-Enough\-Money\-And\-Food}!default_worker@{default\-\_\-worker}}
+\subsubsection[{test\-\_\-tile\-Work\-Action\-\_\-not\-Enough\-Money\-And\-Food}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-worker\-::test\-\_\-tile\-Work\-Action\-\_\-not\-Enough\-Money\-And\-Food (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__worker_a130375f5e40f7c8cc24c2da1d0039b3c}
+
+
+Tests worker's tileworkaction when there aren't \par
+enough resources. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should not give resources 
+\end{DoxyPostcond}
+\hypertarget{classdefault__worker_aa23fa13744f7dbfb7a8d6b3f46402b15}{\index{default\-\_\-worker@{default\-\_\-worker}!test\-\_\-type\-\_\-basicworker@{test\-\_\-type\-\_\-basicworker}}
+\index{test\-\_\-type\-\_\-basicworker@{test\-\_\-type\-\_\-basicworker}!default_worker@{default\-\_\-worker}}
+\subsubsection[{test\-\_\-type\-\_\-basicworker}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-worker\-::test\-\_\-type\-\_\-basicworker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__worker_aa23fa13744f7dbfb7a8d6b3f46402b15}
+
+
+Tests Basic\-Worker's type. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be Basic\-Worker 
+\end{DoxyPostcond}
+\hypertarget{classdefault__worker_a18bed647358defe17331e70a024bfc61}{\index{default\-\_\-worker@{default\-\_\-worker}!test\-\_\-type\-\_\-mineworker@{test\-\_\-type\-\_\-mineworker}}
+\index{test\-\_\-type\-\_\-mineworker@{test\-\_\-type\-\_\-mineworker}!default_worker@{default\-\_\-worker}}
+\subsubsection[{test\-\_\-type\-\_\-mineworker}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-worker\-::test\-\_\-type\-\_\-mineworker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__worker_a18bed647358defe17331e70a024bfc61}
+
+
+Tests Mine\-Worker's type. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be Mine\-Worker 
+\end{DoxyPostcond}
+\hypertarget{classdefault__worker_a54075e0089e64d81493a9462de924457}{\index{default\-\_\-worker@{default\-\_\-worker}!test\-\_\-type\-\_\-sawmillworker@{test\-\_\-type\-\_\-sawmillworker}}
+\index{test\-\_\-type\-\_\-sawmillworker@{test\-\_\-type\-\_\-sawmillworker}!default_worker@{default\-\_\-worker}}
+\subsubsection[{test\-\_\-type\-\_\-sawmillworker}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-worker\-::test\-\_\-type\-\_\-sawmillworker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__worker_a54075e0089e64d81493a9462de924457}
+
+
+Tests Saw\-Mill\-Worker's type. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be Saw\-Mill\-Worker 
+\end{DoxyPostcond}
+\hypertarget{classdefault__worker_a79930b71a5ed3d6322aaa1123fbec92b}{\index{default\-\_\-worker@{default\-\_\-worker}!test\-\_\-unset\-Location\-Tile@{test\-\_\-unset\-Location\-Tile}}
+\index{test\-\_\-unset\-Location\-Tile@{test\-\_\-unset\-Location\-Tile}!default_worker@{default\-\_\-worker}}
+\subsubsection[{test\-\_\-unset\-Location\-Tile}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-worker\-::test\-\_\-unset\-Location\-Tile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__worker_a79930b71a5ed3d6322aaa1123fbec92b}
+
+
+Tests whether an object's location can be removed. 
+
+\begin{DoxyPostcond}{Postcondition}
+Should be possible 
+\end{DoxyPostcond}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classdefault__worker_a872779c575aa3b978bd368c9c120982f}{\index{default\-\_\-worker@{default\-\_\-worker}!default\-\_\-object@{default\-\_\-object}}
+\index{default\-\_\-object@{default\-\_\-object}!default_worker@{default\-\_\-worker}}
+\subsubsection[{default\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Basic\-Worker}$>$ default\-\_\-worker\-::default\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__worker_a872779c575aa3b978bd368c9c120982f}
+\hypertarget{classdefault__worker_a44df0b6b6c93b3992dfbc912001c47d1}{\index{default\-\_\-worker@{default\-\_\-worker}!G\-E\-Hand@{G\-E\-Hand}}
+\index{G\-E\-Hand@{G\-E\-Hand}!default_worker@{default\-\_\-worker}}
+\subsubsection[{G\-E\-Hand}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Game\-Event\-Handler}$>$ default\-\_\-worker\-::\-G\-E\-Hand\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__worker_a44df0b6b6c93b3992dfbc912001c47d1}
+\hypertarget{classdefault__worker_a4e2482621b6bdd379211cc71006501ad}{\index{default\-\_\-worker@{default\-\_\-worker}!mineworker\-\_\-object@{mineworker\-\_\-object}}
+\index{mineworker\-\_\-object@{mineworker\-\_\-object}!default_worker@{default\-\_\-worker}}
+\subsubsection[{mineworker\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Mine\-Worker}$>$ default\-\_\-worker\-::mineworker\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__worker_a4e2482621b6bdd379211cc71006501ad}
+\hypertarget{classdefault__worker_af5dedfd6c8224ee5ca2eba1290f7a853}{\index{default\-\_\-worker@{default\-\_\-worker}!obj\-Man@{obj\-Man}}
+\index{obj\-Man@{obj\-Man}!default_worker@{default\-\_\-worker}}
+\subsubsection[{obj\-Man}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Object\-Manager}$>$ default\-\_\-worker\-::obj\-Man\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__worker_af5dedfd6c8224ee5ca2eba1290f7a853}
+\hypertarget{classdefault__worker_aba0535cd3653d51e44437df2796edb0a}{\index{default\-\_\-worker@{default\-\_\-worker}!player1@{player1}}
+\index{player1@{player1}!default_worker@{default\-\_\-worker}}
+\subsubsection[{player1}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Player}$>$ default\-\_\-worker\-::player1\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__worker_aba0535cd3653d51e44437df2796edb0a}
+\hypertarget{classdefault__worker_a099ddc74e55afb29982086d62063e34c}{\index{default\-\_\-worker@{default\-\_\-worker}!player2@{player2}}
+\index{player2@{player2}!default_worker@{default\-\_\-worker}}
+\subsubsection[{player2}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Player}$>$ default\-\_\-worker\-::player2\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__worker_a099ddc74e55afb29982086d62063e34c}
+\hypertarget{classdefault__worker_a266e28b4c12c4312b616acae5911bb51}{\index{default\-\_\-worker@{default\-\_\-worker}!sawmillworker\-\_\-object@{sawmillworker\-\_\-object}}
+\index{sawmillworker\-\_\-object@{sawmillworker\-\_\-object}!default_worker@{default\-\_\-worker}}
+\subsubsection[{sawmillworker\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Saw\-Mill\-Worker}$>$ default\-\_\-worker\-::sawmillworker\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__worker_a266e28b4c12c4312b616acae5911bb51}
+\hypertarget{classdefault__worker_acd1ecdadb65e25b996f64a42790f83d1}{\index{default\-\_\-worker@{default\-\_\-worker}!start\-Resources@{start\-Resources}}
+\index{start\-Resources@{start\-Resources}!default_worker@{default\-\_\-worker}}
+\subsubsection[{start\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Course\-::\-Resource\-Map} default\-\_\-worker\-::start\-Resources\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__worker_acd1ecdadb65e25b996f64a42790f83d1}
+\hypertarget{classdefault__worker_a1dca180451327fc342c5874f31dc5b34}{\index{default\-\_\-worker@{default\-\_\-worker}!tile1@{tile1}}
+\index{tile1@{tile1}!default_worker@{default\-\_\-worker}}
+\subsubsection[{tile1}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Tile\-Base}$>$ default\-\_\-worker\-::tile1\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__worker_a1dca180451327fc342c5874f31dc5b34}
+\hypertarget{classdefault__worker_a8d151cfc7d0d347577cdb66f3db280b0}{\index{default\-\_\-worker@{default\-\_\-worker}!tile1\-\_\-coordinate@{tile1\-\_\-coordinate}}
+\index{tile1\-\_\-coordinate@{tile1\-\_\-coordinate}!default_worker@{default\-\_\-worker}}
+\subsubsection[{tile1\-\_\-coordinate}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Course\-::\-Coordinate} default\-\_\-worker\-::tile1\-\_\-coordinate = \{1,1\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__worker_a8d151cfc7d0d347577cdb66f3db280b0}
+\hypertarget{classdefault__worker_a58ff3b99ca13fb2bac484383cb97224e}{\index{default\-\_\-worker@{default\-\_\-worker}!tile2@{tile2}}
+\index{tile2@{tile2}!default_worker@{default\-\_\-worker}}
+\subsubsection[{tile2}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Tile\-Base}$>$ default\-\_\-worker\-::tile2\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__worker_a58ff3b99ca13fb2bac484383cb97224e}
+\hypertarget{classdefault__worker_a5bbce973c2c9387484b709d57f718054}{\index{default\-\_\-worker@{default\-\_\-worker}!tile2\-\_\-coordinate@{tile2\-\_\-coordinate}}
+\index{tile2\-\_\-coordinate@{tile2\-\_\-coordinate}!default_worker@{default\-\_\-worker}}
+\subsubsection[{tile2\-\_\-coordinate}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Course\-::\-Coordinate} default\-\_\-worker\-::tile2\-\_\-coordinate = \{1,2\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__worker_a5bbce973c2c9387484b709d57f718054}
+\hypertarget{classdefault__worker_ae85c6a01155685fe642e8e6c55116da2}{\index{default\-\_\-worker@{default\-\_\-worker}!tile\-Expire@{tile\-Expire}}
+\index{tile\-Expire@{tile\-Expire}!default_worker@{default\-\_\-worker}}
+\subsubsection[{tile\-Expire}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Course\-::\-Tile\-Base}$>$ default\-\_\-worker\-::tile\-Expire\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__worker_ae85c6a01155685fe642e8e6c55116da2}
+\hypertarget{classdefault__worker_a0a0fe24881186dbb4704e66f121dfeb2}{\index{default\-\_\-worker@{default\-\_\-worker}!tile\-Expire\-\_\-coordinate@{tile\-Expire\-\_\-coordinate}}
+\index{tile\-Expire\-\_\-coordinate@{tile\-Expire\-\_\-coordinate}!default_worker@{default\-\_\-worker}}
+\subsubsection[{tile\-Expire\-\_\-coordinate}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Course\-::\-Coordinate} default\-\_\-worker\-::tile\-Expire\-\_\-coordinate = \{2,2\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__worker_a0a0fe24881186dbb4704e66f121dfeb2}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Unit\-Tests/worker\-\_\-tests/\hyperlink{tst__default__worker_8cpp}{tst\-\_\-default\-\_\-worker.\-cpp}\end{DoxyCompactItemize}

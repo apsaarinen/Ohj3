@@ -1,0 +1,173 @@
+\hypertarget{classCourse_1_1Outpost}{\section{Course\-:\-:Outpost Class Reference}
+\label{classCourse_1_1Outpost}\index{Course\-::\-Outpost@{Course\-::\-Outpost}}
+}
+
+
+The \hyperlink{classCourse_1_1Outpost}{Outpost} class represents a player's Outpost-\/building.  
+
+
+
+
+{\ttfamily \#include $<$outpost.\-h$>$}
+
+Inheritance diagram for Course\-:\-:Outpost\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classCourse_1_1Outpost}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCourse_1_1Outpost_a3b69759306e036223cfd991337c8b4e2}{Outpost} ()=delete
+\begin{DoxyCompactList}\small\item\em Disabled parameterless constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCourse_1_1Outpost_aa8f768ade225127da85fe4dd9c2c892d}{Outpost} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iGameEventHandler}{i\-Game\-Event\-Handler} $>$ \&eventhandler, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iObjectManager}{i\-Object\-Manager} $>$ \&objectmanager, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1PlayerBase}{Player\-Base} $>$ \&owner, const int \&tilespaces=1, const \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Resource\-Map} \&buildcost=\hyperlink{namespaceCourse_1_1ConstResourceMaps_a0baa840c24b118a34043afeb268c4408}{Const\-Resource\-Maps\-::\-O\-U\-T\-P\-O\-S\-T\-\_\-\-B\-U\-I\-L\-D\-\_\-\-C\-O\-S\-T}, const \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Resource\-Map} \&production=\hyperlink{namespaceCourse_1_1ConstResourceMaps_ae91bf6e7a36ca76016f6d149e94a3e9d}{Const\-Resource\-Maps\-::\-O\-U\-T\-P\-O\-S\-T\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N})
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+virtual \hyperlink{classCourse_1_1Outpost_aed6c03ab76797cac0712b1d88660ce14}{$\sim$\-Outpost} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classCourse_1_1Outpost_a8c89c67187451e0a49ecd57d4fc80602}{get\-Type} () const override
+\begin{DoxyCompactList}\small\item\em get\-Type Returns a string describing objects type. This should be overriden in each inherited class. Makes checking object's type easier for students. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCourse_1_1Outpost_a81849d7b0b1731051e5f26e9df213d6b}{on\-Build\-Action} () override
+\begin{DoxyCompactList}\small\item\em Sets neighbouring Tiles' ownership to this building's ownership in 1 tile-\/radius, if the Tiles don't already have an owner. \end{DoxyCompactList}\item 
+virtual \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Resource\-Map} \hyperlink{classCourse_1_1Outpost_a8d27878666500d574e62cea5819c77e2}{get\-Production} () override
+\begin{DoxyCompactList}\small\item\em get\-Production \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classCourse_1_1Outpost}{Outpost} class represents a player's Outpost-\/building. 
+
+It can be constructed on any tile that has not been claimed by any other player. \par
+Effects\-: Claims surrounding unclaimed tiles. \par
+Radius\-: 1 tiles\par
+Production\-: -\/10 money (upkeep)\par
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCourse_1_1Outpost_a3b69759306e036223cfd991337c8b4e2}{\index{Course\-::\-Outpost@{Course\-::\-Outpost}!Outpost@{Outpost}}
+\index{Outpost@{Outpost}!Course::Outpost@{Course\-::\-Outpost}}
+\subsubsection[{Outpost}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Outpost\-::\-Outpost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classCourse_1_1Outpost_a3b69759306e036223cfd991337c8b4e2}
+
+
+Disabled parameterless constructor. 
+
+\hypertarget{classCourse_1_1Outpost_aa8f768ade225127da85fe4dd9c2c892d}{\index{Course\-::\-Outpost@{Course\-::\-Outpost}!Outpost@{Outpost}}
+\index{Outpost@{Outpost}!Course::Outpost@{Course\-::\-Outpost}}
+\subsubsection[{Outpost}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Outpost\-::\-Outpost (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf i\-Game\-Event\-Handler} $>$ \&}]{eventhandler, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf i\-Object\-Manager} $>$ \&}]{objectmanager, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Player\-Base} $>$ \&}]{owner, }
+\item[{const int \&}]{tilespaces = {\ttfamily 1}, }
+\item[{const {\bf Resource\-Map} \&}]{buildcost = {\ttfamily {\bf Const\-Resource\-Maps\-::\-O\-U\-T\-P\-O\-S\-T\-\_\-\-B\-U\-I\-L\-D\-\_\-\-C\-O\-S\-T}}, }
+\item[{const {\bf Resource\-Map} \&}]{production = {\ttfamily {\bf Const\-Resource\-Maps\-::\-O\-U\-T\-P\-O\-S\-T\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classCourse_1_1Outpost_aa8f768ade225127da85fe4dd9c2c892d}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eventhandler} & points to the student's Game\-Event\-Handler. \\
+\hline
+{\em owner} & points to the owning player. \\
+\hline
+{\em tile} & points to the tile upon which the building is constructed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Exception Guarantee\-: No guarantee. 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classCourse_1_1OwnerConflict}{Owner\-Conflict}} & -\/ if the building conflicts with tile's ownership. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classCourse_1_1Outpost_aed6c03ab76797cac0712b1d88660ce14}{\index{Course\-::\-Outpost@{Course\-::\-Outpost}!$\sim$\-Outpost@{$\sim$\-Outpost}}
+\index{$\sim$\-Outpost@{$\sim$\-Outpost}!Course::Outpost@{Course\-::\-Outpost}}
+\subsubsection[{$\sim$\-Outpost}]{\setlength{\rightskip}{0pt plus 5cm}virtual Course\-::\-Outpost\-::$\sim$\-Outpost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}}\label{classCourse_1_1Outpost_aed6c03ab76797cac0712b1d88660ce14}
+
+
+Default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCourse_1_1Outpost_a8d27878666500d574e62cea5819c77e2}{\index{Course\-::\-Outpost@{Course\-::\-Outpost}!get\-Production@{get\-Production}}
+\index{get\-Production@{get\-Production}!Course::Outpost@{Course\-::\-Outpost}}
+\subsubsection[{get\-Production}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Resource\-Map} Course\-::\-Outpost\-::get\-Production (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCourse_1_1Outpost_a8d27878666500d574e62cea5819c77e2}
+
+
+get\-Production 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: Basic 
+\end{DoxyPostcond}
+
+
+Reimplemented from \hyperlink{classCourse_1_1BuildingBase_ad53ecc1dea91e3ca51c31759fe1680cb}{Course\-::\-Building\-Base}.
+
+\hypertarget{classCourse_1_1Outpost_a8c89c67187451e0a49ecd57d4fc80602}{\index{Course\-::\-Outpost@{Course\-::\-Outpost}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!Course::Outpost@{Course\-::\-Outpost}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Course\-::\-Outpost\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCourse_1_1Outpost_a8c89c67187451e0a49ecd57d4fc80602}
+
+
+get\-Type Returns a string describing objects type. This should be overriden in each inherited class. Makes checking object's type easier for students. 
+
+\begin{DoxyReturn}{Returns}
+std\-::string that represents Object's type. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\begin{DoxyNote}{Note}
+You can use this in e.\-g. debugging and similar printing. 
+\end{DoxyNote}
+
+
+Reimplemented from \hyperlink{classCourse_1_1BuildingBase_ac2cc44e08dc73d05b1617bf71295baaf}{Course\-::\-Building\-Base}.
+
+\hypertarget{classCourse_1_1Outpost_a81849d7b0b1731051e5f26e9df213d6b}{\index{Course\-::\-Outpost@{Course\-::\-Outpost}!on\-Build\-Action@{on\-Build\-Action}}
+\index{on\-Build\-Action@{on\-Build\-Action}!Course::Outpost@{Course\-::\-Outpost}}
+\subsubsection[{on\-Build\-Action}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::\-Outpost\-::on\-Build\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCourse_1_1Outpost_a81849d7b0b1731051e5f26e9df213d6b}
+
+
+Sets neighbouring Tiles' ownership to this building's ownership in 1 tile-\/radius, if the Tiles don't already have an owner. 
+
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: Basic 
+\end{DoxyPostcond}
+
+
+Reimplemented from \hyperlink{classCourse_1_1BuildingBase_a2e3a5ad53afb74fdf030a5679e40a341}{Course\-::\-Building\-Base}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Course/\-Course\-Lib/buildings/\hyperlink{outpost_8h}{outpost.\-h}\item 
+Course/\-Course\-Lib/buildings/\hyperlink{outpost_8cpp}{outpost.\-cpp}\end{DoxyCompactItemize}

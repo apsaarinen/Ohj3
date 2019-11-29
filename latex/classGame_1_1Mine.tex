@@ -1,0 +1,117 @@
+\hypertarget{classGame_1_1Mine}{\section{Game\-:\-:Mine Class Reference}
+\label{classGame_1_1Mine}\index{Game\-::\-Mine@{Game\-::\-Mine}}
+}
+
+
+The \hyperlink{classGame_1_1Mine}{Mine} class represents a mine-\/building in the game.  
+
+
+
+
+{\ttfamily \#include $<$mine.\-hh$>$}
+
+Inheritance diagram for Game\-:\-:Mine\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGame_1_1Mine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGame_1_1Mine_a052f5f30bddf99dfeb2d5a250f052571}{Mine} ()=delete
+\begin{DoxyCompactList}\small\item\em Disabled parameterless constructor. \end{DoxyCompactList}\item 
+\hyperlink{classGame_1_1Mine_a47b233fda9aeb633a0de2e72c6030f1b}{Mine} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1GameEventHandler}{Game\-Event\-Handler} $>$ \&eventhandler, const std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1ObjectManager}{Object\-Manager} $>$ \&objectmanager, const std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1Player}{Player} $>$ \&owner, const int \&tilespaces=1, const \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} \&buildcost=\hyperlink{namespaceGame_1_1ConstResourceMaps_adda0aad5b2188a57d2d187f692e2c2f9}{Game\-::\-Const\-Resource\-Maps\-::\-M\-I\-N\-E\-\_\-\-B\-U\-I\-L\-D\-\_\-\-C\-O\-S\-T}, const \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} \&production=\hyperlink{namespaceGame_1_1ConstResourceMaps_ad58736a7028bf9bdd46583af4cb3d410}{Game\-::\-Const\-Resource\-Maps\-::\-M\-I\-N\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N})
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+virtual \hyperlink{classGame_1_1Mine_a418dd7de3691b762b7373e5f39a111c9}{$\sim$\-Mine} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classGame_1_1Mine_aaf18e426d1978c8e6f0cf0dc7435c257}{get\-Type} () const override
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classGame_1_1Mine}{Mine} class represents a mine-\/building in the game. 
+
+The mine adds 1 base-\/production for money and 5 for stone and ore. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGame_1_1Mine_a052f5f30bddf99dfeb2d5a250f052571}{\index{Game\-::\-Mine@{Game\-::\-Mine}!Mine@{Mine}}
+\index{Mine@{Mine}!Game::Mine@{Game\-::\-Mine}}
+\subsubsection[{Mine}]{\setlength{\rightskip}{0pt plus 5cm}Game\-::\-Mine\-::\-Mine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classGame_1_1Mine_a052f5f30bddf99dfeb2d5a250f052571}
+
+
+Disabled parameterless constructor. 
+
+\hypertarget{classGame_1_1Mine_a47b233fda9aeb633a0de2e72c6030f1b}{\index{Game\-::\-Mine@{Game\-::\-Mine}!Mine@{Mine}}
+\index{Mine@{Mine}!Game::Mine@{Game\-::\-Mine}}
+\subsubsection[{Mine}]{\setlength{\rightskip}{0pt plus 5cm}Game\-::\-Mine\-::\-Mine (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Game\-Event\-Handler} $>$ \&}]{eventhandler, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Object\-Manager} $>$ \&}]{objectmanager, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Player} $>$ \&}]{owner, }
+\item[{const int \&}]{tilespaces = {\ttfamily 1}, }
+\item[{const {\bf Course\-::\-Resource\-Map} \&}]{buildcost = {\ttfamily {\bf Game\-::\-Const\-Resource\-Maps\-::\-M\-I\-N\-E\-\_\-\-B\-U\-I\-L\-D\-\_\-\-C\-O\-S\-T}}, }
+\item[{const {\bf Course\-::\-Resource\-Map} \&}]{production = {\ttfamily {\bf Game\-::\-Const\-Resource\-Maps\-::\-M\-I\-N\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classGame_1_1Mine_a47b233fda9aeb633a0de2e72c6030f1b}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eventhandler} & points to the student's \hyperlink{classGame_1_1GameEventHandler}{Game\-Event\-Handler}. \\
+\hline
+{\em owner} & points to the owning player. \\
+\hline
+{\em tile} & points to the tile upon which the building is constructed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Exception Guarantee\-: No guarantee. 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Owner\-Conflict} & -\/ if the building conflicts with tile's ownership. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classGame_1_1Mine_a418dd7de3691b762b7373e5f39a111c9}{\index{Game\-::\-Mine@{Game\-::\-Mine}!$\sim$\-Mine@{$\sim$\-Mine}}
+\index{$\sim$\-Mine@{$\sim$\-Mine}!Game::Mine@{Game\-::\-Mine}}
+\subsubsection[{$\sim$\-Mine}]{\setlength{\rightskip}{0pt plus 5cm}virtual Game\-::\-Mine\-::$\sim$\-Mine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}}\label{classGame_1_1Mine_a418dd7de3691b762b7373e5f39a111c9}
+
+
+Default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGame_1_1Mine_aaf18e426d1978c8e6f0cf0dc7435c257}{\index{Game\-::\-Mine@{Game\-::\-Mine}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!Game::Mine@{Game\-::\-Mine}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Game\-::\-Mine\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGame_1_1Mine_aaf18e426d1978c8e6f0cf0dc7435c257}
+
+
+
+
+
+
+Reimplemented from \hyperlink{classCourse_1_1BuildingBase_ac2cc44e08dc73d05b1617bf71295baaf}{Course\-::\-Building\-Base}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Game/buildings/\hyperlink{mine_8hh}{mine.\-hh}\item 
+Game/buildings/\hyperlink{mine_8cpp}{mine.\-cpp}\end{DoxyCompactItemize}

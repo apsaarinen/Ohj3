@@ -1,0 +1,202 @@
+\hypertarget{classdefault__gameeventhandler}{\section{default\-\_\-gameeventhandler Class Reference}
+\label{classdefault__gameeventhandler}\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}}
+}
+
+
+The gameventhandler\-\_\-tests test the Game\-Event\-Handler class.  
+
+
+Inheritance diagram for default\-\_\-gameeventhandler\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdefault__gameeventhandler}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdefault__gameeventhandler_a95b0dc5a9a792c26221332de6008ed1a}{default\-\_\-gameeventhandler} ()
+\begin{DoxyCompactList}\small\item\em Test setup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classdefault__gameeventhandler_af32f4c295555f30b7d922d1c55399e91}{test\-\_\-player\-Has\-Won} ()
+\begin{DoxyCompactList}\small\item\em Tests player reaching the win condition. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__gameeventhandler_a3eb2c5de5b08c3217a04d6b45d3b255b}{test\-\_\-modify\-Resource} ()
+\begin{DoxyCompactList}\small\item\em Tests modifying a player's resource. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__gameeventhandler_a17c006978a06fc12a6b88b3c1814e11c}{test\-\_\-modify\-Resources} ()
+\begin{DoxyCompactList}\small\item\em Tests modifying a player's resources. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__gameeventhandler_aa0b383fd6c699b1f044022bfe5269d2b}{test\-\_\-player\-In\-Turn} ()
+\begin{DoxyCompactList}\small\item\em Tests getting and setting the player in turn. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__gameeventhandler_a253bd1627b80b1259b2a1c30701e428c}{test\-\_\-is\-Buying} ()
+\begin{DoxyCompactList}\small\item\em Tests getting and setting the buying-\/flag. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__gameeventhandler_aaccee5017653e8216f2193c926e81265}{test\-\_\-rounds} ()
+\begin{DoxyCompactList}\small\item\em Tests getting and increasing the current game round. \end{DoxyCompactList}\item 
+void \hyperlink{classdefault__gameeventhandler_ab933cc221885e1793129cbe57e149c32}{cleanup} ()
+\begin{DoxyCompactList}\small\item\em Test cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1ObjectManager}{Object\-Manager} $>$ \hyperlink{classdefault__gameeventhandler_acdd2478cf08de20b164b66ec103b7de1}{obj\-Man}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1GameEventHandler}{Game\-Event\-Handler} $>$ \hyperlink{classdefault__gameeventhandler_aefeb6dad4999cfc75af77e989043815c}{gameeventhandler\-\_\-object}
+\item 
+int \hyperlink{classdefault__gameeventhandler_a1ac8cedd79456662813fa56454501d88}{win\-Resource\-Sum}
+\item 
+\hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} \hyperlink{classdefault__gameeventhandler_a09d45dc3340790f910f4c42a200d5fbf}{zero\-Resources}
+\item 
+\hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} \hyperlink{classdefault__gameeventhandler_aa6df2098d736982fb23603eff7edcf02}{start\-Resources}
+\item 
+\hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Course\-::\-Resource\-Map} \hyperlink{classdefault__gameeventhandler_aa22ed639196433fa97c3c53501660910}{minus\-Start\-Resources}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1Player}{Player} $>$ \hyperlink{classdefault__gameeventhandler_a25fc82697d08eb776919e8286bd2db5d}{player1}
+\item 
+std\-::shared\-\_\-ptr$<$ \hyperlink{classGame_1_1Player}{Player} $>$ \hyperlink{classdefault__gameeventhandler_a638662f415f3dc219ebb727b546734ba}{player2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The gameventhandler\-\_\-tests test the Game\-Event\-Handler class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classdefault__gameeventhandler_a95b0dc5a9a792c26221332de6008ed1a}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}}
+\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{default\-\_\-gameeventhandler}]{\setlength{\rightskip}{0pt plus 5cm}default\-\_\-gameeventhandler\-::default\-\_\-gameeventhandler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classdefault__gameeventhandler_a95b0dc5a9a792c26221332de6008ed1a}
+
+
+Test setup. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classdefault__gameeventhandler_ab933cc221885e1793129cbe57e149c32}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-gameeventhandler\-::cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__gameeventhandler_ab933cc221885e1793129cbe57e149c32}
+
+
+Test cleanup. 
+
+\hypertarget{classdefault__gameeventhandler_a253bd1627b80b1259b2a1c30701e428c}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!test\-\_\-is\-Buying@{test\-\_\-is\-Buying}}
+\index{test\-\_\-is\-Buying@{test\-\_\-is\-Buying}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{test\-\_\-is\-Buying}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-gameeventhandler\-::test\-\_\-is\-Buying (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__gameeventhandler_a253bd1627b80b1259b2a1c30701e428c}
+
+
+Tests getting and setting the buying-\/flag. 
+
+\begin{DoxyPostcond}{Postcondition}
+Buying flag should change and be returned correctly 
+\end{DoxyPostcond}
+\hypertarget{classdefault__gameeventhandler_a3eb2c5de5b08c3217a04d6b45d3b255b}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!test\-\_\-modify\-Resource@{test\-\_\-modify\-Resource}}
+\index{test\-\_\-modify\-Resource@{test\-\_\-modify\-Resource}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{test\-\_\-modify\-Resource}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-gameeventhandler\-::test\-\_\-modify\-Resource (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__gameeventhandler_a3eb2c5de5b08c3217a04d6b45d3b255b}
+
+
+Tests modifying a player's resource. 
+
+\begin{DoxyPostcond}{Postcondition}
+Resource should be modified accordingly 
+\end{DoxyPostcond}
+\hypertarget{classdefault__gameeventhandler_a17c006978a06fc12a6b88b3c1814e11c}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!test\-\_\-modify\-Resources@{test\-\_\-modify\-Resources}}
+\index{test\-\_\-modify\-Resources@{test\-\_\-modify\-Resources}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{test\-\_\-modify\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-gameeventhandler\-::test\-\_\-modify\-Resources (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__gameeventhandler_a17c006978a06fc12a6b88b3c1814e11c}
+
+
+Tests modifying a player's resources. 
+
+\begin{DoxyPostcond}{Postcondition}
+Resources should be modified accordingly 
+\end{DoxyPostcond}
+\hypertarget{classdefault__gameeventhandler_af32f4c295555f30b7d922d1c55399e91}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!test\-\_\-player\-Has\-Won@{test\-\_\-player\-Has\-Won}}
+\index{test\-\_\-player\-Has\-Won@{test\-\_\-player\-Has\-Won}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{test\-\_\-player\-Has\-Won}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-gameeventhandler\-::test\-\_\-player\-Has\-Won (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__gameeventhandler_af32f4c295555f30b7d922d1c55399e91}
+
+
+Tests player reaching the win condition. 
+
+\begin{DoxyPostcond}{Postcondition}
+Player should be selected as the winner 
+\end{DoxyPostcond}
+\hypertarget{classdefault__gameeventhandler_aa0b383fd6c699b1f044022bfe5269d2b}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!test\-\_\-player\-In\-Turn@{test\-\_\-player\-In\-Turn}}
+\index{test\-\_\-player\-In\-Turn@{test\-\_\-player\-In\-Turn}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{test\-\_\-player\-In\-Turn}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-gameeventhandler\-::test\-\_\-player\-In\-Turn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__gameeventhandler_aa0b383fd6c699b1f044022bfe5269d2b}
+
+
+Tests getting and setting the player in turn. 
+
+\begin{DoxyPostcond}{Postcondition}
+Player in turn should change and be returned correctly 
+\end{DoxyPostcond}
+\hypertarget{classdefault__gameeventhandler_aaccee5017653e8216f2193c926e81265}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!test\-\_\-rounds@{test\-\_\-rounds}}
+\index{test\-\_\-rounds@{test\-\_\-rounds}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{test\-\_\-rounds}]{\setlength{\rightskip}{0pt plus 5cm}void default\-\_\-gameeventhandler\-::test\-\_\-rounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classdefault__gameeventhandler_aaccee5017653e8216f2193c926e81265}
+
+
+Tests getting and increasing the current game round. 
+
+\begin{DoxyPostcond}{Postcondition}
+Rounds should increase and be returned correctly 
+\end{DoxyPostcond}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classdefault__gameeventhandler_aefeb6dad4999cfc75af77e989043815c}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!gameeventhandler\-\_\-object@{gameeventhandler\-\_\-object}}
+\index{gameeventhandler\-\_\-object@{gameeventhandler\-\_\-object}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{gameeventhandler\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Game\-Event\-Handler}$>$ default\-\_\-gameeventhandler\-::gameeventhandler\-\_\-object\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__gameeventhandler_aefeb6dad4999cfc75af77e989043815c}
+\hypertarget{classdefault__gameeventhandler_aa22ed639196433fa97c3c53501660910}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!minus\-Start\-Resources@{minus\-Start\-Resources}}
+\index{minus\-Start\-Resources@{minus\-Start\-Resources}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{minus\-Start\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Course\-::\-Resource\-Map} default\-\_\-gameeventhandler\-::minus\-Start\-Resources\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__gameeventhandler_aa22ed639196433fa97c3c53501660910}
+\hypertarget{classdefault__gameeventhandler_acdd2478cf08de20b164b66ec103b7de1}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!obj\-Man@{obj\-Man}}
+\index{obj\-Man@{obj\-Man}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{obj\-Man}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Object\-Manager}$>$ default\-\_\-gameeventhandler\-::obj\-Man\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__gameeventhandler_acdd2478cf08de20b164b66ec103b7de1}
+\hypertarget{classdefault__gameeventhandler_a25fc82697d08eb776919e8286bd2db5d}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!player1@{player1}}
+\index{player1@{player1}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{player1}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Player}$>$ default\-\_\-gameeventhandler\-::player1\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__gameeventhandler_a25fc82697d08eb776919e8286bd2db5d}
+\hypertarget{classdefault__gameeventhandler_a638662f415f3dc219ebb727b546734ba}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!player2@{player2}}
+\index{player2@{player2}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{player2}]{\setlength{\rightskip}{0pt plus 5cm}std\-::shared\-\_\-ptr$<${\bf Player}$>$ default\-\_\-gameeventhandler\-::player2\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__gameeventhandler_a638662f415f3dc219ebb727b546734ba}
+\hypertarget{classdefault__gameeventhandler_aa6df2098d736982fb23603eff7edcf02}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!start\-Resources@{start\-Resources}}
+\index{start\-Resources@{start\-Resources}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{start\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Course\-::\-Resource\-Map} default\-\_\-gameeventhandler\-::start\-Resources\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__gameeventhandler_aa6df2098d736982fb23603eff7edcf02}
+\hypertarget{classdefault__gameeventhandler_a1ac8cedd79456662813fa56454501d88}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!win\-Resource\-Sum@{win\-Resource\-Sum}}
+\index{win\-Resource\-Sum@{win\-Resource\-Sum}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{win\-Resource\-Sum}]{\setlength{\rightskip}{0pt plus 5cm}int default\-\_\-gameeventhandler\-::win\-Resource\-Sum\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__gameeventhandler_a1ac8cedd79456662813fa56454501d88}
+\hypertarget{classdefault__gameeventhandler_a09d45dc3340790f910f4c42a200d5fbf}{\index{default\-\_\-gameeventhandler@{default\-\_\-gameeventhandler}!zero\-Resources@{zero\-Resources}}
+\index{zero\-Resources@{zero\-Resources}!default_gameeventhandler@{default\-\_\-gameeventhandler}}
+\subsubsection[{zero\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Course\-::\-Resource\-Map} default\-\_\-gameeventhandler\-::zero\-Resources\hspace{0.3cm}{\ttfamily [private]}}}\label{classdefault__gameeventhandler_a09d45dc3340790f910f4c42a200d5fbf}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Unit\-Tests/gameeventhandler\-\_\-tests/\hyperlink{tst__default__gameeventhandler_8cpp}{tst\-\_\-default\-\_\-gameeventhandler.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,148 @@
+\hypertarget{classCourse_1_1HeadQuarters}{\section{Course\-:\-:Head\-Quarters Class Reference}
+\label{classCourse_1_1HeadQuarters}\index{Course\-::\-Head\-Quarters@{Course\-::\-Head\-Quarters}}
+}
+
+
+The \hyperlink{classCourse_1_1HeadQuarters}{Head\-Quarters} class represents a player's Head\-Quarters-\/building.  
+
+
+
+
+{\ttfamily \#include $<$headquarters.\-h$>$}
+
+Inheritance diagram for Course\-:\-:Head\-Quarters\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classCourse_1_1HeadQuarters}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCourse_1_1HeadQuarters_a117d344b8498b5fee8da099d5f3c06a5}{Head\-Quarters} ()=delete
+\begin{DoxyCompactList}\small\item\em Disabled parameterless constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCourse_1_1HeadQuarters_a7c928678452102770fff5d0e5ad1bdf9}{Head\-Quarters} (const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iGameEventHandler}{i\-Game\-Event\-Handler} $>$ \&eventhandler, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1iObjectManager}{i\-Object\-Manager} $>$ \&objectmanager, const std\-::shared\-\_\-ptr$<$ \hyperlink{classCourse_1_1PlayerBase}{Player\-Base} $>$ \&owner, const int \&tilespaces=1, const \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Resource\-Map} \&buildcost=\hyperlink{namespaceCourse_1_1ConstResourceMaps_a629a12b3f9357cd851c54f2126d22502}{Const\-Resource\-Maps\-::\-H\-Q\-\_\-\-B\-U\-I\-L\-D\-\_\-\-C\-O\-S\-T}, const \hyperlink{namespaceCourse_ab9a46ed9cd00485e318e5731ea2f78d9}{Resource\-Map} \&production=\hyperlink{namespaceCourse_1_1ConstResourceMaps_aabaaa4f78c30eed6e966b596423c8dea}{Const\-Resource\-Maps\-::\-H\-Q\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N})
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\item 
+virtual \hyperlink{classCourse_1_1HeadQuarters_afb7c412b1d0a4997a90c87940de2eabd}{$\sim$\-Head\-Quarters} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classCourse_1_1HeadQuarters_a1d9a996a6a87ca31aeb63dff2d41d242}{get\-Type} () const override
+\begin{DoxyCompactList}\small\item\em get\-Type Returns a string describing objects type. This should be overriden in each inherited class. Makes checking object's type easier for students. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCourse_1_1HeadQuarters_addf7f7f78486ce17024a639f15f25649}{on\-Build\-Action} () override
+\begin{DoxyCompactList}\small\item\em Sets neighbouring Tiles' ownership to this building's ownership in 3 tile-\/radius, if the Tiles don't already have an owner. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classCourse_1_1HeadQuarters}{Head\-Quarters} class represents a player's Head\-Quarters-\/building. 
+
+It can be constructed on any tile that has not been claimed by any other player. \par
+Effects\-: Claims surrounding unclaimed tiles. \par
+Radius\-: 3 tiles. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCourse_1_1HeadQuarters_a117d344b8498b5fee8da099d5f3c06a5}{\index{Course\-::\-Head\-Quarters@{Course\-::\-Head\-Quarters}!Head\-Quarters@{Head\-Quarters}}
+\index{Head\-Quarters@{Head\-Quarters}!Course::HeadQuarters@{Course\-::\-Head\-Quarters}}
+\subsubsection[{Head\-Quarters}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Head\-Quarters\-::\-Head\-Quarters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}}\label{classCourse_1_1HeadQuarters_a117d344b8498b5fee8da099d5f3c06a5}
+
+
+Disabled parameterless constructor. 
+
+\hypertarget{classCourse_1_1HeadQuarters_a7c928678452102770fff5d0e5ad1bdf9}{\index{Course\-::\-Head\-Quarters@{Course\-::\-Head\-Quarters}!Head\-Quarters@{Head\-Quarters}}
+\index{Head\-Quarters@{Head\-Quarters}!Course::HeadQuarters@{Course\-::\-Head\-Quarters}}
+\subsubsection[{Head\-Quarters}]{\setlength{\rightskip}{0pt plus 5cm}Course\-::\-Head\-Quarters\-::\-Head\-Quarters (
+\begin{DoxyParamCaption}
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf i\-Game\-Event\-Handler} $>$ \&}]{eventhandler, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf i\-Object\-Manager} $>$ \&}]{objectmanager, }
+\item[{const std\-::shared\-\_\-ptr$<$ {\bf Player\-Base} $>$ \&}]{owner, }
+\item[{const int \&}]{tilespaces = {\ttfamily 1}, }
+\item[{const {\bf Resource\-Map} \&}]{buildcost = {\ttfamily {\bf Const\-Resource\-Maps\-::\-H\-Q\-\_\-\-B\-U\-I\-L\-D\-\_\-\-C\-O\-S\-T}}, }
+\item[{const {\bf Resource\-Map} \&}]{production = {\ttfamily {\bf Const\-Resource\-Maps\-::\-H\-Q\-\_\-\-P\-R\-O\-D\-U\-C\-T\-I\-O\-N}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classCourse_1_1HeadQuarters_a7c928678452102770fff5d0e5ad1bdf9}
+
+
+Constructor for the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eventhandler} & points to the student's Game\-Event\-Handler. \\
+\hline
+{\em owner} & points to the owning player. \\
+\hline
+{\em tile} & points to the tile upon which the building is constructed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Exception Guarantee\-: No guarantee. 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classCourse_1_1OwnerConflict}{Owner\-Conflict}} & -\/ if the building conflicts with tile's ownership. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classCourse_1_1HeadQuarters_afb7c412b1d0a4997a90c87940de2eabd}{\index{Course\-::\-Head\-Quarters@{Course\-::\-Head\-Quarters}!$\sim$\-Head\-Quarters@{$\sim$\-Head\-Quarters}}
+\index{$\sim$\-Head\-Quarters@{$\sim$\-Head\-Quarters}!Course::HeadQuarters@{Course\-::\-Head\-Quarters}}
+\subsubsection[{$\sim$\-Head\-Quarters}]{\setlength{\rightskip}{0pt plus 5cm}virtual Course\-::\-Head\-Quarters\-::$\sim$\-Head\-Quarters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}}\label{classCourse_1_1HeadQuarters_afb7c412b1d0a4997a90c87940de2eabd}
+
+
+Default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCourse_1_1HeadQuarters_a1d9a996a6a87ca31aeb63dff2d41d242}{\index{Course\-::\-Head\-Quarters@{Course\-::\-Head\-Quarters}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!Course::HeadQuarters@{Course\-::\-Head\-Quarters}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Course\-::\-Head\-Quarters\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCourse_1_1HeadQuarters_a1d9a996a6a87ca31aeb63dff2d41d242}
+
+
+get\-Type Returns a string describing objects type. This should be overriden in each inherited class. Makes checking object's type easier for students. 
+
+\begin{DoxyReturn}{Returns}
+std\-::string that represents Object's type. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: No-\/throw 
+\end{DoxyPostcond}
+\begin{DoxyNote}{Note}
+You can use this in e.\-g. debugging and similar printing. 
+\end{DoxyNote}
+
+
+Reimplemented from \hyperlink{classCourse_1_1BuildingBase_ac2cc44e08dc73d05b1617bf71295baaf}{Course\-::\-Building\-Base}.
+
+\hypertarget{classCourse_1_1HeadQuarters_addf7f7f78486ce17024a639f15f25649}{\index{Course\-::\-Head\-Quarters@{Course\-::\-Head\-Quarters}!on\-Build\-Action@{on\-Build\-Action}}
+\index{on\-Build\-Action@{on\-Build\-Action}!Course::HeadQuarters@{Course\-::\-Head\-Quarters}}
+\subsubsection[{on\-Build\-Action}]{\setlength{\rightskip}{0pt plus 5cm}void Course\-::\-Head\-Quarters\-::on\-Build\-Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classCourse_1_1HeadQuarters_addf7f7f78486ce17024a639f15f25649}
+
+
+Sets neighbouring Tiles' ownership to this building's ownership in 3 tile-\/radius, if the Tiles don't already have an owner. 
+
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\-: Basic 
+\end{DoxyPostcond}
+
+
+Reimplemented from \hyperlink{classCourse_1_1BuildingBase_a2e3a5ad53afb74fdf030a5679e40a341}{Course\-::\-Building\-Base}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Course/\-Course\-Lib/buildings/\hyperlink{headquarters_8h}{headquarters.\-h}\item 
+Course/\-Course\-Lib/buildings/\hyperlink{headquarters_8cpp}{headquarters.\-cpp}\end{DoxyCompactItemize}
