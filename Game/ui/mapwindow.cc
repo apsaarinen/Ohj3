@@ -486,7 +486,7 @@ void MapWindow::drawResources(std::shared_ptr<Game::Player> player)
     m_ui->label_woodInput->setText(QString::number(playerResources[Course::BasicResource::WOOD]));
     m_ui->label_stoneInput->setText(QString::number(playerResources[Course::BasicResource::STONE]));
     m_ui->label_oreInput->setText(QString::number(playerResources[Course::BasicResource::ORE]));
-    int resourceSum;
+    int resourceSum = 0;
     for(auto res: playerResources) {
         resourceSum += res.second;
     }
