@@ -27,7 +27,7 @@ bool GameEventHandler::modifyResources(std::shared_ptr<Course::PlayerBase> playe
 bool GameEventHandler::playerHasWon(std::shared_ptr<Player> player)
 {
     Course::ResourceMap playerResourceMap = player->getResources();
-    int resourceSum;
+    int resourceSum = 0;
     for(auto n: playerResourceMap) {
         resourceSum += n.second;
     }

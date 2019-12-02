@@ -142,7 +142,7 @@ private:
 
     std::vector<std::shared_ptr<Course::GameObject> > destroyable_objects;
 
-    std::unique_ptr<Player> default_instance;
+    std::shared_ptr<Player> default_instance;
 
     bool vectorContainsPtr(std::vector<std::shared_ptr<Course::GameObject> > vec,
                             std::shared_ptr<Course::GameObject> ptr);
@@ -151,7 +151,7 @@ private:
 
 default_player::default_player()
 {
-    default_instance = std::make_unique<Player>(DEFAULT_NAME, "red");
+    default_instance = std::make_shared<Player>(DEFAULT_NAME, "red");
 }
 
 bool default_player::vectorContainsPtr(
@@ -453,7 +453,7 @@ void default_player::checkColor()
 
 void default_player::cleanup()
 {
-    default_instance = std::make_unique<Player>(DEFAULT_NAME, "red");
+    default_instance = std::make_shared<Player>(DEFAULT_NAME, "red");
 
     destroyable_objects = {
         std::make_shared<Course::GameObject>(),

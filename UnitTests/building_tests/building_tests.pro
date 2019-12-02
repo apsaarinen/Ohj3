@@ -56,8 +56,8 @@ else:unix: PRE_TARGETDEPS += \
 
 HEADERS += \
     $$PWD/../../Game/core/player.h \
-    $$PWD/../../Game/buildings/mine.h \
-    $$PWD/../../Game/buildings/sawmill.h \
+    $$PWD/../../Game/buildings/mine.hh \
+    $$PWD/../../Game/buildings/sawmill.hh \
     $$PWD/../../Game/core/objectmanager.h \
     $$PWD/../../Game/core/gameeventhandler.h
 
