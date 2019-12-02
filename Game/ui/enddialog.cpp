@@ -18,7 +18,7 @@ void enddialog::setWinner(std::vector<std::shared_ptr<Game::Player> > winners, i
     if(winners.size() == 1) {
         // One winner, calculate sum of resources
         Course::ResourceMap playerResourceMap = winners[0]->getResources();
-        int resourceSum;
+        int resourceSum = 0;
         for(auto n: playerResourceMap) {
             resourceSum += n.second;
         }
